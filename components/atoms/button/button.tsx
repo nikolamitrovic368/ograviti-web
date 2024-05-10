@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { Slot } from '@radix-ui/react-slot'
 import { cva, type VariantProps } from 'class-variance-authority'
-import { cn } from '@/app/utils/util'
+import { cn } from '@/utils/tailwind'
 
 const buttonVariants = cva('rounded-lg', {
   variants: {
