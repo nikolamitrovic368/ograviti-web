@@ -16,7 +16,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={cn(lato.className, 'px-28')}>
+      <body className={cn(lato.className, 'px-8 xl:px-28')}>
         <Header />
         {children}
       </body>
