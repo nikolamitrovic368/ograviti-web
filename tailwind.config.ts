@@ -19,6 +19,10 @@ const config: Config = {
           DEFAULT: 'var(--secondary)',
           foreground: 'var(--secondary-foreground)',
         },
+        action: {
+          DEFAULT: 'var(--action)',
+          active: 'var(--action-active)',
+        },
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',

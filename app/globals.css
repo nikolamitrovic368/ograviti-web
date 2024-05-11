@@ -9,6 +9,8 @@
   --primary-foreground: #ffffff;
   --secondary: #272727;
   --secondary-foreground: #ffffff;
+  --action: #666666;
+  --action-active: #d9d9d9;
 }
 
 body {
