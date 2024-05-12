@@ -1,14 +1,16 @@
 'use client'
-import { useEffect, useRef, useState } from 'react'
-import gsap from 'gsap'
 import { useGSAP } from '@gsap/react'
+import gsap from 'gsap'
 import Image from 'next/image'
-import { steps } from './constants'
-import { Left, Right } from '@/components/atoms/icons'
-import { cn } from '@/utils/tailwind'
+import { useEffect, useRef, useState } from 'react'
 import { Carousel } from 'react-responsive-carousel'
+
 import { IconButton } from '@/components/atoms/icon-button'
+import { Left, Right } from '@/components/atoms/icons'
 import useMedia from '@/hooks/useMedia'
+import { cn } from '@/utils/tailwind'
+
+import { steps } from './constants'
 
 export default function Section1() {
   const container = useRef(null)

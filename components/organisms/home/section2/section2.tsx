@@ -1,20 +1,22 @@
 'use client'
 import { useEffect, useState } from 'react'
-import { steps } from './constants'
+
 import { cn } from '@/utils/tailwind'
+
+import { steps } from './constants'
 
 export default function Section2() {
   const [step, setStep] = useState(0)
   useEffect(() => {
-    // const myInterval = setInterval(() => {
-    //   setStep(v => {
-    //     console.log(v)
-    //     return (v + 1) % 4
-    //   })
-    // }, 6000)
-    // return () => {
-    //   clearInterval(myInterval)
-    // }
+    const myInterval = setInterval(() => {
+      setStep(v => {
+        console.log(v)
+        return (v + 1) % 4
+      })
+    }, 6000)
+    return () => {
+      clearInterval(myInterval)
+    }
   }, [])
 
   return (

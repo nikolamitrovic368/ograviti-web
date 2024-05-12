@@ -1,8 +1,10 @@
 import './globals.css'
 import 'react-responsive-carousel/lib/styles/carousel.min.css'
+
+import { Lato } from 'next/font/google'
+
 import Header from '@/components/organisms/header'
 import { cn } from '@/utils/tailwind'
-import { Lato } from 'next/font/google'
 
 const lato = Lato({
   subsets: ['latin'],
@@ -16,7 +18,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={cn(lato.className, 'px-8 xl:px-28')}>
+      <body className={cn(lato.className, 'px-8 xl:px-16 2xl:px-28')}>
         <Header />
         {children}
       </body>

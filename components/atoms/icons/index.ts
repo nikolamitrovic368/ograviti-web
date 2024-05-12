@@ -1,6 +1,6 @@
-import Ograviti from './ograviti'
-import Menu from './menu'
 import Left from './left'
+import Menu from './menu'
+import Ograviti from './ograviti'
 import Right from './right'
 
-export { Ograviti, Menu, Left, Right }
+export { Left, Menu, Ograviti, Right }

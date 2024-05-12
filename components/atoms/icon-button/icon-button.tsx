@@ -1,5 +1,6 @@
-import * as React from 'react'
 import { cva, type VariantProps } from 'class-variance-authority'
+import * as React from 'react'
+
 import { cn } from '@/utils/tailwind'
 
 const iconButtonVariants = cva(
@@ -8,6 +9,7 @@ const iconButtonVariants = cva(
     variants: {
       variant: {
         default: 'bg-secondary text-background',
+        secondary: 'bg-stone-500 text-background',
       },
       size: {
         default: 'w-[72px] h-[72px]',
