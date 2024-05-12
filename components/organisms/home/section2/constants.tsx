@@ -11,6 +11,7 @@ export const steps = [
           width={426}
           height={240}
           alt="how to 1"
+          unoptimized
         />
         <div className="px-4">
           <div className="text-3xl text-primary py-4 font-semibold">
@@ -81,13 +82,16 @@ export const steps = [
             success.
           </div>
         </div>
-        <Image
-          className="w-[700px] py-5"
-          src="/images/main/howto4.gif"
-          width={426}
-          height={240}
-          alt="how to 1"
-        />
+        <div>
+          <Image
+            className="w-[700px] py-5"
+            src="/images/main/howto4.gif"
+            width={426}
+            unoptimized
+            height={240}
+            alt="how to 1"
+          />
+        </div>
       </>
     ),
   },
