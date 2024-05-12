@@ -1,23 +1,22 @@
-import 'swiper/css'
-
 import Image from 'next/image'
 import { Autoplay } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
 
+import { Typography } from '@/components/atoms/typography'
 import Card from '@/components/molecules/card'
 
 export default function Section3() {
   return (
     <div className="py-14">
-      <div className="text-5xl text-primary font-bold pb-4 text-left w-2/3">
+      <Typography variant="h2" type="primary">
         Realizing Possibilities, One Solution at a Time
-      </div>
-      <div className="text-2xl py-5 text-left w-2/3">
+      </Typography>
+      <Typography variant="subtitle2" className="w-2/3 py-2">
         Embark on a journey through our Case Studies, where real-world
         challenges meet innovative solutions. Explore how Ograviti transforms
         possibilities into success stories, showcasing the tangible impact of
         our tailored solutions in diverse business landscapes.
-      </div>
+      </Typography>
       <div className="flex py-10">
         <div className="w-1/4 px-4">
           <Card
