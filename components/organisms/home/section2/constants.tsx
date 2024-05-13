@@ -14,10 +14,10 @@ export const steps = [
           unoptimized
         />
         <div className="px-4">
-          <div className="text-3xl text-primary py-4 font-semibold">
+          <div className="py-4 text-3xl font-semibold text-primary">
             How We Started
           </div>
-          <div className="text-2xl py-2">
+          <div className="py-2 text-2xl">
             Embark on a narrative that traces our humble beginnings, founded on
             innovation and a vision to transform the software landscape.
           </div>
@@ -29,10 +29,10 @@ export const steps = [
     title: 'Values',
     content: (
       <div className="px-4">
-        <div className="text-3xl text-primary py-4 font-semibold">
+        <div className="py-4 text-3xl font-semibold text-primary">
           Values - Reshaping Your Business
         </div>
-        <div className="text-2xl py-2 leading-9">
+        <div className="py-2 text-2xl leading-9">
           Dive into the essence of Ograviti, where our core values serve as
           guiding lights, shaping businesses through innovation, adaptability,
           and a commitment to excellence. Explore how we redefine industry
@@ -49,17 +49,17 @@ export const steps = [
     content: (
       <div className="flex">
         <Image
-          className="py-5 w-1/3 h-[587px] object-cover"
+          className="h-[587px] w-1/3 object-cover py-5"
           src="/images/main/howto3.png"
           width={313}
           height={519}
           alt="how to 3"
         />
         <div className="px-4">
-          <div className="text-3xl text-primary py-4 font-semibold">
+          <div className="py-4 text-3xl font-semibold text-primary">
             Our Promises - High Quality, Every Time
           </div>
-          <div className="text-2xl py-2 leading-9">
+          <div className="py-2 text-2xl leading-9">
             Explore our unwavering dedication to delivering high-quality
             solutions, where precision meets innovation, and client satisfaction
             is non-negotiable.
@@ -73,10 +73,10 @@ export const steps = [
     content: (
       <>
         <div className="px-4">
-          <div className="text-3xl text-primary py-4 font-semibold">
+          <div className="py-4 text-3xl font-semibold text-primary">
             Results - The Ograviti Impact
           </div>
-          <div className="text-2xl py-2 leading-9">
+          <div className="py-2 text-2xl leading-9">
             Witness the transformative outcomes of our collaborations, where
             measurable results speak volumes about our commitment to your
             success.

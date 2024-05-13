@@ -47,7 +47,7 @@ export default function Section3() {
           />
         </div>
       </div>
-      <div className="-mx-8 xl:-mx-16 2xl:-mx-28 py-16">
+      <div className="-mx-8 py-16 xl:-mx-16 2xl:-mx-28">
         <Swiper
           dir="rtl"
           loop={true}
@@ -64,7 +64,7 @@ export default function Section3() {
         >
           {[1, 2, 3].map(v => (
             <SwiperSlide className="!w-auto" key={v}>
-              <div className="flex justify-center items-center h-36 gap-56 pl-56">
+              <div className="flex h-36 items-center justify-center gap-56 pl-56">
                 <Image
                   src="/images/companies/1.svg"
                   alt="companies-1"

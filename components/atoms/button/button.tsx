@@ -4,14 +4,13 @@ import * as React from 'react'
 
 import { cn } from '@/utils/tailwind'
 
-const buttonVariants = cva('rounded-lg', {
+const buttonVariants = cva('font-bold', {
   variants: {
     variant: {
-      default: 'bg-primary text-background',
-      text: 'text-primary',
+      default: 'bg-primary text-primary-foreground',
     },
     size: {
-      default: 'px-5 py-3 text-3xl',
+      default: 'rounded-full px-20 py-4',
     },
   },
   defaultVariants: {

@@ -1,11 +1,15 @@
 import Image from 'next/image'
 
-const Ograviti = () => (
+const Ograviti = ({
+  variants = 'primary',
+}: {
+  variants?: 'primary' | 'secondary'
+}) => (
   <Image
-    src="/images/logos/ograviti.svg"
+    src={`/images/logos/ograviti${variants === 'secondary' ? '-white' : ''}.svg`}
     alt="Ograviti Logo"
-    width={145}
-    height={23}
+    width={variants === 'secondary' ? 273 : 145}
+    height={variants === 'secondary' ? 43 : 23}
     priority
   />
 )

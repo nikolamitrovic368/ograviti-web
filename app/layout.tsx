@@ -4,6 +4,7 @@ import 'swiper/css'
 
 import { Lato } from 'next/font/google'
 
+import Footer from '@/components/organisms/footer'
 import Header from '@/components/organisms/header'
 import { cn } from '@/utils/tailwind'
 
@@ -19,9 +20,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={cn(lato.className, 'px-8 xl:px-16 2xl:px-28')}>
+      <body className={cn(lato.className, 'overflow-x-hidden ')}>
         <Header />
-        {children}
+        <div className="px-8 xl:px-16 2xl:px-28">{children}</div>
+        <Footer />
       </body>
     </html>
   )

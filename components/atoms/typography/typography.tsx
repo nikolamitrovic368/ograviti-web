@@ -11,6 +11,7 @@ const typographyVariants = cva('', {
       h2: 'text-5xl font-bold py-4 ',
       subtitle1: 'text-3xl',
       subtitle2: 'text-2xl leading-9',
+      small: '',
     },
     type: {
       default: '',
