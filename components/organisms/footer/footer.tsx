@@ -4,7 +4,7 @@ import { Button } from '@/components/atoms/button'
 import { Ograviti } from '@/components/atoms/icons'
 import { Typography } from '@/components/atoms/typography'
 import Socials from '@/components/molecules/socials/socials'
-import navigation from '@/constants/navigation'
+import { footerNavigationConfig } from '@/constants/navigation'
 
 export default function Footer() {
   return (
@@ -23,7 +23,7 @@ export default function Footer() {
       <div className="flex h-32 w-full items-center justify-between">
         <Ograviti variants="secondary" />
         <div className="flex gap-4">
-          {navigation.map(nav => (
+          {footerNavigationConfig.map(nav => (
             <Link
               href={nav.url}
               key={nav.url}

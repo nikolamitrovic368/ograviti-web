@@ -25,9 +25,9 @@ export default function Section1() {
   }, [contextSafe, step])
 
   return (
-    <div className="flex flex-col md:flex-row justify-between items-center md:pt-20 relative w-full">
+    <div className="relative flex w-full flex-col items-center justify-between md:flex-row md:pt-20">
       <Carousel
-        className="md:absolute left-0 top-5 w-full pt-6 pb-14"
+        className="left-0 top-5 w-full pb-14 pt-6 md:absolute"
         showArrows={false}
         showStatus={false}
         showIndicators={false}
@@ -41,12 +41,12 @@ export default function Section1() {
       >
         {steps.map(step => (
           <div key={step.title}>
-            <div className="text-4xl md:text-5xl text-primary font-bold pb-4 text-left">
+            <div className="pb-4 text-left text-4xl font-bold text-primary md:text-5xl">
               {step.title}
             </div>
             {step.subtitles.map((subtitle, key) => (
               <div
-                className={`md:text-2xl py-1 text-left step-${key}`}
+                className={`py-1 text-left md:text-2xl step-${key}`}
                 key={key}
               >
                 {subtitle}
@@ -64,18 +64,18 @@ export default function Section1() {
       )}
 
       <div
-        className="relative h-[calc(100vw-64px)] md:h-[calc(100vw-112px)] w-[calc(100vw-64px)] md:w-[calc(100vw-112px)] max-h-[700px] max-w-[700px] md:mx-8"
+        className="relative h-[calc(100vw-64px)] max-h-[700px] w-[calc(100vw-64px)] max-w-[700px] md:mx-8 md:h-[calc(100vw-112px)] md:w-[calc(100vw-112px)]"
         ref={container}
       >
         <Image
-          className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-[88%] w-[88%]"
+          className="absolute left-1/2 top-1/2 h-[88%] w-[88%] -translate-x-1/2 -translate-y-1/2"
           src="/images/main/subtract-2.svg"
           alt="subtract-2"
           width={896}
           height={896}
         />
         <Image
-          className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-[80.5%] w-[80.5%]"
+          className="absolute left-1/2 top-1/2 h-[80.5%] w-[80.5%] -translate-x-1/2 -translate-y-1/2"
           src="/images/main/subtract-1.svg"
           alt="subtract-1"
           width={780}
@@ -84,7 +84,7 @@ export default function Section1() {
         {steps.map((_, key) => (
           <Image
             className={cn(
-              'absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-[70%] w-[70%] opacity-0 transition-opacity',
+              'absolute left-1/2 top-1/2 h-[70%] w-[70%] -translate-x-1/2 -translate-y-1/2 opacity-0 transition-opacity',
               key <= step && 'opacity-100',
             )}
             key={key}
@@ -95,7 +95,7 @@ export default function Section1() {
           />
         ))}
         <Image
-          className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-[92.5%] w-[92.5%] point"
+          className="point absolute left-1/2 top-1/2 h-[92.5%] w-[92.5%] -translate-x-1/2 -translate-y-1/2"
           src="/images/main/point.svg"
           alt="point"
           width={940}
@@ -105,7 +105,7 @@ export default function Section1() {
           <Image
             key={_step.title}
             className={cn(
-              'absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-full w-full',
+              'absolute left-1/2 top-1/2 h-full w-full -translate-x-1/2 -translate-y-1/2',
               key === step ? 'opacity-90' : 'opacity-25',
             )}
             src={`/images/main/step${key + 1}${isMd ? '' : '-mobile'}.svg`}

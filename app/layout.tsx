@@ -1,4 +1,4 @@
-import './globals.css'
+import '@/styles/globals.css'
 import 'react-responsive-carousel/lib/styles/carousel.min.css'
 import 'swiper/css'
 
@@ -20,7 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={cn(lato.className, 'overflow-x-hidden ')}>
+      <body className={cn(lato.className, 'overflow-x-hidden')}>
         <Header />
         <div className="px-8 xl:px-16 2xl:px-28">{children}</div>
         <Footer />

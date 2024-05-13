@@ -3,24 +3,23 @@ import * as React from 'react'
 
 import { cn } from '@/utils/tailwind'
 
-const iconButtonVariants = cva(
-  'rounded-full flex justify-center items-center',
-  {
-    variants: {
-      variant: {
-        default: 'bg-secondary text-background',
-        secondary: 'bg-stone-500 text-background',
-      },
-      size: {
-        default: 'w-[72px] h-[72px]',
-      },
+const iconButtonVariants = cva('flex justify-center items-center', {
+  variants: {
+    variant: {
+      default: 'rounded-full bg-secondary text-background',
+      secondary: 'rounded-full bg-stone-500 text-background',
+      icon: '',
     },
-    defaultVariants: {
-      variant: 'default',
-      size: 'default',
+    size: {
+      default: 'w-[72px] h-[72px]',
+      tiny: '',
     },
   },
-)
+  defaultVariants: {
+    variant: 'default',
+    size: 'default',
+  },
+})
 
 export interface IconButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement>,
