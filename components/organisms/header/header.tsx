@@ -26,7 +26,9 @@ export default function Header() {
   return (
     <>
       <div className="flex justify-between px-8 py-10 xl:px-16 2xl:px-28">
-        <Ograviti />
+        <Link href="/">
+          <Ograviti />
+        </Link>
         <IconButton variant="icon" size="tiny" onClick={() => setIsOpen(true)}>
           <Menu />
         </IconButton>
