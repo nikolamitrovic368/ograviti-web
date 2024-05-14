@@ -13,7 +13,7 @@ export const navigationConfig = [
   },
   {
     title: 'About Us',
-    url: CASE_STUDY_LINK,
+    url: ABOUT_US,
   },
   {
     title: 'Services',

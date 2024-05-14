@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 import { IconButton } from '@/components/atoms/icon-button'
 import Enter from '@/components/atoms/icons/enter'
 import { Typography } from '@/components/atoms/typography'
@@ -17,7 +19,8 @@ export default function BlogCard(
   }: BlogCardProps,
 ) {
   return (
-    <div
+    <Link
+      href="/blog/1"
       className="group relative flex h-[544px] w-full flex-col justify-end overflow-hidden rounded-[45px]"
       style={{
         backgroundImage: 'url(/images/blogs/1.jpg)',
@@ -40,6 +43,6 @@ export default function BlogCard(
       <IconButton className="absolute -bottom-20 right-4 opacity-0 transition-all duration-500 group-hover:bottom-4 group-hover:opacity-100">
         <Enter />
       </IconButton>
-    </div>
+    </Link>
   )
 }

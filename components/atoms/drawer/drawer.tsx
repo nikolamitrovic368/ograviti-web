@@ -59,7 +59,7 @@ const Drawer = ({ open, setOpen, side = 'right', children }: DrawerProps) => {
           >
             <div
               className={cn(
-                'pointer-events-auto relative h-full w-full transform transition duration-500 ease-in-out',
+                'pointer-events-auto relative h-screen w-full transform transition duration-500 ease-in-out',
                 { [closeClassNames[side]]: !open },
                 { [openClassNames[side]]: open },
               )}
