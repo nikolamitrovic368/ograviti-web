@@ -7,6 +7,7 @@ import Drawer from '@/components/atoms/drawer'
 import { IconButton } from '@/components/atoms/icon-button'
 import { Menu, Ograviti } from '@/components/atoms/icons'
 import Close from '@/components/atoms/icons/close'
+import NavLink from '@/components/atoms/nav-link'
 import Socials from '@/components/molecules/socials/socials'
 import navigationConfig from '@/constants/navigation'
 
@@ -47,17 +48,29 @@ export default function Header() {
             <div className="text-2xl font-bold text-white underline">En</div>
             <div className="text-2xl font-normal text-stone-500">Deu</div>
           </div>
-          <div className="flex h-full w-[calc(100%-)] flex-col items-center justify-between">
+          <div className="flex h-full flex-col items-center gap-8 md:hidden">
             {navigationConfig.map((nav, key) => (
               <Link
                 href={nav.url}
                 key={key}
-                className="py-4 text-2xl font-bold md:text-5xl"
+                className="text-2xl font-bold md:text-5xl"
                 onClick={() => setIsOpen(false)}
               >
                 {nav.title}
               </Link>
             ))}
+          </div>
+          <div className=" hidden h-full flex-col items-center justify-between md:flex">
+            <div className="flex h-full flex-col items-center justify-between text-center md:w-auto">
+              {navigationConfig.map((nav, key) => (
+                <NavLink
+                  key={key}
+                  title={nav.title}
+                  url={nav.url}
+                  onClick={() => setIsOpen(false)}
+                />
+              ))}
+            </div>
           </div>
           <div className="flex items-center justify-center md:justify-between">
             <div className="hidden gap-4 md:flex">
