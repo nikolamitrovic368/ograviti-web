@@ -6,7 +6,7 @@ import BlogCard from '@/components/molecules/blog-card'
 
 export default function Page() {
   return (
-    <main className="flex flex-col gap-8 pb-28 md:gap-14 md:pb-60">
+    <main className="flex flex-col gap-8 md:gap-14">
       <div className="flex flex-col items-center gap-4 md:gap-14">
         <Typography variant="h1" className="text-center">
           <span className="text-primary">Look</span> inside art

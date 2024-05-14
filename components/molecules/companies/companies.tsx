@@ -4,7 +4,7 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 
 export default function Companies() {
   return (
-    <div className="-mx-8 py-16 xl:-mx-16 2xl:-mx-28">
+    <div className="-mx-8 py-12 xl:-mx-16 2xl:-mx-28">
       <Swiper
         dir="rtl"
         loop={true}

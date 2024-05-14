@@ -8,7 +8,7 @@ import Card from '@/components/molecules/card'
 
 export default function Page() {
   return (
-    <main className="flex flex-col gap-8 pb-28 md:gap-14 md:pb-60">
+    <main className="flex flex-col gap-8 md:gap-14">
       <div className="flex w-full flex-col gap-8 md:flex-row">
         <Typography
           variant="h1"

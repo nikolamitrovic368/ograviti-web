@@ -14,7 +14,7 @@ export default function Footer() {
   return (
     <div
       className={cn(
-        'flex-col items-center justify-center bg-secondary px-8 md:flex xl:px-16 2xl:px-28',
+        'mt-28 flex-col items-center justify-center bg-secondary px-8 md:mt-60 md:flex xl:px-16 2xl:px-28',
         pathname === '/' ? 'hidden' : 'flex',
       )}
     >
@@ -48,7 +48,9 @@ export default function Footer() {
             </Link>
           ))}
         </div>
-        <Socials />
+        <div>
+          <Socials />
+        </div>
       </div>
     </div>
   )

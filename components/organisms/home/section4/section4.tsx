@@ -8,7 +8,7 @@ import { users } from './constants'
 
 export default function Section4() {
   return (
-    <div className="py-14">
+    <div className="pt-14">
       <Typography variant="h2" type="primary">
         Stories of Transformation with Ograviti
       </Typography>
@@ -18,7 +18,7 @@ export default function Section4() {
         journeys shared by our clients and partners, echoing the essence of our
         commitment, innovation, and strategic collaboration.
       </Typography>
-      <div className="py-16">
+      <div className="pt-20">
         <Swiper
           slidesPerView="auto"
           spaceBetween={32}

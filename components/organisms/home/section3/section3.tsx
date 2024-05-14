@@ -4,7 +4,7 @@ import Companies from '@/components/molecules/companies'
 
 export default function Section3() {
   return (
-    <div className="py-14">
+    <div className="pt-14">
       <Typography variant="h2" type="primary">
         Realizing Possibilities, One Solution at a Time
       </Typography>
@@ -14,34 +14,18 @@ export default function Section3() {
         possibilities into success stories, showcasing the tangible impact of
         our tailored solutions in diverse business landscapes.
       </Typography>
-      <div className="flex py-10">
+      <div className="flex pt-10">
         <div className="w-1/4 px-4">
-          <Card
-            title="Change"
-            subtitle="30% increase in sales"
-            onClick={() => alert('clicked card')}
-          />
+          <Card title="Change" subtitle="30% increase in sales" />
         </div>
         <div className="w-1/4 px-4">
-          <Card
-            title="Change"
-            subtitle="30% increase in sales"
-            onClick={() => alert(5555)}
-          />
+          <Card title="Change" subtitle="30% increase in sales" />
         </div>
         <div className="w-1/4 px-4">
-          <Card
-            title="Change"
-            subtitle="30% increase in sales"
-            onClick={() => alert(5555)}
-          />
+          <Card title="Change" subtitle="30% increase in sales" />
         </div>
         <div className="w-1/4 px-4">
-          <Card
-            title="Change"
-            subtitle="30% increase in sales"
-            onClick={() => alert(5555)}
-          />
+          <Card title="Change" subtitle="30% increase in sales" />
         </div>
       </div>
       <Companies />

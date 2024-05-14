@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 export default function Socials() {
   return (
-    <div className="flex gap-7 py-4">
+    <div className="flex w-60 gap-7 py-4">
       <Link href="https://linkedin.com">
         <Image
           src="/images/logos/linkedin.svg"
