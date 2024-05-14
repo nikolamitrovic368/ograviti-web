@@ -1,14 +1,23 @@
+'use client'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 
 import { Button } from '@/components/atoms/button'
 import { Ograviti } from '@/components/atoms/icons'
 import { Typography } from '@/components/atoms/typography'
 import Socials from '@/components/molecules/socials/socials'
 import { footerNavigationConfig } from '@/constants/navigation'
+import { cn } from '@/utils/tailwind'
 
 export default function Footer() {
+  const pathname = usePathname()
   return (
-    <div className="flex flex-col items-center justify-center bg-secondary px-8 xl:px-16 2xl:px-28">
+    <div
+      className={cn(
+        'flex-col items-center justify-center bg-secondary px-8 md:flex xl:px-16 2xl:px-28',
+        pathname === '/' ? 'hidden' : 'flex',
+      )}
+    >
       <Typography
         variant="small"
         className="pt-8 text-white opacity-50 md:pt-14"
