@@ -20,6 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <link rel="icon" href="/favicon.png" sizes="any" />
       <body className={cn(lato.className, 'overflow-x-hidden')}>
         <Header />
         <div className="px-8 xl:px-16 2xl:px-28">{children}</div>
