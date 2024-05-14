@@ -24,7 +24,7 @@ export default function BlogCard(
       }}
     >
       <div className="w-full backdrop-blur-xl">
-        <div className="p-8 pb-10 transition-all group-hover:pb-20 duration-500">
+        <div className="p-8 pb-10 transition-all duration-500 group-hover:pb-20">
           <Typography variant="subtitle1" className="text-primary-foreground">
             Look Inside Art
           </Typography>

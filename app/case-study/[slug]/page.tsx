@@ -3,12 +3,11 @@ import Image from 'next/image'
 
 import { Typography } from '@/components/atoms/typography'
 import Card from '@/components/molecules/card'
-import Companies from '@/components/molecules/companies'
 
 export default function Page() {
   return (
     <main className="pb-28 md:pb-60">
-      <div className="flex w-full">
+      <div className="flex w-full pb-14">
         <Typography variant="h1" className="w-2/3">
           <span className="text-primary">Creative</span> development and
           production for Cleano’s new commercial
