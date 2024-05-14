@@ -1,5 +1,6 @@
-import { cn } from '@/utils/tailwind'
 import Image from 'next/image'
+
+import { cn } from '@/utils/tailwind'
 
 const Menu = ({ className }: { className?: string }) => (
   <Image

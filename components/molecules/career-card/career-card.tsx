@@ -22,7 +22,7 @@ export default function CareerCard({
     <Link
       href="/careers/1"
       className={cn(
-        'bg-card hover:bg-card-active relative flex w-full flex-col justify-end gap-4 rounded-2xl leading-normal transition-all duration-500',
+        'relative flex w-full flex-col justify-end gap-4 rounded-2xl bg-card leading-normal transition-all duration-500 hover:bg-card-active',
         className,
       )}
     >
