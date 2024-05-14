@@ -9,6 +9,8 @@
   --primary-foreground: #f3f3f3;
   --secondary: #272727;
   --secondary-foreground: #ffffff;
+  --card: #191919;
+  --card-active: #272727;
   --action: #666666;
   --action-active: #d9d9d9;
 }

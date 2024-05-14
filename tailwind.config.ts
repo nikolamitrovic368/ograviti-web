@@ -19,6 +19,11 @@ const config: Config = {
           DEFAULT: 'var(--secondary)',
           foreground: 'var(--secondary-foreground)',
         },
+        card: {
+          DEFAULT: 'var(--card)',
+          active: 'var(--card-active)',
+          foreground: 'var(--card-foreground)',
+        },
         action: {
           DEFAULT: 'var(--action)',
           active: 'var(--action-active)',

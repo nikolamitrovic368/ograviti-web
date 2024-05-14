@@ -12,6 +12,7 @@ const iconButtonVariants = cva('flex justify-center items-center', {
     },
     size: {
       default: 'w-[72px] h-[72px]',
+      small: 'w-[42px] h-[42px]',
       tiny: '',
     },
   },
