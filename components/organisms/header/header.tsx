@@ -30,7 +30,7 @@ export default function Header() {
           <Ograviti />
         </Link>
         <IconButton variant="icon" size="tiny" onClick={() => setIsOpen(true)}>
-          <Menu />
+          <Menu className="h-auto w-5 md:w-auto" />
         </IconButton>
       </div>
       <Drawer open={isOpen} setOpen={setIsOpen} side="top">
