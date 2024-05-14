@@ -27,7 +27,7 @@ export default function CareerCard({
       )}
     >
       <div className="w-full">
-        <div className="p-8 pb-10 transition-all duration-500 group-hover:pb-20">
+        <div className="flex flex-col gap-4 p-8">
           <div className="flex items-center justify-between">
             <Typography
               variant="subtitle3"
@@ -39,7 +39,7 @@ export default function CareerCard({
               <Enter className="h-6 w-6 " />
             </IconButton>
           </div>
-          <Typography className="py-2 text-primary-foreground">
+          <Typography variant="small" className="text-card-text">
             Join Ograviti as a Full Stack Developer to shape the digital future.
             Contribute to cutting-edge projects, redefine industry standards,
             and be part of a culture that values creativity and collaboration
