@@ -20,7 +20,7 @@ export default function CareerCard({
 }: CareerCardProps) {
   return (
     <Link
-      href="/career/1"
+      href="/careers/1"
       className={cn(
         'bg-card hover:bg-card-active relative flex w-full flex-col justify-end gap-4 rounded-2xl leading-normal transition-all duration-500',
         className,

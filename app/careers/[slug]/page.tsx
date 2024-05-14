@@ -1,167 +1,145 @@
 'use client'
-import Image from 'next/image'
 
+import { Button } from '@/components/atoms/button'
+import { Input } from '@/components/atoms/input/input'
+import { PhoneInput } from '@/components/atoms/phone-input'
 import { Typography } from '@/components/atoms/typography'
-import BlogCard from '@/components/molecules/blog-card'
+import { UploadInput } from '@/components/atoms/upload-input/upload-input'
 
 export default function Page() {
   return (
-    <main className="flex flex-col gap-8 md:gap-14">
-      <div className="flex flex-col items-center gap-4 md:gap-14">
-        <Typography variant="h1" className="text-center">
-          <span className="text-primary">Look</span> inside art
-        </Typography>
-        <Typography variant="subtitle1" className="text-center md:w-2/3">
-          Nunc nulla. Praesent ac massa at ligula laoreet iaculis. Aliquam erat
-          volutpat. Aenean commodo ligula eget dolor.
-        </Typography>
-      </div>
-
-      <Image
-        src="/images/blogs/9.jpg"
-        alt="Ograviti Logo"
-        width={1280}
-        height={686}
-        className="h-[245px] w-full rounded-[45px] object-cover md:h-[686px]"
-        priority
-      />
-      <div className="flex flex-col gap-4 md:gap-8">
-        <Typography variant="h2" className="text-primary">
-          Donec mi odio, faucibus at.
-        </Typography>
-        <Typography variant="subtitle2">
-          Phasellus volutpat, metus eget egestas mollis, lacus lacus blandit
-          dui, id egestas quam mauris ut lacus. Suspendisse feugiat. Vestibulum
-          ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia
-          Curae; Fusce id purus.
-        </Typography>
-        <Typography variant="subtitle2">
-          Cras risus ipsum, faucibus ut, ullamcorper id, varius ac, leo. Duis
-          arcu tortor, suscipit eget, imperdiet nec, imperdiet iaculis, ipsum.
-          Maecenas ullamcorper, dui et placerat feugiat, eros pede varius nisi,
-          condimentum viverra felis nunc et lorem. Proin faucibus arcu quis
-          ante. Etiam imperdiet imperdiet orci.
-        </Typography>
-        <Typography variant="subtitle2">
-          Phasellus gravida semper nisi. Nunc sed turpis. Praesent ac massa at
-          ligula laoreet iaculis.
-        </Typography>
-        <Typography variant="subtitle2">
-          Duis vel nibh at velit scelerisque suscipit. Praesent ac massa at
-          ligula laoreet iaculis. Aenean commodo ligula eget dolor. Vivamus
-          consectetuer hendrerit lacus. Phasellus ullamcorper ipsum rutrum nunc.
-        </Typography>
-      </div>
-      <Typography
-        variant="subtitle1"
-        className="rounded-[45px] bg-primary-foreground px-6 py-3.5 text-secondary md:px-28 md:py-9"
-      >
-        Phasellus a est. Sed mollis, eros et ultrices tempus, mauris ipsum
-        aliquam libero, non adipiscing dolor urna a orci. Cras risus ipsum,
-        faucibus ut, ullamcorper id, varius ac, leo. Phasellus consectetuer
-        vestibulum elit. Fusce egestas elit eget lorem.
-      </Typography>
-      <Typography variant="subtitle2">
-        Quisque id odio. Curabitur at lacus ac velit ornare lobortis.
-        Pellentesque libero tortor, tincidunt et, tincidunt eget, semper nec,
-        quam. Quisque id odio.. Praesent blandit laoreet nibh. Nulla consequat
-        massa quis enim. Morbi mattis ullamcorper velit. Morbi mattis
-        ullamcorper velit. Nunc nulla. Proin sapien ipsum, porta a, auctor quis,
-        euismod ut, mi. Etiam vitae tortor. Cras ultricies mi eu turpis
-        hendrerit fringilla. Pellentesque habitant morbi tristique senectus et
-        netus et malesuada fames ac turpis egestas. Vivamus laoreet.
-      </Typography>
-      <Image
-        src="/images/blogs/10.jpg"
-        alt="Ograviti Logo"
-        width={1280}
-        height={245}
-        className="h-[245px] w-full rounded-[45px] object-cover md:h-[836px]"
-        priority
-      />
-
-      <div className="flex flex-col gap-4 md:gap-8">
-        <Typography variant="subtitle2">
-          Mauris turpis nunc, blandit et, volutpat molestie, porta ut, ligula.
-          Etiam ut purus mattis mauris sodales aliquam. Vestibulum ante ipsum
-          primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed
-          aliquam, nisi quis porttitor congue, elit erat euismod orci, ac
-          placerat dolor lectus quis orci. Vivamus laoreet. Donec elit libero,
-          sodales nec, volutpat a, suscipit non, turpis.
-        </Typography>
-        <Typography variant="subtitle2">
-          Sed lectus. Donec quam felis, ultricies nec, pellentesque eu, pretium
-          quis, sem. Praesent ut ligula non mi varius sagittis. Morbi vestibulum
-          volutpat enim. Fusce commodo aliquam arcu.
-        </Typography>
-        <Typography variant="subtitle2">
-          Curabitur suscipit suscipit tellus. Vestibulum ante ipsum primis in
-          faucibus orci luctus et ultrices posuere cubilia Curae; Fusce id
-          purus. Integer ante arcu, accumsan a, consectetuer eget, posuere ut,
-          mauris. In consectetuer turpis ut velit. Praesent vestibulum dapibus
-          nibh.
-        </Typography>
-      </div>
-      <div className="flex flex-col gap-6 md:flex-row md:gap-8">
-        <Image
-          src="/images/blogs/11.jpg"
-          alt="Ograviti Logo"
-          width={3840}
-          height={2561}
-          className="h-[245px] rounded-[45px] object-cover md:h-[439px]"
-          priority
-        />
-        <Image
-          src="/images/blogs/12.jpg"
-          alt="Ograviti Logo"
-          width={3840}
-          height={2561}
-          className="h-[245px] rounded-[45px] object-cover md:h-[439px]"
-          priority
-        />
-        <Image
-          src="/images/blogs/13.jpg"
-          alt="Ograviti Logo"
-          width={3840}
-          height={2561}
-          className="h-[245px] rounded-[45px] object-cover md:h-[439px]"
-          priority
-        />
-      </div>
-
-      <div className="flex flex-col gap-4 md:gap-8">
-        <Typography variant="h2" className="text-primary">
-          Donec mi odio, faucibus at.
-        </Typography>
-        <Typography variant="subtitle2">
-          Phasellus volutpat, metus eget egestas mollis, lacus lacus blandit
-          dui, id egestas quam mauris ut lacus. Suspendisse feugiat. Vestibulum
-          ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia
-          Curae; Fusce id purus.
-        </Typography>
-        <Typography variant="subtitle2">
-          Cras risus ipsum, faucibus ut, ullamcorper id, varius ac, leo. Duis
-          arcu tortor, suscipit eget, imperdiet nec, imperdiet iaculis, ipsum.
-          Maecenas ullamcorper, dui et placerat feugiat, eros pede varius nisi,
-          condimentum viverra felis nunc et lorem. Proin faucibus arcu quis
-          ante. Etiam imperdiet imperdiet orci.
-        </Typography>
-      </div>
-      <div>
-        <div className="flex justify-end py-4 md:justify-between md:py-8">
-          <Typography variant="subtitle1" className="hidden md:block">
-            Other blogs
+    <div className="-mx-8 -mb-28 pb-12 md:-mb-60 md:bg-[url('/images/bgs/1.svg')] md:bg-right md:bg-repeat-y xl:-mx-16 2xl:-mx-28">
+      <main className="mb-28 flex flex-col gap-8 px-8 md:mb-60 md:gap-14 xl:px-16 2xl:px-28">
+        <div className="flex flex-col items-center gap-4 md:gap-14">
+          <Typography variant="h1" className="text-center">
+            <span className="text-primary">Full</span> Stack Developer
           </Typography>
-          <div className="text-right font-bold underline md:text-2xl">
-            See all
+          <Typography variant="subtitle1" className="text-center md:w-2/3">
+            Join Ograviti as a Full Stack Developer to shape the digital future.
+            Contribute to cutting-edge projects, redefine industry standards,
+            and be part of a culture that values creativity and collaboration
+          </Typography>
+        </div>
+
+        <div className="flex flex-col gap-4 md:w-2/3 md:gap-8">
+          <Typography variant="h2" className="text-primary md:py-0">
+            Background
+          </Typography>
+          <Typography variant="subtitle2">
+            <ul className="flex flex-col gap-1 pl-4">
+              <li className="list-outside list-disc">
+                Bachelor&apos;s degree in Computer Science, Engineering, or a
+                related field.
+              </li>
+              <li className="list-outside list-disc">
+                Proven track record of successful full-stack development
+                projects.
+              </li>
+              <li className="list-outside list-disc">
+                Continuous learning mindset to stay updated with emerging
+                technologies and industry trends.
+              </li>
+            </ul>
+          </Typography>
+        </div>
+        <div className="flex flex-col gap-4 md:w-2/3 md:gap-8">
+          <Typography variant="h2" className="text-primary md:py-0">
+            Requirements
+          </Typography>
+          <Typography variant="subtitle2">
+            <ul className="flex flex-col gap-1 pl-4">
+              <li className="list-outside list-decimal">
+                Proven experience as a Full Stack Developer or similar role.
+              </li>
+              <li className="list-outside list-decimal">
+                Proficiency in front-end technologies (HTML, CSS, JavaScript)
+                and back-end technologies (Node.js, Python, Ruby).{' '}
+              </li>
+              <li className="list-outside list-decimal">
+                Experience with database systems (MySQL, MongoDB) and web
+                frameworks (Express, Django).{' '}
+              </li>
+              <li className="list-outside list-decimal">
+                Strong understanding of server-side templating languages and
+                client-side frameworks (React, Angular, Vue).
+              </li>
+              <li className="list-outside list-decimal">
+                Familiarity with version control systems (Git) and agile
+                development methodologies.
+              </li>
+              <li className="list-outside list-decimal">
+                Excellent problem-solving skills and ability to work
+                collaboratively in a team.
+              </li>
+            </ul>
+          </Typography>
+        </div>
+        <div className="flex flex-col gap-4 md:w-2/3 md:gap-8">
+          <Typography variant="h2" className="text-primary md:py-0">
+            Benefits
+          </Typography>
+          <Typography variant="subtitle2">
+            <ul className="flex flex-col gap-1 pl-4">
+              <li className="list-outside list-decimal">
+                Competitive salary and performance-based bonuses.
+              </li>
+              <li className="list-outside list-decimal">
+                Comprehensive health and dental insurance.
+              </li>
+              <li className="list-outside list-decimal">
+                Flexible work hours and remote work options.
+              </li>
+              <li className="list-outside list-decimal">
+                Professional development opportunities and ongoing training.
+              </li>
+              <li className="list-outside list-decimal">
+                Collaborative and inclusive work environment.
+              </li>
+              <li className="list-outside list-decimal">
+                Opportunities to work on cutting-edge projects and contribute to
+                innovative solutions.
+              </li>
+              <li className="list-outside list-decimal">
+                Employee recognition programs and social events.
+              </li>
+              <li className="list-outside list-decimal">
+                Career advancement opportunities within a growing organization.
+              </li>
+            </ul>
+          </Typography>
+        </div>
+        <Typography variant="subtitle1" className="text-center text-3xl">
+          Are you interested?
+        </Typography>
+        <div className="flex flex-col items-center justify-center gap-14 md:gap-24">
+          <div className="grid w-full grid-cols-1 justify-center gap-8 md:w-auto md:grid-cols-2">
+            <Input
+              label="First Name"
+              placeholder="Enter First Name"
+              className="md:w-[554px]"
+            />
+            <Input
+              label="Last Name"
+              placeholder="Enter Last Name"
+              className="md:w-[554px]"
+            />
+            <Input
+              label="Email Address"
+              placeholder="Enter Email Address"
+              className="md:w-[554px]"
+            />
+            <div className="w-full md:w-[554px]">
+              <PhoneInput
+                label="Phone Number"
+                placeholder="Enter Phone Number"
+                fullWidth
+              />
+            </div>
+            <UploadInput className="w-full md:w-[227px]" />
           </div>
+          <Button>Apply Now</Button>
         </div>
-        <div className="flex flex-col gap-8 md:flex-row">
-          <BlogCard />
-          <BlogCard />
-          <BlogCard />
-        </div>
-      </div>
-    </main>
+      </main>
+    </div>
   )
 }
