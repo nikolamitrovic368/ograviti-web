@@ -25,7 +25,7 @@ export default function Header() {
 
   return (
     <>
-      <div className="flex justify-between px-8 py-10 xl:px-16 2xl:px-28">
+      <div className="max-md: mb-8 flex justify-between border-neutral-700 px-8 py-10 max-md:border-b md:mb-14 xl:px-16 2xl:px-28">
         <Link href="/">
           <Ograviti />
         </Link>
