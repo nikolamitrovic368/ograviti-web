@@ -1,5 +1,5 @@
 'use client'
-import { motion, useAnimate } from 'framer-motion'
+import { motion } from 'framer-motion'
 import Image from 'next/image'
 import { Fragment } from 'react'
 

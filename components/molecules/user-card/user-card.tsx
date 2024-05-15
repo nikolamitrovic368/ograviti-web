@@ -1,7 +1,7 @@
 import Image from 'next/image'
 
 import Rating from '@/components/atoms/rating'
-import { Typography } from '@/components/atoms/typography'
+
 type UserCardProps = {
   user: {
     description: string

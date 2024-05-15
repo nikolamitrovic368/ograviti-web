@@ -1,8 +1,5 @@
 import Image from 'next/image'
-import Link from 'next/link'
 
-import { IconButton } from '@/components/atoms/icon-button'
-import { Right } from '@/components/atoms/icons'
 import { Typography } from '@/components/atoms/typography'
 import { cn } from '@/utils/tailwind'
 
