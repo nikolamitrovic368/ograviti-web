@@ -33,7 +33,7 @@ export default function Header() {
           <Menu className="h-auto w-5 md:w-auto" />
         </IconButton>
       </div>
-      <Drawer open={isOpen} setOpen={setIsOpen} side="top">
+      <Drawer open={isOpen} side="top">
         <div className="flex h-screen w-full flex-col justify-between gap-12 overflow-y-auto bg-background px-8 py-10 xl:px-16 2xl:px-28">
           <div className="flex justify-between">
             <Ograviti />
@@ -76,8 +76,12 @@ export default function Header() {
           </div>
           <div className="flex items-center justify-center md:justify-between">
             <div className="hidden gap-4 md:flex">
-              <div className="text-2xl font-bold text-white underline">En</div>
-              <div className="text-2xl font-normal text-stone-500">Deu</div>
+              <div className="cursor-pointer text-2xl font-bold text-white underline duration-300 hover:text-primary">
+                En
+              </div>
+              <div className="cursor-default text-2xl font-normal text-stone-500">
+                Deu
+              </div>
             </div>
             <Socials />
           </div>

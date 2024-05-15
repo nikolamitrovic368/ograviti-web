@@ -25,12 +25,11 @@ const classNames = {
 
 type DrawerProps = {
   open: boolean
-  setOpen: (open: boolean) => void
   side?: 'right' | 'left' | 'top' | 'bottom'
   children: ReactNode
 }
 
-const Drawer = ({ open, setOpen, side = 'right', children }: DrawerProps) => {
+const Drawer = ({ open, side = 'right', children }: DrawerProps) => {
   return (
     <div
       id={`dialog-${side}`}
@@ -38,7 +37,6 @@ const Drawer = ({ open, setOpen, side = 'right', children }: DrawerProps) => {
       aria-labelledby="slide-over"
       role="dialog"
       aria-modal="true"
-      onClick={() => setOpen(!open)}
     >
       <div
         className={cn(
@@ -63,10 +61,6 @@ const Drawer = ({ open, setOpen, side = 'right', children }: DrawerProps) => {
                 { [closeClassNames[side]]: !open },
                 { [openClassNames[side]]: open },
               )}
-              onClick={event => {
-                event.preventDefault()
-                event.stopPropagation()
-              }}
             >
               {children}
             </div>

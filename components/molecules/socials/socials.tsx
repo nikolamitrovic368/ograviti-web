@@ -1,41 +1,56 @@
 import Image from 'next/image'
-import Link from 'next/link'
 
 export default function Socials() {
   return (
     <div className="flex w-60 gap-7 py-4">
-      <Link href="https://linkedin.com">
+      <a
+        href="https://linkedin.com"
+        target="_blank"
+        className="transition-opacity duration-300 hover:opacity-60"
+      >
         <Image
           src="/images/logos/linkedin.svg"
           width={45}
           height={45}
           alt="linkedin"
         />
-      </Link>
-      <Link href="https://linkedin.com">
+      </a>
+      <a
+        href="https://linkedin.com"
+        target="_blank"
+        className="transition-opacity duration-300 hover:opacity-60"
+      >
         <Image
           src="/images/logos/facebook.svg"
           width={45}
           height={45}
           alt="facebook"
         />
-      </Link>
-      <Link href="https://linkedin.com">
+      </a>
+      <a
+        href="https://linkedin.com"
+        target="_blank"
+        className="transition-opacity duration-300 hover:opacity-60"
+      >
         <Image
           src="/images/logos/instagram.svg"
           width={45}
           height={45}
           alt="instagram"
         />
-      </Link>
-      <Link href="https://linkedin.com">
+      </a>
+      <a
+        href="https://linkedin.com"
+        target="_blank"
+        className="transition-opacity duration-300 hover:opacity-60"
+      >
         <Image
           src="/images/logos/youtube.svg"
           width={45}
           height={45}
           alt="youtube"
         />
-      </Link>
+      </a>
     </div>
   )
 }
