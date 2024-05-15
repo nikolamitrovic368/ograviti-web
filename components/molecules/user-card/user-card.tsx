@@ -16,13 +16,10 @@ export default function UserCard({
   user: { description, rate, img, name, role },
 }: UserCardProps) {
   return (
-    <div className="flex h-[465px] w-[400px] flex-col justify-between rounded-3xl bg-secondary px-7 py-10">
-      <Typography variant="subtitle2" className="text-center">
-        {description}
-      </Typography>
+    <div className="flex h-[322px] flex-col justify-between gap-4 rounded-3xl bg-secondary px-7 py-6 md:h-[465px] md:w-[400px] md:py-10">
+      <div className="text-center md:text-2xl md:leading-9">{description}</div>
       <div className="flex flex-col items-center justify-center">
         <Rating className="pb-6" initialValue={rate} />
-
         <Image
           className="h-12 w-12 rounded-full object-cover"
           src={img}
