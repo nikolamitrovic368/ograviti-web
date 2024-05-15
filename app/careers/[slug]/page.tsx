@@ -53,11 +53,11 @@ export default function Page() {
               </li>
               <li className="list-outside list-decimal">
                 Proficiency in front-end technologies (HTML, CSS, JavaScript)
-                and back-end technologies (Node.js, Python, Ruby).{' '}
+                and back-end technologies (Node.js, Python, Ruby).
               </li>
               <li className="list-outside list-decimal">
                 Experience with database systems (MySQL, MongoDB) and web
-                frameworks (Express, Django).{' '}
+                frameworks (Express, Django).
               </li>
               <li className="list-outside list-decimal">
                 Strong understanding of server-side templating languages and

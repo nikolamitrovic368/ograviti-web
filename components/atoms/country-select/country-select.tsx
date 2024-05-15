@@ -5,7 +5,7 @@ import * as React from 'react'
 import { cn } from '@/utils/tailwind'
 
 const countrySelectVariants = cva(
-  'h-12 md:h-16 rounded-full flex justify-center items-center w-24 gap-1.5',
+  'h-12 md:h-16 rounded-full flex justify-center items-center w-20 gap-1.5',
   {
     variants: {
       variant: {

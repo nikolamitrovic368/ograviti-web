@@ -14,7 +14,7 @@ export default function Page() {
           variant="h1"
           className="w-full text-center md:w-2/3 md:text-left"
         >
-          <span className="text-primary max-md:block">Creative</span>{' '}
+          <span className="text-primary max-md:block">Creative</span>
           development and production for Cleano’s new commercial
         </Typography>
         <div className="flex w-full flex-col justify-center gap-5 pr-5 md:w-1/3 md:gap-8 md:border-l">
