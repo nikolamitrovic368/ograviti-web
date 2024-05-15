@@ -7,7 +7,8 @@ import { cn } from '@/utils/tailwind'
 const buttonVariants = cva('font-bold', {
   variants: {
     variant: {
-      default: 'bg-primary text-primary-foreground',
+      default:
+        'bg-primary hover:bg-primary-hover transition-colors duration-300 text-primary-foreground',
     },
     size: {
       default: 'rounded-full px-20 py-4',
