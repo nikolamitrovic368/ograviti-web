@@ -34,7 +34,7 @@ export default function Section2() {
           <div
             className={cn(
               'w-1/6 overflow-hidden border-l pr-36 transition-all duration-700',
-              key === step && 'w-2/3',
+              { 'w-2/3': key === step },
             )}
             key={key}
           >

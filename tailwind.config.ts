@@ -8,15 +8,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      // fontSize: {
-      //   sm: '0.8rem',
-      //   base: '1rem',
-      //   xl: '1.25rem',
-      //   '2xl': '1.563rem',
-      //   '3xl': '1.953rem',
-      //   '4xl': '2.441rem',
-      //   '5xl': '3.052rem',
-      // },
+      transitionTimingFunction: {
+        smart: 'cubic-bezier(0.45, 1.65, 0.6, 1)',
+      },
       colors: {
         background: 'var(--background)',
         foreground: 'var(--foreground)',

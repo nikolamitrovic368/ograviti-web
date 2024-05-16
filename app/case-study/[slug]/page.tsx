@@ -156,6 +156,7 @@ export default function Page() {
           height={686}
           className="h-[686px] w-full rounded-[45px] object-cover"
           priority
+          unoptimized
         />
         <div className="flex flex-col gap-8 pt-8 md:flex-row">
           <Image

@@ -26,6 +26,33 @@ export default function Section1() {
 
   return (
     <div className="relative flex w-full flex-col items-center justify-between md:flex-row md:pt-20">
+      <div className="gradient-bg -z-10 -ml-[100px] -mr-[400px] -mt-52">
+        <svg>
+          <defs>
+            <filter id="goo">
+              <feGaussianBlur
+                in="SourceGraphic"
+                stdDeviation="10"
+                result="blur"
+              />
+              <feColorMatrix
+                in="blur"
+                mode="matrix"
+                values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -8"
+                result="goo"
+              />
+              <feBlend in="SourceGraphic" in2="goo" />
+            </filter>
+          </defs>
+        </svg>
+        <div className="gradients-container">
+          <div className="g1"></div>
+          <div className="g2"></div>
+          <div className="g3"></div>
+          <div className="g4"></div>
+          <div className="g5"></div>
+        </div>
+      </div>
       <Carousel
         className="left-0 top-5 w-full pb-14 pt-6 md:absolute"
         showArrows={false}
