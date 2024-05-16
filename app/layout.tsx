@@ -5,7 +5,6 @@ import 'swiper/css'
 import { Lato } from 'next/font/google'
 import { Suspense } from 'react'
 
-import { Ograviti } from '@/components/atoms/icons'
 import Footer from '@/components/organisms/footer'
 import Header from '@/components/organisms/header'
 import { cn } from '@/utils/tailwind'
