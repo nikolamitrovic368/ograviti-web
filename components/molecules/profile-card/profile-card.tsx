@@ -23,35 +23,43 @@ export default function ProfileCard({
                 backgroundImage: 'url(/images/users/1.png)',
               }}
             >
-              <div className="absolute -left-16 bottom-0 flex w-16 flex-col items-center justify-center gap-8 rounded-tr-3xl bg-background py-8 transition-all duration-500 group-hover:left-0">
-                <Image
-                  src="/images/icons/linkedin.svg"
-                  alt="facebook Logo"
-                  width={24}
-                  height={24}
-                  priority
-                />
-                <Image
-                  src="/images/icons/facebook.svg"
-                  alt="facebook Logo"
-                  width={15}
-                  height={24}
-                  priority
-                />
-                <Image
-                  src="/images/icons/instagram.svg"
-                  alt="facebook Logo"
-                  width={25}
-                  height={24}
-                  priority
-                />
-                <Image
-                  src="/images/icons/youtube.svg"
-                  alt="facebook Logo"
-                  width={28}
-                  height={24}
-                  priority
-                />
+              <div className="absolute -left-16 bottom-0 flex w-16 flex-col items-center justify-center rounded-tr-3xl bg-background py-8 transition-all duration-500 group-hover:left-0">
+                <button className="flex w-full items-center justify-center py-4 transition-all duration-500 hover:bg-primary">
+                  <Image
+                    src="/images/icons/linkedin.svg"
+                    alt="facebook Logo"
+                    width={24}
+                    height={24}
+                    priority
+                  />
+                </button>
+                <button className="flex w-full items-center justify-center py-4 transition-all duration-500 hover:bg-primary">
+                  <Image
+                    src="/images/icons/facebook.svg"
+                    alt="facebook Logo"
+                    width={15}
+                    height={24}
+                    priority
+                  />
+                </button>
+                <button className="flex w-full items-center justify-center py-4 transition-all duration-500 hover:bg-primary">
+                  <Image
+                    src="/images/icons/instagram.svg"
+                    alt="facebook Logo"
+                    width={25}
+                    height={24}
+                    priority
+                  />
+                </button>
+                <button className="flex w-full items-center justify-center py-4 transition-all duration-500 hover:bg-primary">
+                  <Image
+                    src="/images/icons/youtube.svg"
+                    alt="facebook Logo"
+                    width={28}
+                    height={24}
+                    priority
+                  />
+                </button>
               </div>
             </div>
           </div>
