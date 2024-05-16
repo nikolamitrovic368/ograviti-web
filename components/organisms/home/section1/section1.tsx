@@ -7,7 +7,6 @@ import { Carousel } from 'react-responsive-carousel'
 
 import { IconButton } from '@/components/atoms/icon-button'
 import { Left, Right } from '@/components/atoms/icons'
-import useMedia from '@/hooks/useMedia'
 import { cn } from '@/utils/tailwind'
 
 import { steps } from './constants'
@@ -16,7 +15,6 @@ export default function Section1() {
   const container = useRef(null)
   const { contextSafe } = useGSAP({ scope: container })
   const [step, setStep] = useState(0)
-  const { isMd } = useMedia()
   useEffect(() => {
     contextSafe(() => {
       gsap.to('.point', { rotate: steps[step].deg })
@@ -85,13 +83,11 @@ export default function Section1() {
             </div>
           ))}
         </Carousel>
-        {isMd && (
-          <div>
-            <IconButton onClick={() => setStep(step - 1)} disabled={!step}>
-              <Left />
-            </IconButton>
-          </div>
-        )}
+        <div className="hidden md:block">
+          <IconButton onClick={() => setStep(step - 1)} disabled={!step}>
+            <Left />
+          </IconButton>
+        </div>
 
         <div
           className="relative h-[calc(100vw-64px)] max-h-[700px] w-[calc(100vw-64px)] max-w-[700px] md:mx-8 md:h-[calc(100vh-80px)] md:w-[calc(100vh-80px)]"
@@ -131,40 +127,54 @@ export default function Section1() {
             width={940}
             height={940}
           />
-          {steps.map((_step, key) => (
-            <Image
-              key={_step.title}
-              className={cn(
-                'absolute left-1/2 top-1/2 h-full w-full -translate-x-1/2 -translate-y-1/2',
-                key === step ? 'opacity-90' : 'opacity-25',
-              )}
-              src={`/images/main/step${key + 1}${isMd ? '' : '-mobile'}.svg`}
-              alt={_step.title}
-              width={940}
-              height={940}
-            />
-          ))}
+          <div className="md:hidden">
+            {steps.map((_step, key) => (
+              <Image
+                key={_step.title}
+                className={cn(
+                  'absolute left-1/2 top-1/2 h-full w-full -translate-x-1/2 -translate-y-1/2',
+                  key === step ? 'opacity-90' : 'opacity-25',
+                )}
+                src={`/images/main/step${key + 1}-mobile.svg`}
+                alt={_step.title}
+                width={940}
+                height={940}
+              />
+            ))}
+          </div>
+          <div className="hidden md:block">
+            {steps.map((_step, key) => (
+              <Image
+                key={_step.title}
+                className={cn(
+                  'absolute left-1/2 top-1/2 h-full w-full -translate-x-1/2 -translate-y-1/2',
+                  key === step ? 'opacity-90' : 'opacity-25',
+                )}
+                src={`/images/main/step${key + 1}-mobile.svg`}
+                alt={_step.title}
+                width={940}
+                height={940}
+              />
+            ))}
+          </div>
         </div>
-        {isMd ? (
+        <div className="hidden md:block">
+          <IconButton onClick={() => setStep(step === 4 ? 0 : step + 1)}>
+            <Right />
+          </IconButton>
+        </div>
+        <div className="flex md:hidden">
+          <div className="mr-12">
+            <IconButton onClick={() => setStep(step - 1)} disabled={!step}>
+              <Left />
+            </IconButton>
+          </div>
           <div>
             <IconButton onClick={() => setStep(step === 4 ? 0 : step + 1)}>
               <Right />
             </IconButton>
           </div>
-        ) : (
-          <div className="flex">
-            <div className="mr-12">
-              <IconButton onClick={() => setStep(step - 1)} disabled={!step}>
-                <Left />
-              </IconButton>
-            </div>
-            <div>
-              <IconButton onClick={() => setStep(step === 4 ? 0 : step + 1)}>
-                <Right />
-              </IconButton>
-            </div>
-          </div>
-        )}
+        </div>
       </div>
     </>
   )
