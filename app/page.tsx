@@ -8,7 +8,7 @@ import useMedia from '@/hooks/useMedia'
 export default function Home() {
   const { isMd } = useMedia()
   return (
-    <main>
+    <main className="md:-mt-14">
       <Section1 />
       {isMd && (
         <div className="flex flex-col gap-12">
