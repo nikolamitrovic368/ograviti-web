@@ -53,6 +53,7 @@ export default function TransformationStories({
             }}
             pagination={{
               clickable: true,
+              bulletClass: 'hidden',
             }}
             slideToClickedSlide
             modules={[FreeMode, Pagination]}
