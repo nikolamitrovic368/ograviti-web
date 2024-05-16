@@ -1,5 +1,3 @@
-import Image from 'next/image'
-
 import { cn } from '@/utils/tailwind'
 
 const Ograviti = ({

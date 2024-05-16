@@ -1,5 +1,3 @@
-import Image from 'next/image'
-
 import { Button } from '@/components/atoms/button'
 import { Ograviti } from '@/components/atoms/icons'
 import { Input } from '@/components/atoms/input'
