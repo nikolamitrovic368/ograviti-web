@@ -4,7 +4,7 @@ import * as React from 'react'
 import { cn } from '@/utils/tailwind'
 
 const textareaVariants = cva(
-  'px-5 py-3.5 md:py-5 rounded-[32px] max-md:text-sm resize-none h-40',
+  'px-5 py-3.5 md:py-5 rounded-[32px] max-md:text-sm resize-none h-40 outline-none focus:outline focus:outline-primary transition-all',
   {
     variants: {
       variant: {

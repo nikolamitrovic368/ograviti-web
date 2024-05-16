@@ -59,7 +59,7 @@ export default function TransformationStories({
             modules={[FreeMode, Pagination]}
           >
             {users.map((user, k) => (
-              <SwiperSlide key={k} className="!w-auto">
+              <SwiperSlide key={k} className="!w-auto select-none">
                 <UserCard user={user} />
               </SwiperSlide>
             ))}

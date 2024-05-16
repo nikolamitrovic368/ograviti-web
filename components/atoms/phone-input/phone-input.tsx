@@ -6,7 +6,7 @@ import { cn } from '@/utils/tailwind'
 import { CountrySelect } from '../country-select'
 
 const phoneInputVariants = cva(
-  'px-5 py-3.5 md:py-5 rounded-full w-[calc(100%-52px)]',
+  'px-5 py-3.5 md:py-5 rounded-full w-[calc(100%-52px)] outline-none focus:outline focus:outline-primary transition-all',
   {
     variants: {
       variant: {

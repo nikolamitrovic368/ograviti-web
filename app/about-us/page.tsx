@@ -46,7 +46,7 @@ export default function Page() {
         />
       </div>
       <div className="flex flex-col md:flex-row">
-        <div className="hidden w-1/2 items-center justify-center md:flex">
+        <div className="animate-spin-slow hidden w-1/2 items-center justify-center md:flex">
           <Image
             src="/images/logos/ograviti-o.svg"
             alt="Ograviti Logo"

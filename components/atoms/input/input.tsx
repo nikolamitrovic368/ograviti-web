@@ -3,16 +3,19 @@ import * as React from 'react'
 
 import { cn } from '@/utils/tailwind'
 
-const inputVariants = cva('px-5 py-3.5 md:py-5 rounded-full max-md:text-sm', {
-  variants: {
-    variant: {
-      default: 'bg-card text-card-foreground',
+const inputVariants = cva(
+  'px-5 py-3.5 md:py-5 rounded-full max-md:text-sm outline-none focus:outline focus:outline-primary transition-all',
+  {
+    variants: {
+      variant: {
+        default: 'bg-card text-card-foreground',
+      },
+    },
+    defaultVariants: {
+      variant: 'default',
     },
   },
-  defaultVariants: {
-    variant: 'default',
-  },
-})
+)
 
 export interface InputProps
   extends React.InputHTMLAttributes<HTMLInputElement>,

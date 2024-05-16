@@ -1,3 +1,10 @@
+import {
+  Menu,
+  MenuButton,
+  MenuItem,
+  MenuItems,
+  Transition,
+} from '@headlessui/react'
 import { cva, type VariantProps } from 'class-variance-authority'
 import Image from 'next/image'
 import * as React from 'react'
@@ -5,11 +12,11 @@ import * as React from 'react'
 import { cn } from '@/utils/tailwind'
 
 const countrySelectVariants = cva(
-  'h-12 md:h-16 rounded-full flex justify-center items-center w-20 gap-1.5',
+  'h-12 md:h-16 rounded-full flex justify-center items-center w-20 gap-1.5 hover:bg-secondary-active',
   {
     variants: {
       variant: {
-        default: 'bg-card text-card-foreground',
+        default: 'bg-card text-card-foreground hover:bg-card-active',
       },
     },
     defaultVariants: {
@@ -27,30 +34,88 @@ export interface CountrySelectProps
 const CountrySelect = React.forwardRef<HTMLDivElement, CountrySelectProps>(
   ({ className, variant, label, ...props }, ref) => {
     return (
-      <div className="flex w-auto flex-col gap-4">
-        {label && <div>{label}</div>}
-        <div
-          className={cn(countrySelectVariants({ variant, className }))}
-          ref={ref}
-          {...props}
-        >
-          <Image
-            src="/images/logos/flag.svg"
-            alt="Ograviti Logo"
-            width={34}
-            height={34}
-            priority
-          />
+      <Menu>
+        <MenuButton>
+          <div className="group flex w-auto flex-col gap-4">
+            {label && <div>{label}</div>}
+            <div
+              className={cn(countrySelectVariants({ variant, className }))}
+              ref={ref}
+              {...props}
+            >
+              <Image
+                src="/images/logos/flag.svg"
+                alt="Ograviti Logo"
+                width={34}
+                height={34}
+                priority
+              />
 
-          <Image
-            src="/images/icons/down.svg"
-            alt="Ograviti Logo"
-            width={24}
-            height={24}
-            priority
-          />
-        </div>
-      </div>
+              <Image
+                src="/images/icons/down.svg"
+                alt="Ograviti Logo"
+                width={24}
+                height={24}
+                priority
+              />
+            </div>
+          </div>
+        </MenuButton>
+        <Transition
+          enter="transition ease-out duration-75"
+          enterFrom="opacity-0 scale-95"
+          enterTo="opacity-100 scale-100"
+          leave="transition ease-in duration-100"
+          leaveFrom="opacity-100 scale-100"
+          leaveTo="opacity-0 scale-95"
+        >
+          <MenuItems
+            anchor="bottom"
+            modal={false}
+            className="ml-10 mt-1 flex flex-col items-center justify-center rounded-[16px] border border-primary bg-card py-3"
+          >
+            <MenuItem>
+              <button className="flex items-center gap-4 px-3 py-2 transition-colors duration-300 hover:bg-primary">
+                <Image
+                  src="https://kapowaz.github.io/square-flags/flags/br.svg"
+                  alt="Ograviti Logo"
+                  className="rounded-full"
+                  width={34}
+                  height={34}
+                  priority
+                />
+                <div>Brazil (+55)</div>
+              </button>
+            </MenuItem>
+            <MenuItem>
+              <button className="flex items-center gap-4 px-3 py-2 transition-colors duration-300 hover:bg-primary">
+                <Image
+                  src="https://kapowaz.github.io/square-flags/flags/br.svg"
+                  alt="Ograviti Logo"
+                  className="rounded-full"
+                  width={34}
+                  height={34}
+                  priority
+                />
+                <div>Brazil (+55)</div>
+              </button>
+            </MenuItem>
+            <MenuItem>
+              <button className="flex items-center gap-4 px-3 py-2 transition-colors duration-300 hover:bg-primary">
+                <Image
+                  src="https://kapowaz.github.io/square-flags/flags/br.svg"
+                  alt="Ograviti Logo"
+                  className="rounded-full"
+                  width={34}
+                  height={34}
+                  priority
+                />
+                <div>Brazil (+55)</div>
+              </button>
+            </MenuItem>
+          </MenuItems>
+        </Transition>
+      </Menu>
     )
   },
 )

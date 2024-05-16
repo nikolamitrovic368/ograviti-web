@@ -8,6 +8,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      animation: {
+        'spin-slow': 'spin 60s linear infinite',
+      },
       transitionTimingFunction: {
         smart: 'cubic-bezier(0.45, 1.65, 0.6, 1)',
       },
@@ -22,6 +25,7 @@ const config: Config = {
         secondary: {
           DEFAULT: 'var(--secondary)',
           foreground: 'var(--secondary-foreground)',
+          active: 'var(--secondary-active)',
         },
         card: {
           DEFAULT: 'var(--card)',
