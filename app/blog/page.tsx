@@ -1,4 +1,3 @@
-'use client'
 import BlogCard from '@/components/molecules/blog-card'
 import Title from '@/components/molecules/title'
 

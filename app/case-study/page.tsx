@@ -1,4 +1,3 @@
-'use client'
 import Card from '@/components/molecules/card'
 import Companies from '@/components/molecules/companies'
 import Title from '@/components/molecules/title'

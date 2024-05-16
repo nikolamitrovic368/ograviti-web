@@ -1,5 +1,3 @@
-'use client'
-
 import Image from 'next/image'
 
 import CardSwiper from '@/components/atoms/card-swiper'

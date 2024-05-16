@@ -13,11 +13,7 @@ type BlogCardProps = {
   }
 }
 
-export default function BlogCard(
-  {
-    // blog: { title, description, img, src },
-  }: BlogCardProps,
-) {
+export default function BlogCard({}: BlogCardProps) {
   return (
     <Link
       href="/blog/1"

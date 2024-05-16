@@ -1,6 +1,4 @@
 import '@/styles/globals.css'
-import 'react-responsive-carousel/lib/styles/carousel.min.css'
-import 'swiper/css'
 
 import { Lato } from 'next/font/google'
 import { Suspense } from 'react'

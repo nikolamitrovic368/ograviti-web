@@ -1,10 +1,4 @@
-'use client'
-
-import { Step1 } from '@/components/atoms/icons'
-import Step2 from '@/components/atoms/icons/step2'
-import Step3 from '@/components/atoms/icons/step3'
-import Step4 from '@/components/atoms/icons/step4'
-import Step5 from '@/components/atoms/icons/step5'
+import { Step1, Step2, Step3, Step4, Step5 } from '@/components/atoms/icons'
 import ServiceStep from '@/components/molecules/service-step'
 import Title from '@/components/molecules/title'
 import ContactForm from '@/components/organisms/contact-form'

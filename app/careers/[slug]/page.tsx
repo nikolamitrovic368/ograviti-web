@@ -1,5 +1,3 @@
-'use client'
-
 import { Button } from '@/components/atoms/button'
 import { Input } from '@/components/atoms/input/input'
 import { PhoneInput } from '@/components/atoms/phone-input'

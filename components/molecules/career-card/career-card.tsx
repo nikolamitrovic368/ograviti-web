@@ -14,10 +14,7 @@ type CareerCardProps = {
   className?: string
 }
 
-export default function CareerCard({
-  // career: { title, description, img, src },
-  className,
-}: CareerCardProps) {
+export default function CareerCard({ className }: CareerCardProps) {
   return (
     <Link
       href="/careers/1"

@@ -1,4 +1,3 @@
-'use client'
 import CareerCard from '@/components/molecules/career-card'
 import Title from '@/components/molecules/title'
 

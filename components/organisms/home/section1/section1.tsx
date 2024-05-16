@@ -1,4 +1,6 @@
 'use client'
+import 'react-responsive-carousel/lib/styles/carousel.min.css'
+
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 import Image from 'next/image'
