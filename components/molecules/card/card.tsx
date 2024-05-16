@@ -18,7 +18,7 @@ export default function Card({
       <div className="flex h-[calc(65vh-4px)] w-[calc(100%-4px)] items-center justify-center rounded-[45.84px] bg-secondary">
         <div className="group h-[calc(65vh-24px)] w-[calc(100%-20px)] flex-col justify-center overflow-hidden">
           <div
-            className={`ease-smart flex h-[calc(65vh-24px)] w-full items-center justify-center overflow-hidden rounded-[34.38px] bg-[url(/images/card/1.png)] bg-cover bg-center bg-no-repeat transition-all duration-300 group-hover:h-[calc(65vh-210px)]`}
+            className={`flex h-[calc(65vh-24px)] w-full items-center justify-center overflow-hidden rounded-[34.38px] bg-[url(/images/card/1.png)] bg-cover bg-center bg-no-repeat transition-all duration-300 ease-smart group-hover:h-[calc(65vh-210px)]`}
           ></div>
           <div className="flex h-28 items-center justify-center overflow-hidden bg-gradient-to-r from-white to-secondary bg-clip-text text-center text-6xl text-transparent md:text-[4vw]">
             {title}
