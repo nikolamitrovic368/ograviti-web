@@ -32,9 +32,10 @@ export interface TypographyProps
     VariantProps<typeof typographyVariants> {}
 
 const Typography = React.forwardRef<HTMLDivElement, TypographyProps>(
-  ({ className, variant, type, ...props }) => {
+  ({ className, variant, type, ...props }, ref) => {
     return (
       <div
+        ref={ref}
         className={cn(typographyVariants({ variant, type, className }))}
         {...props}
       />

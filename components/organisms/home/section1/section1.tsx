@@ -1,10 +1,8 @@
 'use client'
 import 'react-responsive-carousel/lib/styles/carousel.min.css'
 
-import { useGSAP } from '@gsap/react'
-import gsap from 'gsap'
 import Image from 'next/image'
-import { useEffect, useRef, useState } from 'react'
+import { useState } from 'react'
 import { Carousel } from 'react-responsive-carousel'
 
 import { IconButton } from '@/components/atoms/icon-button'
@@ -14,16 +12,7 @@ import { cn } from '@/utils/tailwind'
 import { steps } from './constants'
 
 export default function Section1() {
-  const container = useRef(null)
-  const { contextSafe } = useGSAP({ scope: container })
   const [step, setStep] = useState(0)
-  useEffect(() => {
-    contextSafe(() => {
-      gsap.to('.point', { rotate: steps[step].deg })
-      gsap.to('.description', { transition: 50 })
-    })()
-  }, [contextSafe, step])
-
   return (
     <>
       <div>
@@ -91,10 +80,7 @@ export default function Section1() {
           </IconButton>
         </div>
 
-        <div
-          className="relative h-[calc(100vw-64px)] max-h-[700px] w-[calc(100vw-64px)] max-w-[700px] md:mx-8 md:h-[calc(100vh-80px)] md:w-[calc(100vh-80px)]"
-          ref={container}
-        >
+        <div className="relative h-[calc(100vw-64px)] max-h-[700px] w-[calc(100vw-64px)] max-w-[700px] md:mx-8 md:h-[calc(100vh-80px)] md:w-[calc(100vh-80px)]">
           <Image
             className="absolute left-1/2 top-1/2 h-[88%] w-[88%] -translate-x-1/2 -translate-y-1/2"
             src="/images/main/subtract-2.svg"
@@ -123,7 +109,16 @@ export default function Section1() {
             />
           ))}
           <Image
-            className="point absolute left-1/2 top-1/2 h-[92.5%] w-[92.5%] -translate-x-1/2 -translate-y-1/2"
+            className={cn(
+              'point absolute left-1/2 top-1/2 h-[92.5%] w-[92.5%] !translate-x-[-50%] !translate-y-[-50%] transition-all duration-300',
+              {
+                'rotate-0': step === 0,
+                'rotate-[41deg]': step === 1,
+                'rotate-[95deg]': step === 2,
+                'rotate-[148deg]': step === 3,
+                'rotate-[188deg]': step === 4,
+              },
+            )}
             src="/images/main/point.svg"
             alt="point"
             width={940}
