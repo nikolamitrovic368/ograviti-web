@@ -3,20 +3,15 @@ import Image from 'next/image'
 
 import { Typography } from '@/components/atoms/typography'
 import BlogCard from '@/components/molecules/blog-card'
+import Title from '@/components/molecules/title'
 
 export default function Page() {
   return (
     <main className="flex flex-col gap-8 md:gap-14">
-      <div className="flex flex-col items-center gap-4 md:gap-14">
-        <Typography variant="h1" className="text-center">
-          <span className="text-primary">Look</span> inside art
-        </Typography>
-        <Typography variant="subtitle1" className="text-center md:w-2/3">
-          Nunc nulla. Praesent ac massa at ligula laoreet iaculis. Aliquam erat
-          volutpat. Aenean commodo ligula eget dolor.
-        </Typography>
-      </div>
-
+      <Title
+        title="Look inside art"
+        subtitle="Nunc nulla. Praesent ac massa at ligula laoreet iaculis. Aliquam erat volutpat. Aenean commodo ligula eget dolor."
+      />
       <Image
         src="/images/blogs/9.jpg"
         alt="Ograviti Logo"
@@ -102,7 +97,7 @@ export default function Page() {
           nibh.
         </Typography>
       </div>
-      <div className="flex flex-col gap-6 md:flex-row md:gap-8">
+      <div className="grid grid-cols-1 gap-6 md:grid-cols-3 md:gap-8">
         <Image
           src="/images/blogs/11.jpg"
           alt="Ograviti Logo"

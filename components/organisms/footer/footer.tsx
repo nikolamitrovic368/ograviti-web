@@ -24,13 +24,13 @@ export default function Footer() {
       >
         Are you ready?
       </Typography>
-      <Typography variant="subtitle1" className="py-8 max-md:text-2xl">
+      <Typography variant="subtitle1" className="py-6 max-md:text-2xl">
         Let’s get started
       </Typography>
       <Button className="max-md:w-full">Get started</Button>
       <Typography
         variant="small"
-        className="py-6 text-white opacity-70 md:py-14"
+        className="pb-10 pt-6 text-white opacity-70 md:pb-14 md:pt-14"
       >
         Copyright © 2024 • Ograviti.
       </Typography>

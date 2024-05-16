@@ -9,16 +9,13 @@ import Card from '@/components/molecules/card'
 export default function Page() {
   return (
     <main className="flex flex-col gap-8 md:gap-14">
-      <div className="flex w-full flex-col gap-8 md:flex-row">
-        <Typography
-          variant="h1"
-          className="w-full text-center md:w-2/3 md:text-left"
-        >
-          <span className="text-primary max-md:block">Creative</span>
-          development and production for Cleano’s new commercial
-        </Typography>
-        <div className="flex w-full flex-col justify-center gap-5 pr-5 md:w-1/3 md:gap-8 md:border-l">
-          <div className="flex justify-between md:pl-32">
+      <div className="flex w-full flex-col items-center gap-8 lg:flex-row">
+        <h1 className=" w-full text-center text-3xl font-bold md:text-6xl md:leading-[80px]  lg:w-2/3 lg:border-r lg:py-12 lg:text-left xl:text-6xl xl:text-[80px] xl:leading-[100px]">
+          <span className="text-primary">Creative</span> development and
+          production for Cleano’s new commercial
+        </h1>
+        <div className="flex w-full flex-col justify-center gap-5 py-6 pr-5 md:gap-8 lg:w-1/3 lg:py-12">
+          <div className="flex justify-between xl:pl-16">
             <Typography variant="subtitle2" className="max-md:text-base">
               Completed
             </Typography>
@@ -29,7 +26,7 @@ export default function Page() {
               January 2023
             </Typography>
           </div>
-          <div className="flex justify-between md:pl-32">
+          <div className="flex justify-between xl:pl-16">
             <Typography variant="subtitle2" className="max-md:text-base">
               Client
             </Typography>
@@ -40,7 +37,7 @@ export default function Page() {
               Cleano
             </Typography>
           </div>
-          <div className="flex justify-between md:pl-32">
+          <div className="flex justify-between xl:pl-16">
             <Typography variant="subtitle2" className="max-md:text-base">
               Website
             </Typography>
@@ -51,7 +48,7 @@ export default function Page() {
               www.Cleano.com
             </Typography>
           </div>
-          <div className="flex justify-between md:pl-32">
+          <div className="flex justify-between xl:pl-16">
             <Typography variant="subtitle2" className="max-md:text-base">
               Main Service
             </Typography>
@@ -73,13 +70,13 @@ export default function Page() {
           className="h-[245px] w-full rounded-[45px] object-cover md:h-[686px]"
           priority
         />
-        <div className="flex flex-col gap-6 pt-6 md:flex-row md:gap-8 md:pt-8">
+        <div className="grid grid-cols-1 gap-6 pt-6 md:grid-cols-3 md:gap-8 md:pt-8">
           <Image
             src="/images/blogs/3.jpg"
             alt="Ograviti Logo"
             width={3840}
             height={2561}
-            className="h-[245px] w-full rounded-[45px] object-cover md:h-[439px] md:w-1/3"
+            className="h-[245px] rounded-[45px] object-cover md:h-[439px]"
             priority
           />
           <Image
@@ -87,7 +84,7 @@ export default function Page() {
             alt="Ograviti Logo"
             width={3840}
             height={2561}
-            className="h-[245px] w-full rounded-[45px] object-cover md:h-[439px] md:w-1/3"
+            className="h-[245px] rounded-[45px] object-cover md:h-[439px]"
             priority
           />
           <Image
@@ -95,7 +92,7 @@ export default function Page() {
             alt="Ograviti Logo"
             width={3840}
             height={2561}
-            className="h-[245px] w-full rounded-[45px] object-cover md:h-[439px] md:w-1/3"
+            className="h-[245px] rounded-[45px] object-cover md:h-[439px]"
             priority
           />
         </div>
@@ -158,13 +155,13 @@ export default function Page() {
           priority
           unoptimized
         />
-        <div className="flex flex-col gap-8 pt-8 md:flex-row">
+        <div className="grid grid-cols-1 gap-8 pt-8 md:grid-cols-2">
           <Image
             src="/images/blogs/7.jpg"
             alt="Ograviti Logo"
             width={3840}
             height={2561}
-            className="h-[245px] w-full rounded-[45px] object-cover md:h-[686px] md:w-1/2"
+            className="h-[245px] rounded-[45px] object-cover md:h-[686px]"
             priority
           />
           <Image
@@ -172,7 +169,7 @@ export default function Page() {
             alt="Ograviti Logo"
             width={3840}
             height={2561}
-            className="h-[245px] w-full rounded-[45px] object-cover md:h-[686px] md:w-1/2"
+            className="h-[245px] rounded-[45px] object-cover md:h-[686px]"
             priority
           />
         </div>
@@ -204,7 +201,7 @@ export default function Page() {
       </div>
       <div className="hidden flex-col justify-center gap-8 pb-10 md:flex md:flex-row md:pt-10">
         {[1, 2, 3].map(v => (
-          <div className="w-1/4" key={v}>
+          <div className="w-1/3 xl:w-1/4" key={v}>
             <Card title="Change" subtitle="30% increase in sales" />
           </div>
         ))}

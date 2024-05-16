@@ -71,12 +71,12 @@ export default function Section1() {
         >
           {steps.map(step => (
             <div key={step.title}>
-              <div className="pb-4 text-left text-4xl font-bold text-primary md:text-5xl">
+              <div className="pb-4 text-left text-4xl font-bold text-primary md:text-4xl lg:text-5xl">
                 {step.title}
               </div>
               {step.subtitles.map((subtitle, key) => (
                 <div
-                  className={`py-1 text-left md:text-2xl step-${key}`}
+                  className={`py-1 text-left md:text-xl lg:text-2xl step-${key}`}
                   key={key}
                 >
                   {subtitle}

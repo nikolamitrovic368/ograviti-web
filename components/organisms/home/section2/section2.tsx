@@ -9,10 +9,7 @@ export default function Section2() {
   const [step, setStep] = useState(0)
   useEffect(() => {
     const myInterval = setInterval(() => {
-      setStep(v => {
-        console.log(v)
-        return (v + 1) % 4
-      })
+      setStep(v => (v + 1) % 4)
     }, 6000)
     return () => {
       clearInterval(myInterval)

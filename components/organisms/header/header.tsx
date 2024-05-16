@@ -47,8 +47,12 @@ export default function Header() {
           </div>
 
           <div className="flex gap-4 md:hidden">
-            <div className="text-2xl font-bold text-white underline">En</div>
-            <div className="text-2xl font-normal text-stone-500">Deu</div>
+            <div className="cursor-pointer text-2xl font-bold text-white underline duration-300 hover:text-primary">
+              En
+            </div>
+            <div className="cursor-default text-2xl font-normal text-stone-500">
+              Deu
+            </div>
           </div>
           <div className="flex h-full flex-col items-center gap-8 md:hidden">
             {navigationConfig.map((nav, key) => (

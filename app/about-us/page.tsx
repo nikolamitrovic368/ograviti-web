@@ -8,22 +8,19 @@ import CardSwiper from '@/components/atoms/card-swiper'
 import { Typography } from '@/components/atoms/typography'
 import Companies from '@/components/molecules/companies'
 import ProfileCard from '@/components/molecules/profile-card'
+import Title from '@/components/molecules/title'
 import ContactForm from '@/components/organisms/contact-form'
 import TransformationStories from '@/components/organisms/transformation-stories'
 
 export default function Page() {
   return (
     <main className="flex flex-col gap-8 md:gap-14">
-      <div className="flex flex-col items-center gap-8 md:gap-14 md:pb-8">
-        <Typography variant="h1" className="text-center">
-          <span className="text-primary">About</span> Us
-        </Typography>
-        <Typography variant="subtitle1" className="text-center md:w-2/3">
-          Empowering Innovation, Enriching Futures: Explore the Ograviti Story
-        </Typography>
-      </div>
+      <Title
+        title="About Us"
+        subtitle="Empowering Innovation, Enriching Futures: Explore the Ograviti Story"
+      />
       <div className="mr-0 flex items-center justify-between md:-mr-8 xl:-mr-16 2xl:-mr-28">
-        <div className="w-full md:w-3/5 md:pr-32">
+        <div className="w-full md:w-4/5 lg:h-3/5 lg:pr-24 2xl:pr-32">
           <Typography variant="h2" className="pb-4 text-primary">
             Our Story
           </Typography>
@@ -41,12 +38,12 @@ export default function Page() {
           alt="Ograviti Logo"
           width={657}
           height={155}
-          className="hidden h-[155px] md:block"
+          className="hidden h-[155px] xl:block"
           priority
         />
       </div>
-      <div className="flex flex-col md:flex-row">
-        <div className="animate-spin-slow hidden w-1/2 items-center justify-center md:flex">
+      <div className="flex flex-col lg:flex-row">
+        <div className="hidden w-1/2 animate-spin-slow items-center justify-center lg:flex">
           <Image
             src="/images/logos/ograviti-o.svg"
             alt="Ograviti Logo"
@@ -55,11 +52,11 @@ export default function Page() {
             priority
           />
         </div>
-        <div className="flex flex-col gap-4 md:w-1/2 md:gap-14">
+        <div className="flex flex-col md:gap-14 lg:w-1/2">
           <Typography variant="h2" className="pb-4 text-primary">
             Our Mission
           </Typography>
-          <div className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-8">
+          <div className="grid grid-cols-1 gap-4 md:gap-8 xl:grid-cols-2">
             <div>
               <Typography variant="h3" className="pb-4 text-primary">
                 Innovation
@@ -114,7 +111,7 @@ export default function Page() {
             positive change.
           </Typography>
         </div>
-        <div className="w-full md:hidden">
+        <div className="w-full sm:hidden">
           <CardSwiper
             cards={[
               <ProfileCard name="Danila Mark" role="CEO" key={1} />,
@@ -124,11 +121,11 @@ export default function Page() {
             ]}
           />
         </div>
-        <div className="hidden w-full gap-8 md:flex">
-          <ProfileCard name="Danila Mark" role="CEO" className="mb-48" />
-          <ProfileCard name="Danila Mark" role="CEO" className="mt-48" />
-          <ProfileCard name="Danila Mark" role="CEO" className="mb-48" />
-          <ProfileCard name="Danila Mark" role="CEO" className="mt-48" />
+        <div className="hidden w-full grid-cols-2 gap-4 sm:grid lg:grid-cols-4 2xl:gap-8">
+          <ProfileCard name="Danila Mark" role="CEO" className="lg:mb-48" />
+          <ProfileCard name="Danila Mark" role="CEO" className="lg:mt-48" />
+          <ProfileCard name="Danila Mark" role="CEO" className="lg:mb-48" />
+          <ProfileCard name="Danila Mark" role="CEO" className="lg:mt-48" />
         </div>
       </div>
       <div className="relative -mx-8 flex h-[501px] items-center justify-end overflow-hidden md:h-[958px] xl:-mx-16 2xl:-mx-28">

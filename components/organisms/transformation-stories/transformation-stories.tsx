@@ -35,7 +35,7 @@ export default function TransformationStories({
           </Typography>
         </>
       )}
-      <div className="md:pt-20">
+      <div className="pt-8 md:pt-20">
         <div className="w-full md:hidden">
           <CardSwiper
             cards={users.map((user, k) => (

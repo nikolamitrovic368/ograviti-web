@@ -12,7 +12,7 @@ export default function ServiceStep({
   url: string
 }) {
   return (
-    <div className="group flex w-full overflow-hidden rounded-3xl bg-secondary md:h-[730px] md:w-[538px]">
+    <div className="group flex w-full scale-90 overflow-hidden rounded-3xl bg-secondary md:h-[730px] md:w-[538px] 2xl:scale-100">
       <div className="flex w-1/2 flex-col justify-between gap-4 px-3.5 pb-5 pt-7 md:px-6 md:pb-10 md:pt-14">
         <Icon className="h-14 w-14 fill-primary md:h-24 md:w-24 md:fill-white md:group-hover:fill-primary" />
         <div>
