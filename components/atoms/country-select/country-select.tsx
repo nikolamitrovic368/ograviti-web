@@ -44,8 +44,9 @@ const CountrySelect = React.forwardRef<HTMLDivElement, CountrySelectProps>(
               {...props}
             >
               <Image
-                src="/images/logos/flag.svg"
+                src="https://kapowaz.github.io/square-flags/flags/ae.svg"
                 alt="Ograviti Logo"
+                className="rounded-full"
                 width={34}
                 height={34}
                 priority

@@ -1,6 +1,7 @@
 import Image from 'next/image'
 
 import { Button } from '@/components/atoms/button'
+import { Ograviti } from '@/components/atoms/icons'
 import { Input } from '@/components/atoms/input'
 import { PhoneInput } from '@/components/atoms/phone-input'
 import { Textarea } from '@/components/atoms/textarea'
@@ -10,14 +11,9 @@ export default function ContactForm() {
   return (
     <div className="flex w-full flex-col gap-8 lg:flex-row">
       <div className="flex w-full flex-col gap-14 md:py-20 lg:w-2/5 lg:border-r lg:border-secondary">
-        <Image
-          className="hidden h-auto max-sm:w-[121px] lg:block"
-          src={`/images/logos/ograviti.svg`}
-          alt="Ograviti Logo"
-          width={363}
-          height={57}
-          priority
-        />
+        <div className="flex justify-center">
+          <Ograviti className="hidden h-auto w-[121px] sm:h-[57px] sm:w-[363px] lg:block" />
+        </div>
         <Typography
           variant="subtitle1"
           className="text-center text-2xl md:text-3xl"

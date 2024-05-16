@@ -11,7 +11,7 @@ export default function Step2({ className }: { className?: string }) {
     >
       <g
         id="svgexport-17 - 2024-02-17T024942.446 1"
-        clip-path="url(#clip0_105_3087)"
+        clipPath="url(#clip0_105_3087)"
       >
         <g id="Group">
           <path

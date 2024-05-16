@@ -36,7 +36,9 @@ export default function Footer() {
       </Typography>
       <hr className="w-full bg-primary-foreground opacity-20" />
       <div className="flex w-full flex-col items-center justify-between gap-6 py-10 md:flex-row md:gap-0">
-        <Ograviti variants="secondary" />
+        <Link href="/">
+          <Ograviti variants="secondary" className="h-5 w-32 md:h-11 md:w-72" />
+        </Link>
         <div className="flex flex-col flex-wrap items-center justify-center gap-4 md:flex-row">
           {footerNavigationConfig.map(nav => (
             <Link
