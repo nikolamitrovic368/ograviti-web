@@ -7,8 +7,10 @@ import { steps } from './constants'
 
 export default function Section2() {
   const [step, setStep] = useState(0)
+  const [isClickAction, setIsClickAction] = useState(false)
   useEffect(() => {
     const myInterval = setInterval(() => {
+      setIsClickAction(false)
       setStep(v => (v + 1) % 4)
     }, 6000)
     return () => {
@@ -30,7 +32,8 @@ export default function Section2() {
         {steps.map((_step, key) => (
           <div
             className={cn(
-              'w-1/6 overflow-hidden border-l pr-36 transition-all duration-700',
+              'w-1/6 overflow-hidden border-l pr-36 transition-all',
+              isClickAction ? 'duration-700' : 'duration-[3000ms]',
               { 'w-2/3': key === step },
             )}
             key={key}
@@ -41,14 +44,18 @@ export default function Section2() {
                   'h-52 rotate-180 cursor-pointer px-4 text-right text-2xl [writing-mode:vertical-lr] ',
                   key === step ? 'text-action-active' : 'text-action',
                 )}
-                onClick={() => setStep(key)}
+                onClick={() => {
+                  setIsClickAction(true)
+                  setStep(key)
+                }}
               >
                 {_step.title}
               </div>
               <div
                 className={cn(
-                  'w-0 overflow-hidden transition-all duration-700',
+                  'w-0 overflow-hidden transition-all',
                   key === step ? 'w-[34vw]' : 'ml-96',
+                  isClickAction ? 'duration-700' : 'duration-[3000ms]',
                 )}
               >
                 <div className="w-[34vw]">{_step.content}</div>
