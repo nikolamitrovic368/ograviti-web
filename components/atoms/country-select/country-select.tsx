@@ -11,6 +11,8 @@ import * as React from 'react'
 
 import { cn } from '@/utils/tailwind'
 
+import { Down } from '../icons'
+
 const countrySelectVariants = cva(
   'h-12 md:h-16 rounded-full flex justify-center items-center w-20 gap-1.5 hover:bg-secondary-active',
   {
@@ -51,14 +53,7 @@ const CountrySelect = React.forwardRef<HTMLDivElement, CountrySelectProps>(
                 height={34}
                 priority
               />
-
-              <Image
-                src="/images/icons/down.svg"
-                alt="Ograviti Logo"
-                width={24}
-                height={24}
-                priority
-              />
+              <Down />
             </div>
           </div>
         </MenuButton>

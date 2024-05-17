@@ -3,24 +3,28 @@ import * as React from 'react'
 
 import { cn } from '@/utils/tailwind'
 
-const iconButtonVariants = cva('flex justify-center items-center', {
-  variants: {
-    variant: {
-      default: 'rounded-full bg-secondary text-background',
-      secondary: 'rounded-full bg-stone-500 text-background',
-      icon: '',
+const iconButtonVariants = cva(
+  'flex justify-center items-center transition-colors duration-300',
+  {
+    variants: {
+      variant: {
+        default: 'rounded-full bg-secondary text-background ',
+        secondary:
+          'rounded-full bg-stone-500 text-background hover:bg-primary active:bg-primary-hover',
+        icon: '[&_path]:hover:fill-primary [&_path]:active:fill-primary-hover [&_path]:transition-all [&_path]:duration-300',
+      },
+      size: {
+        default: 'w-[72px] h-[72px]',
+        small: 'w-[42px] h-[42px]',
+        tiny: '',
+      },
     },
-    size: {
-      default: 'w-[72px] h-[72px]',
-      small: 'w-[42px] h-[42px]',
-      tiny: '',
+    defaultVariants: {
+      variant: 'default',
+      size: 'default',
     },
   },
-  defaultVariants: {
-    variant: 'default',
-    size: 'default',
-  },
-})
+)
 
 export interface IconButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement>,
@@ -30,10 +34,12 @@ const IconButton = React.forwardRef<HTMLButtonElement, IconButtonProps>(
   ({ className, variant, size, disabled = false, ...props }, ref) => {
     return (
       <button
-        className={cn(
-          iconButtonVariants({ variant, size, className }),
-          disabled && 'opacity-70',
-        )}
+        className={cn(iconButtonVariants({ variant, size, className }), {
+          [disabled
+            ? 'opacity-70'
+            : 'hover:bg-primary active:bg-primary-hover']:
+            variant === 'default' || !variant,
+        })}
         ref={ref}
         disabled={disabled}
         {...props}

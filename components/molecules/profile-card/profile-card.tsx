@@ -1,5 +1,5 @@
-import Image from 'next/image'
-
+import { Instagram, Linkedin, Youtube } from '@/components/atoms/icons'
+import Facebook from '@/components/atoms/icons/facebook'
 import { Typography } from '@/components/atoms/typography'
 import { cn } from '@/utils/tailwind'
 
@@ -25,40 +25,16 @@ export default function ProfileCard({
             >
               <div className="absolute -left-16 bottom-0 flex w-16 flex-col items-center justify-center rounded-tr-3xl bg-background py-8 transition-all duration-500 group-hover:left-0">
                 <button className="flex w-full items-center justify-center py-4 transition-all duration-500 hover:bg-primary">
-                  <Image
-                    src="/images/icons/linkedin.svg"
-                    alt="facebook Logo"
-                    width={24}
-                    height={24}
-                    priority
-                  />
+                  <Linkedin />
                 </button>
                 <button className="flex w-full items-center justify-center py-4 transition-all duration-500 hover:bg-primary">
-                  <Image
-                    src="/images/icons/facebook.svg"
-                    alt="facebook Logo"
-                    width={15}
-                    height={24}
-                    priority
-                  />
+                  <Facebook />
                 </button>
                 <button className="flex w-full items-center justify-center py-4 transition-all duration-500 hover:bg-primary">
-                  <Image
-                    src="/images/icons/instagram.svg"
-                    alt="facebook Logo"
-                    width={25}
-                    height={24}
-                    priority
-                  />
+                  <Instagram />
                 </button>
                 <button className="flex w-full items-center justify-center py-4 transition-all duration-500 hover:bg-primary">
-                  <Image
-                    src="/images/icons/youtube.svg"
-                    alt="facebook Logo"
-                    width={28}
-                    height={24}
-                    priority
-                  />
+                  <Youtube />
                 </button>
               </div>
             </div>
