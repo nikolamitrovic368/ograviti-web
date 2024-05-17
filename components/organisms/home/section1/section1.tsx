@@ -15,9 +15,9 @@ export default function Section1() {
   const [step, setStep] = useState(0)
   return (
     <>
-      <div>
-        <div className="gradient-bg -z-10 overflow-hidden">
-          <svg>
+      <div className="relative flex w-full flex-col items-center justify-between md:h-screen md:flex-row">
+        <div className="absolute -top-[104px] left-0 -z-10 -mx-8 h-full w-screen overflow-hidden xl:-mx-16 2xl:-mx-28">
+          <svg className="hidden">
             <defs>
               <filter id="goo">
                 <feGaussianBlur
@@ -35,16 +35,14 @@ export default function Section1() {
               </filter>
             </defs>
           </svg>
-          <div className="gradients-container">
-            <div className="g1"></div>
-            <div className="g2"></div>
-            <div className="g3"></div>
-            <div className="g4"></div>
-            <div className="g5"></div>
+          <div className="h-full w-full [filter:url(#goo)_blur(60px)]">
+            <div className="absolute left-[10%] top-[10%] h-4/5 w-4/5 origin-center animate-[moveVertical_30s_ease_infinite] opacity-60 mix-blend-hard-light [background:radial-gradient(circle_at_center,rgba(30,30,30,0.8)_0,rgba(30,30,30,0)_50%)_no-repeat]"></div>
+            <div className="absolute left-[10%] top-[10%] h-4/5 w-4/5 origin-[calc(50%-600px)] animate-[moveInCircle_50s_reverse_infinite] opacity-30 mix-blend-hard-light [background:radial-gradient(circle_at_center,rgba(80,80,255,0.8)_0,rgba(80,80,255,0)_50%)_no-repeat]"></div>
+            <div className="absolute left-[10%-500px] top-[10%+200px] h-4/5 w-4/5 origin-[calc(50%+1200px)] animate-[moveInCircle_40s_reverse_infinite] opacity-30 mix-blend-hard-light [background:radial-gradient(circle_at_center,rgba(30,30,30,0.8)_0,rgba(30,30,30,0)_50%)_no-repeat]"></div>
+            <div className="absolute left-[10%] top-[10%] h-4/5 w-4/5 origin-[calc(50%-200px)] animate-[moveHorizontal_40s_ease_infinite] opacity-30 mix-blend-hard-light [background:radial-gradient(circle_at_center,rgba(255,255,255,0.8)_0,rgba(255,255,255,0)_50%)_no-repeat]"></div>
+            <div className="absolute left-[10%] top-[10%] h-[160%] w-[160%] origin-[calc(50%-300px)_calc(50%+500px)] animate-[moveInCircle_20s_reverse_infinite] opacity-10 mix-blend-hard-light [background:radial-gradient(circle_at_center,rgba(80,80,255,0.8)_0,rgba(80,80,255,0)_50%)_no-repeat]"></div>
           </div>
         </div>
-      </div>
-      <div className="relative flex w-full flex-col items-center justify-between md:h-screen md:flex-row">
         <Carousel
           className="left-0 top-5 w-full pb-14 pt-6 md:absolute"
           showArrows={false}
