@@ -1,7 +1,8 @@
-import Image from 'next/image'
 import { Rating as OriginRating, RatingProps } from 'react-simple-star-rating'
 
 import { cn } from '@/utils/tailwind'
+
+import { Star } from '../icons'
 
 export default function Rating({ className, ...props }: RatingProps) {
   return (
@@ -12,22 +13,14 @@ export default function Rating({ className, ...props }: RatingProps) {
         className,
       )}
       fillIcon={
-        <Image
-          className="inline"
-          src="/images/icons/star.svg"
-          width={20}
-          height={20}
-          alt="star"
-        />
+        <div>
+          <Star className="inline" />
+        </div>
       }
       emptyIcon={
-        <Image
-          className="inline"
-          src="/images/icons/star.svg"
-          width={20}
-          height={20}
-          alt="star"
-        />
+        <div>
+          <Star className="inline" />
+        </div>
       }
       {...props}
     />
