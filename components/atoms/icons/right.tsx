@@ -3,6 +3,7 @@ const Right = ({ className }: { className?: string }) => (
     width="13"
     height="22"
     viewBox="0 0 13 22"
+    className={className}
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
   >
