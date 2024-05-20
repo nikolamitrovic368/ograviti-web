@@ -1,12 +1,9 @@
 import '@/styles/globals.css'
 
 import { Lato } from 'next/font/google'
-import { Suspense } from 'react'
 
 import Footer from '@/components/organisms/footer'
 import Header from '@/components/organisms/header'
-
-import Loading from './loading'
 
 const lato = Lato({
   subsets: ['latin'],
@@ -21,11 +18,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={lato.className}>
-        <Suspense fallback={<Loading />}>
-          <Header />
-          <div className="px-8 xl:px-16 2xl:px-28">{children}</div>
-          <Footer />
-        </Suspense>
+        <Header />
+        <div className="px-8 xl:px-16 2xl:px-28">{children}</div>
+        <Footer />
       </body>
     </html>
   )
