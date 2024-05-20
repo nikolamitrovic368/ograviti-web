@@ -97,7 +97,7 @@ export default function Page() {
       </div>
       <div className="mr-0 flex items-center justify-between md:-mr-8 xl:-mr-16 2xl:-mr-28">
         <div className="w-full md:w-3/5 md:pr-32">
-          <Typography variant="h2" className="pb-4 text-primary">
+          <Typography variant="h2" className="pb-4">
             How we approached the project?
           </Typography>
           <Typography variant="subtitle2">
@@ -129,7 +129,7 @@ export default function Page() {
           priority
         />
         <div className="w-full md:w-3/5 md:pr-32">
-          <Typography variant="h2" className="pb-4 text-primary">
+          <Typography variant="h2" className="pb-4">
             How we approached the project?
           </Typography>
           <Typography variant="subtitle2">
@@ -173,7 +173,7 @@ export default function Page() {
         </div>
       </div>
       <div className="flex flex-col gap-4">
-        <Typography variant="h2" className="text-primary">
+        <Typography variant="h2">
           Exceptional Results: Ograviti Elevates Cosmetic Brand Presence.
         </Typography>
         <Typography variant="subtitle2">

@@ -21,7 +21,7 @@ export default function Companies() {
       >
         {[1, 2, 3].map(v => (
           <SwiperSlide className="!w-auto" key={v}>
-            <div className="flex h-12 items-center justify-center gap-12 pl-12 md:h-36 md:gap-56 md:pl-56">
+            <div className="flex h-12 items-center justify-center gap-12 pl-12 md:h-20 md:gap-24 md:pl-24 2xl:h-36 2xl:gap-56 2xl:pl-56">
               <Image
                 className="h-auto max-md:w-[170px]"
                 src="/images/companies/1.svg"

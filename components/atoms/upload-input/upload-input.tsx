@@ -1,8 +1,9 @@
 import { cva, type VariantProps } from 'class-variance-authority'
-import Image from 'next/image'
 import * as React from 'react'
 
 import { cn } from '@/utils/tailwind'
+
+import { Upload } from '../icons'
 
 const uploadInputVariants = cva(
   'h-12 md:h-16 px-5 rounded-full flex justify-between items-center w-24 gap-1.5 ',
@@ -35,13 +36,7 @@ const UploadInput = React.forwardRef<HTMLDivElement, UploadInputProps>(
           {...props}
         >
           Upload CV
-          <Image
-            src="/images/icons/upload.svg"
-            alt="Ograviti Logo"
-            width={34}
-            height={34}
-            priority
-          />
+          <Upload />
         </div>
       </div>
     )

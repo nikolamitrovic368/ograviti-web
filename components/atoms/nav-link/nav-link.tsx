@@ -2,6 +2,8 @@ import { motion, useAnimate } from 'framer-motion'
 import Link from 'next/link'
 import React from 'react'
 
+import useMedia from '@/hooks/useMedia'
+
 export default function NavLink({
   url,
   title,
@@ -12,6 +14,7 @@ export default function NavLink({
   onClick?: () => void
 }) {
   const [scope, animate] = useAnimate()
+  const { is2xl } = useMedia()
   return (
     <div
       className="w-full overflow-hidden"
@@ -23,33 +26,22 @@ export default function NavLink({
         animate('hr', { opacity: 0, x: '-100%' }, { duration: 0.7 })
       }
     >
-      <div className="h-20 w-full overflow-hidden">
+      <div className="h-16 w-full overflow-hidden 2xl:h-20">
         <motion.div
-          whileHover={{ y: -160 }}
+          whileHover={{ y: is2xl ? -160 : -144 }}
           className="flex flex-col"
           transition={{ duration: 0.7 }}
         >
-          <Link
-            href={url}
-            className="py-4 text-2xl font-bold md:text-5xl"
-            onClick={onClick}
-          >
-            {title}
-          </Link>
-          <Link
-            href={url}
-            className="py-4 text-2xl font-bold md:text-5xl"
-            onClick={onClick}
-          >
-            {title}
-          </Link>
-          <Link
-            href={url}
-            className="py-4 text-2xl font-bold md:text-5xl"
-            onClick={onClick}
-          >
-            {title}
-          </Link>
+          {[...new Array(3)].map((_v, key) => (
+            <Link
+              key={key}
+              href={url}
+              className="py-4 text-2xl font-bold md:text-4xl 2xl:text-5xl"
+              onClick={onClick}
+            >
+              {title}
+            </Link>
+          ))}
         </motion.div>
       </div>
       <motion.hr

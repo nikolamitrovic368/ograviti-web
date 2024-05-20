@@ -7,7 +7,7 @@ export default function Title({
   className,
 }: {
   title: string
-  subtitle: string
+  subtitle?: string
   className?: string
 }) {
   return (
@@ -18,9 +18,11 @@ export default function Title({
         <span className="text-primary">{title.split(' ')[0]}</span>{' '}
         {title.includes(' ') && title.substring(title.indexOf(' ') + 1)}
       </Typography>
-      <Typography variant="subtitle1" className="text-center lg:w-2/3">
-        {subtitle}
-      </Typography>
+      {subtitle && (
+        <Typography variant="subtitle1" className="text-center lg:w-2/3">
+          {subtitle}
+        </Typography>
+      )}
     </div>
   )
 }

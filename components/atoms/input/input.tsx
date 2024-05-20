@@ -4,7 +4,7 @@ import * as React from 'react'
 import { cn } from '@/utils/tailwind'
 
 const inputVariants = cva(
-  'px-5 py-3.5 md:py-5 rounded-full max-md:text-sm outline-none focus:outline focus:outline-primary transition-all',
+  'px-5 py-3.5 md:py-4 2xl:py-5 rounded-full max-md:text-sm outline-none focus:outline focus:outline-primary transition-all',
   {
     variants: {
       variant: {

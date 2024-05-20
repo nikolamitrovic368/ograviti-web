@@ -17,7 +17,7 @@ export default function BlogCard({}: BlogCardProps) {
   return (
     <Link
       href="/blog/1"
-      className="group relative flex h-[544px] w-full flex-col justify-end overflow-hidden rounded-[45px]"
+      className="group relative flex h-[460px] w-full flex-col justify-end overflow-hidden rounded-[45px] 2xl:h-[544px]"
       style={{
         backgroundImage: 'url(/images/blogs/1.jpg)',
       }}

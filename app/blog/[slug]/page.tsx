@@ -16,13 +16,11 @@ export default function Page() {
         alt="Ograviti Logo"
         width={1280}
         height={686}
-        className="h-[245px] w-full rounded-[45px] object-cover md:h-[686px]"
+        className="h-[245px] w-full rounded-[45px] object-cover xl:h-[500px] 2xl:h-[686px]"
         priority
       />
       <div className="flex flex-col gap-4 md:gap-8">
-        <Typography variant="h2" className="text-primary">
-          Donec mi odio, faucibus at.
-        </Typography>
+        <Typography variant="h2">Donec mi odio, faucibus at.</Typography>
         <Typography variant="subtitle2">
           Phasellus volutpat, metus eget egestas mollis, lacus lacus blandit
           dui, id egestas quam mauris ut lacus. Suspendisse feugiat. Vestibulum
@@ -48,7 +46,7 @@ export default function Page() {
       </div>
       <Typography
         variant="subtitle1"
-        className="rounded-[45px] bg-primary-foreground px-6 py-3.5 text-secondary md:px-28 md:py-9"
+        className="rounded-[45px] bg-primary-foreground px-6 py-3.5 text-center text-secondary md:px-16 md:py-5 2xl:px-28 2xl:py-9"
       >
         Phasellus a est. Sed mollis, eros et ultrices tempus, mauris ipsum
         aliquam libero, non adipiscing dolor urna a orci. Cras risus ipsum,
@@ -70,7 +68,7 @@ export default function Page() {
         alt="Ograviti Logo"
         width={1280}
         height={245}
-        className="h-[245px] w-full rounded-[45px] object-cover md:h-[836px]"
+        className="h-[245px] w-full rounded-[45px] object-cover xl:h-[500px] 2xl:h-[686px]"
         priority
       />
 
@@ -124,9 +122,7 @@ export default function Page() {
       </div>
 
       <div className="flex flex-col gap-4 md:gap-8">
-        <Typography variant="h2" className="text-primary">
-          Donec mi odio, faucibus at.
-        </Typography>
+        <Typography variant="h2">Donec mi odio, faucibus at.</Typography>
         <Typography variant="subtitle2">
           Phasellus volutpat, metus eget egestas mollis, lacus lacus blandit
           dui, id egestas quam mauris ut lacus. Suspendisse feugiat. Vestibulum

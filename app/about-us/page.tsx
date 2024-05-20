@@ -1,7 +1,7 @@
 import Image from 'next/image'
 
-import { Button } from '@/components/atoms/button'
 import CardSwiper from '@/components/atoms/card-swiper'
+import { Link } from '@/components/atoms/link'
 import LogoBackground from '@/components/atoms/logo-background/logo-background'
 import { Typography } from '@/components/atoms/typography'
 import Companies from '@/components/molecules/companies'
@@ -19,7 +19,7 @@ export default function Page() {
       />
       <div className="mr-0 flex items-center justify-between md:-mr-8 xl:-mr-16 2xl:-mr-28">
         <div className="w-full md:w-4/5 lg:h-3/5 lg:pr-24 2xl:pr-32">
-          <Typography variant="h2" className="pb-4 text-primary">
+          <Typography variant="h2" className="pb-4">
             Our Story
           </Typography>
           <Typography variant="subtitle2">
@@ -51,7 +51,7 @@ export default function Page() {
           />
         </div>
         <div className="flex flex-col md:gap-14 lg:w-1/2">
-          <Typography variant="h2" className="pb-4 text-primary">
+          <Typography variant="h2" className="pb-4">
             Our Mission
           </Typography>
           <div className="grid grid-cols-1 gap-4 md:gap-8 xl:grid-cols-2">
@@ -97,7 +97,7 @@ export default function Page() {
       <Companies />
       <div className="flex flex-col items-center justify-center gap-8">
         <div className="w-full md:w-4/5">
-          <Typography variant="h2" className="pb-4 text-center text-primary">
+          <Typography variant="h2" className="pb-4 text-center">
             Meet Our Team
           </Typography>
           <Typography variant="subtitle2" className=" text-center">
@@ -128,12 +128,14 @@ export default function Page() {
       </div>
 
       <LogoBackground>
-        <div className="flex flex-col gap-8 p-5 text-center md:w-1/2 md:p-10 md:text-left">
+        <div className="flex flex-col gap-16 p-5 text-center md:w-1/2 md:p-10 md:text-left">
           <Typography variant="h1">
             We provide special offers for the best customers
           </Typography>
-          <div>
-            <Button>Contact Us</Button>
+          <div className="w-full">
+            <Link variant="button" href="/contact-us" className="inline-block">
+              Contact Us
+            </Link>
           </div>
         </div>
       </LogoBackground>

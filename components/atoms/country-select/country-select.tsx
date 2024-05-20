@@ -14,7 +14,7 @@ import { cn } from '@/utils/tailwind'
 import { Down } from '../icons'
 
 const countrySelectVariants = cva(
-  'h-12 md:h-16 rounded-full flex justify-center items-center w-20 gap-1.5 hover:bg-secondary-active',
+  'h-12 md:h-14 2xl:h-16 rounded-full flex justify-center items-center w-20 gap-1.5 hover:bg-secondary-active',
   {
     variants: {
       variant: {

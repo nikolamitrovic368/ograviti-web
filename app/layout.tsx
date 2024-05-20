@@ -5,7 +5,6 @@ import { Suspense } from 'react'
 
 import Footer from '@/components/organisms/footer'
 import Header from '@/components/organisms/header'
-import { cn } from '@/utils/tailwind'
 
 import Loading from './loading'
 
@@ -21,7 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={cn(lato.className, 'overflow-x-hidden')}>
+      <body className={lato.className}>
         <Suspense fallback={<Loading />}>
           <Header />
           <div className="px-8 xl:px-16 2xl:px-28">{children}</div>
