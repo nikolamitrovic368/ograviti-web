@@ -14,7 +14,7 @@ const iconButtonVariants = cva(
         icon: '[&_path]:hover:fill-primary [&_path]:active:fill-primary-hover [&_path]:transition-all [&_path]:duration-300',
       },
       size: {
-        default: 'w-[72px] h-[72px]',
+        default: 'w-14 h-14 2xl:w-[72px] 2xl:h-[72px]',
         small: 'w-[42px] h-[42px]',
         tiny: '',
       },

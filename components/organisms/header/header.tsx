@@ -36,7 +36,9 @@ export default function Header() {
       <Drawer open={isOpen} side="top">
         <div className="flex h-screen w-full flex-col justify-between gap-4 overflow-y-auto bg-background px-8 py-10 xl:px-16 2xl:gap-12 2xl:px-28">
           <div className="flex justify-between">
-            <Ograviti className="h-5 w-32 sm:h-6 sm:w-36" />
+            <Link href="/">
+              <Ograviti className="h-5 w-32 sm:h-6 sm:w-36" />
+            </Link>
             <IconButton
               variant="icon"
               onClick={() => setIsOpen(false)}

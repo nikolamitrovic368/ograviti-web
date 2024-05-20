@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import Link from 'next/link'
 
 import { IconButton } from '@/components/atoms/icon-button'
@@ -18,10 +19,14 @@ export default function BlogCard({}: BlogCardProps) {
     <Link
       href="/blog/1"
       className="group relative flex h-[460px] w-full flex-col justify-end overflow-hidden rounded-[45px] 2xl:h-[544px]"
-      style={{
-        backgroundImage: 'url(/images/blogs/1.jpg)',
-      }}
     >
+      <Image
+        src="/images/blogs/1.jpg"
+        width={1134}
+        className="absolute left-0 top-0 h-[460px] w-auto object-cover transition-transform duration-500 group-hover:scale-150"
+        height={1134}
+        alt="blogs-1"
+      />
       <div className="w-full backdrop-blur-xl">
         <div className="p-8 pb-10 transition-all duration-500 group-hover:pb-20">
           <Typography variant="subtitle1" className="text-primary-foreground">
