@@ -15,7 +15,13 @@ export default function Page() {
           or forecast future trends, our expert team delivers precise and
           impactful results tailored to your unique needs.
         </Typography>
-        <video width="320" height="240" controls className="w-full rounded-3xl">
+        <video
+          width="320"
+          height="240"
+          controls
+          className="w-full rounded-3xl"
+          playsInline
+        >
           <source src="/videos/services/4.mp4" type="video/mp4" />
         </video>
       </div>
