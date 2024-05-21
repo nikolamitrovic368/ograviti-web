@@ -23,18 +23,18 @@ export default function ProfileCard({
                 backgroundImage: 'url(/images/users/1.png)',
               }}
             >
-              <div className="absolute -left-16 bottom-0 flex w-16 flex-col items-center justify-center rounded-tr-3xl bg-background py-8 transition-all duration-500 group-hover:left-0">
+              <div className="absolute -left-16 bottom-0 flex w-14 flex-col items-center justify-center rounded-tr-3xl bg-background py-8 transition-all duration-500 group-hover:left-0 2xl:w-16">
                 <button className="flex w-full items-center justify-center py-4 transition-all duration-500 hover:bg-primary">
-                  <Linkedin />
+                  <Linkedin className="h-auto w-4 2xl:w-[18px]" />
                 </button>
                 <button className="flex w-full items-center justify-center py-4 transition-all duration-500 hover:bg-primary">
-                  <Facebook />
+                  <Facebook className="h-auto w-3 2xl:w-[13px]" />
                 </button>
                 <button className="flex w-full items-center justify-center py-4 transition-all duration-500 hover:bg-primary">
-                  <Instagram />
+                  <Instagram className="h-auto w-4 2xl:w-[18px]" />
                 </button>
                 <button className="flex w-full items-center justify-center py-4 transition-all duration-500 hover:bg-primary">
-                  <Youtube />
+                  <Youtube className="h-auto w-4 2xl:w-[18px]" />
                 </button>
               </div>
             </div>

@@ -9,7 +9,7 @@ const linkVariants = cva('font-bold', {
     variant: {
       default: '',
       button:
-        'bg-primary hover:bg-primary-hover transition-colors duration-300 text-primary-foreground rounded-full px-20 py-4',
+        'bg-primary hover:bg-primary-hover transition-colors duration-300 text-primary-foreground rounded-full 2xl:px-20 2xl:py-4 px-16 py-3',
     },
     size: {
       default: '',
