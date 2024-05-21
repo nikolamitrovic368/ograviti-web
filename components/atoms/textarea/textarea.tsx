@@ -27,9 +27,7 @@ export interface InputProps
 const Textarea = React.forwardRef<HTMLTextAreaElement, InputProps>(
   ({ className, variant, fullWidth, label, ...props }, ref) => {
     return (
-      <div
-        className={cn('flex flex-col gap-2 2xl:gap-4', { 'w-full': fullWidth })}
-      >
+      <div className={cn('flex flex-col gap-4', { 'w-full': fullWidth })}>
         {label && <div className="max-md:text-sm">{label}</div>}
         <textarea
           className={cn(textareaVariants({ variant, className }))}

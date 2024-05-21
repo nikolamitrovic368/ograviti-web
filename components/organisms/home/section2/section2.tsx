@@ -40,7 +40,7 @@ export default function Section2() {
             <div className="mr-12">
               <div
                 className={cn(
-                  'h-32 rotate-180 cursor-pointer px-4 text-right text-lg transition-all [writing-mode:vertical-lr] 2xl:h-36 2xl:h-44 2xl:text-2xl ',
+                  'h-36 rotate-180 cursor-pointer px-4 text-right text-xl transition-all [writing-mode:vertical-lr] 2xl:h-44 2xl:text-2xl ',
                   key === step ? 'text-action-active' : 'text-action',
                 )}
                 onClick={() => {

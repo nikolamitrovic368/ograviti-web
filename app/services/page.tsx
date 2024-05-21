@@ -69,7 +69,7 @@ export default function Page() {
         />
       </div>
       <TransformationStories hideTitle />
-      <div className="md:my-4 2xl:my-16"></div>
+      <div className="md:my-16"></div>
       <ContactForm />
     </main>
   )

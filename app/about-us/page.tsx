@@ -50,7 +50,7 @@ export default function Page() {
             priority
           />
         </div>
-        <div className="flex flex-col gap-14 md:gap-8 lg:w-1/2 2xl:gap-14">
+        <div className="flex flex-col md:gap-14 lg:w-1/2">
           <Typography variant="h2" className="pb-4">
             Our Mission
           </Typography>
@@ -141,7 +141,7 @@ export default function Page() {
       </LogoBackground>
 
       <TransformationStories />
-      <div className="md:my-4 2xl:my-16"></div>
+      <div className="md:my-16"></div>
       <ContactForm />
     </main>
   )

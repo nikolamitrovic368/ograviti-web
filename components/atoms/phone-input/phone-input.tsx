@@ -6,7 +6,7 @@ import { cn } from '@/utils/tailwind'
 import { CountrySelect } from '../country-select'
 
 const phoneInputVariants = cva(
-  'px-5 py-3.5 2xl:py-5 rounded-full w-[calc(100%-52px)] outline-none focus:outline focus:outline-primary transition-all',
+  'px-5 py-3.5 md:py-4 2xl:py-5 rounded-full w-[calc(100%-52px)] outline-none focus:outline focus:outline-primary transition-all',
   {
     variants: {
       variant: {
@@ -29,9 +29,7 @@ export interface PhoneInputProps
 const PhoneInput = React.forwardRef<HTMLInputElement, PhoneInputProps>(
   ({ className, variant, label, fullWidth, ...props }, ref) => {
     return (
-      <div
-        className={cn('flex flex-col gap-2 2xl:gap-4', { 'w-full': fullWidth })}
-      >
+      <div className={cn('flex flex-col gap-4', { 'w-full': fullWidth })}>
         {label && <div>{label}</div>}
 
         <div

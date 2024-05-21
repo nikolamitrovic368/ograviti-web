@@ -34,13 +34,13 @@ export default function Section1() {
             <div key={step.title}>
               <Link
                 href="/services/4"
-                className="block pb-4 text-left text-4xl font-bold text-primary md:text-3xl 2xl:text-5xl"
+                className="block pb-4 text-left text-4xl font-bold text-primary md:text-4xl 2xl:text-5xl"
               >
                 {step.title}
               </Link>
               {step.subtitles.map((subtitle, key) => (
                 <div
-                  className={`py-1 text-left md:text-lg 2xl:text-2xl step-${key}`}
+                  className={`py-1 text-left md:text-xl 2xl:text-2xl step-${key}`}
                   key={key}
                 >
                   {subtitle}

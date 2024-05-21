@@ -11,7 +11,7 @@ const buttonVariants = cva('font-bold', {
         'bg-primary hover:bg-primary-hover transition-colors duration-300 text-primary-foreground',
     },
     size: {
-      default: 'rounded-full 2xl:px-20 2xl:py-4 px-16 py-3',
+      default: 'rounded-full px-20 py-4',
     },
   },
   defaultVariants: {

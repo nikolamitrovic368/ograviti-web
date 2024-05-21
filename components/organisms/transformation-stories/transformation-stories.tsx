@@ -28,7 +28,7 @@ export default function TransformationStories({
             collaboration."
         />
       )}
-      <div className="pt-8 md:pt-12 2xl:pt-20">
+      <div className="pt-8 md:pt-20">
         <div className="w-full md:hidden">
           <CardSwiper
             cards={users.map((user, k) => (
