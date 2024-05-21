@@ -103,7 +103,7 @@ export default function Page() {
         <Typography variant="subtitle1" className="text-center text-3xl">
           Are you interested?
         </Typography>
-        <div className="flex flex-col items-center justify-center gap-14 md:gap-24">
+        <div className="flex flex-col items-center justify-center gap-14 md:gap-16 2xl:gap-24">
           <div className="grid w-full grid-cols-1 justify-center gap-8 md:w-auto md:grid-cols-2">
             <Input
               label="First Name"

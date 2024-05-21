@@ -49,7 +49,7 @@ export default function Section1() {
             </div>
           ))}
         </Carousel>
-        <div className="absolute -top-[134px] left-0 -z-10 h-screen w-full overflow-hidden sm:-top-[137px] md:-top-[104px]">
+        <div className="absolute -top-[134px] left-0 -z-10 h-screen w-full overflow-hidden sm:-top-[137px] md:-top-20 2xl:-top-[104px]">
           <svg className="hidden">
             <defs>
               <filter id="goo">
