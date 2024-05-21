@@ -6,7 +6,7 @@ import { cn } from '@/utils/tailwind'
 import { Upload } from '../icons'
 
 const uploadInputVariants = cva(
-  'h-12 md:h-[52px] px-5 rounded-full flex justify-between items-center w-24 gap-1.5 ',
+  'h-12 md:h-16 px-5 rounded-full flex justify-between items-center w-24 gap-1.5 ',
   {
     variants: {
       variant: {
