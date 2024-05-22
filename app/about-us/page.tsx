@@ -50,7 +50,7 @@ export default function Page() {
             priority
           />
         </div>
-        <div className="flex flex-col gap-14 md:gap-8 lg:w-2/3 xl:w-1/2 2xl:gap-14">
+        <div className="flex flex-col gap-4 md:gap-8 lg:w-2/3 xl:w-1/2 2xl:gap-14">
           <Typography variant="h2" className="pb-4">
             Our Mission
           </Typography>

@@ -5,13 +5,11 @@ import TransformationStories from '@/components/organisms/transformation-stories
 
 export default function Home() {
   return (
-    <main className="md:-mt-14">
+    <main className="flex flex-col gap-12 md:-mt-14">
       <Section1 />
-      <div className="hidden flex-col gap-12 md:flex">
-        <Section2 />
-        <Section3 />
-        <TransformationStories />
-      </div>
+      <Section2 />
+      <Section3 />
+      <TransformationStories />
     </main>
   )
 }

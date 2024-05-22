@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev --port 3005",
     "format": "npx prettier --write .",
     "lint": "next lint",
     "build": "next build",
@@ -21,6 +21,7 @@
     "react-multi-carousel": "^2.8.5",
     "react-responsive-carousel": "^3.2.23",
     "react-simple-star-rating": "^5.1.7",
+    "react-touch-events": "^3.0.0",
     "swiper": "^11.1.1",
     "tailwind-merge": "^2.3.0",
     "use-media": "^1.5.0"

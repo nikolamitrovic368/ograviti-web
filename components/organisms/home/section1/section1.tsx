@@ -16,7 +16,7 @@ export default function Section1() {
   const [step, setStep] = useState(0)
   return (
     <>
-      <div className="relative -mx-8 flex flex-col justify-between md:h-screen md:flex-row xl:-mx-16 2xl:-mx-28">
+      <div className="relative -mx-8 flex h-[calc(100vh-133px)] flex-col justify-between md:h-screen md:flex-row xl:-mx-16 2xl:-mx-28">
         <Carousel
           className="left-0 top-5 z-10 pl-8 pt-6 max-md:pb-14 md:absolute xl:pl-16 2xl:pl-28"
           showArrows={false}
@@ -76,7 +76,7 @@ export default function Section1() {
             <div className="absolute left-[10%] top-[10%] h-[160%] w-[160%] origin-[calc(50%-300px)_calc(50%+500px)] animate-[moveInCircle_20s_reverse_infinite] opacity-10 mix-blend-hard-light [background:radial-gradient(circle_at_center,rgba(80,80,255,0.8)_0,rgba(80,80,255,0)_50%)_no-repeat]"></div>
           </div>
         </div>
-        <div className="relative flex w-full flex-col items-center justify-between px-8 md:flex-row xl:px-16 2xl:px-28">
+        <div className="relative mb-14 flex w-full flex-col items-center justify-between px-8 md:mb-0 md:flex-row xl:px-16 2xl:px-28">
           <div className="hidden md:block">
             <IconButton onClick={() => setStep(step - 1)} disabled={!step}>
               <Left />

@@ -26,7 +26,7 @@ export default function NavLink({
         animate('hr', { opacity: 0, x: '-100%' }, { duration: 0.7 })
       }
     >
-      <div className="h-16 w-full overflow-hidden 2xl:h-20">
+      <div className="h-16 w-full overflow-hidden md:h-14 2xl:h-20">
         <motion.div
           whileHover={{ y: is2xl ? -160 : -144 }}
           className="flex flex-col"
@@ -36,7 +36,7 @@ export default function NavLink({
             <Link
               key={key}
               href={url}
-              className="py-4 text-2xl font-bold md:text-4xl 2xl:text-5xl"
+              className="py-4 text-2xl font-bold md:py-2 md:text-3xl xl:text-3xl 2xl:py-4 2xl:text-5xl"
               onClick={onClick}
             >
               {title}
