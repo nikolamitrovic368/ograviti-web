@@ -36,7 +36,7 @@ export default function Page() {
           alt="Ograviti Logo"
           width={657}
           height={155}
-          className="hidden h-[155px] xl:block"
+          className="hidden xl:block xl:h-28 2xl:h-[155px]"
           priority
         />
       </div>
@@ -120,10 +120,26 @@ export default function Page() {
           />
         </div>
         <div className="hidden w-full grid-cols-2 gap-4 sm:grid lg:grid-cols-4 2xl:gap-8">
-          <ProfileCard name="Danila Mark" role="CEO" className="lg:mb-48" />
-          <ProfileCard name="Danila Mark" role="CEO" className="lg:mt-48" />
-          <ProfileCard name="Danila Mark" role="CEO" className="lg:mb-48" />
-          <ProfileCard name="Danila Mark" role="CEO" className="lg:mt-48" />
+          <ProfileCard
+            name="Danila Mark"
+            role="CEO"
+            className="lg:mb-14 2xl:mb-48"
+          />
+          <ProfileCard
+            name="Danila Mark"
+            role="CEO"
+            className="lg:mt-14 2xl:mt-48"
+          />
+          <ProfileCard
+            name="Danila Mark"
+            role="CEO"
+            className="lg:mb-14 2xl:mb-48"
+          />
+          <ProfileCard
+            name="Danila Mark"
+            role="CEO"
+            className="lg:mt-14 2xl:mt-48"
+          />
         </div>
       </div>
 

@@ -13,7 +13,7 @@ export default function ProfileCard({
   className?: string
 }) {
   return (
-    <div className={cn('flex w-full flex-col gap-8', className)}>
+    <div className={cn('flex w-full flex-col gap-4 2xl:gap-8', className)}>
       <div className="group flex h-[500px] w-full items-center justify-center rounded-[45.84px] [background-image:linear-gradient(135deg,#1e1e1e_74%,rgba(255,255,255,0.6)_100%)] lg:h-[480px] xl:h-[420px] 2xl:h-[560px]">
         <div className="flex h-[calc(500px-4px)] w-[calc(100%-4px)] items-center justify-center rounded-[45.84px] bg-secondary lg:h-[calc(480px-4px)] xl:h-[calc(420px-4px)] 2xl:h-[calc(560px-4px)]">
           <div className="group h-[calc(500px-24px)] w-[calc(100%-20px)] flex-col justify-center overflow-hidden lg:h-[calc(480px-24px)] xl:h-[calc(420px-24px)] 2xl:h-[calc(560px-24px)]">

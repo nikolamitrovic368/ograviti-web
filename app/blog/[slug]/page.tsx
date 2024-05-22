@@ -6,7 +6,7 @@ import Title from '@/components/molecules/title'
 
 export default function Page() {
   return (
-    <main className="flex flex-col gap-8 md:gap-14">
+    <main className="flex flex-col gap-8 md:gap-10 2xl:gap-14">
       <Title
         title="Look inside art"
         subtitle="Nunc nulla. Praesent ac massa at ligula laoreet iaculis. Aliquam erat volutpat. Aenean commodo ligula eget dolor."
@@ -16,10 +16,10 @@ export default function Page() {
         alt="Ograviti Logo"
         width={1280}
         height={686}
-        className="h-[245px] w-full rounded-[45px] object-cover xl:h-[500px] 2xl:h-[686px]"
+        className="h-[245px] w-full rounded-[45px] object-cover xl:h-[400px] 2xl:h-[686px]"
         priority
       />
-      <div className="flex flex-col gap-4 md:gap-8">
+      <div className="flex flex-col gap-4 md:gap-6 2xl:gap-8">
         <Typography variant="h2">Donec mi odio, faucibus at.</Typography>
         <Typography variant="subtitle2">
           Phasellus volutpat, metus eget egestas mollis, lacus lacus blandit
@@ -68,7 +68,7 @@ export default function Page() {
         alt="Ograviti Logo"
         width={1280}
         height={245}
-        className="h-[245px] w-full rounded-[45px] object-cover xl:h-[500px] 2xl:h-[686px]"
+        className="h-[245px] w-full rounded-[45px] object-cover xl:h-[400px] 2xl:h-[686px]"
         priority
       />
 
@@ -100,7 +100,7 @@ export default function Page() {
           alt="Ograviti Logo"
           width={3840}
           height={2561}
-          className="h-[245px] rounded-[45px] object-cover md:h-[439px]"
+          className="h-[245px] rounded-[45px] object-cover md:h-[350px] 2xl:h-[439px]"
           priority
         />
         <Image
@@ -108,7 +108,7 @@ export default function Page() {
           alt="Ograviti Logo"
           width={3840}
           height={2561}
-          className="h-[245px] rounded-[45px] object-cover md:h-[439px]"
+          className="h-[245px] rounded-[45px] object-cover md:h-[350px] 2xl:h-[439px]"
           priority
         />
         <Image
@@ -116,7 +116,7 @@ export default function Page() {
           alt="Ograviti Logo"
           width={3840}
           height={2561}
-          className="h-[245px] rounded-[45px] object-cover md:h-[439px]"
+          className="h-[245px] rounded-[45px] object-cover md:h-[350px] 2xl:h-[439px]"
           priority
         />
       </div>

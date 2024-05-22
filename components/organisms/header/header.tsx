@@ -25,16 +25,16 @@ export default function Header() {
 
   return (
     <>
-      <div className="relative z-10 mb-8 flex justify-between border-neutral-700 px-8 py-10 max-md:border-b md:mb-8 xl:px-16 2xl:mb-14 2xl:px-28">
+      <div className="relative z-10 mb-8 flex justify-between border-neutral-700 px-8 py-10 max-md:border-b md:mb-8 md:py-7 xl:px-16 2xl:mb-14 2xl:px-28 2xl:py-10">
         <Link href="/">
           <Ograviti className="h-5 w-32 sm:h-6 sm:w-36" />
         </Link>
         <IconButton variant="icon" size="tiny" onClick={() => setIsOpen(true)}>
-          <Menu className="h-auto w-5 md:w-auto" />
+          <Menu className="h-auto w-5 md:w-6 2xl:w-auto" />
         </IconButton>
       </div>
       <Drawer open={isOpen} side="top">
-        <div className="flex h-screen w-full flex-col justify-between gap-4 overflow-y-auto bg-background px-8 py-10 xl:px-16 2xl:gap-12 2xl:px-28">
+        <div className="flex h-screen w-full flex-col justify-between gap-4 overflow-y-auto bg-background px-8 py-10 md:py-7 xl:px-16 2xl:gap-12 2xl:px-28 2xl:py-10">
           <div className="flex justify-between">
             <Link href="/">
               <Ograviti className="h-5 w-32 sm:h-6 sm:w-36" />
@@ -44,7 +44,7 @@ export default function Header() {
               onClick={() => setIsOpen(false)}
               size="tiny"
             >
-              <Close />
+              <Close className="h-auto w-5 md:w-6 2xl:w-auto" />
             </IconButton>
           </div>
 
