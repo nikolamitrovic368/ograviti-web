@@ -5,6 +5,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useState } from 'react'
 import { Carousel } from 'react-responsive-carousel'
+import { defineSwipe, Swipeable } from 'react-touch'
 
 import { IconButton } from '@/components/atoms/icon-button'
 import { Left, Right } from '@/components/atoms/icons'
@@ -15,7 +16,16 @@ import { steps } from './constants'
 export default function Section1() {
   const [step, setStep] = useState(0)
   return (
-    <>
+    // @ts-ignore
+    <Swipeable
+      config={defineSwipe({ swipeDistance: 50 })}
+      onSwipeRight={() => {
+        setStep(step === 0 ? 4 : step - 1)
+      }}
+      onSwipeLeft={() => {
+        setStep(step === 4 ? 0 : step + 1)
+      }}
+    >
       <div className="relative -mx-8 flex h-[calc(100vh-133px)] flex-col justify-between md:h-screen md:flex-row xl:-mx-16 2xl:-mx-28">
         <Carousel
           className="left-0 top-5 z-10 pl-8 pt-6 max-md:pb-14 md:absolute xl:pl-16 2xl:pl-28"
@@ -25,6 +35,7 @@ export default function Section1() {
           useKeyboardArrows={false}
           autoPlay={false}
           autoFocus={false}
+          swipeable={false}
           dynamicHeight={false}
           showThumbs={false}
           selectedItem={step}
@@ -76,7 +87,7 @@ export default function Section1() {
             <div className="absolute left-[10%] top-[10%] h-[160%] w-[160%] origin-[calc(50%-300px)_calc(50%+500px)] animate-[moveInCircle_20s_reverse_infinite] opacity-10 mix-blend-hard-light [background:radial-gradient(circle_at_center,rgba(80,80,255,0.8)_0,rgba(80,80,255,0)_50%)_no-repeat]"></div>
           </div>
         </div>
-        <div className="relative mb-14 flex w-full flex-col items-center justify-between px-8 md:mb-0 md:flex-row xl:px-16 2xl:px-28">
+        <div className=" relative mb-14 flex w-full flex-col items-center justify-between overflow-hidden px-8 pt-4 md:mb-0 md:flex-row md:pt-0 xl:px-16 2xl:px-28">
           <div className="hidden md:block">
             <IconButton onClick={() => setStep(step - 1)} disabled={!step}>
               <Left />
@@ -86,8 +97,8 @@ export default function Section1() {
           <div
             className={cn(
               'relative',
-              'h-[350px]',
-              'w-[350px]',
+              'h-[320px]',
+              'w-[320px]',
               'sm:h-[480px]',
               'sm:w-[480px]',
               'md:h-[450px]',
@@ -129,7 +140,7 @@ export default function Section1() {
             ))}
             <Image
               className={cn(
-                'point absolute left-1/2 top-1/2 h-[92.5%] w-[92.5%] !translate-x-[-50%] !translate-y-[-50%] transition-all duration-300',
+                'point absolute left-1/2 top-1/2 h-[92.5%] w-[92.5%] !translate-x-[-50%] !translate-y-[-50%] overflow-hidden transition-all duration-300',
                 {
                   'rotate-0': step === 0,
                   'rotate-[41deg]': step === 1,
@@ -443,6 +454,6 @@ export default function Section1() {
           </div>
         </div>
       </div>
-    </>
+    </Swipeable>
   )
 }
