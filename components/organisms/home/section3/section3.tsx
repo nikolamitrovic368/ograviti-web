@@ -12,19 +12,11 @@ export default function Section3() {
       possibilities into success stories, showcasing the tangible impact of
       our tailored solutions in diverse business landscapes."
       />
-      <div className="flex py-10 md:gap-4 2xl:gap-8">
-        <div className="w-1/4">
-          <Card title="Change" subtitle="30% increase in sales" />
-        </div>
-        <div className="w-1/4">
-          <Card title="Change" subtitle="30% increase in sales" />
-        </div>
-        <div className="w-1/4">
-          <Card title="Change" subtitle="30% increase in sales" />
-        </div>
-        <div className="w-1/4">
-          <Card title="Change" subtitle="30% increase in sales" />
-        </div>
+      <div className="grid grid-cols-4 py-10 md:gap-4 2xl:gap-8">
+        <Card title="Change" subtitle="30% increase in sales" />
+        <Card title="Change" subtitle="30% increase in sales" />
+        <Card title="Change" subtitle="30% increase in sales" />
+        <Card title="Change" subtitle="30% increase in sales" />
       </div>
       <Companies />
     </div>

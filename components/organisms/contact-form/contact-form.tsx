@@ -8,7 +8,7 @@ import { Typography } from '@/components/atoms/typography'
 export default function ContactForm() {
   return (
     <div className="flex w-full flex-col gap-8 lg:flex-row">
-      <div className="flex w-full flex-col gap-14 md:py-20 lg:w-1/3 lg:border-r lg:border-secondary">
+      <div className="flex w-full flex-col gap-8 md:py-12 lg:w-[35%] lg:border-r lg:border-secondary xl:w-[30%] xl:gap-14 xl:py-20">
         <div className="flex justify-center">
           <Ograviti className="hidden h-auto w-[121px] sm:w-[250px] lg:block 2xl:w-[363px]" />
         </div>
@@ -18,7 +18,7 @@ export default function ContactForm() {
         >
           Get in Touch with Ograviti
         </Typography>
-        <div className="hidden grid-cols-2 gap-7 lg:grid">
+        <div className="hidden grid-cols-2 gap-6 lg:grid xl:gap-7">
           <div>
             <div className="pb-2 text-xl md:text-lg">Switzerland Office</div>
             <div>Bahnhofstrasse 100, Zurich</div>
@@ -47,7 +47,7 @@ export default function ContactForm() {
           </div>
         </div>
       </div>
-      <div className="flex w-full flex-col items-center justify-center gap-8 lg:w-2/3 lg:gap-14 lg:py-20">
+      <div className="flex w-full flex-1 flex-col items-center justify-center gap-8 md:py-12 xl:gap-14 xl:py-20">
         <div className="grid w-full grid-cols-1 justify-center gap-6 md:grid-cols-2 2xl:gap-8">
           <Input
             label="First Name"

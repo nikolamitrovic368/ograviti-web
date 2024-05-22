@@ -17,8 +17,8 @@ export default function Page() {
         title="About Us"
         subtitle="Empowering Innovation, Enriching Futures: Explore the Ograviti Story"
       />
-      <div className="mr-0 flex items-center justify-between md:-mr-8 xl:-mr-16 2xl:-mr-28">
-        <div className="w-full md:w-4/5 lg:h-3/5 lg:pr-24 2xl:pr-32">
+      <div className="mr-0 flex items-center justify-between xl:-mr-16 2xl:-mr-28">
+        <div className="w-full xl:h-3/5 xl:pr-24 2xl:pr-32">
           <Typography variant="h2" className="pb-4">
             Our Story
           </Typography>
@@ -40,8 +40,8 @@ export default function Page() {
           priority
         />
       </div>
-      <div className="flex flex-col lg:flex-row">
-        <div className="hidden w-1/2 animate-spin-slow items-center justify-center lg:flex">
+      <div className="flex flex-col gap-0 lg:flex-row lg:gap-8 xl:gap-0">
+        <div className="hidden animate-spin-slow items-center justify-center lg:flex lg:w-1/3 xl:w-1/2">
           <Image
             src="/images/logos/ograviti-o.svg"
             alt="Ograviti Logo"
@@ -50,11 +50,11 @@ export default function Page() {
             priority
           />
         </div>
-        <div className="flex flex-col gap-14 md:gap-8 lg:w-1/2 2xl:gap-14">
+        <div className="flex flex-col gap-14 md:gap-8 lg:w-2/3 xl:w-1/2 2xl:gap-14">
           <Typography variant="h2" className="pb-4">
             Our Mission
           </Typography>
-          <div className="grid grid-cols-1 gap-4 md:gap-8 xl:grid-cols-2">
+          <div className="grid grid-cols-1 gap-4 md:gap-8 lg:gap-6 xl:grid-cols-2 xl:gap-8">
             <div>
               <Typography variant="h3" className="pb-4 text-primary">
                 Innovation
@@ -123,22 +123,22 @@ export default function Page() {
           <ProfileCard
             name="Danila Mark"
             role="CEO"
-            className="lg:mb-14 2xl:mb-48"
+            className="xl:mb-14 2xl:mb-48"
           />
           <ProfileCard
             name="Danila Mark"
             role="CEO"
-            className="lg:mt-14 2xl:mt-48"
+            className="xl:mt-14 2xl:mt-48"
           />
           <ProfileCard
             name="Danila Mark"
             role="CEO"
-            className="lg:mb-14 2xl:mb-48"
+            className="xl:mb-14 2xl:mb-48"
           />
           <ProfileCard
             name="Danila Mark"
             role="CEO"
-            className="lg:mt-14 2xl:mt-48"
+            className="xl:mt-14 2xl:mt-48"
           />
         </div>
       </div>
@@ -157,7 +157,7 @@ export default function Page() {
       </LogoBackground>
 
       <TransformationStories />
-      <div className="md:my-4 2xl:my-16"></div>
+      <div className="xl:my-4 2xl:my-16"></div>
       <ContactForm />
     </main>
   )

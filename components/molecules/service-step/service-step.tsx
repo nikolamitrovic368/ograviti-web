@@ -29,7 +29,7 @@ export default function ServiceStep({
         </div>
       </div>
       <div
-        className="w-1/2 bg-cover bg-no-repeat"
+        className="flex-1 bg-cover bg-no-repeat"
         style={{
           backgroundImage: `url(${url})`,
         }}
