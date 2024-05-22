@@ -23,12 +23,12 @@ export default function BlogCard({}: BlogCardProps) {
       <Image
         src="/images/blogs/1.jpg"
         width={1134}
-        className="absolute left-0 top-0 h-[460px] w-full object-cover transition-transform duration-500 group-hover:scale-150 2xl:h-[544px]"
+        className="absolute left-0 top-0 h-[460px] w-full object-cover transition-transform duration-500 md:group-hover:scale-150 2xl:h-[544px]"
         height={1134}
         alt="blogs-1"
       />
       <div className="w-full backdrop-blur-xl">
-        <div className="p-8 pb-10 transition-all duration-500 group-hover:pb-20">
+        <div className="p-8 pb-20 transition-all duration-500 md:pb-10 md:group-hover:pb-20">
           <div className="text-3xl leading-[50px] text-primary-foreground md:leading-10">
             Look Inside Art
           </div>
@@ -41,7 +41,7 @@ export default function BlogCard({}: BlogCardProps) {
           </Typography>
         </div>
       </div>
-      <IconButton className="absolute -bottom-20 right-4 opacity-0 transition-all duration-500 group-hover:bottom-4 group-hover:opacity-100">
+      <IconButton className="absolute bottom-4 right-4 opacity-100 transition-all duration-500 md:-bottom-20 md:opacity-0 md:group-hover:bottom-4 md:group-hover:opacity-100">
         <Enter />
       </IconButton>
     </Link>

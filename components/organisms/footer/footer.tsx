@@ -1,6 +1,4 @@
-'use client'
 import Link from 'next/link'
-import { usePathname } from 'next/navigation'
 
 import { Button } from '@/components/atoms/button'
 import { Ograviti } from '@/components/atoms/icons'
@@ -10,27 +8,25 @@ import { footerNavigationConfig } from '@/constants/navigation'
 import { cn } from '@/utils/tailwind'
 
 export default function Footer() {
-  const pathname = usePathname()
   return (
     <div
       className={cn(
         'mt-28 flex-col items-center justify-center bg-secondary px-8 md:mt-10 md:flex xl:px-16 2xl:mt-60 2xl:px-28',
-        pathname === '/' ? 'hidden' : 'flex',
       )}
     >
       <Typography
         variant="small"
-        className="pt-8 text-white opacity-50 md:pt-8 2xl:pt-14"
+        className="pt-8 text-center  opacity-50 md:pt-8 2xl:pt-14"
       >
         Are you ready?
       </Typography>
-      <div className="py-6 text-sm leading-6 md:text-2xl md:leading-10 2xl:text-3xl 2xl:leading-[50px]">
+      <div className="py-6 text-center text-2xl leading-6  md:leading-10 2xl:text-3xl 2xl:leading-[50px]">
         Let’s get started
       </div>
       <Button className="max-md:w-full">Get started</Button>
       <Typography
         variant="small"
-        className="pb-10 pt-6 text-white opacity-70 md:py-8 2xl:py-14"
+        className="pb-10 pt-6 text-center text-white opacity-70 md:py-8 2xl:py-14"
       >
         Copyright © 2024 • Ograviti.
       </Typography>

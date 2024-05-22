@@ -375,6 +375,13 @@
   dependencies:
     "@types/react" "*"
 
+"@types/react-touch@^1.8.8":
+  version "1.8.8"
+  resolved "https://registry.yarnpkg.com/@types/react-touch/-/react-touch-1.8.8.tgz#73dddae8a8c34f3b1fbbd7bf05ba433a5f8a4b4e"
+  integrity sha512-XrLsNih6xiqoDqJ0f/KD7CqyiS2CHHivC3IjL1K5nWnF2oPcPPhmkFITLk0Uxga6PCNw3wyNp7iG7TVux2w5WQ==
+  dependencies:
+    "@types/react" "*"
+
 "@types/react@*", "@types/react@^18":
   version "18.3.1"
   resolved "https://registry.yarnpkg.com/@types/react/-/react-18.3.1.tgz#fed43985caa834a2084d002e4771e15dfcbdbe8e"
@@ -1986,6 +1993,11 @@ lodash.merge@^4.6.2:
   resolved "https://registry.yarnpkg.com/lodash.merge/-/lodash.merge-4.6.2.tgz#558aa53b43b661e1925a0afdfa36a9a1085fe57a"
   integrity sha512-0KpjqXRVvrYyCsX1swR/XTK0va6VQkQM6MNo7PqW77ByjAhoARA8EfrP1N4+KlKj8YS0ZUCtRT/YUuhyYDujIQ==
 
+lodash@4.6.1:
+  version "4.6.1"
+  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.6.1.tgz#df00c1164ad236b183cfc3887a5e8d38cc63cbbc"
+  integrity sha512-85DFrB4TYPwVZbZw/HCGnmRUdDQOxGJuDmSfZ9OQEESdFJ1NxlYLoQObfHJGr+UsWwmVQhwG2iPmUCi6+eKzUg==
+
 loose-envify@^1.1.0, loose-envify@^1.4.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/loose-envify/-/loose-envify-1.4.0.tgz#71ee51fa7be4caec1a63839f7e682d8132d30caf"
@@ -2248,6 +2260,11 @@ path-type@^4.0.0:
   resolved "https://registry.yarnpkg.com/path-type/-/path-type-4.0.0.tgz#84ed01c0a7ba380afe09d90a8c180dcd9d03043b"
   integrity sha512-gDKb8aZMDeD/tZWs9P6+q0J9Mwkdl6xMV8TjnGP3qJVJ06bdMgkbBlLU8IdfOsIsFz2BW1rNVT3XuNEl8zPAvw==
 
+performance-now@~0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/performance-now/-/performance-now-0.2.0.tgz#33ef30c5c77d4ea21c5a53869d91b56d8f2555e5"
+  integrity sha512-YHk5ez1hmMR5LOkb9iJkLKqoBlL7WD5M8ljC75ZfzXriuBIVNuecaXuU7e+hOwyqf24Wxhh7Vxgt7Hnw9288Tg==
+
 picocolors@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/picocolors/-/picocolors-1.0.0.tgz#cb5bdc74ff3f51892236eaf79d68bc44564ab81c"
@@ -2357,7 +2374,7 @@ prettier@^3.2.5:
   resolved "https://registry.yarnpkg.com/prettier/-/prettier-3.2.5.tgz#e52bc3090586e824964a8813b09aba6233b28368"
   integrity sha512-3/GWa9aOC0YeD7LUfvOG2NiDyhOWRvt1k+rcKhOuYnMY24iiCphgneUfJDyFXd6rZCAnuLBv6UeAULtrhT/F4A==
 
-prop-types@^15.5.8, prop-types@^15.8.1:
+prop-types@^15.5.7, prop-types@^15.5.8, prop-types@^15.8.1:
   version "15.8.1"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.8.1.tgz#67d87bf1a694f48435cf332c24af10214a3140b5"
   integrity sha512-oj87CgZICdulUohogVAR7AjlC0327U4el4L6eAvOqCeudMDVU0NThNaV+b9Df4dXgSP1gXMTnPdhfe/2qDH5cg==
@@ -2375,6 +2392,13 @@ queue-microtask@^1.2.2:
   version "1.2.3"
   resolved "https://registry.yarnpkg.com/queue-microtask/-/queue-microtask-1.2.3.tgz#4929228bbc724dfac43e0efb058caf7b6cfb6243"
   integrity sha512-NuaNSa6flKT5JaSYQzJok04JzTL1CA6aGhv5rfLW3PgqA+M2ChpZQnAC8h8i4ZFkBS8X5RqkDBHA7r4hej3K9A==
+
+raf@3.2.0:
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/raf/-/raf-3.2.0.tgz#2aba9a09bb70f8c2e9094dc60ace7c374fadec7e"
+  integrity sha512-7xczdqIElmtpytYX1aMCY6n/YB0sJaYnMKFGwDIn3bHPYPtm7F0jmKXtsTue2qjHrSMYZRBhHv4QC/hAJRatlQ==
+  dependencies:
+    performance-now "~0.2.0"
 
 react-dom@^18:
   version "18.3.1"
@@ -2415,12 +2439,14 @@ react-simple-star-rating@^5.1.7:
   resolved "https://registry.yarnpkg.com/react-simple-star-rating/-/react-simple-star-rating-5.1.7.tgz#5406ade8d0e117a654e979ebd702d89389876c29"
   integrity sha512-NTFkW8W3uwvI82Fv7JW5i7gmDjEZKxJmj+Z9vn+BjYIXT6ILdnU9qnSUP2cWrWN/WAUlue81f9SgM4CQcenltQ==
 
-react-touch-events@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/react-touch-events/-/react-touch-events-3.0.0.tgz#3126eaaa49fc72eb0503135b5be20a8c3fcd6f14"
-  integrity sha512-qs5JGCZQBgycQMiWC8RD6kv9WvpTWSJaaX7qw9hQiLMcyXX7WclOMUv7LPaRIXa5rXebRJQSi94TlsJ1GlnXew==
+react-touch@^0.4.4:
+  version "0.4.4"
+  resolved "https://registry.yarnpkg.com/react-touch/-/react-touch-0.4.4.tgz#87730ace63759685467ebd827b05bb1ac9f376e6"
+  integrity sha512-1LrddNwIehrfGgufnkliIaNIXCIQOv0IbN4Bg7VMlPxc86Y896fE05L+U/5mmNN3UGUjIe09KbwEo6K1R0ywKg==
   dependencies:
-    prop-types "^15.5.8"
+    lodash "4.6.1"
+    prop-types "^15.5.7"
+    raf "3.2.0"
 
 react@^18:
   version "18.3.1"

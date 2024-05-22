@@ -3,6 +3,7 @@ import Image from 'next/image'
 import CardSwiper from '@/components/atoms/card-swiper'
 import { Typography } from '@/components/atoms/typography'
 import Card from '@/components/molecules/card'
+import SectionTitle from '@/components/molecules/section-title'
 
 export default function Page() {
   return (
@@ -173,16 +174,15 @@ export default function Page() {
         </div>
       </div>
       <div className="flex flex-col gap-4">
-        <Typography variant="h2">
-          Exceptional Results: Ograviti Elevates Cosmetic Brand Presence.
-        </Typography>
-        <Typography variant="subtitle2">
-          The achieved outcomes were outstanding, underscoring the seamless
-          integration of technology and design for the Cosmetic Product brand.
-          The digital platform not only effectively showcases the cosmetic
-          products but also elevates the overall brand identity, exemplifying
-          Ograviti&apos;s commitment to excellence.
-        </Typography>
+        <SectionTitle
+          title="Exceptional Results: Ograviti Elevates Cosmetic Brand Presence."
+          subtitle="The achieved outcomes were outstanding, underscoring the seamless
+            integration of technology and design for the Cosmetic Product brand.
+            The digital platform not only effectively showcases the cosmetic
+            products but also elevates the overall brand identity, exemplifying
+            Ograviti's commitment to excellence."
+          center
+        />
       </div>
       <div className="flex flex-col">
         <div className="text-right font-bold underline md:text-xl 2xl:text-2xl">
