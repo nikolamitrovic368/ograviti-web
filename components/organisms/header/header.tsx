@@ -48,7 +48,7 @@ export default function Header() {
             </IconButton>
           </div>
 
-          <div className="flex gap-4 md:hidden">
+          <div className="flex gap-4 py-4 md:hidden">
             <div className="cursor-pointer text-2xl font-bold text-white underline duration-300 hover:text-primary">
               En
             </div>
