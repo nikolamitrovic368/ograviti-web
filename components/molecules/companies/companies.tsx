@@ -5,7 +5,7 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 
 export default function Companies() {
   return (
-    <div className="-mx-8 py-12 xl:-mx-16 2xl:-mx-28">
+    <div className="-mx-8 py-4 xl:-mx-16 2xl:-mx-28 2xl:py-12">
       <Swiper
         dir="rtl"
         loop={true}
@@ -23,28 +23,28 @@ export default function Companies() {
           <SwiperSlide className="!w-auto" key={v}>
             <div className="flex h-12 items-center justify-center gap-12 pl-12 md:h-20 md:gap-24 md:pl-24 2xl:h-36 2xl:gap-56 2xl:pl-56">
               <Image
-                className="h-auto max-md:w-[170px]"
+                className="w-[136px] md:w-[238px] 2xl:h-auto"
                 src="/images/companies/1.svg"
                 alt="companies-1"
                 width={340}
                 height={62}
               />
               <Image
-                className="h-auto max-md:w-[135px]"
+                className="w-[136px] md:w-[189px] 2xl:h-auto"
                 src="/images/companies/2.svg"
                 alt="companies-1"
                 width={270}
                 height={77}
               />
               <Image
-                className="h-auto max-md:w-[86px]"
+                className="w-[69.2px] md:w-[173px] 2xl:h-auto"
                 src="/images/companies/3.svg"
                 alt="companies-1"
                 width={173}
                 height={54}
               />
               <Image
-                className="h-auto max-md:w-[117px]"
+                className="w-[93.6px] md:w-[235px] 2xl:h-auto"
                 src="/images/companies/4.svg"
                 alt="companies-1"
                 width={235}
