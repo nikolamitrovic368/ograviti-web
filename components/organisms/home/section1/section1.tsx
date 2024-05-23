@@ -3,6 +3,7 @@ import 'react-responsive-carousel/lib/styles/carousel.min.css'
 
 import Image from 'next/image'
 import Link from 'next/link'
+import { useRouter } from 'next/navigation'
 import { useState } from 'react'
 import { Carousel } from 'react-responsive-carousel'
 import { defineSwipe, Swipeable } from 'react-touch'
@@ -15,6 +16,11 @@ import { steps } from './constants'
 
 export default function Section1() {
   const [step, setStep] = useState(0)
+  const router = useRouter()
+  function serviceonClick(v: number) {
+    if (step === v) router.push('/services/4')
+    else setStep(v)
+  }
   return (
     // @ts-ignore
     <Swipeable
@@ -28,7 +34,7 @@ export default function Section1() {
     >
       <div className="relative -mx-8 flex h-[calc(100vh-133px)] flex-col justify-between md:h-screen md:flex-row xl:-mx-16 2xl:-mx-28">
         <Carousel
-          className="left-0 top-5 z-10 pl-8 pt-6 max-md:pb-14 md:absolute xl:pl-16 2xl:pl-28"
+          className="left-0 top-5 z-10 pl-8 md:absolute md:pt-6 xl:pl-16 2xl:pl-28"
           showArrows={false}
           showStatus={false}
           showIndicators={false}
@@ -87,7 +93,7 @@ export default function Section1() {
             <div className="absolute left-[10%] top-[10%] h-[160%] w-[160%] origin-[calc(50%-300px)_calc(50%+500px)] animate-[moveInCircle_20s_reverse_infinite] opacity-10 mix-blend-hard-light [background:radial-gradient(circle_at_center,rgba(80,80,255,0.8)_0,rgba(80,80,255,0)_50%)_no-repeat]"></div>
           </div>
         </div>
-        <div className=" relative mb-14 flex w-full flex-col items-center justify-between overflow-hidden px-8 pt-4 md:mb-0 md:flex-row md:pt-0 xl:px-16 2xl:px-28">
+        <div className=" relative mb-12 flex w-full flex-col items-center justify-between overflow-hidden px-8 pt-4 md:mb-0 md:flex-row md:pt-0 xl:px-16 2xl:px-28">
           <div className="hidden md:block">
             <IconButton onClick={() => setStep(step - 1)} disabled={!step}>
               <Left />
@@ -154,7 +160,7 @@ export default function Section1() {
               width={940}
               height={940}
             />
-            <Link href="/services/4">
+            <button onClick={() => serviceonClick(0)}>
               <svg
                 className={cn(
                   'absolute left-0 top-[55%] -translate-x-1/2 -translate-y-1/2 scale-50 duration-300 sm:scale-75 lg:scale-90 2xl:scale-100 [&_path]:fill-stone-500 [&_path]:transition-all [&_path]:hover:fill-primary',
@@ -199,8 +205,8 @@ export default function Section1() {
                   fill="#F3F3F3"
                 />
               </svg>
-            </Link>
-            <Link href="/services/4" className="z-30">
+            </button>
+            <button onClick={() => serviceonClick(1)} className="z-30">
               <svg
                 className={cn(
                   'absolute left-[9%] top-[20%] w-[200px] -translate-x-1/2 -translate-y-1/2 rotate-[-53deg] scale-50 duration-300 sm:scale-75 lg:scale-90 2xl:scale-100 [&_path]:fill-stone-500 [&_path]:transition-all [&_path]:hover:fill-primary',
@@ -263,9 +269,9 @@ export default function Section1() {
                   d="M211.9,23.3c-0.1,0.1-0.2,0.2-0.3,0.2c-0.1,0-0.2,0-0.3,0c-0.1,0-0.3-0.1-0.4-0.2c-0.1-0.1-0.3-0.3-0.5-0.4               c-0.2-0.2-0.4-0.3-0.7-0.5c-0.2-0.1-0.5-0.3-0.9-0.4c-0.6-0.1-1-0.1-1.4,0c-0.4,0.2-0.6,0.4-0.7,0.8c-0.1,0.3,0,0.5,0.1,0.7               c0.1,0.2,0.3,0.4,0.5,0.6c0.2,0.2,0.5,0.4,0.8,0.6c0.3,0.2,0.6,0.4,1,0.6c0.3,0.2,0.7,0.5,1,0.7c0.3,0.2,0.6,0.5,0.8,0.8               c0.2,0.3,0.4,0.7,0.4,1c0.1,0.4,0.1,0.8-0.1,1.3c-0.1,0.6-0.4,1.1-0.7,1.5c-0.3,0.4-0.7,0.8-1.2,1c-0.5,0.2-1.1,0.4-1.7,0.4               c-0.6,0-1.3,0-2.1-0.2c-0.4-0.1-0.8-0.2-1.2-0.4c-0.4-0.2-0.7-0.4-1-0.6c-0.3-0.2-0.6-0.5-0.9-0.7c-0.3-0.3-0.5-0.5-0.7-0.8l0.9-0.9               c0.1-0.1,0.2-0.2,0.4-0.2c0.1,0,0.3,0,0.5,0c0.2,0,0.3,0.1,0.5,0.3c0.1,0.1,0.3,0.3,0.5,0.5c0.2,0.2,0.4,0.3,0.6,0.5               c0.3,0.2,0.6,0.3,1,0.4c0.3,0.1,0.6,0.1,0.9,0.1c0.3,0,0.5-0.1,0.7-0.2c0.2-0.1,0.4-0.2,0.5-0.4c0.1-0.2,0.2-0.3,0.3-0.5               c0.1-0.3,0-0.5-0.1-0.8c-0.1-0.2-0.3-0.4-0.5-0.6c-0.2-0.2-0.5-0.4-0.9-0.6c-0.3-0.2-0.7-0.4-1-0.6c-0.3-0.2-0.7-0.5-1-0.7               c-0.3-0.3-0.6-0.6-0.8-0.9c-0.2-0.3-0.3-0.7-0.4-1.1c-0.1-0.4,0-0.9,0.1-1.4c0.1-0.5,0.3-0.9,0.7-1.3c0.3-0.4,0.7-0.7,1.1-0.9               c0.5-0.2,1-0.4,1.6-0.4c0.6-0.1,1.3,0,2,0.2c0.8,0.2,1.5,0.5,2.1,1s1.1,0.9,1.4,1.5L211.9,23.3z"
                 />
               </svg>
-            </Link>
+            </button>
 
-            <Link href="/services/4">
+            <button onClick={() => serviceonClick(2)}>
               <svg
                 className={cn(
                   'absolute left-[48.8%] top-0 -translate-x-1/2 -translate-y-1/2 scale-50 duration-300 sm:scale-75 lg:scale-90 2xl:scale-100 [&_path]:fill-stone-500 [&_path]:transition-all [&_path]:hover:fill-primary',
@@ -298,8 +304,8 @@ export default function Section1() {
                   fill="#666666"
                 />
               </svg>
-            </Link>
-            <Link href="/services/4">
+            </button>
+            <button onClick={() => serviceonClick(3)}>
               <svg
                 className={cn(
                   'absolute left-[90%] top-[18%] w-[200px] -translate-x-1/2 -translate-y-1/2 rotate-[51deg] scale-50 duration-300 sm:scale-75 lg:scale-90 2xl:scale-100 [&_path]:fill-stone-500 [&_path]:transition-all [&_path]:hover:fill-primary',
@@ -359,8 +365,8 @@ export default function Section1() {
                   d="M182.6,30c-1-0.2-1.8-0.7-2.2-1.4c-0.4-0.7-0.5-1.6-0.3-2.6l1.4-6.7l-1.2-0.3c-0.2,0-0.3-0.1-0.4-0.2 c-0.1-0.1-0.1-0.3-0.1-0.5l0.2-1.2l2,0.1l1.3-3.2c0.1-0.1,0.2-0.3,0.3-0.3c0.1-0.1,0.3-0.1,0.4,0l1.5,0.3l-0.8,3.8l3.2,0.7l-0.4,2.1 l-3.2-0.7l-1.4,6.5c-0.1,0.4,0,0.7,0.1,0.9c0.1,0.3,0.4,0.4,0.7,0.5c0.2,0,0.3,0,0.5,0c0.1,0,0.3,0,0.3-0.1c0.1,0,0.2-0.1,0.3-0.1 c0.1,0,0.2,0,0.2,0c0.1,0,0.2,0.1,0.2,0.1c0,0.1,0.1,0.1,0.1,0.2l0.6,1.6c-0.5,0.3-1,0.4-1.6,0.5C183.8,30.2,183.2,30.1,182.6,30z"
                 />
               </svg>
-            </Link>
-            <Link href="/services/4">
+            </button>
+            <button onClick={() => serviceonClick(4)}>
               <svg
                 className={cn(
                   'absolute left-full top-[52%] -translate-x-1/2 -translate-y-1/2 scale-50 duration-300 sm:scale-75 lg:scale-90 2xl:scale-100 [&_path]:fill-stone-500 [&_path]:transition-all [&_path]:hover:fill-primary',
@@ -433,7 +439,7 @@ export default function Section1() {
                   fill="#666666"
                 />
               </svg>
-            </Link>
+            </button>
           </div>
           <div className="hidden md:block">
             <IconButton onClick={() => setStep(step === 4 ? 0 : step + 1)}>
