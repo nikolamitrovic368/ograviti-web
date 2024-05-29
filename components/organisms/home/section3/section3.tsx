@@ -12,7 +12,7 @@ export default function Section3() {
       challenges meet innovative solutions. Explore how Ograviti transforms
       possibilities into success stories, showcasing the tangible impact of
       our tailored solutions in diverse business landscapes."
-        center
+        className="text-center md:text-left"
       />
       <div className="py-5 md:hidden">
         <CardSwiper

@@ -32,7 +32,7 @@ export default function Section2() {
         subtitle="Discover our journey, values, promises, and impactful results—a concise
         exploration of Ograviti's commitment to reshaping the future of
         software solutions."
-        center
+        className="text-center md:text-left"
       />
       {/* @ts-ignore */}
       <Swipeable
@@ -86,7 +86,7 @@ export default function Section2() {
           ))}
         </div>
       </Swipeable>
-      <div className="flex justify-center gap-3 pt-10">
+      <div className="flex justify-center gap-3 pt-10 md:hidden">
         {steps.map((_step, key) => (
           <div
             key={key}

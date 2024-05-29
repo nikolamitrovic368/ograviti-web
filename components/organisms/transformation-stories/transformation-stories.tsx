@@ -20,7 +20,7 @@ export default function TransformationStories({
     <div className="">
       {hideTitle || (
         <SectionTitle
-          center
+          className="text-center md:text-left"
           title="Stories of Transformation with Ograviti"
           subtitle="Discover the resonance of Ograviti's impact through firsthand
             experiences. From CEOs to industry experts, explore the
