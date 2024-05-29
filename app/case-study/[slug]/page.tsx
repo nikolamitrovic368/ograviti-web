@@ -181,7 +181,7 @@ export default function Page() {
             The digital platform not only effectively showcases the cosmetic
             products but also elevates the overall brand identity, exemplifying
             Ograviti's commitment to excellence."
-          center
+          className="text-center"
         />
       </div>
       <div className="flex flex-col">
