@@ -28,7 +28,7 @@ export default function NavLink({
     >
       <div className="h-16 w-full overflow-hidden md:h-14 2xl:h-20">
         <motion.div
-          whileHover={{ y: is2xl ? -160 : -144 }}
+          whileHover={{ y: is2xl ? -160 : -104 }}
           className="flex flex-col"
           transition={{ duration: 0.7 }}
         >
