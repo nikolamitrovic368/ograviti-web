@@ -112,32 +112,96 @@ export default function Page() {
         <div className="w-full sm:hidden">
           <CardSwiper
             cards={[
-              <ProfileCard name="Danila Mark" role="CEO" key={1} />,
-              <ProfileCard name="Danila Mark" role="CEO" key={2} />,
-              <ProfileCard name="Danila Mark" role="CEO" key={3} />,
-              <ProfileCard name="Danila Mark" role="CEO" key={4} />,
+              <ProfileCard
+                data={{
+                  name: 'Danila Mark',
+                  role: 'CEO',
+                  linkedin: '',
+                  facebook: '',
+                  instagram: '',
+                  youtube: '',
+                }}
+                key={1}
+              />,
+              <ProfileCard
+                data={{
+                  name: 'Danila Mark',
+                  role: 'CEO',
+                  linkedin: '',
+                  facebook: '',
+                  instagram: '',
+                  youtube: '',
+                }}
+                key={2}
+              />,
+              <ProfileCard
+                data={{
+                  name: 'Danila Mark',
+                  role: 'CEO',
+                  linkedin: '',
+                  facebook: '',
+                  instagram: '',
+                  youtube: '',
+                }}
+                key={3}
+              />,
+              <ProfileCard
+                data={{
+                  name: 'Danila Mark',
+                  role: 'CEO',
+                  linkedin: '',
+                  facebook: '',
+                  instagram: '',
+                  youtube: '',
+                }}
+                key={4}
+              />,
             ]}
           />
         </div>
         <div className="hidden w-full grid-cols-2 gap-4 sm:grid lg:grid-cols-4 2xl:gap-8">
           <ProfileCard
-            name="Danila Mark"
-            role="CEO"
+            data={{
+              name: 'Danila Mark',
+              role: 'CEO',
+              linkedin: '',
+              facebook: '',
+              instagram: '',
+              youtube: '',
+            }}
             className="xl:mb-14 2xl:mb-48"
           />
           <ProfileCard
-            name="Danila Mark"
-            role="CEO"
+            data={{
+              name: 'Danila Mark',
+              role: 'CEO',
+              linkedin: '',
+              facebook: '',
+              instagram: '',
+              youtube: '',
+            }}
             className="xl:mt-14 2xl:mt-48"
           />
           <ProfileCard
-            name="Danila Mark"
-            role="CEO"
+            data={{
+              name: 'Danila Mark',
+              role: 'CEO',
+              linkedin: '',
+              facebook: '',
+              instagram: '',
+              youtube: '',
+            }}
             className="xl:mb-14 2xl:mb-48"
           />
           <ProfileCard
-            name="Danila Mark"
-            role="CEO"
+            data={{
+              name: 'Danila Mark',
+              role: 'CEO',
+              linkedin: '',
+              facebook: '',
+              instagram: '',
+              youtube: '',
+            }}
             className="xl:mt-14 2xl:mt-48"
           />
         </div>
