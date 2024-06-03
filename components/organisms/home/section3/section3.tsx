@@ -1,5 +1,5 @@
 import CardSwiper from '@/components/atoms/card-swiper'
-import Card from '@/components/molecules/card'
+import CaseStudyCard from '@/components/molecules/case-study-card'
 import Companies from '@/components/molecules/companies'
 import SectionTitle from '@/components/molecules/section-title'
 
@@ -17,17 +17,62 @@ export default function Section3() {
       <div className="py-5 md:hidden">
         <CardSwiper
           cards={[
-            <Card key={1} title="Change" subtitle="30% increase in sales" />,
-            <Card key={2} title="Change" subtitle="30% increase in sales" />,
-            <Card key={3} title="Change" subtitle="30% increase in sales" />,
+            <CaseStudyCard
+              key={1}
+              data={{
+                title: 'Change',
+                subtitle: '30% increase in sales',
+                image: '/images/card/1.png',
+              }}
+            />,
+            <CaseStudyCard
+              key={2}
+              data={{
+                title: 'Change',
+                subtitle: '30% increase in sales',
+                image: '/images/card/1.png',
+              }}
+            />,
+            <CaseStudyCard
+              key={3}
+              data={{
+                title: 'Change',
+                subtitle: '30% increase in sales',
+                image: '/images/card/1.png',
+              }}
+            />,
           ]}
         />
       </div>
       <div className="hidden grid-cols-2 py-10 md:grid md:gap-4 lg:grid-cols-4 2xl:gap-8">
-        <Card title="Change" subtitle="30% increase in sales" />
-        <Card title="Change" subtitle="30% increase in sales" />
-        <Card title="Change" subtitle="30% increase in sales" />
-        <Card title="Change" subtitle="30% increase in sales" />
+        <CaseStudyCard
+          data={{
+            title: 'Change',
+            subtitle: '30% increase in sales',
+            image: '/images/card/1.png',
+          }}
+        />
+        <CaseStudyCard
+          data={{
+            title: 'Change',
+            subtitle: '30% increase in sales',
+            image: '/images/card/1.png',
+          }}
+        />
+        <CaseStudyCard
+          data={{
+            title: 'Change',
+            subtitle: '30% increase in sales',
+            image: '/images/card/1.png',
+          }}
+        />
+        <CaseStudyCard
+          data={{
+            title: 'Change',
+            subtitle: '30% increase in sales',
+            image: '/images/card/1.png',
+          }}
+        />
       </div>
       <Companies />
     </div>

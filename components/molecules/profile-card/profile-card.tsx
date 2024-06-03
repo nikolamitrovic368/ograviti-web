@@ -1,17 +1,25 @@
+import Link from 'next/link'
+
 import { Instagram, Linkedin, Youtube } from '@/components/atoms/icons'
 import Facebook from '@/components/atoms/icons/facebook'
 import { Typography } from '@/components/atoms/typography'
 import { cn } from '@/utils/tailwind'
 
-export default function ProfileCard({
-  name,
-  role,
-  className,
-}: {
-  name: string
-  role: string
+type ProfileCardProps = {
+  data: {
+    name: string
+    role: string
+    linkedin: string
+    facebook: string
+    instagram: string
+    youtube: string
+  }
   className?: string
-}) {
+}
+export default function ProfileCard({
+  data: { name, role, linkedin, facebook, instagram, youtube },
+  className,
+}: ProfileCardProps) {
   return (
     <div className={cn('flex w-full flex-col gap-4 2xl:gap-8', className)}>
       <div className="group flex h-[500px] w-full items-center justify-center rounded-[45.84px] [background-image:linear-gradient(135deg,#1e1e1e_74%,rgba(255,255,255,0.6)_100%)] lg:h-[375px] xl:h-[420px] 2xl:h-[560px]">
@@ -25,16 +33,24 @@ export default function ProfileCard({
             >
               <div className="absolute -left-16 bottom-0 flex w-14 flex-col items-center justify-center rounded-tr-3xl bg-background py-8 transition-all duration-500 group-hover:left-0 2xl:w-16">
                 <button className="flex w-full items-center justify-center py-4 transition-all duration-500 hover:bg-primary">
-                  <Linkedin className="h-auto w-4 2xl:w-[18px]" />
+                  <Link href={linkedin}>
+                    <Linkedin className="h-auto w-4 2xl:w-[18px]" />
+                  </Link>
                 </button>
                 <button className="flex w-full items-center justify-center py-4 transition-all duration-500 hover:bg-primary">
-                  <Facebook className="h-auto w-3 2xl:w-[13px]" />
+                  <Link href={facebook}>
+                    <Facebook className="h-auto w-3 2xl:w-[13px]" />
+                  </Link>
                 </button>
                 <button className="flex w-full items-center justify-center py-4 transition-all duration-500 hover:bg-primary">
-                  <Instagram className="h-auto w-4 2xl:w-[18px]" />
+                  <Link href={instagram}>
+                    <Instagram className="h-auto w-4 2xl:w-[18px]" />{' '}
+                  </Link>
                 </button>
                 <button className="flex w-full items-center justify-center py-4 transition-all duration-500 hover:bg-primary">
-                  <Youtube className="h-auto w-4 2xl:w-[18px]" />
+                  <Link href={youtube}>
+                    <Youtube className="h-auto w-4 2xl:w-[18px]" />{' '}
+                  </Link>
                 </button>
               </div>
             </div>

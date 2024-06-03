@@ -7,7 +7,7 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 
 import CardSwiper from '@/components/atoms/card-swiper'
 import SectionTitle from '@/components/molecules/section-title'
-import UserCard from '@/components/molecules/user-card'
+import TestimonialCard from '@/components/molecules/testimonial-card'
 
 import { users } from './constants'
 
@@ -33,7 +33,7 @@ export default function TransformationStories({
         <div className="w-full md:hidden">
           <CardSwiper
             cards={users.map((user, k) => (
-              <UserCard user={user} key={k} />
+              <TestimonialCard data={user} key={k} />
             ))}
           />
         </div>
@@ -55,7 +55,7 @@ export default function TransformationStories({
           >
             {users.map((user, k) => (
               <SwiperSlide key={k} className="!w-auto select-none">
-                <UserCard user={user} />
+                <TestimonialCard data={user} />
               </SwiperSlide>
             ))}
           </Swiper>

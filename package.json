@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --port 3005",
+    "dev": "next dev --port 3003",
     "format": "npx prettier --write .",
     "lint": "next lint",
     "build": "next build",

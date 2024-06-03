@@ -3,7 +3,7 @@ import Image from 'next/image'
 import Rating from '@/components/atoms/rating'
 
 type UserCardProps = {
-  user: {
+  data: {
     description: string
     rate: number
     img: string
@@ -12,8 +12,8 @@ type UserCardProps = {
   }
 }
 
-export default function UserCard({
-  user: { description, rate, img, name, role },
+export default function TestimonialCard({
+  data: { description, rate, img, name, role },
 }: UserCardProps) {
   return (
     <div className="flex h-[322px] flex-col justify-between gap-4 rounded-3xl bg-secondary px-4 py-6 md:h-[334px] md:w-[288px] md:py-5 2xl:h-[465px] 2xl:w-[400px] 2xl:px-7 2xl:py-10">

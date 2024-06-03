@@ -6,7 +6,7 @@ import Enter from '@/components/atoms/icons/enter'
 import { Typography } from '@/components/atoms/typography'
 
 type BlogCardProps = {
-  blog?: {
+  data: {
     title: string
     description: string
     img: string

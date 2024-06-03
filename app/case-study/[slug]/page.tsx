@@ -2,7 +2,7 @@ import Image from 'next/image'
 
 import CardSwiper from '@/components/atoms/card-swiper'
 import { Typography } from '@/components/atoms/typography'
-import Card from '@/components/molecules/card'
+import CaseStudyCard from '@/components/molecules/case-study-card'
 import SectionTitle from '@/components/molecules/section-title'
 
 export default function Page() {
@@ -181,7 +181,6 @@ export default function Page() {
             The digital platform not only effectively showcases the cosmetic
             products but also elevates the overall brand identity, exemplifying
             Ograviti's commitment to excellence."
-          className="text-center"
         />
       </div>
       <div className="flex flex-col">
@@ -194,16 +193,43 @@ export default function Page() {
         <div className="md:hidden">
           <CardSwiper
             cards={[
-              <Card key={1} title="Change" subtitle="30% increase in sales" />,
-              <Card key={2} title="Change" subtitle="30% increase in sales" />,
-              <Card key={3} title="Change" subtitle="30% increase in sales" />,
+              <CaseStudyCard
+                key={1}
+                data={{
+                  title: 'Change',
+                  subtitle: '30% increase in sales',
+                  image: '/images/card/1.png',
+                }}
+              />,
+              <CaseStudyCard
+                key={2}
+                data={{
+                  title: 'Change',
+                  subtitle: '30% increase in sales',
+                  image: '/images/card/1.png',
+                }}
+              />,
+              <CaseStudyCard
+                key={3}
+                data={{
+                  title: 'Change',
+                  subtitle: '30% increase in sales',
+                  image: '/images/card/1.png',
+                }}
+              />,
             ]}
           />
         </div>
         <div className="hidden flex-col justify-center gap-8 pb-10 md:flex md:flex-row md:pt-10">
           {[1, 2, 3].map(v => (
             <div className="w-1/3 xl:w-1/4" key={v}>
-              <Card title="Change" subtitle="30% increase in sales" />
+              <CaseStudyCard
+                data={{
+                  title: 'Change',
+                  subtitle: '30% increase in sales',
+                  image: '/images/card/1.png',
+                }}
+              />
             </div>
           ))}
         </div>
