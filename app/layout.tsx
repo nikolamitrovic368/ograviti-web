@@ -1,6 +1,8 @@
 import '@/styles/globals.css'
 
 import { Lato } from 'next/font/google'
+import { draftMode } from 'next/headers'
+import { VisualEditing } from 'next-sanity'
 
 import Footer from '@/components/organisms/footer'
 import Header from '@/components/organisms/header'
@@ -21,6 +23,7 @@ export default function RootLayout({
         <Header />
         <div className="px-8 xl:px-16 2xl:px-28">{children}</div>
         <Footer />
+        {draftMode().isEnabled && <VisualEditing />}
       </body>
     </html>
   )

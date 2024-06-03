@@ -10,12 +10,14 @@ import { defineSwipe, Swipeable } from 'react-touch'
 
 import { IconButton } from '@/components/atoms/icon-button'
 import { Left, Right } from '@/components/atoms/icons'
+import { Brandings } from '@/sanity/queries/pages/home.query'
 import { cn } from '@/utils/tailwind'
 
-import { steps } from './constants'
+import { mapSteps } from './constants'
 
-export default function Section1() {
+export default function Section1({ data }: { data: Brandings }) {
   const [step, setStep] = useState(0)
+  const steps = mapSteps(data)
   const router = useRouter()
   function serviceonClick(v: number) {
     if (step === v) router.push('/services/4')
@@ -48,21 +50,16 @@ export default function Section1() {
           axis="vertical"
         >
           {steps.map(step => (
-            <div key={step.title}>
+            <div key={step.title} className="w-[400px]">
               <Link
                 href="/services/4"
                 className="block pb-4 text-left text-4xl font-bold text-primary md:text-3xl 2xl:text-5xl"
               >
                 {step.title}
               </Link>
-              {step.subtitles.map((subtitle, key) => (
-                <div
-                  className={`py-1 text-left md:text-lg 2xl:text-2xl step-${key}`}
-                  key={key}
-                >
-                  {subtitle}
-                </div>
-              ))}
+              <div className="w-[200px] py-1 text-left text-base/9 md:w-[300px] md:text-lg 2xl:text-2xl/10">
+                {step.subtitle}
+              </div>
             </div>
           ))}
         </Carousel>

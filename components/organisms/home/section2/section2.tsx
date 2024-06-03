@@ -3,11 +3,12 @@ import { useEffect, useRef, useState } from 'react'
 import { defineSwipe, Swipeable } from 'react-touch'
 
 import SectionTitle from '@/components/molecules/section-title'
+import { Journey } from '@/sanity/queries/pages/home.query'
 import { cn } from '@/utils/tailwind'
 
 import { steps } from './constants'
 
-export default function Section2() {
+export default function Section2({ data }: { data: Journey }) {
   const interval = useRef<any>()
   const [step, setStep] = useState(3)
   const [isClickAction, setIsClickAction] = useState(false)
@@ -28,7 +29,7 @@ export default function Section2() {
   return (
     <div>
       <SectionTitle
-        title="Unveiling Ograviti's Journey"
+        title={data.title}
         subtitle="Discover our journey, values, promises, and impactful results—a concise
         exploration of Ograviti's commitment to reshaping the future of
         software solutions."
