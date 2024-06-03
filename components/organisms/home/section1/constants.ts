@@ -1,11 +1,9 @@
-export const steps = [
+import { Brandings } from '@/sanity/queries/pages/home.query'
+
+export const mapSteps = (data: Brandings) => [
   {
     title: 'Branding',
-    subtitles: [
-      'Brand Establishment',
-      'Messaging and Strategy',
-      'Collateral and Presentation',
-    ],
+    subtitle: data.brandingSubtitle,
     image: 'branding',
     width: 50,
     height: 146,
@@ -14,11 +12,7 @@ export const steps = [
   },
   {
     title: 'Data Analysis',
-    subtitles: [
-      'Data Infrastructure',
-      'Advanced Analytics',
-      'Marketing Insights',
-    ],
+    subtitle: data.dataAnalysisSubtitle,
     image: 'data-analysis',
     width: 166,
     height: 202,
@@ -27,11 +21,7 @@ export const steps = [
   },
   {
     title: 'UI & UX',
-    subtitles: [
-      'Strategic Planning',
-      'User-Centric Design',
-      'Design Framework',
-    ],
+    subtitle: data.uiuxSubtitle,
     image: 'ui-ux',
     width: 96,
     height: 34,
@@ -40,7 +30,7 @@ export const steps = [
   },
   {
     title: 'Development',
-    subtitles: ['Web Development', 'Infrastructure', 'Customer Support'],
+    subtitle: data.developmentSubtitle,
     image: 'development',
     width: 155,
     height: 178,
@@ -49,11 +39,7 @@ export const steps = [
   },
   {
     title: 'Digital Marketing',
-    subtitles: [
-      'Online Visibility',
-      'Direct Communication',
-      'Strategic Promotion',
-    ],
+    subtitle: data.digitalMarketingSubtitle,
     image: 'digital-marketing',
     width: 56,
     height: 239,

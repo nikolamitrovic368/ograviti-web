@@ -1,67 +1,101 @@
 'use client'
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
+import { defineSwipe, Swipeable } from 'react-touch'
 
+import SectionTitle from '@/components/molecules/section-title'
+import { Journey } from '@/sanity/queries/pages/home.query'
 import { cn } from '@/utils/tailwind'
 
 import { steps } from './constants'
 
-export default function Section2() {
-  const [step, setStep] = useState(0)
+export default function Section2({ data }: { data: Journey }) {
+  const interval = useRef<any>()
+  const [step, setStep] = useState(3)
   const [isClickAction, setIsClickAction] = useState(false)
+  function autoNextStep() {
+    setIsClickAction(false)
+    setStep(v => (v + 1) % 4)
+  }
   useEffect(() => {
-    const myInterval = setInterval(() => {
-      setIsClickAction(false)
-      setStep(v => (v + 1) % 4)
-    }, 6000)
+    interval.current = setInterval(autoNextStep, 10000)
     return () => {
-      clearInterval(myInterval)
+      clearInterval(interval.current)
     }
   }, [])
-
+  function restartInterval() {
+    clearInterval(interval.current)
+    interval.current = setInterval(autoNextStep, 10000)
+  }
   return (
     <div>
-      <div className="pb-4 text-left text-5xl font-bold text-primary">
-        Unveiling Ograviti&apos;s Journey
-      </div>
-      <div className="w-2/3 py-1 text-left text-2xl">
-        Discover our journey, values, promises, and impactful results—a concise
-        exploration of Ograviti&apos;s commitment to reshaping the future of
-        software solutions.
-      </div>
-      <div className="ml-24 mt-16 flex">
-        {steps.map((_step, key) => (
-          <div
-            className={cn(
-              'w-1/6 overflow-hidden border-l pr-36 transition-all',
-              isClickAction ? 'duration-700' : 'duration-[3000ms]',
-              { 'w-2/3': key === step },
-            )}
-            key={key}
-          >
-            <div className="mr-36">
-              <div
-                className={cn(
-                  'h-52 rotate-180 cursor-pointer px-4 text-right text-2xl [writing-mode:vertical-lr] ',
-                  key === step ? 'text-action-active' : 'text-action',
-                )}
-                onClick={() => {
-                  setIsClickAction(true)
-                  setStep(key)
-                }}
-              >
-                {_step.title}
-              </div>
-              <div
-                className={cn(
-                  'w-0 overflow-hidden transition-all',
-                  key === step ? 'w-[34vw]' : 'ml-96',
-                  isClickAction ? 'duration-700' : 'duration-[3000ms]',
-                )}
-              >
-                <div className="w-[34vw]">{_step.content}</div>
+      <SectionTitle
+        title={data.title}
+        subtitle="Discover our journey, values, promises, and impactful results—a concise
+        exploration of Ograviti's commitment to reshaping the future of
+        software solutions."
+        className="text-center md:text-left"
+      />
+      {/* @ts-ignore */}
+      <Swipeable
+        config={defineSwipe({ swipeDistance: 50 })}
+        onSwipeRight={() => {
+          setStep(step === 0 ? 3 : step - 1)
+          restartInterval()
+        }}
+        onSwipeLeft={() => {
+          setStep(step === 3 ? 0 : step + 1)
+          restartInterval()
+        }}
+      >
+        <div className="ml-0 mt-6 flex md:ml-12 2xl:mt-12">
+          {steps.map((_step, key) => (
+            <div
+              className={cn(
+                'w-0 overflow-hidden border-stone-500 pr-0 transition-all md:w-1/6 md:border-l md:pr-12',
+                isClickAction ? 'duration-700' : 'duration-[3000ms]',
+                key === step && 'w-screen border-l border-zinc-100 md:w-2/3',
+              )}
+              key={key}
+            >
+              <div className="md:mr-12">
+                <div
+                  className={cn(
+                    'h-32 rotate-180 cursor-pointer px-4 text-right text-lg transition-all [writing-mode:vertical-lr] 2xl:h-36 2xl:h-44 2xl:text-2xl ',
+                    key === step ? 'text-action-active' : 'text-action',
+                  )}
+                  onClick={() => {
+                    setIsClickAction(true)
+                    setStep(key)
+                    restartInterval()
+                  }}
+                >
+                  {_step.title}
+                </div>
+                <div
+                  className={cn(
+                    'w-0 overflow-hidden transition-all',
+                    key === step ? 'w-full md:w-[46vw]' : 'ml-96',
+                    isClickAction ? 'duration-700' : 'duration-[3000ms]',
+                  )}
+                >
+                  <div className="w-[calc(100vw-60px)] pb-8 md:w-[46vw] md:pb-0">
+                    {_step.content}
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
+          ))}
+        </div>
+      </Swipeable>
+      <div className="flex justify-center gap-3 pt-10 md:hidden">
+        {steps.map((_step, key) => (
+          <div
+            key={key}
+            className={cn(
+              'h-1.5 w-7 rounded-3xl transition-all duration-700',
+              step === key ? 'w-7 bg-zinc-300' : 'w-4 bg-neutral-800',
+            )}
+          />
         ))}
       </div>
     </div>

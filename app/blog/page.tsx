@@ -10,7 +10,16 @@ export default function Page() {
       />
       <div className="grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-3">
         {[...new Array(12)].map((_v, key) => (
-          <BlogCard key={key} />
+          <BlogCard
+            data={{
+              title: 'Look Inside Art',
+              description:
+                'Nunc nulla. Praesent ac massa at ligula laoreet iaculis. Aliquam erat volutpat.',
+              img: '',
+              src: '',
+            }}
+            key={key}
+          />
         ))}
       </div>
     </main>

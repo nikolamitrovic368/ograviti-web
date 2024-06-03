@@ -6,7 +6,7 @@ import Title from '@/components/molecules/title'
 
 export default function Page() {
   return (
-    <main className="flex flex-col gap-8 md:gap-14">
+    <main className="flex flex-col gap-8 md:gap-10 2xl:gap-14">
       <Title
         title="Look inside art"
         subtitle="Nunc nulla. Praesent ac massa at ligula laoreet iaculis. Aliquam erat volutpat. Aenean commodo ligula eget dolor."
@@ -16,13 +16,11 @@ export default function Page() {
         alt="Ograviti Logo"
         width={1280}
         height={686}
-        className="h-[245px] w-full rounded-[45px] object-cover md:h-[686px]"
+        className="h-[245px] w-full rounded-[45px] object-cover xl:h-[400px] 2xl:h-[686px]"
         priority
       />
-      <div className="flex flex-col gap-4 md:gap-8">
-        <Typography variant="h2" className="text-primary">
-          Donec mi odio, faucibus at.
-        </Typography>
+      <div className="flex flex-col gap-4 md:gap-6 2xl:gap-8">
+        <Typography variant="h2">Donec mi odio, faucibus at.</Typography>
         <Typography variant="subtitle2">
           Phasellus volutpat, metus eget egestas mollis, lacus lacus blandit
           dui, id egestas quam mauris ut lacus. Suspendisse feugiat. Vestibulum
@@ -48,7 +46,7 @@ export default function Page() {
       </div>
       <Typography
         variant="subtitle1"
-        className="rounded-[45px] bg-primary-foreground px-6 py-3.5 text-secondary md:px-28 md:py-9"
+        className="rounded-[45px] bg-primary-foreground px-6 py-3.5 text-center text-secondary md:px-16 md:py-5 2xl:px-28 2xl:py-9"
       >
         Phasellus a est. Sed mollis, eros et ultrices tempus, mauris ipsum
         aliquam libero, non adipiscing dolor urna a orci. Cras risus ipsum,
@@ -70,7 +68,7 @@ export default function Page() {
         alt="Ograviti Logo"
         width={1280}
         height={245}
-        className="h-[245px] w-full rounded-[45px] object-cover md:h-[836px]"
+        className="h-[245px] w-full rounded-[45px] object-cover xl:h-[400px] 2xl:h-[686px]"
         priority
       />
 
@@ -102,7 +100,7 @@ export default function Page() {
           alt="Ograviti Logo"
           width={3840}
           height={2561}
-          className="h-[245px] rounded-[45px] object-cover md:h-[439px]"
+          className="h-[245px] rounded-[45px] object-cover md:h-[350px] 2xl:h-[439px]"
           priority
         />
         <Image
@@ -110,7 +108,7 @@ export default function Page() {
           alt="Ograviti Logo"
           width={3840}
           height={2561}
-          className="h-[245px] rounded-[45px] object-cover md:h-[439px]"
+          className="h-[245px] rounded-[45px] object-cover md:h-[350px] 2xl:h-[439px]"
           priority
         />
         <Image
@@ -118,15 +116,13 @@ export default function Page() {
           alt="Ograviti Logo"
           width={3840}
           height={2561}
-          className="h-[245px] rounded-[45px] object-cover md:h-[439px]"
+          className="h-[245px] rounded-[45px] object-cover md:h-[350px] 2xl:h-[439px]"
           priority
         />
       </div>
 
       <div className="flex flex-col gap-4 md:gap-8">
-        <Typography variant="h2" className="text-primary">
-          Donec mi odio, faucibus at.
-        </Typography>
+        <Typography variant="h2">Donec mi odio, faucibus at.</Typography>
         <Typography variant="subtitle2">
           Phasellus volutpat, metus eget egestas mollis, lacus lacus blandit
           dui, id egestas quam mauris ut lacus. Suspendisse feugiat. Vestibulum
@@ -151,9 +147,33 @@ export default function Page() {
           </div>
         </div>
         <div className="flex flex-col gap-8 md:flex-row">
-          <BlogCard />
-          <BlogCard />
-          <BlogCard />
+          <BlogCard
+            data={{
+              title: 'Look Inside Art',
+              description:
+                'Nunc nulla. Praesent ac massa at ligula laoreet iaculis. Aliquam erat volutpat.',
+              img: '',
+              src: '',
+            }}
+          />
+          <BlogCard
+            data={{
+              title: 'Look Inside Art',
+              description:
+                'Nunc nulla. Praesent ac massa at ligula laoreet iaculis. Aliquam erat volutpat.',
+              img: '',
+              src: '',
+            }}
+          />
+          <BlogCard
+            data={{
+              title: 'Look Inside Art',
+              description:
+                'Nunc nulla. Praesent ac massa at ligula laoreet iaculis. Aliquam erat volutpat.',
+              img: '',
+              src: '',
+            }}
+          />
         </div>
       </div>
     </main>

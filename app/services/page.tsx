@@ -11,7 +11,7 @@ export default function Page() {
         title="Our Services"
         subtitle="At Ogravity, we offer a comprehensive range of services to meet your digital needs. From branding to digital marketing, our team is here to help you achieve your goals and stand out in the digital landscape."
       />
-      <div className="flex flex-wrap justify-center 2xl:gap-8">
+      <div className="flex flex-wrap justify-center gap-8 md:gap-4 2xl:gap-8">
         <ServiceStep
           url="/images/services/1.jpg"
           title={
@@ -69,7 +69,7 @@ export default function Page() {
         />
       </div>
       <TransformationStories hideTitle />
-      <div className="md:my-16"></div>
+      <div className="md:my-4 2xl:my-16"></div>
       <ContactForm />
     </main>
   )

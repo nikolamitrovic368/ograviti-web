@@ -2,16 +2,17 @@ import Section1 from '@/components/organisms/home/section1'
 import Section2 from '@/components/organisms/home/section2'
 import Section3 from '@/components/organisms/home/section3'
 import TransformationStories from '@/components/organisms/transformation-stories'
+import { fetchHomeData } from '@/sanity/services/pages/home.service'
 
-export default function Home() {
+export default async function Page() {
+  const data = await fetchHomeData()
+
   return (
-    <main className="md:-mt-14">
-      <Section1 />
-      <div className="hidden flex-col gap-12 md:flex">
-        <Section2 />
-        <Section3 />
-        <TransformationStories />
-      </div>
+    <main className="flex flex-col gap-12 md:-mt-14">
+      <Section1 data={data.brandings} />
+      <Section2 data={data.journey} />
+      <Section3 />
+      <TransformationStories />
     </main>
   )
 }

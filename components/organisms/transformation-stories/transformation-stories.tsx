@@ -6,8 +6,8 @@ import { FreeMode, Pagination } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
 
 import CardSwiper from '@/components/atoms/card-swiper'
-import { Typography } from '@/components/atoms/typography'
-import UserCard from '@/components/molecules/user-card'
+import SectionTitle from '@/components/molecules/section-title'
+import TestimonialCard from '@/components/molecules/testimonial-card'
 
 import { users } from './constants'
 
@@ -17,37 +17,27 @@ export default function TransformationStories({
   hideTitle?: boolean
 }) {
   return (
-    <div className="pt-8 md:pt-14">
+    <div className="">
       {hideTitle || (
-        <>
-          <Typography
-            variant="h2"
-            type="primary"
-            className="max-md:text-center"
-          >
-            Stories of Transformation with Ograviti
-          </Typography>
-          <Typography
-            variant="subtitle2"
-            className="py-2 max-md:text-center md:w-2/3"
-          >
-            Discover the resonance of Ograviti&apos;s impact through firsthand
+        <SectionTitle
+          className="text-center md:text-left"
+          title="Stories of Transformation with Ograviti"
+          subtitle="Discover the resonance of Ograviti's impact through firsthand
             experiences. From CEOs to industry experts, explore the
             transformative journeys shared by our clients and partners, echoing
             the essence of our commitment, innovation, and strategic
-            collaboration.
-          </Typography>
-        </>
+            collaboration."
+        />
       )}
-      <div className="pt-8 md:pt-20">
+      <div className="pt-8 md:pt-12 2xl:pt-20">
         <div className="w-full md:hidden">
           <CardSwiper
             cards={users.map((user, k) => (
-              <UserCard user={user} key={k} />
+              <TestimonialCard data={user} key={k} />
             ))}
           />
         </div>
-        <div className="max-md:hidden">
+        <div className="-mx-8 max-md:hidden xl:-mx-16 2xl:-mx-28">
           <Swiper
             slidesPerView="auto"
             spaceBetween={32}
@@ -59,12 +49,13 @@ export default function TransformationStories({
               clickable: true,
               bulletClass: 'hidden',
             }}
+            className="!px-8"
             slideToClickedSlide
             modules={[FreeMode, Pagination]}
           >
             {users.map((user, k) => (
               <SwiperSlide key={k} className="!w-auto select-none">
-                <UserCard user={user} />
+                <TestimonialCard data={user} />
               </SwiperSlide>
             ))}
           </Swiper>

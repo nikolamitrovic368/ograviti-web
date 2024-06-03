@@ -15,7 +15,7 @@ export default function LogoBackground({
   return (
     <div
       className={cn(
-        'relative -mx-8 flex h-[501px] items-center justify-end overflow-hidden md:h-[958px] xl:-mx-16 2xl:-mx-28',
+        'relative -mx-8 flex h-[501px] items-center justify-end overflow-hidden md:h-[80vh] xl:-mx-16 2xl:-mx-28',
         className,
       )}
     >

@@ -14,7 +14,7 @@ export default function Page() {
           subtitle="Join Ograviti as a Full Stack Developer to shape the digital future. Contribute to cutting-edge projects, redefine industry standards, and be part of a culture that values creativity and collaboration"
         />
         <div className="flex flex-col gap-4 md:w-2/3 md:gap-8">
-          <Typography variant="h2" className="text-primary md:py-0">
+          <Typography variant="h2" className="md:py-0">
             Background
           </Typography>
           <Typography variant="subtitle2">
@@ -35,7 +35,7 @@ export default function Page() {
           </Typography>
         </div>
         <div className="flex flex-col gap-4 md:w-2/3 md:gap-8">
-          <Typography variant="h2" className="text-primary md:py-0">
+          <Typography variant="h2" className="md:py-0">
             Requirements
           </Typography>
           <Typography variant="subtitle2">
@@ -67,7 +67,7 @@ export default function Page() {
           </Typography>
         </div>
         <div className="flex flex-col gap-4 md:w-2/3 md:gap-8">
-          <Typography variant="h2" className="text-primary md:py-0">
+          <Typography variant="h2" className="md:py-0">
             Benefits
           </Typography>
           <Typography variant="subtitle2">
@@ -103,7 +103,7 @@ export default function Page() {
         <Typography variant="subtitle1" className="text-center text-3xl">
           Are you interested?
         </Typography>
-        <div className="flex flex-col items-center justify-center gap-14 md:gap-24">
+        <div className="flex flex-col items-center justify-center gap-14 md:gap-16 2xl:gap-24">
           <div className="grid w-full grid-cols-1 justify-center gap-8 md:w-auto md:grid-cols-2">
             <Input
               label="First Name"

@@ -7,12 +7,13 @@ const typographyVariants = cva('', {
   variants: {
     variant: {
       default: '',
-      h1: 'text-3xl md:text-6xl xl:text-[80px] leading-10 md:leading-[60px] xl:leading-[100px] font-bold',
-      h2: 'text-2xl md:text-5xl font-bold md:py-6 ',
-      h3: 'text-lg md:text-4xl font-bold md:py-6 ',
+      h1: 'text-3xl md:text-5xl 2xl:text-[80px] leading-10 md:leading-[80px] 2xl:leading-[100px] font-bold',
+      h2: 'text-2xl md:text-3xl 2xl:text-5xl font-bold text-primary',
+      h3: 'text-lg md:text-3xl 2xl:text-4xl font-bold ',
       subtitle1:
-        'text-sm md:text-3xl xl:text-3xl leading-6 md:leading-10 xl:leading-[50px]',
-      subtitle2: 'text-sm md:text-2xl leading-[24px] md:leading-9',
+        'text-sm md:text-xl 2xl:text-3xl leading-6 md:leading-10 xl:leading-8 2xl:leading-[50px]',
+      subtitle2:
+        'text-sm md:text-lg 2xl:text-2xl leading-[24px] md:leading-7 2xl:leading-9',
       subtitle3: 'text-lg',
       small: 'max-md:text-sm',
     },

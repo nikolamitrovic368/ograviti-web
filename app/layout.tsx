@@ -1,13 +1,11 @@
 import '@/styles/globals.css'
 
 import { Lato } from 'next/font/google'
-import { Suspense } from 'react'
+import { draftMode } from 'next/headers'
+import { VisualEditing } from 'next-sanity'
 
 import Footer from '@/components/organisms/footer'
 import Header from '@/components/organisms/header'
-import { cn } from '@/utils/tailwind'
-
-import Loading from './loading'
 
 const lato = Lato({
   subsets: ['latin'],
@@ -21,12 +19,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={cn(lato.className, 'overflow-x-hidden')}>
-        <Suspense fallback={<Loading />}>
-          <Header />
-          <div className="px-8 xl:px-16 2xl:px-28">{children}</div>
-          <Footer />
-        </Suspense>
+      <body className={lato.className}>
+        <Header />
+        <div className="px-8 xl:px-16 2xl:px-28">{children}</div>
+        <Footer />
+        {draftMode().isEnabled && <VisualEditing />}
       </body>
     </html>
   )
