@@ -50,14 +50,17 @@ export default function Section1({ data }: { data: Brandings }) {
           axis="vertical"
         >
           {steps.map(step => (
-            <div key={step.title} className="w-[400px]">
+            <div
+              key={step.title}
+              className="h-[200px] overflow-hidden xl:h-[300px]"
+            >
               <Link
                 href="/services/4"
                 className="block pb-4 text-left text-4xl font-bold text-primary md:text-3xl 2xl:text-5xl"
               >
                 {step.title}
               </Link>
-              <div className="w-[200px] py-1 text-left text-base/9 md:w-[300px] md:text-lg 2xl:text-2xl/10">
+              <div className="w-[200px] py-1 text-left text-base/9 md:w-[250px] md:text-lg 2xl:w-[350px] 2xl:text-2xl/10">
                 {step.subtitle}
               </div>
             </div>
