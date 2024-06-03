@@ -147,9 +147,33 @@ export default function Page() {
           </div>
         </div>
         <div className="flex flex-col gap-8 md:flex-row">
-          <BlogCard />
-          <BlogCard />
-          <BlogCard />
+          <BlogCard
+            data={{
+              title: 'Look Inside Art',
+              description:
+                'Nunc nulla. Praesent ac massa at ligula laoreet iaculis. Aliquam erat volutpat.',
+              img: '',
+              src: '',
+            }}
+          />
+          <BlogCard
+            data={{
+              title: 'Look Inside Art',
+              description:
+                'Nunc nulla. Praesent ac massa at ligula laoreet iaculis. Aliquam erat volutpat.',
+              img: '',
+              src: '',
+            }}
+          />
+          <BlogCard
+            data={{
+              title: 'Look Inside Art',
+              description:
+                'Nunc nulla. Praesent ac massa at ligula laoreet iaculis. Aliquam erat volutpat.',
+              img: '',
+              src: '',
+            }}
+          />
         </div>
       </div>
     </main>
