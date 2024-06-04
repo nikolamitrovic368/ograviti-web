@@ -19,10 +19,33 @@ export type Journey = {
   step4: Step
 }
 
-type Step = {
-  subtitle: string
+export type TestimonialCard = {
+  image: Image
+  name: string
+  rate: number
+  description: string
+  role: string
+  _id: string
+}
+
+export type TestimonialCards = TestimonialCard[]
+
+export type CaseStudy = {
   title: string
-  image?: {
+  subtitle: string
+}
+
+export type Testimonial = {
+  title: string
+  subtitle: string
+  testimonialCards: TestimonialCards
+}
+
+export type Step = {
+  name: string
+  title: string
+  subtitle: string
+  media?: {
     image: Image
     position: 'bottom' | 'left' | 'top'
   }
@@ -30,16 +53,17 @@ type Step = {
 
 export type HomeType = {
   _id: string
-  caseStudy: {
-    title: string
-    subtitle: string
-  }
+  caseStudy: CaseStudy
   brandings: Brandings
-  testimonial: {
-    title: string
-    subtitle: string
-  }
+  testimonial: Testimonial
   journey: Journey
 }
 
-export const homeQuery = groq`*[_type == "home"][0]`
+export const homeQuery = groq`
+*[_type == "home"][0] {
+  ..., 
+  testimonial{
+    ...,
+    testimonialCards[]->
+  }
+}`

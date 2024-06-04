@@ -8,32 +8,31 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import CardSwiper from '@/components/atoms/card-swiper'
 import SectionTitle from '@/components/molecules/section-title'
 import TestimonialCard from '@/components/molecules/testimonial-card'
+import { Testimonial } from '@/sanity/queries/pages/home.query'
 
 import { users } from './constants'
 
 export default function TransformationStories({
   hideTitle = false,
+  data,
 }: {
   hideTitle?: boolean
+  data: Testimonial
 }) {
   return (
     <div className="">
       {hideTitle || (
         <SectionTitle
           className="text-center md:text-left"
-          title="Stories of Transformation with Ograviti"
-          subtitle="Discover the resonance of Ograviti's impact through firsthand
-            experiences. From CEOs to industry experts, explore the
-            transformative journeys shared by our clients and partners, echoing
-            the essence of our commitment, innovation, and strategic
-            collaboration."
+          title={data.title}
+          subtitle={data.subtitle}
         />
       )}
       <div className="pt-8 md:pt-12 2xl:pt-20">
         <div className="w-full md:hidden">
           <CardSwiper
-            cards={users.map((user, k) => (
-              <TestimonialCard data={user} key={k} />
+            cards={data.testimonialCards.map((card, k) => (
+              <TestimonialCard data={card} key={k} />
             ))}
           />
         </div>
@@ -53,7 +52,7 @@ export default function TransformationStories({
             slideToClickedSlide
             modules={[FreeMode, Pagination]}
           >
-            {users.map((user, k) => (
+            {data.testimonialCards.map((user, k) => (
               <SwiperSlide key={k} className="!w-auto select-none">
                 <TestimonialCard data={user} />
               </SwiperSlide>

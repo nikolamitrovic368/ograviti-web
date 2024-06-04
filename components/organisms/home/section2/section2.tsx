@@ -2,15 +2,14 @@
 import { useEffect, useRef, useState } from 'react'
 import { defineSwipe, Swipeable } from 'react-touch'
 
+import JourneyStep from '@/components/molecules/journey-step'
 import SectionTitle from '@/components/molecules/section-title'
 import { Journey } from '@/sanity/queries/pages/home.query'
 import { cn } from '@/utils/tailwind'
 
-import { steps } from './constants'
-
 export default function Section2({ data }: { data: Journey }) {
   const interval = useRef<any>()
-  const [step, setStep] = useState(3)
+  const [step, setStep] = useState(2)
   const [isClickAction, setIsClickAction] = useState(false)
   function autoNextStep() {
     setIsClickAction(false)
@@ -30,9 +29,7 @@ export default function Section2({ data }: { data: Journey }) {
     <div>
       <SectionTitle
         title={data.title}
-        subtitle="Discover our journey, values, promises, and impactful results—a concise
-        exploration of Ograviti's commitment to reshaping the future of
-        software solutions."
+        subtitle={data.subtitle}
         className="text-center md:text-left"
       />
       {/* @ts-ignore */}
@@ -48,47 +45,49 @@ export default function Section2({ data }: { data: Journey }) {
         }}
       >
         <div className="ml-0 mt-6 flex md:ml-12 2xl:mt-12">
-          {steps.map((_step, key) => (
-            <div
-              className={cn(
-                'w-0 overflow-hidden border-stone-500 pr-0 transition-all md:w-1/6 md:border-l md:pr-12',
-                isClickAction ? 'duration-700' : 'duration-[3000ms]',
-                key === step && 'w-screen border-l border-zinc-100 md:w-2/3',
-              )}
-              key={key}
-            >
-              <div className="md:mr-12">
-                <div
-                  className={cn(
-                    'h-32 rotate-180 cursor-pointer px-4 text-right text-lg transition-all [writing-mode:vertical-lr] 2xl:h-36 2xl:h-44 2xl:text-2xl ',
-                    key === step ? 'text-action-active' : 'text-action',
-                  )}
-                  onClick={() => {
-                    setIsClickAction(true)
-                    setStep(key)
-                    restartInterval()
-                  }}
-                >
-                  {_step.title}
-                </div>
-                <div
-                  className={cn(
-                    'w-0 overflow-hidden transition-all',
-                    key === step ? 'w-full md:w-[46vw]' : 'ml-96',
-                    isClickAction ? 'duration-700' : 'duration-[3000ms]',
-                  )}
-                >
-                  <div className="w-[calc(100vw-60px)] pb-8 md:w-[46vw] md:pb-0">
-                    {_step.content}
+          {[data.step1, data.step2, data.step3, data.step4].map(
+            (_step, key) => (
+              <div
+                className={cn(
+                  'w-0 overflow-hidden border-stone-500 pr-0 transition-all md:w-1/6 md:border-l md:pr-12',
+                  isClickAction ? 'duration-700' : 'duration-[3000ms]',
+                  key === step && 'w-screen border-l border-zinc-100 md:w-2/3',
+                )}
+                key={key}
+              >
+                <div className="md:mr-12">
+                  <div
+                    className={cn(
+                      'h-32 rotate-180 cursor-pointer px-4 text-right text-lg transition-all [writing-mode:vertical-lr] 2xl:h-36 2xl:h-44 2xl:text-2xl ',
+                      key === step ? 'text-action-active' : 'text-action',
+                    )}
+                    onClick={() => {
+                      setIsClickAction(true)
+                      setStep(key)
+                      restartInterval()
+                    }}
+                  >
+                    {_step.name}
+                  </div>
+                  <div
+                    className={cn(
+                      'w-0 overflow-hidden transition-all',
+                      key === step ? 'w-full md:w-[46vw]' : 'ml-96',
+                      isClickAction ? 'duration-700' : 'duration-[3000ms]',
+                    )}
+                  >
+                    <div className="w-[calc(100vw-60px)] pb-8 md:w-[46vw] md:pb-0">
+                      <JourneyStep data={_step} />
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ),
+          )}
         </div>
       </Swipeable>
       <div className="flex justify-center gap-3 pt-10 md:hidden">
-        {steps.map((_step, key) => (
+        {[...new Array(4)].map((_step, key) => (
           <div
             key={key}
             className={cn(

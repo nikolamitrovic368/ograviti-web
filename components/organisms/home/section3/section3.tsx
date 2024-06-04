@@ -2,18 +2,12 @@ import CardSwiper from '@/components/atoms/card-swiper'
 import CaseStudyCard from '@/components/molecules/case-study-card'
 import Companies from '@/components/molecules/companies'
 import SectionTitle from '@/components/molecules/section-title'
+import { CaseStudy } from '@/sanity/queries/pages/home.query'
 
-export default function Section3() {
+export default function Section3({ data }: { data: CaseStudy }) {
   return (
     <div className="pt-14">
-      <SectionTitle
-        title="Realizing Possibilities, One Solution at a Time"
-        subtitle=" Embark on a journey through our Case Studies, where real-world
-      challenges meet innovative solutions. Explore how Ograviti transforms
-      possibilities into success stories, showcasing the tangible impact of
-      our tailored solutions in diverse business landscapes."
-        className="text-center md:text-left"
-      />
+      <SectionTitle title={data.title} subtitle={data.subtitle} />
       <div className="py-5 md:hidden">
         <CardSwiper
           cards={[

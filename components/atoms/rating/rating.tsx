@@ -7,7 +7,7 @@ import { Star } from '../icons'
 export default function Rating({ className, ...props }: RatingProps) {
   return (
     <OriginRating
-      initialValue={5}
+      initialValue={3}
       className={cn(
         '[&>.empty-icons]:flex [&>.empty-icons]:gap-1 [&>.filled-icons]:flex [&>.filled-icons]:gap-1',
         className,
@@ -19,7 +19,7 @@ export default function Rating({ className, ...props }: RatingProps) {
       }
       emptyIcon={
         <div>
-          <Star className="inline" />
+          <Star className="inline [&_path]:fill-white" />
         </div>
       }
       {...props}

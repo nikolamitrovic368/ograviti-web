@@ -27,10 +27,7 @@ export default function CaseStudyCard({
               alt=""
               width={376}
               height={599}
-              className="flex h-[calc(60vh-165px)] w-full items-center justify-center overflow-hidden rounded-[34.38px] bg-cover bg-center bg-no-repeat transition-all duration-500 ease-smart md:h-[calc(60vh-24px)] md:group-hover:h-[calc(60vh-165px)] 2xl:group-hover:h-[calc(60vh-210px)]"
-              style={{
-                backgroundImage: `url(/images/card/1.png)`,
-              }}
+              className="flex h-[calc(60vh-165px)] w-full items-center justify-center overflow-hidden rounded-[34.38px] object-cover transition-all duration-500 ease-smart md:h-[calc(60vh-24px)] md:group-hover:h-[calc(60vh-165px)] 2xl:group-hover:h-[calc(60vh-210px)]"
             ></Image>
             <div className="flex h-20 items-center justify-center overflow-hidden bg-gradient-to-r from-white to-secondary bg-clip-text text-center text-6xl text-transparent md:text-[4vw] 2xl:h-28">
               {title}

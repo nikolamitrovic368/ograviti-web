@@ -11,8 +11,8 @@ export default async function Page() {
     <main className="flex flex-col gap-12 md:-mt-14">
       <Section1 data={data.brandings} />
       <Section2 data={data.journey} />
-      <Section3 />
-      <TransformationStories />
+      <Section3 data={data.caseStudy} />
+      <TransformationStories data={data.testimonial} />
     </main>
   )
 }
