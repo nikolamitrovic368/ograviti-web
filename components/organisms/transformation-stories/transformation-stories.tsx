@@ -10,8 +10,6 @@ import SectionTitle from '@/components/molecules/section-title'
 import TestimonialCard from '@/components/molecules/testimonial-card'
 import { Testimonial } from '@/sanity/queries/pages/home.query'
 
-import { users } from './constants'
-
 export default function TransformationStories({
   hideTitle = false,
   data,

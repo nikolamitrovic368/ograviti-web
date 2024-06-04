@@ -8,7 +8,8 @@ import Companies from '@/components/molecules/companies'
 import ProfileCard from '@/components/molecules/profile-card'
 import Title from '@/components/molecules/title'
 import ContactForm from '@/components/organisms/contact-form'
-import TransformationStories from '@/components/organisms/transformation-stories'
+// TODO:
+// import TransformationStories from '@/components/organisms/transformation-stories'
 
 export default function Page() {
   return (
@@ -220,7 +221,8 @@ export default function Page() {
         </div>
       </LogoBackground>
 
-      <TransformationStories />
+      {/* TODO: fill out real data */}
+      {/* <TransformationStories /> */}
       <div className="xl:my-4 2xl:my-16"></div>
       <ContactForm />
     </main>

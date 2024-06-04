@@ -2,7 +2,7 @@ import { Step1, Step2, Step3, Step4, Step5 } from '@/components/atoms/icons'
 import ServiceStep from '@/components/molecules/service-step'
 import Title from '@/components/molecules/title'
 import ContactForm from '@/components/organisms/contact-form'
-import TransformationStories from '@/components/organisms/transformation-stories'
+// import TransformationStories from '@/components/organisms/transformation-stories'
 
 export default function Page() {
   return (
@@ -68,7 +68,8 @@ export default function Page() {
           icon={Step5}
         />
       </div>
-      <TransformationStories hideTitle />
+      {/* TODO: fill out */}
+      {/* <TransformationStories hideTitle /> */}
       <div className="md:my-4 2xl:my-16"></div>
       <ContactForm />
     </main>
