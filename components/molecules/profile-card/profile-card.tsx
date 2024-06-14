@@ -3,17 +3,11 @@ import Link from 'next/link'
 import { Instagram, Linkedin, Youtube } from '@/components/atoms/icons'
 import Facebook from '@/components/atoms/icons/facebook'
 import { Typography } from '@/components/atoms/typography'
+import { TeamMember } from '@/sanity/types'
 import { cn } from '@/utils/tailwind'
 
 type ProfileCardProps = {
-  data: {
-    name: string
-    role: string
-    linkedin: string
-    facebook: string
-    instagram: string
-    youtube: string
-  }
+  data: TeamMember
   className?: string
 }
 export default function ProfileCard({

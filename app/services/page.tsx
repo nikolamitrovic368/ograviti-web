@@ -68,8 +68,6 @@ export default function Page() {
           icon={Step5}
         />
       </div>
-      {/* TODO: fill out */}
-      {/* <TransformationStories hideTitle /> */}
       <div className="md:my-4 2xl:my-16"></div>
       <ContactForm />
     </main>
