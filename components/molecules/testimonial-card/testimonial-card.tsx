@@ -19,13 +19,11 @@ export default function TestimonialCard({
       </div>
       <div className="flex flex-col items-center justify-center">
         <Rating className="pb-6" initialValue={rate} readonly />
-        {imageProps && (
-          <Image
-            {...imageProps}
-            className="h-12 w-12 rounded-full object-cover"
-            alt="user-avatar"
-          />
-        )}
+        <Image
+          {...imageProps!}
+          className="h-12 w-12 rounded-full object-cover"
+          alt="user-avatar"
+        />
         <div className="py-1 text-lg font-semibold text-white md:text-base">
           {name}
         </div>

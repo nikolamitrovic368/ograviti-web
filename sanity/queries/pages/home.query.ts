@@ -1,6 +1,6 @@
 import { groq } from 'next-sanity'
 
-import { Image } from '@/sanity/types'
+import { Image, Slug } from '@/sanity/types'
 
 export type Brandings = {
   uiuxSubtitle: string
@@ -30,9 +30,18 @@ export type TestimonialCard = {
 
 export type TestimonialCards = TestimonialCard[]
 
-export type CaseStudy = {
+export type CaseStudies = {
   title: string
   subtitle: string
+  relatedCaseStudies: CaseStudyCard[]
+}
+
+export type CaseStudyCard = {
+  _id: string
+  title: string
+  description: string
+  slug: Slug
+  image: Image
 }
 
 export type Testimonial = {
@@ -53,7 +62,7 @@ export type Step = {
 
 export type HomeType = {
   _id: string
-  caseStudy: CaseStudy
+  caseStudies: CaseStudies
   brandings: Brandings
   testimonial: Testimonial
   journey: Journey
@@ -65,5 +74,11 @@ export const homeQuery = groq`
   testimonial{
     ...,
     testimonialCards[]->
+  },
+  caseStudies{
+    ...,
+    relatedCaseStudies[]->{
+      _id, title, description, slug, image
+    }
   }
 }`

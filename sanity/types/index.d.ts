@@ -5,3 +5,8 @@ export type Image = {
     _ref: string
   }
 }
+
+export type Slug = {
+  current: string
+  _type: 'slug'
+}
