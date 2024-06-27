@@ -12,9 +12,11 @@ export default function SanityImage({
   ...props
 }: {
   image: SanityImage
-  className: string
-  alt: string
+  className?: string
+  alt?: string
 }) {
   const imageProps = useSanityImage(image)
-  return <Image alt={alt} {...imageProps!} className={className} {...props} />
+  return (
+    <Image alt={alt ?? ''} {...imageProps!} className={className} {...props} />
+  )
 }

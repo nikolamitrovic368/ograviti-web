@@ -4,7 +4,7 @@ import React from 'react'
 
 import useSanityImage from '@/hooks/useSanityImage'
 import { Step } from '@/sanity/queries/pages/home.query'
-import { cn } from '@/utils/tailwind'
+import { cn } from '@/utils/common'
 
 export default function JourneyStep({ data }: { data: Step }) {
   const position = stegaClean(data.media?.position)

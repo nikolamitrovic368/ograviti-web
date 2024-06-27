@@ -1,5 +1,8 @@
 import { fetchSanity } from '@/sanity/fetch'
-import { aboutUsQuery, AboutUsType } from '@/sanity/queries/pages/aboutUs.query'
+import {
+  aboutUsPageQuery,
+  AboutUsPageType,
+} from '@/sanity/queries/pages/aboutUs.query'
 
-export const fetchAboutUsData = () =>
-  fetchSanity<AboutUsType>(aboutUsQuery, { tags: ['aboutUsPage'] })
+export const fetchAboutUsPageData = () =>
+  fetchSanity<AboutUsPageType>(aboutUsPageQuery, { tags: ['aboutUsPage'] })

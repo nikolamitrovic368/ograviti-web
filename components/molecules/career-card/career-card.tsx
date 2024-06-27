@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { IconButton } from '@/components/atoms/icon-button'
 import Enter from '@/components/atoms/icons/enter'
 import { Typography } from '@/components/atoms/typography'
-import { cn } from '@/utils/tailwind'
+import { cn } from '@/utils/common'
 
 type CareerCardProps = {
   career?: {

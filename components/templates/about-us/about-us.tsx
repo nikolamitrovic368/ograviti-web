@@ -9,9 +9,9 @@ import ProfileCard from '@/components/molecules/profile-card'
 import Title from '@/components/molecules/title'
 import ContactForm from '@/components/organisms/contact-form'
 import TransformationStories from '@/components/organisms/transformation-stories'
-import { AboutUsType } from '@/sanity/queries/pages/aboutUs.query'
+import { AboutUsPageType } from '@/sanity/queries/pages/aboutUs.query'
 
-type AboutUsProps = { data: AboutUsType }
+type AboutUsProps = { data: AboutUsPageType }
 
 export default function AboutUs({ data }: AboutUsProps) {
   return (

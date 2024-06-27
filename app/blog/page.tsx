@@ -1,25 +1,15 @@
 import BlogCard from '@/components/molecules/blog-card'
 import Title from '@/components/molecules/title'
+import { fetchBlogPageData } from '@/sanity/services/pages/blog.service'
 
-export default function Page() {
+export default async function Page() {
+  const data = await fetchBlogPageData()
   return (
     <main className="flex flex-col gap-8 md:gap-14">
-      <Title
-        title="Our Blog"
-        subtitle="Exploring Insights and Innovations, Dive into the Ograviti Blog for the Latest in Technology, Design, and Digital Transformation."
-      />
+      <Title title={data.title} subtitle={data.subtitle} />
       <div className="grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-3">
-        {[...new Array(12)].map((_v, key) => (
-          <BlogCard
-            data={{
-              title: 'Look Inside Art',
-              description:
-                'Nunc nulla. Praesent ac massa at ligula laoreet iaculis. Aliquam erat volutpat.',
-              img: '',
-              src: '',
-            }}
-            key={key}
-          />
+        {data.blogs.map((blog, key) => (
+          <BlogCard data={blog} key={key} />
         ))}
       </div>
     </main>

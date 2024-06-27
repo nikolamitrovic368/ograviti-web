@@ -1,3 +1,7 @@
+import { BlogCard } from '@/components/molecules/blog-card'
+
+import { ImageProps } from '../queries/components/imageProps'
+
 export type Image = {
   _type: 'image'
   asset: {
@@ -31,5 +35,17 @@ export type TeamMember = {
   _rev: string
   name: string
 }
+
+export type TeamMembers = TeamMember[]
+
+export type BlogCard = {
+  _id: string
+  title: string
+  subtitle: string
+  image: ImageProps
+  slug: Slug
+}
+
+export type BlogCards = BlogCard[]
 
 export type TeamMembers = TeamMember[]

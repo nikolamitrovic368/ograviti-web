@@ -1,7 +1,7 @@
 import AboutUs from '@/components/templates/about-us'
-import { fetchAboutUsData } from '@/sanity/services/pages/aboutUs.service'
+import { fetchAboutUsPageData } from '@/sanity/services/pages/aboutUs.service'
 
 export default async function Page() {
-  const data = await fetchAboutUsData()
+  const data = await fetchAboutUsPageData()
   return <AboutUs data={data} />
 }

@@ -15,7 +15,7 @@ export type ContactUs = {
   ctaText: string
 }
 
-export type AboutUsType = {
+export type AboutUsPageType = {
   _id: string
   title: string
   subtitle: string
@@ -33,8 +33,8 @@ export type AboutUsType = {
   testimonial: Testimonial
 }
 
-export const aboutUsQuery = groq`
-*[_type == "aboutUs"][0] {
+export const aboutUsPageQuery = groq`
+*[_type == "aboutUsPage"][0] {
   ..., 
   ourTeam{
     ...,

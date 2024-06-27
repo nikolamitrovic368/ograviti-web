@@ -4,3 +4,6 @@ export type ChildrenProps = {
   children: ReactNode
 }
 
+export type SlugProps = {
+  params: { slug: string };
+};

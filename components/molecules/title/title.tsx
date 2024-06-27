@@ -1,5 +1,5 @@
 import { Typography } from '@/components/atoms/typography'
-import { cn } from '@/utils/tailwind'
+import { cn } from '@/utils/common'
 
 export default function Title({
   title,

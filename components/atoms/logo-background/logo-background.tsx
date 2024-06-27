@@ -3,7 +3,7 @@ import { motion } from 'framer-motion'
 import Image from 'next/image'
 import { Fragment, ReactNode } from 'react'
 
-import { cn } from '@/utils/tailwind'
+import { cn } from '@/utils/common'
 
 export default function LogoBackground({
   children,

@@ -11,7 +11,7 @@ import { defineSwipe, Swipeable } from 'react-touch'
 import { IconButton } from '@/components/atoms/icon-button'
 import { Left, Right } from '@/components/atoms/icons'
 import { Brandings } from '@/sanity/queries/pages/home.query'
-import { cn } from '@/utils/tailwind'
+import { cn } from '@/utils/common'
 
 import { mapSteps } from './constants'
 

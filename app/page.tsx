@@ -2,10 +2,10 @@ import Section1 from '@/components/organisms/home/section1'
 import Section2 from '@/components/organisms/home/section2'
 import Section3 from '@/components/organisms/home/section3'
 import TransformationStories from '@/components/organisms/transformation-stories'
-import { fetchHomeData } from '@/sanity/services/pages/home.service'
+import { fetchHomePageData } from '@/sanity/services/pages/home.service'
 
 export default async function Page() {
-  const data = await fetchHomeData()
+  const data = await fetchHomePageData()
 
   return (
     <main className="flex flex-col gap-12 md:-mt-14">

@@ -45,7 +45,7 @@ export type Step = {
   }
 }
 
-export type HomeType = {
+export type HomePageType = {
   _id: string
   caseStudies: CaseStudies
   brandings: Brandings
@@ -53,8 +53,8 @@ export type HomeType = {
   journey: Journey
 }
 
-export const homeQuery = groq`
-*[_type == "home"][0] {
+export const homePageQuery = groq`
+*[_type == "homePage"][0] {
   ..., 
   "testimonial" : ${testimonialField},
   caseStudies{

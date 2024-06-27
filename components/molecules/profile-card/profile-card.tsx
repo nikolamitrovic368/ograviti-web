@@ -4,7 +4,7 @@ import { Instagram, Linkedin, Youtube } from '@/components/atoms/icons'
 import Facebook from '@/components/atoms/icons/facebook'
 import { Typography } from '@/components/atoms/typography'
 import { TeamMember } from '@/sanity/types'
-import { cn } from '@/utils/tailwind'
+import { cn } from '@/utils/common'
 
 type ProfileCardProps = {
   data: TeamMember

@@ -5,7 +5,7 @@ import { Ograviti } from '@/components/atoms/icons'
 import { Typography } from '@/components/atoms/typography'
 import Socials from '@/components/molecules/socials/socials'
 import { footerNavigationConfig } from '@/constants/navigation'
-import { cn } from '@/utils/tailwind'
+import { cn } from '@/utils/common'
 
 export default function Footer() {
   return (

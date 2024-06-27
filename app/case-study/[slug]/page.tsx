@@ -1,8 +1,9 @@
 import Image from 'next/image'
 
-import CardSwiper from '@/components/atoms/card-swiper'
+// TODO: fill out CaseStudy data from Sanity CMS
+// import CardSwiper from '@/components/atoms/card-swiper'
 import { Typography } from '@/components/atoms/typography'
-import CaseStudyCard from '@/components/molecules/case-study-card'
+// import CaseStudyCard from '@/components/molecules/case-study-card'
 import SectionTitle from '@/components/molecules/section-title'
 
 export default function Page() {
@@ -190,7 +191,7 @@ export default function Page() {
         <Typography variant="subtitle1" className="hidden md:block">
           Other case studies
         </Typography>
-        <div className="md:hidden">
+        {/* <div className="md:hidden">
           <CardSwiper
             cards={[
               <CaseStudyCard
@@ -232,7 +233,7 @@ export default function Page() {
               />
             </div>
           ))}
-        </div>
+        </div> */}
       </div>
     </main>
   )

@@ -1,7 +1,7 @@
 import { cva, type VariantProps } from 'class-variance-authority'
 import * as React from 'react'
 
-import { cn } from '@/utils/tailwind'
+import { cn } from '@/utils/common'
 
 const iconButtonVariants = cva(
   'flex justify-center items-center transition-colors duration-300',

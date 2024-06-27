@@ -5,7 +5,7 @@ import { defineSwipe, Swipeable } from 'react-touch'
 import JourneyStep from '@/components/molecules/journey-step'
 import SectionTitle from '@/components/molecules/section-title'
 import { Journey } from '@/sanity/queries/pages/home.query'
-import { cn } from '@/utils/tailwind'
+import { cn } from '@/utils/common'
 
 export default function Section2({ data }: { data: Journey }) {
   const interval = useRef<any>()

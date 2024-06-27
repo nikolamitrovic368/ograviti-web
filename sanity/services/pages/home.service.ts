@@ -1,5 +1,5 @@
 import { fetchSanity } from '@/sanity/fetch'
-import { homeQuery, HomeType } from '@/sanity/queries/pages/home.query'
+import { homePageQuery, HomePageType } from '@/sanity/queries/pages/home.query'
 
-export const fetchHomeData = () =>
-  fetchSanity<HomeType>(homeQuery, { tags: ['homePage'] })
+export const fetchHomePageData = () =>
+  fetchSanity<HomePageType>(homePageQuery, { tags: ['homePage'] })

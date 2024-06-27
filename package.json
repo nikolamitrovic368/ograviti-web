@@ -6,9 +6,9 @@
     "dev": "next dev --port 3003",
     "format": "npx prettier --write .",
     "lint": "next lint",
+    "type-check": "tsc --noEmit --pretty",
     "build": "next build",
-    "start": "next start",
-    "type-check": "tsc --noEmit --pretty"
+    "start": "next start"
   },
   "dependencies": {
     "@headlessui/react": "^2.0.3",

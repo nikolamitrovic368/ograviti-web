@@ -1,4 +1,4 @@
-import { cn } from '@/utils/tailwind'
+import { cn } from '@/utils/common'
 
 export default function Step5({ className }: { className?: string }) {
   return (

@@ -1,6 +1,6 @@
 import { Rating as OriginRating, RatingProps } from 'react-simple-star-rating'
 
-import { cn } from '@/utils/tailwind'
+import { cn } from '@/utils/common'
 
 import { Star } from '../icons'
 
