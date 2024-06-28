@@ -2,7 +2,7 @@ import Image from 'next/image'
 
 import Rating from '@/components/atoms/rating'
 import useSanityImage from '@/hooks/useSanityImage'
-import { type TestimonialCard } from '@/sanity/queries/pages/home.query'
+import { type TestimonialCard } from '@/sanity/queries/components/testimonialProps'
 
 type TestimonialCardProps = {
   data: TestimonialCard
