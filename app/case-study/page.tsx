@@ -5,7 +5,6 @@ import { fetchCaseStudyPageData } from '@/sanity/services/pages/caseStudy.servic
 
 export default async function Page() {
   const data = await fetchCaseStudyPageData()
-
   return (
     <main className="flex flex-col gap-8 md:gap-14">
       <Title title={data.title} subtitle={data.subtitle} />
