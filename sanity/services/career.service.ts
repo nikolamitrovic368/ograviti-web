@@ -1,6 +1,6 @@
 import { fetchSanity } from '@/sanity/fetch'
 
-import { blogQuery, BlogType } from '../queries/blog.queries'
+import { careerQuery, CareerType } from '../queries/career.queries'
 
-export const fetchBlogData = (slug: string) =>
-  fetchSanity<BlogType>(blogQuery, { tags: ['blog'], params: { slug } })
+export const fetchCareerData = (slug: string) =>
+  fetchSanity<CareerType>(careerQuery, { tags: ['career'], params: { slug } })
