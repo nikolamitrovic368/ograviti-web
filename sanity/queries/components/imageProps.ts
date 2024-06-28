@@ -1,22 +1,25 @@
 import { groq } from 'next-sanity'
 
 export type ImageProps = {
-  url: string
-  metadata: {
-    dimensions: { width: number; height: number }
-  }
+  src: string
+  width: number
+  height: number
 }
+
+export type Images = ImageProps[]
 
 export const imageProps = groq`
 {
-  url,
-  metadata { dimensions { width, height }} 
+  ...asset-> {
+    "src": url,
+    ...metadata { ...dimensions { width, height }} 
+  }
 }
 `
 
 export const withImageProps = groq`
 {
   ...,
-  "image": image.asset-> ${imageProps}
+  image ${imageProps}
 }
 `

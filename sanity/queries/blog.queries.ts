@@ -21,7 +21,7 @@ export const blogQuery = groq`
     subtitle,
     image,
     slug,
-    "image": image.asset-> ${imageProps}
+    image ${imageProps}
   }
 }
 `

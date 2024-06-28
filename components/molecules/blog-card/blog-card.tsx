@@ -17,10 +17,8 @@ export default function BlogCard({ data }: BlogCardProps) {
       className="group relative flex h-[460px] w-full flex-col justify-end overflow-hidden rounded-[45px] md:h-[380px] 2xl:h-[544px]"
     >
       <Image
-        src={data.image.url}
-        width={data.image.metadata.dimensions.width}
+        {...data.image}
         className="absolute left-0 top-0 h-[460px] w-full object-cover transition-transform duration-500 md:group-hover:scale-150 2xl:h-[544px]"
-        height={data.image.metadata.dimensions.height}
         alt="blogs-1"
       />
       <div className="w-full pl-5 backdrop-blur-xl">
@@ -30,7 +28,7 @@ export default function BlogCard({ data }: BlogCardProps) {
           </div>
           <Typography
             variant="subtitle3"
-            className="py-2 text-sm text-primary-foreground md:text-base h-14"
+            className="h-14 py-2 text-sm text-primary-foreground md:text-base"
           >
             {data.subtitle}
           </Typography>

@@ -1,7 +1,8 @@
 import { groq } from 'next-sanity'
 
-import { Image, Slug } from '@/sanity/types'
+import { CaseStudyCards, Image } from '@/sanity/types'
 
+import { imageProps } from '../components/imageProps'
 import { Testimonial, testimonialField } from '../components/testimonialProps'
 
 export type Brandings = {
@@ -24,15 +25,7 @@ export type Journey = {
 export type CaseStudies = {
   title: string
   subtitle: string
-  relatedCaseStudies: CaseStudyCard[]
-}
-
-export type CaseStudyCard = {
-  _id: string
-  title: string
-  description: string
-  slug: Slug
-  image: Image
+  relatedCaseStudies: CaseStudyCards
 }
 
 export type Step = {
@@ -59,8 +52,12 @@ export const homePageQuery = groq`
   "testimonial" : ${testimonialField},
   caseStudies{
     ...,
-    relatedCaseStudies[]->{
-      _id, title, description, slug, image
+    relatedCaseStudies[]-> {
+      _id,
+      title,
+      description,
+      slug,
+      image ${imageProps}
     }
   }
 }

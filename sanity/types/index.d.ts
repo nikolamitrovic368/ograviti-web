@@ -48,4 +48,14 @@ export type BlogCard = {
 
 export type BlogCards = BlogCard[]
 
+export type CaseStudyCard = {
+  _id: string
+  title: string
+  description: string
+  image: ImageProps
+  slug: Slug
+}
+
+export type CaseStudyCards = CaseStudyCard[]
+
 export type TeamMembers = TeamMember[]

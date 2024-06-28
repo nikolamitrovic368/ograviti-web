@@ -1,11 +1,9 @@
-'use client'
 import Image from 'next/image'
 import Link from 'next/link'
 
 import { IconButton } from '@/components/atoms/icon-button'
 import { Right } from '@/components/atoms/icons'
-import useSanityImage from '@/hooks/useSanityImage'
-import { type CaseStudyCard } from '@/sanity/queries/pages/home.query'
+import { type CaseStudyCard } from '@/sanity/types'
 
 type CaseStudyCardProps = {
   data: CaseStudyCard
@@ -14,7 +12,6 @@ type CaseStudyCardProps = {
 export default function CaseStudyCard({
   data: { title, description, image, slug },
 }: CaseStudyCardProps) {
-  const imageProps = useSanityImage(image)
   return (
     <Link
       href={`/case-study/${slug.current}`}
@@ -24,7 +21,7 @@ export default function CaseStudyCard({
         <div className="h-[calc(60vh-24px)] w-[calc(100%-20px)] flex-col justify-center overflow-hidden">
           <div className="h-[calc(60vh-24px)] w-full overflow-hidden rounded-[34.38px]">
             <Image
-              {...imageProps!}
+              {...image}
               alt=""
               className="flex h-[calc(60vh-165px)] w-full items-center justify-center overflow-hidden rounded-[34.38px] object-cover transition-all duration-500 ease-smart md:h-[calc(60vh-24px)] md:group-hover:h-[calc(60vh-165px)] 2xl:group-hover:h-[calc(60vh-210px)]"
             ></Image>
