@@ -1,3 +1,4 @@
+import { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import { PortableText } from 'next-sanity'
@@ -8,6 +9,14 @@ import PortableBlogComponent from '@/components/molecules/portable-blog-componen
 import Title from '@/components/molecules/title'
 import { fetchBlogData } from '@/sanity/services/blog.service'
 import { SlugProps } from '@/types'
+import { mapSeo } from '@/utils/common'
+
+export async function generateMetadata({
+  params,
+}: SlugProps): Promise<Metadata> {
+  const { seo } = await fetchBlogData(params.slug)
+  return mapSeo(seo)
+}
 
 export default async function Page({ params }: SlugProps) {
   const data = await fetchBlogData(params.slug)
@@ -15,14 +24,15 @@ export default async function Page({ params }: SlugProps) {
   return (
     <main className="flex flex-col gap-8 md:gap-10 2xl:gap-14">
       <Title title={data.title} subtitle={data.subtitle} />
-      <Image
-        src="/images/blogs/9.jpg"
-        alt="Ograviti Logo"
-        width={1280}
-        height={686}
-        className="h-[245px] w-full rounded-[45px] object-cover xl:h-[400px] 2xl:h-[686px]"
-        priority
-      />
+      {data.displayHeroImage && (
+        <Image
+          {...data.image}
+          alt="Ograviti Logo"
+          className="h-[245px] w-full rounded-[45px] object-cover xl:h-[400px] 2xl:h-[686px]"
+          priority
+        />
+      )}
+
       <div className="flex flex-col gap-4 md:gap-6 2xl:gap-8">
         <PortableText value={data.body} components={PortableBlogComponent} />
       </div>

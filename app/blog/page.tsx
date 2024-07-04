@@ -1,6 +1,14 @@
+import { Metadata } from 'next'
+
 import BlogCard from '@/components/molecules/blog-card'
 import Title from '@/components/molecules/title'
 import { fetchBlogPageData } from '@/sanity/services/pages/blog.service'
+import { mapSeo } from '@/utils/common'
+
+export async function generateMetadata(): Promise<Metadata> {
+  const { seo } = await fetchBlogPageData()
+  return mapSeo(seo)
+}
 
 export default async function Page() {
   const data = await fetchBlogPageData()

@@ -1,3 +1,4 @@
+import { Metadata } from 'next'
 import { PortableText } from 'next-sanity'
 
 import { Button } from '@/components/atoms/button'
@@ -9,6 +10,14 @@ import PortableCareerComponent from '@/components/molecules/portable-career-comp
 import Title from '@/components/molecules/title'
 import { fetchCareerData } from '@/sanity/services/career.service'
 import { SlugProps } from '@/types'
+import { mapSeo } from '@/utils/common'
+
+export async function generateMetadata({
+  params,
+}: SlugProps): Promise<Metadata> {
+  const { seo } = await fetchCareerData(params.slug)
+  return mapSeo(seo)
+}
 
 export default async function Page({ params }: SlugProps) {
   const data = await fetchCareerData(params.slug)

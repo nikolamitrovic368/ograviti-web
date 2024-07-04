@@ -1,8 +1,13 @@
 import { groq } from 'next-sanity'
 
-import { CaseStudyCards, Slug } from '@/sanity/types'
+import { CaseStudyCards, Seo, Slug } from '@/sanity/types'
 
-import { ImageProps, imageProps, Images } from './components/imageProps'
+import {
+  ImageProps,
+  imageProps,
+  Images,
+  withImageProps,
+} from './components/imageProps'
 
 export type CaseStudyType = {
   _id: string
@@ -24,6 +29,7 @@ export type CaseStudyType = {
   relatedCaseStudies: CaseStudyCards
   slug: Slug
   website: string
+  seo: Seo
 }
 
 export const caseStudyQuery = groq`
@@ -39,6 +45,7 @@ export const caseStudyQuery = groq`
     description,
     slug,
     image ${imageProps}
-  }
+  },
+  seo ${withImageProps}
 }
 `

@@ -1,14 +1,15 @@
 import { groq } from 'next-sanity'
 
-import { BlogCards } from '@/sanity/types'
+import { BlogCards, Seo } from '@/sanity/types'
 
-import { imageProps } from '../components/imageProps'
+import { imageProps, withImageProps } from '../components/imageProps'
 
 export type BlogPageType = {
   _id: string
   title: string
   subtitle: string
   blogs: BlogCards
+  seo: Seo
 }
 
 export const blogPageQuery = groq`
@@ -20,6 +21,7 @@ export const blogPageQuery = groq`
     subtitle,
     slug,
     image ${imageProps}
-  }
+  },
+  seo ${withImageProps}
 }
 `

@@ -1,3 +1,4 @@
+import { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -7,6 +8,14 @@ import CaseStudyCard from '@/components/molecules/case-study-card'
 import SectionTitle from '@/components/molecules/section-title'
 import { fetchCaseStudyData } from '@/sanity/services/caseStudy.service'
 import { SlugProps } from '@/types'
+import { mapSeo } from '@/utils/common'
+
+export async function generateMetadata({
+  params,
+}: SlugProps): Promise<Metadata> {
+  const { seo } = await fetchCaseStudyData(params.slug)
+  return mapSeo(seo)
+}
 
 export default async function Page({ params }: SlugProps) {
   const { title, ...data } = await fetchCaseStudyData(params.slug)

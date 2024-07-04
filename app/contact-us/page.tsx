@@ -1,6 +1,14 @@
+import { Metadata } from 'next'
+
 import Title from '@/components/molecules/title'
 import ContactForm from '@/components/organisms/contact-form'
 import { fetchContactUsPageData } from '@/sanity/services/pages/contact-us.service'
+import { mapSeo } from '@/utils/common'
+
+export async function generateMetadata(): Promise<Metadata> {
+  const { seo } = await fetchContactUsPageData()
+  return mapSeo(seo)
+}
 
 export default async function Page() {
   const data = await fetchContactUsPageData()

@@ -59,3 +59,12 @@ export type CaseStudyCard = {
 export type CaseStudyCards = CaseStudyCard[]
 
 export type TeamMembers = TeamMember[]
+
+export type Seo = {
+  description: string
+  keywords: string[]
+  metaImage: ImageProps
+  robotsNoFollow: boolean
+  robotsNoIndex: boolean
+  title: string
+}

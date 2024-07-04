@@ -1,20 +1,24 @@
 import { groq } from 'next-sanity'
 
-import { BlogCards } from '@/sanity/types'
+import { BlogCards, Seo } from '@/sanity/types'
 
-import { imageProps } from './components/imageProps'
+import { ImageProps, imageProps, withImageProps } from './components/imageProps'
 
 export type BlogType = {
   _id: string
   title: string
   subtitle: string
+  displayHeroImage: boolean
   body: any
   relatedBlogs: BlogCards
+  image: ImageProps
+  seo: Seo
 }
 
 export const blogQuery = groq`
 *[_type == "blog" && slug.current == $slug][0] {
   ...,
+  image ${imageProps},
   relatedBlogs[]-> {
     _id,
     title,
@@ -22,6 +26,7 @@ export const blogQuery = groq`
     image,
     slug,
     image ${imageProps}
-  }
+  },
+  seo ${withImageProps}
 }
 `

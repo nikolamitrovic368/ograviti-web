@@ -1,8 +1,9 @@
 import { groq } from 'next-sanity'
 
-import { Slug } from '@/sanity/types'
+import { Seo, Slug } from '@/sanity/types'
 
 import { careerCardQuery, CareerCards } from '../career.queries'
+import { withImageProps } from '../components/imageProps'
 
 export type CareersPageType = {
   _id: string
@@ -10,11 +11,13 @@ export type CareersPageType = {
   subtitle: string
   careers: CareerCards
   slug: Slug
+  seo: Seo
 }
 
 export const careersPageQuery = groq`
 *[_type == "careersPage"][0] {
   ...,
-  careers[]-> ${careerCardQuery}
+  careers[]-> ${careerCardQuery},
+  seo ${withImageProps}
 }
 `

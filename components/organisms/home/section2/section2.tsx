@@ -44,7 +44,7 @@ export default function Section2({ data }: { data: Journey }) {
           restartInterval()
         }}
       >
-        <div className="ml-0 mt-6 flex md:ml-12 2xl:mt-12">
+        <div className="ml-0 mt-6 flex md:ml-28 2xl:mt-12">
           {[data.step1, data.step2, data.step3, data.step4].map(
             (_step, key) => (
               <div

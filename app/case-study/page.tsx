@@ -1,7 +1,15 @@
+import { Metadata } from 'next'
+
 import CaseStudyCard from '@/components/molecules/case-study-card'
 import Companies from '@/components/molecules/companies'
 import Title from '@/components/molecules/title'
 import { fetchCaseStudyPageData } from '@/sanity/services/pages/caseStudy.service'
+import { mapSeo } from '@/utils/common'
+
+export async function generateMetadata(): Promise<Metadata> {
+  const { seo } = await fetchCaseStudyPageData()
+  return mapSeo(seo)
+}
 
 export default async function Page() {
   const data = await fetchCaseStudyPageData()

@@ -1,7 +1,8 @@
 import { groq } from 'next-sanity'
 
-import { CommonSection, TeamMembers } from '@/sanity/types'
+import { CommonSection, Seo, TeamMembers } from '@/sanity/types'
 
+import { withImageProps } from '../components/imageProps'
 import { Testimonial, testimonialField } from '../components/testimonialProps'
 
 export type OurTeam = {
@@ -31,6 +32,7 @@ export type AboutUsPageType = {
     }[]
   }
   testimonial: Testimonial
+  seo: Seo
 }
 
 export const aboutUsPageQuery = groq`
@@ -41,4 +43,5 @@ export const aboutUsPageQuery = groq`
     teamMembers[]->
   },
   "testimonial" : ${testimonialField},
+  seo ${withImageProps}
 }`

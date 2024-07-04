@@ -29,7 +29,10 @@ export default function CaseStudyCard({
               {title}
             </div>
             <div className="flex items-center justify-between px-1">
-              <div className="pl-4 text-xl">{description}</div>
+              <div className="pl-4 text-xl">
+                {description.substring(0, 20)}
+                {description.length > 20 && ' ...'}
+              </div>
               <div>
                 <IconButton variant="secondary" className="">
                   <Right />

@@ -1,6 +1,7 @@
 import { groq } from 'next-sanity'
 
-import { Slug } from '../types'
+import { Seo, Slug } from '../types'
+import { withImageProps } from './components/imageProps'
 
 export type CareerCard = {
   _id: string
@@ -17,11 +18,13 @@ export type CareerType = {
   subtitle: string
   slug: Slug
   body: any
+  seo: Seo
 }
 
 export const careerQuery = groq`
 *[_type == "career" && slug.current == $slug][0] {
-  ...
+  ...,
+  seo ${withImageProps}
 }
 `
 

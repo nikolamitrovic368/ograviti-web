@@ -1,6 +1,14 @@
+import { Metadata } from 'next'
+
 import CareerCard from '@/components/molecules/career-card'
 import Title from '@/components/molecules/title'
 import { fetchCareersPageData } from '@/sanity/services/pages/careers.service'
+import { mapSeo } from '@/utils/common'
+
+export async function generateMetadata(): Promise<Metadata> {
+  const { seo } = await fetchCareersPageData()
+  return mapSeo(seo)
+}
 
 export default async function Page() {
   const data = await fetchCareersPageData()

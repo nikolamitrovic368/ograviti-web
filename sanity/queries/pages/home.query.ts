@@ -1,8 +1,8 @@
 import { groq } from 'next-sanity'
 
-import { CaseStudyCards, Image } from '@/sanity/types'
+import { CaseStudyCards, Image, Seo } from '@/sanity/types'
 
-import { imageProps } from '../components/imageProps'
+import { imageProps, withImageProps } from '../components/imageProps'
 import { Testimonial, testimonialField } from '../components/testimonialProps'
 
 export type Brandings = {
@@ -44,13 +44,14 @@ export type HomePageType = {
   brandings: Brandings
   testimonial: Testimonial
   journey: Journey
+  seo: Seo
 }
 
 export const homePageQuery = groq`
 *[_type == "homePage"][0] {
   ..., 
   "testimonial" : ${testimonialField},
-  caseStudies{
+  caseStudies {
     ...,
     relatedCaseStudies[]-> {
       _id,
@@ -59,6 +60,7 @@ export const homePageQuery = groq`
       slug,
       image ${imageProps}
     }
-  }
+  },
+  seo ${withImageProps}
 }
 `
