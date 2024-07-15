@@ -1,6 +1,5 @@
 import NextLink from 'next/link'
 
-import { Button } from '@/components/atoms/button'
 import { Ograviti } from '@/components/atoms/icons'
 import { Link } from '@/components/atoms/link'
 import { Typography } from '@/components/atoms/typography'
