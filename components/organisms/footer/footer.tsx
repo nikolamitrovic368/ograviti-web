@@ -1,7 +1,8 @@
-import Link from 'next/link'
+import NextLink from 'next/link'
 
 import { Button } from '@/components/atoms/button'
 import { Ograviti } from '@/components/atoms/icons'
+import { Link } from '@/components/atoms/link'
 import { Typography } from '@/components/atoms/typography'
 import Socials from '@/components/molecules/socials/socials'
 import { footerNavigationConfig } from '@/constants/navigation'
@@ -23,7 +24,9 @@ export default function Footer() {
       <div className="py-6 text-center text-2xl leading-6  md:leading-10 2xl:text-3xl 2xl:leading-[50px]">
         Let’s get started
       </div>
-      <Button className="max-md:w-full">Get started</Button>
+      <Link variant="button" href="/contact-us" className="max-md:w-full">
+        Get Started
+      </Link>
       <Typography
         variant="small"
         className="pb-10 pt-6 text-center text-white opacity-70 md:py-8 2xl:py-14"
@@ -32,21 +35,21 @@ export default function Footer() {
       </Typography>
       <hr className="w-full bg-primary-foreground opacity-20" />
       <div className="flex w-full flex-col items-center justify-between gap-6 py-10 md:flex-row md:gap-0 md:py-5 2xl:py-10">
-        <Link href="/">
+        <NextLink href="/">
           <Ograviti
             variants="secondary"
             className="h-auto w-32 md:w-40 2xl:w-72"
           />
-        </Link>
+        </NextLink>
         <div className="flex flex-col flex-wrap items-center justify-center gap-4 md:flex-row md:gap-0 2xl:gap-4">
           {footerNavigationConfig.map(nav => (
-            <Link
+            <NextLink
               href={nav.url}
               key={nav.url}
               className="w-28 text-center text-base font-semibold capitalize text-zinc-300 md:text-xl"
             >
               {nav.title}
-            </Link>
+            </NextLink>
           ))}
         </div>
         <div>
