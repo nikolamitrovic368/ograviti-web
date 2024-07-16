@@ -5,9 +5,14 @@ import { Link } from '@/components/atoms/link'
 import { Typography } from '@/components/atoms/typography'
 import Socials from '@/components/molecules/socials/socials'
 import { footerNavigationConfig } from '@/constants/navigation'
+import { FooterType } from '@/sanity/queries/layout.queries'
 import { cn } from '@/utils/common'
 
-export default function Footer() {
+type FooterProps = {
+  data: FooterType
+}
+
+export default function Footer({ data }: FooterProps) {
   return (
     <div
       className={cn(
@@ -52,7 +57,7 @@ export default function Footer() {
           ))}
         </div>
         <div>
-          <Socials />
+          <Socials data={data.socialMedia} />
         </div>
       </div>
     </div>

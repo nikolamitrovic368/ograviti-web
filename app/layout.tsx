@@ -8,6 +8,7 @@ import { VisualEditing } from 'next-sanity'
 import Footer from '@/components/organisms/footer'
 import Header from '@/components/organisms/header'
 import { fetchGlobalSeoData } from '@/sanity/services/globalSeo.service'
+import { fetchFooterData } from '@/sanity/services/layout.service'
 
 const lato = Lato({
   subsets: ['latin'],
@@ -26,17 +27,19 @@ export async function generateMetadata(): Promise<Metadata> {
   }
 }
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode
 }>) {
+  const footer = await fetchFooterData()
+
   return (
     <html lang="en">
       <body className={lato.className}>
-        <Header />
+        <Header footer={footer} />
         <div className="px-8 xl:px-16 2xl:px-28">{children}</div>
-        <Footer />
+        <Footer data={footer} />
         {draftMode().isEnabled && <VisualEditing />}
       </body>
     </html>

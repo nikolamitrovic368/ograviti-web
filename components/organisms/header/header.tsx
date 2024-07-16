@@ -10,8 +10,13 @@ import Close from '@/components/atoms/icons/close'
 import NavLink from '@/components/atoms/nav-link'
 import Socials from '@/components/molecules/socials/socials'
 import navigationConfig from '@/constants/navigation'
+import { FooterType } from '@/sanity/queries/layout.queries'
 
-export default function Header() {
+type HeaderProps = {
+  footer: FooterType
+}
+
+export default function Header({ footer }: HeaderProps) {
   const [isOpen, setIsOpen] = useState(false)
   useEffect(() => {
     document.getElementsByTagName('html')[0].style.overflow = isOpen
@@ -89,7 +94,7 @@ export default function Header() {
                 Deu
               </div>
             </div>
-            <Socials />
+            <Socials data={footer.socialMedia} />
           </div>
         </div>
       </Drawer>

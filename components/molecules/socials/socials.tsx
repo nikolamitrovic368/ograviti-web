@@ -1,41 +1,30 @@
-import {
-  Facebook,
-  Instagram,
-  Linkedin,
-  Youtube,
-} from '@/components/atoms/icons'
+import Image from 'next/image'
 
-export default function Socials() {
+import { SocialMedias } from '@/sanity/queries/layout.queries'
+
+type SocialsProps = {
+  data: SocialMedias
+}
+
+export default function Socials({ data }: SocialsProps) {
   return (
     <div className="flex gap-7 py-4 md:gap-4 2xl:gap-7">
-      <a
-        href="https://linkedin.com"
-        target="_blank"
-        className="flex h-12 w-12 items-center justify-center rounded-full border-2 border-[#5c5c5c] transition-all duration-500 hover:border-primary md:h-10 md:w-10 2xl:h-12 2xl:w-12"
-      >
-        <Linkedin className="h-auto w-[18px] md:w-4 2xl:w-[18px]" />
-      </a>
-      <a
-        href="https://linkedin.com"
-        target="_blank"
-        className="flex h-12 w-12 items-center justify-center rounded-full border-2 border-[#5c5c5c] transition-all duration-500 hover:border-primary md:h-10 md:w-10 2xl:h-12 2xl:w-12"
-      >
-        <Facebook className="h-auto w-[13px] md:w-3 2xl:w-[13px]" />
-      </a>
-      <a
-        href="https://linkedin.com"
-        target="_blank"
-        className="flex h-12 w-12 items-center justify-center rounded-full border-2 border-[#5c5c5c] transition-all duration-500 hover:border-primary md:h-10 md:w-10 2xl:h-12 2xl:w-12"
-      >
-        <Instagram className="h-auto w-[18px] md:w-4 2xl:w-[18px]" />
-      </a>
-      <a
-        href="https://linkedin.com"
-        target="_blank"
-        className="flex h-12 w-12 items-center justify-center rounded-full border-2 border-[#5c5c5c] transition-all duration-500 hover:border-primary md:h-10 md:w-10 2xl:h-12 2xl:w-12"
-      >
-        <Youtube className="h-auto w-[18px] md:w-4 2xl:w-[18px]" />
-      </a>
+      {data.map((social, key) => (
+        <a
+          key={key}
+          href={social.link}
+          target="_blank"
+          className="flex h-12 w-12 items-center justify-center rounded-full border-2 border-[#5c5c5c] transition-all duration-500 hover:border-primary md:h-10 md:w-10 2xl:h-12 2xl:w-12"
+        >
+          <Image
+            src={social.image.src}
+            alt="social icon"
+            width={social.image.width}
+            height={social.image.height}
+            className="h-[18px] w-[18px]"
+          />
+        </a>
+      ))}
     </div>
   )
 }
