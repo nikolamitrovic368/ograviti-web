@@ -26,7 +26,7 @@ export type TeamMember = {
   linkedin: string
   _updatedAt: string
   youtube: string
-  image: Image
+  image: ImageProps
   _createdAt: string
   _type: teamMember
   _id: string

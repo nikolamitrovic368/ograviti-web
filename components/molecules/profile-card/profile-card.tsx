@@ -8,6 +8,7 @@ import {
 } from '@/components/atoms/icons'
 import { Typography } from '@/components/atoms/typography'
 import { TeamMember } from '@/sanity/types'
+import { urlFor } from '@/sanity/utils/image-builder'
 import { cn } from '@/utils/common'
 
 type ProfileCardProps = {
@@ -15,7 +16,7 @@ type ProfileCardProps = {
   className?: string
 }
 export default function ProfileCard({
-  data: { name, role, linkedin, facebook, instagram, youtube },
+  data: { name, role, linkedin, facebook, instagram, youtube, image },
   className,
 }: ProfileCardProps) {
   return (
@@ -26,30 +27,34 @@ export default function ProfileCard({
             <div
               className={`relative flex h-[calc(500px-24px)] w-full items-center justify-center overflow-hidden rounded-[34.38px] bg-cover bg-center bg-no-repeat transition-all duration-500 lg:h-[calc(375px-24px)] xl:h-[calc(420px-24px)] 2xl:h-[calc(560px-24px)]`}
               style={{
-                backgroundImage: 'url(/images/users/1.png)',
+                backgroundImage: `url('${urlFor(image).url()}')`,
               }}
             >
               <div className="absolute -left-16 bottom-0 flex w-14 flex-col items-center justify-center rounded-tr-3xl bg-background py-8 transition-all duration-500 group-hover:left-0 2xl:w-16">
-                <button className="flex w-full items-center justify-center py-4 transition-all duration-500 hover:bg-primary">
-                  <Link href={linkedin}>
-                    <Linkedin className="h-auto w-4 2xl:w-[18px]" />
-                  </Link>
-                </button>
-                <button className="flex w-full items-center justify-center py-4 transition-all duration-500 hover:bg-primary">
-                  <Link href={facebook}>
-                    <Facebook className="h-auto w-3 2xl:w-[13px]" />
-                  </Link>
-                </button>
-                <button className="flex w-full items-center justify-center py-4 transition-all duration-500 hover:bg-primary">
-                  <Link href={instagram}>
-                    <Instagram className="h-auto w-4 2xl:w-[18px]" />{' '}
-                  </Link>
-                </button>
-                <button className="flex w-full items-center justify-center py-4 transition-all duration-500 hover:bg-primary">
-                  <Link href={youtube}>
-                    <Youtube className="h-auto w-4 2xl:w-[18px]" />{' '}
-                  </Link>
-                </button>
+                <Link
+                  href={linkedin}
+                  className="flex w-full items-center justify-center py-4 transition-all duration-500 hover:bg-primary"
+                >
+                  <Linkedin className="h-auto w-4 2xl:w-[18px]" />
+                </Link>
+                <Link
+                  href={facebook}
+                  className="flex w-full items-center justify-center py-4 transition-all duration-500 hover:bg-primary"
+                >
+                  <Facebook className="h-auto w-3 2xl:w-[13px]" />
+                </Link>
+                <Link
+                  href={instagram}
+                  className="flex w-full items-center justify-center py-4 transition-all duration-500 hover:bg-primary"
+                >
+                  <Instagram className="h-auto w-4 2xl:w-[18px]" />
+                </Link>
+                <Link
+                  href={youtube}
+                  className="flex w-full items-center justify-center py-4 transition-all duration-500 hover:bg-primary"
+                >
+                  <Youtube className="h-auto w-4 2xl:w-[18px]" />
+                </Link>
               </div>
             </div>
           </div>

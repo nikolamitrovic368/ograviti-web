@@ -38,7 +38,7 @@ export type AboutUsPageType = {
 export const aboutUsPageQuery = groq`
 *[_type == "aboutUsPage"][0] {
   ..., 
-  ourTeam{
+  ourTeam {
     ...,
     teamMembers[]->
   },
