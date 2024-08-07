@@ -1,7 +1,11 @@
 import Link from 'next/link'
 
-import { Instagram, Linkedin, Youtube } from '@/components/atoms/icons'
-import Facebook from '@/components/atoms/icons/facebook'
+import {
+  Facebook,
+  Instagram,
+  Linkedin,
+  Youtube,
+} from '@/components/atoms/icons'
 import { Typography } from '@/components/atoms/typography'
 import { TeamMember } from '@/sanity/types'
 import { cn } from '@/utils/common'

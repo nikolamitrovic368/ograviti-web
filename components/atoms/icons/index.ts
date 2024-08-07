@@ -1,6 +1,9 @@
 import Down from './down'
 import Enter from './enter'
+import Facebook from './facebook'
+import Instagram from './instagram'
 import Left from './left'
+import Linkedin from './linkedin'
 import Menu from './menu'
 import Ograviti from './ograviti'
 import Right from './right'
@@ -11,11 +14,15 @@ import Step3 from './step3'
 import Step4 from './step4'
 import Step5 from './step5'
 import Upload from './upload'
+import Youtube from './youtube'
 
 export {
   Down,
   Enter,
+  Facebook,
+  Instagram,
   Left,
+  Linkedin,
   Menu,
   Ograviti,
   Right,
@@ -26,4 +33,5 @@ export {
   Step4,
   Step5,
   Upload,
+  Youtube,
 }
