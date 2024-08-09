@@ -5,5 +5,9 @@ export type ChildrenProps = {
 }
 
 export type SlugProps = {
-  params: { slug: string };
-};
+  params: { slug: string }
+}
+
+export type LocaleProps = {
+  params: { locale: string }
+}

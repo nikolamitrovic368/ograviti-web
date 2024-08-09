@@ -1,4 +1,4 @@
-import NextLink from 'next/link'
+import {Link as NextLink} from '@/navigation'
 
 import { Ograviti } from '@/components/atoms/icons'
 import { Link } from '@/components/atoms/link'

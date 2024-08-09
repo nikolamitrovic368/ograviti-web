@@ -13,7 +13,7 @@ export type BlogPageType = {
 }
 
 export const blogPageQuery = groq`
-*[_type == "blogPage"][0] {
+*[_type == "blogPage" && language == $locale][0] {
   ...,
   blogs[]-> {
     _id,

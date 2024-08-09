@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import Link from 'next/link'
+import {Link} from '@/navigation'
 
 import { IconButton } from '@/components/atoms/icon-button'
 import { Right } from '@/components/atoms/icons'

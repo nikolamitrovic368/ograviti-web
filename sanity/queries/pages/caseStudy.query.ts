@@ -14,7 +14,7 @@ export type CaseStudyPageType = {
 }
 
 export const caseStudyPageQuery = groq`
-*[_type == "caseStudyPage"][0] {
+*[_type == "caseStudyPage" && language == $locale][0] {
   ...,
   caseStudies[]-> {
     _id,

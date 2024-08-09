@@ -2,8 +2,8 @@
 import 'react-responsive-carousel/lib/styles/carousel.min.css'
 
 import Image from 'next/image'
-import Link from 'next/link'
-import { useRouter } from 'next/navigation'
+import {Link} from '@/navigation'
+import { useRouter } from '@/navigation'
 import { useState } from 'react'
 import { Carousel } from 'react-responsive-carousel'
 import { defineSwipe, Swipeable } from 'react-touch'

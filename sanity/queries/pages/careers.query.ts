@@ -15,7 +15,7 @@ export type CareersPageType = {
 }
 
 export const careersPageQuery = groq`
-*[_type == "careersPage"][0] {
+*[_type == "careersPage" && language == $locale][0] {
   ...,
   careers[]-> ${careerCardQuery},
   seo ${withImageProps}

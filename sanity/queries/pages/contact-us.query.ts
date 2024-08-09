@@ -12,7 +12,7 @@ export type ContactUsPageType = {
 }
 
 export const contactUsPageQuery = groq`
-*[_type == "contactUsPage"][0] {
+*[_type == "contactUsPage" && language == $locale][0] {
   ...,
   seo ${withImageProps}
 }

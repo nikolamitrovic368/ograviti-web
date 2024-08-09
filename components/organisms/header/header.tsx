@@ -1,6 +1,6 @@
 'use client'
 
-import Link from 'next/link'
+import { useParams } from 'next/navigation'
 import { useEffect, useState } from 'react'
 
 import Drawer from '@/components/atoms/drawer'
@@ -10,7 +10,9 @@ import Close from '@/components/atoms/icons/close'
 import NavLink from '@/components/atoms/nav-link'
 import Socials from '@/components/molecules/socials/socials'
 import navigationConfig from '@/constants/navigation'
+import { Link } from '@/navigation'
 import { FooterType } from '@/sanity/queries/layout.queries'
+import { cn } from '@/utils/common'
 
 type HeaderProps = {
   footer: FooterType
@@ -18,6 +20,7 @@ type HeaderProps = {
 
 export default function Header({ footer }: HeaderProps) {
   const [isOpen, setIsOpen] = useState(false)
+  const { locale } = useParams<{ locale: string }>()
   useEffect(() => {
     document.getElementsByTagName('html')[0].style.overflow = isOpen
       ? 'hidden'
@@ -54,12 +57,30 @@ export default function Header({ footer }: HeaderProps) {
           </div>
 
           <div className="flex gap-4 py-4 md:hidden">
-            <div className="cursor-pointer text-2xl font-bold text-white underline duration-300 hover:text-primary">
+            <Link
+              href="/"
+              locale="en"
+              className={cn(
+                'text-2xl',
+                locale === 'en'
+                  ? 'cursor-default font-normal text-stone-500'
+                  : 'cursor-pointer font-bold text-white underline duration-300 hover:text-primary',
+              )}
+            >
               En
-            </div>
-            <div className="cursor-default text-2xl font-normal text-stone-500">
-              Deu
-            </div>
+            </Link>
+            <Link
+              href="/"
+              locale="de"
+              className={cn(
+                'text-2xl',
+                locale === 'de'
+                  ? 'cursor-default font-normal text-stone-500'
+                  : 'cursor-pointer font-bold text-white underline duration-300 hover:text-primary',
+              )}
+            >
+              De
+            </Link>
           </div>
           <div className="flex h-full flex-col items-center gap-8 md:hidden">
             {navigationConfig.map((nav, key) => (
@@ -87,12 +108,30 @@ export default function Header({ footer }: HeaderProps) {
           </div>
           <div className="flex items-center justify-center md:justify-between">
             <div className="hidden gap-4 md:flex">
-              <div className="cursor-pointer text-2xl font-bold text-white underline duration-300 hover:text-primary">
+              <Link
+                href="/"
+                locale="en"
+                className={cn(
+                  'text-2xl',
+                  locale === 'en'
+                    ? 'cursor-default font-normal text-stone-500'
+                    : 'cursor-pointer font-bold text-white underline duration-300 hover:text-primary',
+                )}
+              >
                 En
-              </div>
-              <div className="cursor-default text-2xl font-normal text-stone-500">
-                Deu
-              </div>
+              </Link>
+              <Link
+                href="/"
+                locale="de"
+                className={cn(
+                  'text-2xl',
+                  locale === 'de'
+                    ? 'cursor-default font-normal text-stone-500'
+                    : 'cursor-pointer font-bold text-white underline duration-300 hover:text-primary',
+                )}
+              >
+                De
+              </Link>
             </div>
             <Socials data={footer.socialMedia} />
           </div>

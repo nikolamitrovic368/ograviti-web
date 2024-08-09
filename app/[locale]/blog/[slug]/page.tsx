@@ -1,12 +1,12 @@
 import { Metadata } from 'next'
 import Image from 'next/image'
-import Link from 'next/link'
 import { PortableText } from 'next-sanity'
 
 import { Typography } from '@/components/atoms/typography'
 import BlogCard from '@/components/molecules/blog-card'
 import PortableBlogComponent from '@/components/molecules/portable-blog-component'
 import Title from '@/components/molecules/title'
+import { Link } from '@/navigation'
 import { fetchBlogData } from '@/sanity/services/blog.service'
 import { SlugProps } from '@/types'
 import { mapSeo } from '@/utils/common'

@@ -10,7 +10,7 @@ export type GlobalSeoType = {
 }
 
 export const globalSeoQuery = groq`
-*[_type == "globalSeo"][0] {
+*[_type == "globalSeo" && language == $locale][0] {
   ...,
   globalSeoImage ${imageProps},
 }

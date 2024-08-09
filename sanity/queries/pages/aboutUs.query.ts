@@ -36,7 +36,7 @@ export type AboutUsPageType = {
 }
 
 export const aboutUsPageQuery = groq`
-*[_type == "aboutUsPage"][0] {
+*[_type == "aboutUsPage" && language == $locale][0] {
   ..., 
   ourTeam {
     ...,

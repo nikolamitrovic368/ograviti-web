@@ -22,7 +22,7 @@ export type CareerType = {
 }
 
 export const careerQuery = groq`
-*[_type == "career" && slug.current == $slug][0] {
+*[_type == "career" && slug.current == $slug && language == $locale][0] {
   ...,
   seo ${withImageProps}
 }

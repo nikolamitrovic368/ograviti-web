@@ -16,7 +16,7 @@ export type BlogType = {
 }
 
 export const blogQuery = groq`
-*[_type == "blog" && slug.current == $slug][0] {
+*[_type == "blog" && slug.current == $slug && language == $locale][0] {
   ...,
   image ${imageProps},
   relatedBlogs[]-> {

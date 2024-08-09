@@ -1,8 +1,8 @@
 import { motion, useAnimate } from 'framer-motion'
-import Link from 'next/link'
 import React from 'react'
 
 import useMedia from '@/hooks/useMedia'
+import { Link } from '@/navigation'
 
 export default function NavLink({
   url,

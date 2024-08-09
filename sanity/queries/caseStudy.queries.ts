@@ -33,7 +33,7 @@ export type CaseStudyType = {
 }
 
 export const caseStudyQuery = groq`
-*[_type == "caseStudy" && slug.current == $slug][0] {
+*[_type == "caseStudy" && slug.current == $slug && language == $locale][0] {
   ...,
   footerImages[] ${imageProps},
   footerimage ${imageProps},

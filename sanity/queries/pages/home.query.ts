@@ -48,7 +48,7 @@ export type HomePageType = {
 }
 
 export const homePageQuery = groq`
-*[_type == "homePage"][0] {
+*[_type == "homePage" && language == $locale][0] {
   ..., 
   "testimonial" : ${testimonialField},
   caseStudies {
