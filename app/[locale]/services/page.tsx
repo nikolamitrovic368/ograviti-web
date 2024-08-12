@@ -5,7 +5,6 @@ import ServiceStep from '@/components/molecules/service-step'
 import Title from '@/components/molecules/title'
 import ContactForm from '@/components/organisms/contact-form'
 import { LocaleProps } from '@/types'
-// import TransformationStories from '@/components/organisms/transformation-stories'
 
 export default async function Page({ params: { locale } }: LocaleProps) {
   unstable_setRequestLocale(locale)

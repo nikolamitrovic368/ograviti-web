@@ -6,13 +6,15 @@ import { fetchAboutUsPageData } from '@/sanity/services/pages/aboutUs.service'
 import { LocaleProps } from '@/types'
 import { mapSeo } from '@/utils/common'
 
-export async function generateMetadata(): Promise<Metadata> {
-  const { seo } = await fetchAboutUsPageData()
+export async function generateMetadata({
+  params: { locale },
+}: LocaleProps): Promise<Metadata> {
+  const { seo } = await fetchAboutUsPageData(locale)
   return mapSeo(seo)
 }
 
 export default async function Page({ params: { locale } }: LocaleProps) {
   unstable_setRequestLocale(locale)
-  const data = await fetchAboutUsPageData()
+  const data = await fetchAboutUsPageData(locale)
   return <AboutUs data={data} />
 }

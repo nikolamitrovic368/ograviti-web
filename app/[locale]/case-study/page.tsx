@@ -8,14 +8,16 @@ import { fetchCaseStudyPageData } from '@/sanity/services/pages/caseStudy.servic
 import { LocaleProps } from '@/types'
 import { mapSeo } from '@/utils/common'
 
-export async function generateMetadata(): Promise<Metadata> {
-  const { seo } = await fetchCaseStudyPageData()
+export async function generateMetadata({
+  params: { locale },
+}: LocaleProps): Promise<Metadata> {
+  const { seo } = await fetchCaseStudyPageData(locale)
   return mapSeo(seo)
 }
 
 export default async function Page({ params: { locale } }: LocaleProps) {
   unstable_setRequestLocale(locale)
-  const data = await fetchCaseStudyPageData()
+  const data = await fetchCaseStudyPageData(locale)
   return (
     <main className="flex flex-col gap-8 md:gap-14">
       <Title title={data.title} subtitle={data.subtitle} />

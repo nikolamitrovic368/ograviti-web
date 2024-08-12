@@ -7,14 +7,16 @@ import { fetchCareersPageData } from '@/sanity/services/pages/careers.service'
 import { LocaleProps } from '@/types'
 import { mapSeo } from '@/utils/common'
 
-export async function generateMetadata(): Promise<Metadata> {
-  const { seo } = await fetchCareersPageData()
+export async function generateMetadata({
+  params: { locale },
+}: LocaleProps): Promise<Metadata> {
+  const { seo } = await fetchCareersPageData(locale)
   return mapSeo(seo)
 }
 
 export default async function Page({ params: { locale } }: LocaleProps) {
   unstable_setRequestLocale(locale)
-  const data = await fetchCareersPageData()
+  const data = await fetchCareersPageData(locale)
   return (
     <main className="flex flex-col gap-8 md:gap-14">
       <Title title={data.title} subtitle={data.subtitle} />

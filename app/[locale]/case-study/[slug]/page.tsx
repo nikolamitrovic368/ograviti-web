@@ -12,9 +12,9 @@ import { SlugLocaleProps } from '@/types'
 import { mapSeo } from '@/utils/common'
 
 export async function generateMetadata({
-  params,
+  params: { slug, locale },
 }: SlugLocaleProps): Promise<Metadata> {
-  const { seo } = await fetchCaseStudyData(params.slug)
+  const { seo } = await fetchCaseStudyData(slug, locale)
   return mapSeo(seo)
 }
 

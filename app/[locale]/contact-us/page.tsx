@@ -7,8 +7,10 @@ import { fetchContactUsPageData } from '@/sanity/services/pages/contact-us.servi
 import { LocaleProps } from '@/types'
 import { mapSeo } from '@/utils/common'
 
-export async function generateMetadata(): Promise<Metadata> {
-  const { seo } = await fetchContactUsPageData()
+export async function generateMetadata({
+  params: { locale },
+}: LocaleProps): Promise<Metadata> {
+  const { seo } = await fetchContactUsPageData(locale)
   return mapSeo(seo)
 }
 
