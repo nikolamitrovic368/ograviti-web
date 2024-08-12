@@ -14,6 +14,7 @@ import { mapSeo } from '@/utils/common'
 export async function generateMetadata({
   params: { slug, locale },
 }: SlugLocaleProps): Promise<Metadata> {
+  unstable_setRequestLocale(locale)
   const { seo } = await fetchCaseStudyData(slug, locale)
   return mapSeo(seo)
 }

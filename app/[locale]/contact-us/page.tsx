@@ -10,6 +10,7 @@ import { mapSeo } from '@/utils/common'
 export async function generateMetadata({
   params: { locale },
 }: LocaleProps): Promise<Metadata> {
+  unstable_setRequestLocale(locale)
   const { seo } = await fetchContactUsPageData(locale)
   return mapSeo(seo)
 }
