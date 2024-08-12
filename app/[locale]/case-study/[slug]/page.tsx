@@ -1,6 +1,6 @@
 import { Metadata } from 'next'
 import Image from 'next/image'
-import { unstable_setRequestLocale } from 'next-intl/server'
+
 
 import CardSwiper from '@/components/atoms/card-swiper'
 import { Typography } from '@/components/atoms/typography'
@@ -14,7 +14,7 @@ import { mapSeo } from '@/utils/common'
 export async function generateMetadata({
   params: { slug, locale },
 }: SlugLocaleProps): Promise<Metadata> {
-  unstable_setRequestLocale(locale)
+  
   const { seo } = await fetchCaseStudyData(slug, locale)
   return mapSeo(seo)
 }
@@ -22,7 +22,7 @@ export async function generateMetadata({
 export default async function Page({
   params: { slug, locale },
 }: SlugLocaleProps) {
-  unstable_setRequestLocale(locale)
+  
   const { title, ...data } = await fetchCaseStudyData(slug, locale)
 
   return (

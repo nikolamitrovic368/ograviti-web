@@ -1,5 +1,5 @@
 import { Metadata } from 'next'
-import { unstable_setRequestLocale } from 'next-intl/server'
+
 
 import CareerCard from '@/components/molecules/career-card'
 import Title from '@/components/molecules/title'
@@ -10,13 +10,13 @@ import { mapSeo } from '@/utils/common'
 export async function generateMetadata({
   params: { locale },
 }: LocaleProps): Promise<Metadata> {
-  unstable_setRequestLocale(locale)
+  
   const { seo } = await fetchCareersPageData(locale)
   return mapSeo(seo)
 }
 
 export default async function Page({ params: { locale } }: LocaleProps) {
-  unstable_setRequestLocale(locale)
+  
   const data = await fetchCareersPageData(locale)
   return (
     <main className="flex flex-col gap-8 md:gap-14">

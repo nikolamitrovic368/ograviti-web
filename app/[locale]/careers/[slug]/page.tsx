@@ -1,5 +1,5 @@
 import { Metadata } from 'next'
-import { unstable_setRequestLocale } from 'next-intl/server'
+
 import { PortableText } from 'next-sanity'
 
 import { Button } from '@/components/atoms/button'
@@ -16,7 +16,7 @@ import { mapSeo } from '@/utils/common'
 export async function generateMetadata({
   params: { slug, locale },
 }: SlugLocaleProps): Promise<Metadata> {
-  unstable_setRequestLocale(locale)
+  
   const { seo } = await fetchCareerData(slug, locale)
   return mapSeo(seo)
 }
@@ -24,7 +24,7 @@ export async function generateMetadata({
 export default async function Page({
   params: { slug, locale },
 }: SlugLocaleProps) {
-  unstable_setRequestLocale(locale)
+  
   const data = await fetchCareerData(slug, locale)
   return (
     <div className="-mx-8 -mb-28 pb-12 md:-mb-60 md:bg-[url('/images/bgs/1.svg')] md:bg-right md:bg-repeat-y xl:-mx-16 2xl:-mx-28">
