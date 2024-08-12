@@ -1,10 +1,14 @@
+import { unstable_setRequestLocale } from 'next-intl/server'
+
 import { Step1, Step2, Step3, Step4, Step5 } from '@/components/atoms/icons'
 import ServiceStep from '@/components/molecules/service-step'
 import Title from '@/components/molecules/title'
 import ContactForm from '@/components/organisms/contact-form'
+import { LocaleProps } from '@/types'
 // import TransformationStories from '@/components/organisms/transformation-stories'
 
-export default function Page() {
+export default async function Page({ params: { locale } }: LocaleProps) {
+  unstable_setRequestLocale(locale)
   return (
     <main className="flex flex-col gap-8 md:gap-14">
       <Title

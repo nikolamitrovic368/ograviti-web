@@ -1,4 +1,5 @@
 import { Metadata } from 'next'
+import { unstable_setRequestLocale } from 'next-intl/server'
 import { PortableText } from 'next-sanity'
 
 import { Button } from '@/components/atoms/button'
@@ -9,18 +10,21 @@ import { UploadInput } from '@/components/atoms/upload-input/upload-input'
 import PortableCareerComponent from '@/components/molecules/portable-career-component'
 import Title from '@/components/molecules/title'
 import { fetchCareerData } from '@/sanity/services/career.service'
-import { SlugProps } from '@/types'
+import { SlugLocaleProps } from '@/types'
 import { mapSeo } from '@/utils/common'
 
 export async function generateMetadata({
   params,
-}: SlugProps): Promise<Metadata> {
+}: SlugLocaleProps): Promise<Metadata> {
   const { seo } = await fetchCareerData(params.slug)
   return mapSeo(seo)
 }
 
-export default async function Page({ params }: SlugProps) {
-  const data = await fetchCareerData(params.slug)
+export default async function Page({
+  params: { slug, locale },
+}: SlugLocaleProps) {
+  unstable_setRequestLocale(locale)
+  const data = await fetchCareerData(slug, locale)
   return (
     <div className="-mx-8 -mb-28 pb-12 md:-mb-60 md:bg-[url('/images/bgs/1.svg')] md:bg-right md:bg-repeat-y xl:-mx-16 2xl:-mx-28">
       <main className="mb-28 flex flex-col gap-8 px-8 md:mb-60 md:gap-14 xl:px-16 2xl:px-28">

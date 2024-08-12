@@ -1,5 +1,6 @@
 import { Metadata } from 'next'
 import Image from 'next/image'
+import { unstable_setRequestLocale } from 'next-intl/server'
 import { PortableText } from 'next-sanity'
 
 import { Typography } from '@/components/atoms/typography'
@@ -8,18 +9,21 @@ import PortableBlogComponent from '@/components/molecules/portable-blog-componen
 import Title from '@/components/molecules/title'
 import { Link } from '@/navigation'
 import { fetchBlogData } from '@/sanity/services/blog.service'
-import { SlugProps } from '@/types'
+import { SlugLocaleProps } from '@/types'
 import { mapSeo } from '@/utils/common'
 
 export async function generateMetadata({
   params,
-}: SlugProps): Promise<Metadata> {
+}: SlugLocaleProps): Promise<Metadata> {
   const { seo } = await fetchBlogData(params.slug)
   return mapSeo(seo)
 }
 
-export default async function Page({ params }: SlugProps) {
-  const data = await fetchBlogData(params.slug)
+export default async function Page({
+  params: { slug, locale },
+}: SlugLocaleProps) {
+  unstable_setRequestLocale(locale)
+  const data = await fetchBlogData(slug, locale)
 
   return (
     <main className="flex flex-col gap-8 md:gap-10 2xl:gap-14">

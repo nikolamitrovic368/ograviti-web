@@ -1,8 +1,10 @@
 import { Metadata } from 'next'
+import { unstable_setRequestLocale } from 'next-intl/server'
 
 import BlogCard from '@/components/molecules/blog-card'
 import Title from '@/components/molecules/title'
 import { fetchBlogPageData } from '@/sanity/services/pages/blog.service'
+import { LocaleProps } from '@/types'
 import { mapSeo } from '@/utils/common'
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -10,7 +12,8 @@ export async function generateMetadata(): Promise<Metadata> {
   return mapSeo(seo)
 }
 
-export default async function Page() {
+export default async function Page({ params: { locale } }: LocaleProps) {
+  unstable_setRequestLocale(locale)
   const data = await fetchBlogPageData()
   return (
     <main className="flex flex-col gap-8 md:gap-14">

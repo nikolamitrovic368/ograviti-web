@@ -1,4 +1,5 @@
 import { Metadata } from 'next'
+import { unstable_setRequestLocale } from 'next-intl/server'
 
 import Section1 from '@/components/organisms/home/section1'
 import Section2 from '@/components/organisms/home/section2'
@@ -15,8 +16,9 @@ export async function generateMetadata({
   return mapSeo(seo)
 }
 
-export default async function Page({ params }: LocaleProps) {
-  const data = await fetchHomePageData(params.locale)
+export default async function Page({ params: { locale } }: LocaleProps) {
+  unstable_setRequestLocale(locale)
+  const data = await fetchHomePageData(locale)
 
   return (
     <main className="flex flex-col gap-12 md:-mt-14">

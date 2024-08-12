@@ -1,24 +1,28 @@
 import { Metadata } from 'next'
 import Image from 'next/image'
-import {Link} from '@/navigation'
+import { unstable_setRequestLocale } from 'next-intl/server'
 
 import CardSwiper from '@/components/atoms/card-swiper'
 import { Typography } from '@/components/atoms/typography'
 import CaseStudyCard from '@/components/molecules/case-study-card'
 import SectionTitle from '@/components/molecules/section-title'
+import { Link } from '@/navigation'
 import { fetchCaseStudyData } from '@/sanity/services/caseStudy.service'
-import { SlugProps } from '@/types'
+import { SlugLocaleProps } from '@/types'
 import { mapSeo } from '@/utils/common'
 
 export async function generateMetadata({
   params,
-}: SlugProps): Promise<Metadata> {
+}: SlugLocaleProps): Promise<Metadata> {
   const { seo } = await fetchCaseStudyData(params.slug)
   return mapSeo(seo)
 }
 
-export default async function Page({ params }: SlugProps) {
-  const { title, ...data } = await fetchCaseStudyData(params.slug)
+export default async function Page({
+  params: { slug, locale },
+}: SlugLocaleProps) {
+  unstable_setRequestLocale(locale)
+  const { title, ...data } = await fetchCaseStudyData(slug, locale)
 
   return (
     <main className="flex flex-col gap-8 md:gap-14">
