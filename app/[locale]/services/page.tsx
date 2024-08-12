@@ -1,13 +1,9 @@
-
-
 import { Step1, Step2, Step3, Step4, Step5 } from '@/components/atoms/icons'
 import ServiceStep from '@/components/molecules/service-step'
 import Title from '@/components/molecules/title'
 import ContactForm from '@/components/organisms/contact-form'
-import { LocaleProps } from '@/types'
 
-export default async function Page({ params: { locale } }: LocaleProps) {
-  
+export default async function Page() {
   return (
     <main className="flex flex-col gap-8 md:gap-14">
       <Title
