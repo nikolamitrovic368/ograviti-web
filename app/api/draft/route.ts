@@ -1,7 +1,8 @@
 import { validatePreviewUrl } from '@sanity/preview-url-secret'
 import { draftMode } from 'next/headers'
+// eslint-disable-next-line no-restricted-imports
+import { redirect } from 'next/navigation'
 
-import { redirect } from '@/navigation'
 import client from '@/sanity/client'
 
 const clientWithToken = client.withConfig({
