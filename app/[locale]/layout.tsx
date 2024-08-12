@@ -11,14 +11,18 @@ import Footer from '@/components/organisms/footer'
 import Header from '@/components/organisms/header'
 import { fetchGlobalSeoData } from '@/sanity/services/globalSeo.service'
 import { fetchFooterData } from '@/sanity/services/layout.service'
+import { LocaleProps } from '@/types'
 
 const lato = Lato({
   subsets: ['latin'],
   weight: ['400', '100', '300', '700', '900'],
 })
 
-export async function generateMetadata(): Promise<Metadata> {
-  const data = await fetchGlobalSeoData()
+export async function generateMetadata({
+  params: { locale },
+}: LocaleProps): Promise<Metadata> {
+  unstable_setRequestLocale(locale)
+  const data = await fetchGlobalSeoData(locale)
   return {
     title: data.globalSeoTitle,
     description: data.globalSeoDescription,
