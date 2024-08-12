@@ -50,8 +50,8 @@ export default async function RootLayout({
           <Header footer={footer} />
           <div className="px-8 xl:px-16 2xl:px-28">{children}</div>
           <Footer data={footer} />
-          {draftMode().isEnabled && <VisualEditing />}
         </NextIntlClientProvider>
+        {draftMode().isEnabled && <VisualEditing />}
       </body>
     </html>
   )
