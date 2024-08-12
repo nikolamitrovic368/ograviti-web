@@ -1,5 +1,6 @@
-import {Link} from '@/navigation'
 import { ReactNode } from 'react'
+
+import { Link } from '@/navigation'
 
 export default function ServiceStep({
   title,

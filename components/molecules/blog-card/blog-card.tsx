@@ -1,8 +1,8 @@
 import Image from 'next/image'
-import {Link} from '@/navigation'
 
 import { IconButton } from '@/components/atoms/icon-button'
 import Enter from '@/components/atoms/icons/enter'
+import { Link } from '@/navigation'
 import { type BlogCard } from '@/sanity/types'
 
 type BlogCardProps = {

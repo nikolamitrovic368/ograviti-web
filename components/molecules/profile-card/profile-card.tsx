@@ -5,7 +5,7 @@ import {
   Youtube,
 } from '@/components/atoms/icons'
 import { Typography } from '@/components/atoms/typography'
-import {Link} from '@/navigation'
+import { Link } from '@/navigation'
 import { TeamMember } from '@/sanity/types'
 import { urlFor } from '@/sanity/utils/image-builder'
 import { cn } from '@/utils/common'
