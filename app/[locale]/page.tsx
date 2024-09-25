@@ -1,6 +1,5 @@
 import { Metadata } from 'next'
 
-
 import Section1 from '@/components/organisms/home/section1'
 import Section2 from '@/components/organisms/home/section2'
 import Section3 from '@/components/organisms/home/section3'
@@ -12,13 +11,11 @@ import { mapSeo } from '@/utils/common'
 export async function generateMetadata({
   params: { locale },
 }: LocaleProps): Promise<Metadata> {
-  
   const { seo } = await fetchHomePageData(locale)
   return mapSeo(seo)
 }
 
 export default async function Page({ params: { locale } }: LocaleProps) {
-  
   const data = await fetchHomePageData(locale)
 
   return (

@@ -1,7 +1,6 @@
 import { Metadata } from 'next'
 import Image from 'next/image'
 
-
 import CardSwiper from '@/components/atoms/card-swiper'
 import { Typography } from '@/components/atoms/typography'
 import CaseStudyCard from '@/components/molecules/case-study-card'
@@ -14,7 +13,6 @@ import { mapSeo } from '@/utils/common'
 export async function generateMetadata({
   params: { slug, locale },
 }: SlugLocaleProps): Promise<Metadata> {
-  
   const { seo } = await fetchCaseStudyData(slug, locale)
   return mapSeo(seo)
 }
@@ -22,7 +20,6 @@ export async function generateMetadata({
 export default async function Page({
   params: { slug, locale },
 }: SlugLocaleProps) {
-  
   const { title, ...data } = await fetchCaseStudyData(slug, locale)
 
   return (
@@ -41,7 +38,7 @@ export default async function Page({
               variant="subtitle2"
               className="text-primary max-md:text-base"
             >
-              {data.CompletedDate}
+              {data?.CompletedDate}
             </Typography>
           </div>
           <div className="flex justify-between xl:pl-8 2xl:pl-16">
@@ -52,7 +49,7 @@ export default async function Page({
               variant="subtitle2"
               className="text-primary max-md:text-base"
             >
-              {data.client}
+              {data?.client}
             </Typography>
           </div>
           <div className="flex justify-between xl:pl-8 2xl:pl-16">
@@ -63,7 +60,7 @@ export default async function Page({
               variant="subtitle2"
               className="text-primary max-md:text-base"
             >
-              {data.website}
+              {data?.website}
             </Typography>
           </div>
           <div className="flex justify-between xl:pl-8 2xl:pl-16">
@@ -74,20 +71,20 @@ export default async function Page({
               variant="subtitle2"
               className="text-primary max-md:text-base"
             >
-              {data.mainService}
+              {data?.mainService}
             </Typography>
           </div>
         </div>
       </div>
       <div>
         <Image
-          {...data.image}
+          {...data?.image}
           alt="Ograviti Logo"
           className="h-[245px] w-full rounded-[45px] object-cover md:h-96 2xl:h-[686px]"
           priority
         />
         <div className="grid grid-cols-1 gap-6 pt-6 md:grid-cols-3 md:gap-8 md:pt-8">
-          {data.headerImages.map((image, key) => (
+          {data?.headerImages.map((image, key) => (
             <Image
               key={key}
               {...image}
@@ -101,9 +98,9 @@ export default async function Page({
       <div className="mr-0 flex items-center justify-between gap-0 md:-mr-8 md:gap-16 xl:-mr-16 2xl:-mr-28 2xl:gap-28">
         <div className="flex-1">
           <Typography variant="h2" className="pb-4">
-            {data.approachTitle}
+            {data?.approachTitle}
           </Typography>
-          <Typography variant="subtitle2">{data.approachSubtitle}</Typography>
+          <Typography variant="subtitle2">{data?.approachSubtitle}</Typography>
         </div>
         <Image
           src="/images/logos/ograviti-glass2.svg"
@@ -125,21 +122,23 @@ export default async function Page({
         />
         <div className="flex-1">
           <Typography variant="h2" className="pb-4">
-            {data.backgroundTitle}
+            {data?.backgroundTitle}
           </Typography>
-          <Typography variant="subtitle2">{data.backgroundSubtitle}</Typography>
+          <Typography variant="subtitle2">
+            {data?.backgroundSubtitle}
+          </Typography>
         </div>
       </div>
       <div>
         <Image
-          {...data.footerimage}
+          {...data?.footerimage}
           alt="Ograviti Logo"
           className="h-[245px] w-full rounded-[45px] object-cover md:h-96 2xl:h-[686px]"
           priority
           unoptimized
         />
         <div className="grid grid-cols-1 gap-8 pt-8 md:grid-cols-2">
-          {data.footerImages.map((image, key) => (
+          {data?.footerImages?.map((image, key) => (
             <Image
               key={key}
               {...image}
@@ -152,35 +151,37 @@ export default async function Page({
       </div>
       <div className="flex flex-col gap-4">
         <SectionTitle
-          title={data.exceptionalResultsTitle}
-          subtitle={data.exceptionalResultsSubtitle}
+          title={data?.exceptionalResultsTitle}
+          subtitle={data?.exceptionalResultsSubtitle}
         />
       </div>
-      <div className="flex flex-col">
-        <Link
-          href="/case-study"
-          className="text-right font-bold underline md:text-2xl"
-        >
-          See all
-        </Link>
-        <Typography variant="subtitle1" className="hidden md:block">
-          Other case studies
-        </Typography>
-        <div className="md:hidden">
-          <CardSwiper
-            cards={data.relatedCaseStudies.map(caseStudy => (
-              <CaseStudyCard key={caseStudy._id} data={caseStudy} />
+      {data?.relatedCaseStudies?.length && (
+        <div className="flex flex-col">
+          <Link
+            href="/case-study"
+            className="text-right font-bold underline md:text-2xl"
+          >
+            See all
+          </Link>
+          <Typography variant="subtitle1" className="hidden md:block">
+            Other case studies
+          </Typography>
+          <div className="md:hidden">
+            <CardSwiper
+              cards={data?.relatedCaseStudies?.map(caseStudy => (
+                <CaseStudyCard key={caseStudy._id} data={caseStudy} />
+              ))}
+            />
+          </div>
+          <div className="hidden flex-col justify-center gap-8 pb-10 md:flex md:flex-row md:pt-10">
+            {data?.relatedCaseStudies?.map(caseStudy => (
+              <div className="w-1/3 xl:w-1/4" key={caseStudy._id}>
+                <CaseStudyCard data={caseStudy} />
+              </div>
             ))}
-          />
+          </div>
         </div>
-        <div className="hidden flex-col justify-center gap-8 pb-10 md:flex md:flex-row md:pt-10">
-          {data.relatedCaseStudies.map(caseStudy => (
-            <div className="w-1/3 xl:w-1/4" key={caseStudy._id}>
-              <CaseStudyCard data={caseStudy} />
-            </div>
-          ))}
-        </div>
-      </div>
+      )}
     </main>
   )
 }

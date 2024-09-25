@@ -16,13 +16,13 @@ type AboutUsProps = { data: AboutUsPageType }
 export default function AboutUs({ data }: AboutUsProps) {
   return (
     <main className="flex flex-col gap-8 md:gap-14">
-      <Title title={data.title} subtitle={data.subtitle} />
+      <Title title={data?.title} subtitle={data?.subtitle} />
       <div className="mr-0 flex items-center justify-between xl:-mr-16 2xl:-mr-28">
         <div className="w-full xl:h-3/5 xl:pr-24 2xl:pr-32">
           <Typography variant="h2" className="pb-4">
-            {data.ourStory.title}
+            {data?.ourStory.title}
           </Typography>
-          <Typography variant="subtitle2">{data.ourStory.subtitle}</Typography>
+          <Typography variant="subtitle2">{data?.ourStory.subtitle}</Typography>
         </div>
         <Image
           src="/images/logos/ograviti-glass2.svg"
@@ -45,10 +45,10 @@ export default function AboutUs({ data }: AboutUsProps) {
         </div>
         <div className="flex flex-col gap-4 md:gap-8 lg:w-2/3 xl:w-1/2 2xl:gap-14">
           <Typography variant="h2" className="pb-4">
-            {data.ourMission.title}
+            {data?.ourMission.title}
           </Typography>
           <div className="grid grid-cols-1 gap-4 md:gap-8 lg:gap-6 xl:grid-cols-2 xl:gap-8">
-            {data.ourMission.sections.map(section => (
+            {data?.ourMission.sections.map(section => (
               <div key={section._key}>
                 <Typography variant="h3" className="pb-4 text-primary">
                   {section.title}
@@ -65,21 +65,23 @@ export default function AboutUs({ data }: AboutUsProps) {
       <div className="flex flex-col items-center justify-center gap-8">
         <div className="w-full md:w-4/5">
           <Typography variant="h2" className="pb-4 text-center">
-            {data.ourTeam.title}
+            {data?.ourTeam?.title}
           </Typography>
           <Typography variant="subtitle2" className=" text-center">
-            {data.ourTeam.subtitle}
+            {data?.ourTeam?.subtitle}
           </Typography>
         </div>
-        <div className="w-full sm:hidden">
-          <CardSwiper
-            cards={data.ourTeam.teamMembers.map(team => (
-              <ProfileCard data={team} key={team._id} />
-            ))}
-          />
-        </div>
+        {data?.ourTeam?.teamMembers?.length && (
+          <div className="w-full sm:hidden">
+            <CardSwiper
+              cards={data?.ourTeam?.teamMembers.map(team => (
+                <ProfileCard data={team} key={team._id} />
+              ))}
+            />
+          </div>
+        )}
         <div className="hidden w-full grid-cols-2 gap-4 sm:grid lg:grid-cols-4 2xl:gap-8">
-          {data.ourTeam.teamMembers.map((team, key) => (
+          {data?.ourTeam?.teamMembers.map((team, key) => (
             <ProfileCard
               data={team}
               key={team._id}
@@ -91,16 +93,16 @@ export default function AboutUs({ data }: AboutUsProps) {
 
       <LogoBackground>
         <div className="flex flex-col gap-16 p-5 text-center md:w-1/2 md:p-10 md:text-left">
-          <Typography variant="h1">{data.contactUs.title}</Typography>
+          <Typography variant="h1">{data?.contactUs.title}</Typography>
           <div className="w-full">
             <Link variant="button" href="/contact-us" className="inline-block">
-              {data.contactUs.ctaText}
+              {data?.contactUs.ctaText}
             </Link>
           </div>
         </div>
       </LogoBackground>
 
-      <TransformationStories data={data.testimonial} />
+      <TransformationStories data={data?.testimonial} />
       <div className="xl:my-4 2xl:my-16"></div>
       <ContactForm />
     </main>

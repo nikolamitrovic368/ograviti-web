@@ -19,9 +19,7 @@ export default function CardSwiper({ cards }: { cards: any[] }) {
       className="!pb-12"
       modules={[Pagination]}
     >
-      {cards.map((card, key) => (
-        <SwiperSlide key={key}>{card}</SwiperSlide>
-      ))}
+      {cards?.map((card, key) => <SwiperSlide key={key}>{card}</SwiperSlide>)}
     </Swiper>
   )
 }
