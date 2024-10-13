@@ -3,10 +3,9 @@ import Image from 'next/image'
 import React from 'react'
 
 import useSanityImage from '@/hooks/useSanityImage'
-import { Step } from '@/sanity/queries/pages/home.query'
 import { cn } from '@/utils/common'
 
-export default function JourneyStep({ data }: { data: Step }) {
+export default function JourneyStep({ data }: { data: Sanity.JourneyStep }) {
   const position = stegaClean(data.media?.position)
   const imageProps = useSanityImage(data.media?.image)
   return (

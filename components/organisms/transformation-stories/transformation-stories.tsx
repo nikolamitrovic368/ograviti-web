@@ -31,7 +31,7 @@ export default function TransformationStories({
           <div className="w-full md:hidden">
             <CardSwiper
               cards={data?.testimonialCards.map((card, k) => (
-                <TestimonialCard data={card} key={k} />
+                <TestimonialCard {...card} key={k} />
               ))}
             />
           </div>
@@ -53,9 +53,9 @@ export default function TransformationStories({
             slideToClickedSlide
             modules={[FreeMode, Pagination]}
           >
-            {data?.testimonialCards.map((user, k) => (
+            {data?.testimonialCards.map((card, k) => (
               <SwiperSlide key={k} className="!w-auto select-none">
-                <TestimonialCard data={user} />
+                <TestimonialCard {...card} />
               </SwiperSlide>
             ))}
           </Swiper>

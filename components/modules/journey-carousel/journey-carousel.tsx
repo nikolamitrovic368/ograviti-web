@@ -1,13 +1,22 @@
 'use client'
+
 import { useEffect, useRef, useState } from 'react'
 import { defineSwipe, Swipeable } from 'react-touch'
 
 import JourneyStep from '@/components/molecules/journey-step'
 import SectionTitle from '@/components/molecules/section-title'
-import { Journey } from '@/sanity/queries/pages/home.query'
 import { cn } from '@/utils/common'
 
-export default function Section2({ data }: { data: Journey }) {
+export default function JourneyCarousel(
+  data: Partial<{
+    title: string
+    subtitle: string
+    step1: Sanity.JourneyStep
+    step2: Sanity.JourneyStep
+    step3: Sanity.JourneyStep
+    step4: Sanity.JourneyStep
+  }>,
+) {
   const interval = useRef<any>()
   const [step, setStep] = useState(2)
   const [isClickAction, setIsClickAction] = useState(false)
@@ -67,7 +76,7 @@ export default function Section2({ data }: { data: Journey }) {
                       restartInterval()
                     }}
                   >
-                    {_step.name}
+                    {_step?.name}
                   </div>
                   <div
                     className={cn(
@@ -77,7 +86,7 @@ export default function Section2({ data }: { data: Journey }) {
                     )}
                   >
                     <div className="w-[calc(100vw-60px)] pb-8 md:w-[46vw] md:pb-0">
-                      <JourneyStep data={_step} />
+                      {_step && <JourneyStep data={_step} />}
                     </div>
                   </div>
                 </div>

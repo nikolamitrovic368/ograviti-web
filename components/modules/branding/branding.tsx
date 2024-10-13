@@ -10,12 +10,11 @@ import { IconButton } from '@/components/atoms/icon-button'
 import { Left, Right } from '@/components/atoms/icons'
 import { Link } from '@/navigation'
 import { useRouter } from '@/navigation'
-import { Brandings } from '@/sanity/queries/pages/home.query'
 import { cn } from '@/utils/common'
 
 import { mapSteps } from './constants'
 
-export default function Section1({ data }: { data: Brandings }) {
+export default function Branding(data: Partial<Sanity.Brandings>) {
   const [step, setStep] = useState(0)
   const steps = mapSteps(data)
   const router = useRouter()
@@ -34,7 +33,7 @@ export default function Section1({ data }: { data: Brandings }) {
         setStep(step === 4 ? 0 : step + 1)
       }}
     >
-      <div className="relative -mx-8 flex h-[calc(100vh-133px)] flex-col justify-between md:h-screen md:flex-row xl:-mx-16 2xl:-mx-28">
+      <div className="relative -mx-8 flex h-[calc(100vh-133px)] flex-col justify-between md:-mt-14 md:h-screen md:flex-row xl:-mx-16 2xl:-mx-28">
         <Carousel
           className="left-0 top-5 z-10 pl-8 md:absolute md:pt-6 xl:pl-16 2xl:pl-28"
           showArrows={false}

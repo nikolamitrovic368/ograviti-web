@@ -40,7 +40,11 @@ export const aboutUsPageQuery = groq`
   ..., 
   ourTeam {
     ...,
-    teamMembers[]->
+    teamMembers[]-> {
+      ...,
+      "name":  coalesce(name[_key == $locale][0].value, "Missing translation"),
+      "role":  coalesce(role[_key == $locale][0].value, "Missing translation")
+    }
   },
   "testimonial" : ${testimonialField},
   seo ${withImageProps}

@@ -1,6 +1,4 @@
-import { Brandings } from '@/sanity/queries/pages/home.query'
-
-export const mapSteps = (data: Brandings) => [
+export const mapSteps = (data: Partial<Sanity.Brandings>) => [
   {
     title: 'Branding',
     subtitle: data.brandingSubtitle,

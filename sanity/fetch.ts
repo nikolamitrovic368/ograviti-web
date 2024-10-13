@@ -5,8 +5,6 @@ import { dev } from '@/env'
 
 import client from './client'
 
-export { default as groq } from 'groq'
-
 export function fetchSanity<T = any>(
   query: string,
   {

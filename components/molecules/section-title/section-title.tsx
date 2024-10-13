@@ -5,11 +5,11 @@ export default function SectionTitle({
   title,
   subtitle,
   className,
-}: {
+}: Partial<{
   title: string
   subtitle: string
-  className?: string
-}) {
+  className: string
+}>) {
   return (
     <div className={cn('flex flex-col gap-4 2xl:w-2/3 2xl:gap-8', className)}>
       <Typography variant="h2">{title}</Typography>

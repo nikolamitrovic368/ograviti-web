@@ -1,9 +1,19 @@
+import { groq } from 'next-sanity'
+
 import { defaultLocale } from '@/config'
 import { fetchSanity } from '@/sanity/fetch'
-import { homePageQuery, HomePageType } from '@/sanity/queries/pages/home.query'
+import { modulesQuery, seo } from '@/sanity/queries'
 
 export const fetchHomePageData = (locale: string = defaultLocale) =>
-  fetchSanity<HomePageType>(homePageQuery, {
-    tags: ['homePage'],
-    params: { locale },
-  })
+  fetchSanity<Sanity.Page>(
+    groq`
+    *[_type == "page" && slug.current == 'index' && language == $locale][0] {
+      ...,
+			${modulesQuery},
+      ${seo}
+    }`,
+    {
+      tags: ['homePage'],
+      params: { locale },
+    },
+  )

@@ -4,13 +4,13 @@ import Rating from '@/components/atoms/rating'
 import useSanityImage from '@/hooks/useSanityImage'
 import { type TestimonialCard } from '@/sanity/queries/components/testimonialProps'
 
-type TestimonialCardProps = {
-  data: TestimonialCard
-}
-
 export default function TestimonialCard({
-  data: { description, rate, image, name, role },
-}: TestimonialCardProps) {
+  description,
+  rate,
+  image,
+  name,
+  role,
+}: Sanity.TestimonialCard) {
   const imageProps = useSanityImage(image)
   return (
     <div className="flex h-[322px] flex-col justify-between gap-4 rounded-3xl bg-secondary px-4 py-6 md:h-[334px] md:w-[288px] md:py-5 2xl:h-[465px] 2xl:w-[400px] 2xl:px-7 2xl:py-10">
