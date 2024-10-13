@@ -1,3 +1,5 @@
+import { stegaClean } from '@sanity/client/stega'
+
 import {
   Facebook,
   Instagram,
@@ -5,7 +7,6 @@ import {
   Youtube,
 } from '@/components/atoms/icons'
 import { Typography } from '@/components/atoms/typography'
-import { Link } from '@/navigation'
 import { TeamMember } from '@/sanity/types'
 import { urlFor } from '@/sanity/utils/image-builder'
 import { cn } from '@/utils/common'
@@ -30,30 +31,34 @@ export default function ProfileCard({
               }}
             >
               <div className="absolute -left-16 bottom-0 flex w-14 flex-col items-center justify-center rounded-tr-3xl bg-background py-8 transition-all duration-500 group-hover:left-0 2xl:w-16">
-                <Link
-                  href={linkedin}
+                <a
+                  target="_blank"
+                  href={stegaClean(linkedin)}
                   className="flex w-full items-center justify-center py-4 transition-all duration-500 hover:bg-primary"
                 >
                   <Linkedin className="h-auto w-4 2xl:w-[18px]" />
-                </Link>
-                <Link
-                  href={facebook}
+                </a>
+                <a
+                  target="_blank"
+                  href={stegaClean(facebook)}
                   className="flex w-full items-center justify-center py-4 transition-all duration-500 hover:bg-primary"
                 >
                   <Facebook className="h-auto w-3 2xl:w-[13px]" />
-                </Link>
-                <Link
-                  href={instagram}
+                </a>
+                <a
+                  target="_blank"
+                  href={stegaClean(instagram)}
                   className="flex w-full items-center justify-center py-4 transition-all duration-500 hover:bg-primary"
                 >
                   <Instagram className="h-auto w-4 2xl:w-[18px]" />
-                </Link>
-                <Link
-                  href={youtube}
+                </a>
+                <a
+                  target="_blank"
+                  href={stegaClean(youtube)}
                   className="flex w-full items-center justify-center py-4 transition-all duration-500 hover:bg-primary"
                 >
                   <Youtube className="h-auto w-4 2xl:w-[18px]" />
-                </Link>
+                </a>
               </div>
             </div>
           </div>
