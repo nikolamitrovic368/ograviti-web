@@ -43,3 +43,14 @@ modules[]{
   }
 }
 `
+export const richTextQuery = (name: string = 'body') => groq`
+  ${name}[] {
+      ...,
+    _type == "video" => {
+      ...,
+      type == "file" => {
+        "url": file.asset->url
+      }
+    }
+  }
+`

@@ -2,6 +2,7 @@ import { groq } from 'next-sanity'
 
 import { BlogCards, Seo } from '@/sanity/types'
 
+import { richTextQuery } from '../queries'
 import { ImageProps, imageProps, withImageProps } from './components/imageProps'
 
 export type BlogType = {
@@ -27,6 +28,7 @@ export const blogQuery = groq`
     slug,
     image ${imageProps}
   },
-  seo ${withImageProps}
+  seo ${withImageProps},
+  ${richTextQuery()}
 }
 `

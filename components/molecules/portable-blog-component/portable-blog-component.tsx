@@ -1,5 +1,6 @@
 import SanityImage from '@/components/atoms/sanity-image'
 import { Typography } from '@/components/atoms/typography'
+import Video from '@/components/modules/video'
 import { cn } from '@/utils/common'
 
 const PortableBlogComponent = {
@@ -7,6 +8,12 @@ const PortableBlogComponent = {
     image: ({ value }: any) => (
       <SanityImage
         image={value}
+        className="h-[245px] w-full rounded-[45px] object-cover xl:h-[400px] 2xl:h-[686px]"
+      />
+    ),
+    video: ({ value }: any) => (
+      <Video
+        {...value}
         className="h-[245px] w-full rounded-[45px] object-cover xl:h-[400px] 2xl:h-[686px]"
       />
     ),
