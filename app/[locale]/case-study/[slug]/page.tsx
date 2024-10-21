@@ -3,8 +3,8 @@ import Image from 'next/image'
 
 import CardSwiper from '@/components/atoms/card-swiper'
 import { Typography } from '@/components/atoms/typography'
+import Modules from '@/components/modules'
 import CaseStudyCard from '@/components/molecules/case-study-card'
-import SectionTitle from '@/components/molecules/section-title'
 import { Link } from '@/navigation'
 import { fetchCaseStudyData } from '@/sanity/services/caseStudy.service'
 import { SlugLocaleProps } from '@/types'
@@ -76,85 +76,15 @@ export default async function Page({
           </div>
         </div>
       </div>
-      <div>
+      {data?.image && (
         <Image
-          {...data?.image}
+          {...data.image}
           alt="Ograviti Logo"
           className="h-[245px] w-full rounded-[45px] object-cover md:h-96 2xl:h-[686px]"
           priority
         />
-        <div className="grid grid-cols-1 gap-6 pt-6 md:grid-cols-3 md:gap-8 md:pt-8">
-          {data?.headerImages.map((image, key) => (
-            <Image
-              key={key}
-              {...image}
-              alt="Ograviti Logo"
-              className="h-[245px] rounded-[45px] object-cover md:h-72 2xl:h-[439px]"
-              priority
-            />
-          ))}
-        </div>
-      </div>
-      <div className="mr-0 flex items-center justify-between gap-0 md:-mr-8 md:gap-16 xl:-mr-16 2xl:-mr-28 2xl:gap-28">
-        <div className="flex-1">
-          <Typography variant="h2" className="pb-4">
-            {data?.approachTitle}
-          </Typography>
-          <Typography variant="subtitle2">{data?.approachSubtitle}</Typography>
-        </div>
-        <Image
-          src="/images/logos/ograviti-glass2.svg"
-          alt="Ograviti Logo"
-          width={657}
-          height={155}
-          className="hidden h-28 w-auto md:block 2xl:h-[155px]"
-          priority
-        />
-      </div>
-      <div className="mr-0 flex items-center justify-between gap-0 md:-ml-8 md:gap-16 xl:-ml-16 2xl:-ml-28 2xl:gap-28">
-        <Image
-          src="/images/logos/ograviti-glass1.svg"
-          alt="Ograviti Logo"
-          width={656}
-          height={155}
-          className="hidden h-28 w-auto md:block 2xl:h-[155px]"
-          priority
-        />
-        <div className="flex-1">
-          <Typography variant="h2" className="pb-4">
-            {data?.backgroundTitle}
-          </Typography>
-          <Typography variant="subtitle2">
-            {data?.backgroundSubtitle}
-          </Typography>
-        </div>
-      </div>
-      <div>
-        <Image
-          {...data?.footerimage}
-          alt="Ograviti Logo"
-          className="h-[245px] w-full rounded-[45px] object-cover md:h-96 2xl:h-[686px]"
-          priority
-          unoptimized
-        />
-        <div className="grid grid-cols-1 gap-8 pt-8 md:grid-cols-2">
-          {data?.footerImages?.map((image, key) => (
-            <Image
-              key={key}
-              {...image}
-              alt="Ograviti Logo"
-              className="h-[245px] rounded-[45px] object-cover md:h-[350px] 2xl:h-[686px]"
-              priority
-            />
-          ))}
-        </div>
-      </div>
-      <div className="flex flex-col gap-4">
-        <SectionTitle
-          title={data?.exceptionalResultsTitle}
-          subtitle={data?.exceptionalResultsSubtitle}
-        />
-      </div>
+      )}
+      <Modules modules={data?.modules} />
       {data?.relatedCaseStudies?.length && (
         <div className="flex flex-col">
           <Link

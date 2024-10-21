@@ -23,14 +23,23 @@ modules[]{
   _type == 'blog-list' => { filteredCategory-> },
   _type == 'case-study-list' => { caseStudies[]->
     {
-    _id,
-    title,
-    description,
-    slug,
-    image ${imageProps}
+      _id,
+      title,
+      description,
+      slug,
+      image ${imageProps}
     }
   },
   _type == "companies" => @-> ${withImageProps},
   _type == "testimonial-list" => { testimonialCards[]-> },
+  _type == "gallery" => {
+    images[] ${imageProps}
+  },
+  _type == "video" => {
+    ...,
+    type == "file" => {
+      "url": file.asset->url
+    }
+  }
 }
 `

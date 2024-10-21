@@ -1,8 +1,12 @@
 import Companies from '../molecules/companies'
 import Branding from './branding'
 import CaseStudyList from './case-study-list'
+import Gallery from './gallery'
 import JourneyCarousel from './journey-carousel'
+import SimpleText from './simple-text'
 import TestimonialList from './testimonial-list'
+import TextWithLogo from './text-with-logo'
+import Video from './video'
 
 export default function Modules({ modules }: { modules?: Sanity.Module[] }) {
   return (
@@ -19,6 +23,14 @@ export default function Modules({ modules }: { modules?: Sanity.Module[] }) {
             return <TestimonialList {...module} key={module._key} />
           case 'companies':
             return <Companies {...module} key={module._key} />
+          case 'gallery':
+            return <Gallery {...module} key={module._key} />
+          case 'text-with-logo':
+            return <TextWithLogo {...module} key={module._key} />
+          case 'video':
+            return <Video {...module} key={module._key} />
+          case 'simple-text':
+            return <SimpleText {...module} key={module._key} />
 
           default:
             return <div data-type={module._type} key={module._key} />

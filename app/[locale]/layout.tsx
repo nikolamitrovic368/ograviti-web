@@ -9,6 +9,8 @@ import { VisualEditing } from 'next-sanity'
 
 import Footer from '@/components/organisms/footer'
 import Header from '@/components/organisms/header'
+import ClientLayout from '@/components/providers/client-layout'
+import StyledComponentsRegistry from '@/components/providers/styled-components-registry'
 import { fetchGlobalSeoData } from '@/sanity/services/globalSeo.service'
 import { fetchFooterData } from '@/sanity/services/layout.service'
 import { LocaleProps } from '@/types'
@@ -47,9 +49,13 @@ export default async function RootLayout({
     <html lang={locale}>
       <body className={lato.className}>
         <NextIntlClientProvider messages={messages}>
-          <Header footer={footer} />
-          <div className="px-8 xl:px-16 2xl:px-28">{children}</div>
-          <Footer data={footer} />
+          <StyledComponentsRegistry>
+            <ClientLayout>
+              <Header footer={footer} />
+              <div className="px-8 xl:px-16 2xl:px-28">{children}</div>
+              <Footer data={footer} />
+            </ClientLayout>
+          </StyledComponentsRegistry>
         </NextIntlClientProvider>
         {draftMode().isEnabled && <VisualEditing />}
       </body>

@@ -34,6 +34,14 @@ declare global {
 
     // objects
 
+    type ImageProps = {
+      src: string
+      width: number
+      height: number
+    }
+
+    type VideoType = 'youtube' | 'link' | 'file'
+
     type Seo = {
       description: string
       keywords: string[]
