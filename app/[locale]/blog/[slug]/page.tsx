@@ -6,21 +6,27 @@ import { Typography } from '@/components/atoms/typography'
 import BlogCard from '@/components/molecules/blog-card'
 import PortableBlogComponent from '@/components/molecules/portable-blog-component'
 import Title from '@/components/molecules/title'
-import { Link } from '@/navigation'
+import { Link } from '@/i18n/navigation'
 import { fetchBlogData } from '@/sanity/services/blog.service'
 import { SlugLocaleProps } from '@/types'
 import { mapSeo } from '@/utils/common'
 
-export async function generateMetadata({
-  params: { slug, locale },
-}: SlugLocaleProps): Promise<Metadata> {
+export async function generateMetadata(
+  props: SlugLocaleProps,
+): Promise<Metadata> {
+  const params = await props.params
+
+  const { slug, locale } = params
+
   const { seo } = await fetchBlogData(slug, locale)
   return mapSeo(seo)
 }
 
-export default async function Page({
-  params: { slug, locale },
-}: SlugLocaleProps) {
+export default async function Page(props: SlugLocaleProps) {
+  const params = await props.params
+
+  const { slug, locale } = params
+
   const data = await fetchBlogData(slug, locale)
 
   return (

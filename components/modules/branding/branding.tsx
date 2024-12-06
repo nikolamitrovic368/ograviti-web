@@ -8,8 +8,8 @@ import { defineSwipe, Swipeable } from 'react-touch'
 
 import { IconButton } from '@/components/atoms/icon-button'
 import { Left, Right } from '@/components/atoms/icons'
-import { Link } from '@/navigation'
-import { useRouter } from '@/navigation'
+import { Link } from '@/i18n/navigation'
+import { useRouter } from '@/i18n/navigation'
 import { cn } from '@/utils/common'
 
 import { mapSteps } from './constants'

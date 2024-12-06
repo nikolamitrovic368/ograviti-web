@@ -1,6 +1,6 @@
 import { ReactNode } from 'react'
 
-import { Link } from '@/navigation'
+import { Link } from '@/i18n/navigation'
 
 export default function ServiceStep({
   title,

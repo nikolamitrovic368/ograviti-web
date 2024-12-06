@@ -5,21 +5,27 @@ import CardSwiper from '@/components/atoms/card-swiper'
 import { Typography } from '@/components/atoms/typography'
 import Modules from '@/components/modules'
 import CaseStudyCard from '@/components/molecules/case-study-card'
-import { Link } from '@/navigation'
+import { Link } from '@/i18n/navigation'
 import { fetchCaseStudyData } from '@/sanity/services/caseStudy.service'
 import { SlugLocaleProps } from '@/types'
 import { mapSeo } from '@/utils/common'
 
-export async function generateMetadata({
-  params: { slug, locale },
-}: SlugLocaleProps): Promise<Metadata> {
+export async function generateMetadata(
+  props: SlugLocaleProps,
+): Promise<Metadata> {
+  const params = await props.params
+
+  const { slug, locale } = params
+
   const { seo } = await fetchCaseStudyData(slug, locale)
   return mapSeo(seo)
 }
 
-export default async function Page({
-  params: { slug, locale },
-}: SlugLocaleProps) {
+export default async function Page(props: SlugLocaleProps) {
+  const params = await props.params
+
+  const { slug, locale } = params
+
   const { title, ...data } = await fetchCaseStudyData(slug, locale)
 
   return (

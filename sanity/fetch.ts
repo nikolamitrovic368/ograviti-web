@@ -1,11 +1,11 @@
-// import { draftMode } from 'next/headers'
+import { draftMode } from 'next/headers'
 import type { QueryParams, ResponseQueryOptions } from 'next-sanity'
-
-import { dev } from '@/env'
 
 import client from './client'
 
-export function fetchSanity<T = any>(
+export { default as groq } from 'groq'
+
+export async function fetchSanity<T = any>(
   query: string,
   {
     params = {},
@@ -14,8 +14,8 @@ export function fetchSanity<T = any>(
     params?: QueryParams
   } & ResponseQueryOptions['next'] = {},
 ) {
-  const preview = dev
-  // || draftMode().isEnabled
+  const preview =
+    process.env.NODE_ENV === 'development' || (await draftMode()).isEnabled
 
   return client.fetch<T>(
     query,

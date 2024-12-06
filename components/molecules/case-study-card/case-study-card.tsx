@@ -2,7 +2,7 @@ import Image from 'next/image'
 
 import { IconButton } from '@/components/atoms/icon-button'
 import { Right } from '@/components/atoms/icons'
-import { Link } from '@/navigation'
+import { Link } from '@/i18n/navigation'
 import { type CaseStudyCard } from '@/sanity/types'
 
 type CaseStudyCardProps = {

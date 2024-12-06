@@ -1,3 +1,3 @@
-import { PhoneInput, phoneInputVariants } from './phone-input'
+import PhoneInput from './phone-input'
 
-export { PhoneInput, phoneInputVariants }
+export default PhoneInput

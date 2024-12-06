@@ -17,7 +17,7 @@ export default function JourneyCarousel(
     step4: Sanity.JourneyStep
   }>,
 ) {
-  const interval = useRef<any>()
+  const interval = useRef<any>(undefined)
   const [step, setStep] = useState(2)
   const [isClickAction, setIsClickAction] = useState(false)
   function autoNextStep() {

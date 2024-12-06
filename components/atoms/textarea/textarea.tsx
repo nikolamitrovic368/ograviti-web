@@ -21,21 +21,31 @@ export interface InputProps
   extends React.TextareaHTMLAttributes<HTMLTextAreaElement>,
     VariantProps<typeof textareaVariants> {
   label?: string
+  errorMessage?: string
   fullWidth?: boolean
 }
 
 const Textarea = React.forwardRef<HTMLTextAreaElement, InputProps>(
-  ({ className, variant, fullWidth, label, ...props }, ref) => {
+  ({ className, variant, fullWidth, label, errorMessage, ...props }, ref) => {
+    const textareaId = React.useId()
     return (
       <div
         className={cn('flex flex-col gap-2 2xl:gap-4', { 'w-full': fullWidth })}
       >
-        {label && <div className="max-md:text-sm">{label}</div>}
+        {label && (
+          <label htmlFor={textareaId} className="max-md:text-sm">
+            {label}
+          </label>
+        )}
         <textarea
           className={cn(textareaVariants({ variant, className }))}
+          id={textareaId}
           ref={ref}
           {...props}
         />
+        {errorMessage && (
+          <div className="pl-3 text-red-600">{errorMessage}</div>
+        )}
       </div>
     )
   },

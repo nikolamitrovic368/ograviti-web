@@ -6,14 +6,20 @@ import { fetchCareersPageData } from '@/sanity/services/pages/careers.service'
 import { LocaleProps } from '@/types'
 import { mapSeo } from '@/utils/common'
 
-export async function generateMetadata({
-  params: { locale },
-}: LocaleProps): Promise<Metadata> {
+export async function generateMetadata(props: LocaleProps): Promise<Metadata> {
+  const params = await props.params
+
+  const { locale } = params
+
   const { seo } = await fetchCareersPageData(locale)
   return mapSeo(seo)
 }
 
-export default async function Page({ params: { locale } }: LocaleProps) {
+export default async function Page(props: LocaleProps) {
+  const params = await props.params
+
+  const { locale } = params
+
   const data = await fetchCareersPageData(locale)
   return (
     <main className="flex flex-col gap-8 md:gap-14">

@@ -3,7 +3,7 @@ import { PortableText } from 'next-sanity'
 
 import { Button } from '@/components/atoms/button'
 import { Input } from '@/components/atoms/input/input'
-import { PhoneInput } from '@/components/atoms/phone-input'
+import PhoneInput from '@/components/atoms/phone-input'
 import { Typography } from '@/components/atoms/typography'
 import { UploadInput } from '@/components/atoms/upload-input/upload-input'
 import PortableCareerComponent from '@/components/molecules/portable-career-component'
@@ -12,16 +12,22 @@ import { fetchCareerData } from '@/sanity/services/career.service'
 import { SlugLocaleProps } from '@/types'
 import { mapSeo } from '@/utils/common'
 
-export async function generateMetadata({
-  params: { slug, locale },
-}: SlugLocaleProps): Promise<Metadata> {
+export async function generateMetadata(
+  props: SlugLocaleProps,
+): Promise<Metadata> {
+  const params = await props.params
+
+  const { slug, locale } = params
+
   const { seo } = await fetchCareerData(slug, locale)
   return mapSeo(seo)
 }
 
-export default async function Page({
-  params: { slug, locale },
-}: SlugLocaleProps) {
+export default async function Page(props: SlugLocaleProps) {
+  const params = await props.params
+
+  const { slug, locale } = params
+
   const data = await fetchCareerData(slug, locale)
   return (
     <div className="-mx-8 -mb-28 pb-12 md:-mb-60 md:bg-[url('/images/bgs/1.svg')] md:bg-right md:bg-repeat-y xl:-mx-16 2xl:-mx-28">
@@ -56,8 +62,8 @@ export default async function Page({
             <div className="w-full md:w-80 lg:w-[480px] xl:w-[554px]">
               <PhoneInput
                 label="Phone Number"
-                placeholder="Enter Phone Number"
-                fullWidth
+                onChange={(v: string) => console.log(v)}
+                value={''}
               />
             </div>
             <UploadInput className="w-full md:w-[227px]" />

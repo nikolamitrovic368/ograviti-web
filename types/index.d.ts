@@ -9,9 +9,9 @@ export type SlugProps = {
 }
 
 export type LocaleProps = {
-  params: { locale: string }
+  params: Promise<{ locale: string }>
 }
 
 export type SlugLocaleProps = {
-  params: { slug: string; locale: string }
+  params: Promise<{ slug: string; locale: string }>
 }

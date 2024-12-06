@@ -1,11 +1,60 @@
+'use client'
+
+import { zodResolver } from '@hookform/resolvers/zod'
+import { PhoneNumberUtil } from 'google-libphonenumber'
+import { Controller, useForm } from 'react-hook-form'
+import { z } from 'zod'
+
 import { Button } from '@/components/atoms/button'
 import { Ograviti } from '@/components/atoms/icons'
 import { Input } from '@/components/atoms/input'
-import { PhoneInput } from '@/components/atoms/phone-input'
+import PhoneInput from '@/components/atoms/phone-input'
 import { Textarea } from '@/components/atoms/textarea'
 import { Typography } from '@/components/atoms/typography'
+import { api } from '@/trpc/react'
+
+const phoneUtil = PhoneNumberUtil.getInstance()
+
+const schema = z.object({
+  firstName: z.string().min(1, 'You must enter First name.'),
+  lastName: z.string().min(1, 'You must enter Last name.'),
+  email: z.string().email('You must enter a valid email.'),
+  message: z.string().min(1, 'You must enter Message.'),
+  phone: z.string().refine(
+    (phone: string) => {
+      try {
+        return phoneUtil.isValidNumber(phoneUtil.parseAndKeepRawInput(phone))
+      } catch (error) {
+        return false
+      }
+    },
+    { message: 'Please insert valid phone number' },
+  ),
+})
 
 export default function ContactForm() {
+  const sendContact = api.onesignal.sendContact.useMutation({
+    onSuccess: () => {
+      reset()
+      notifySuccess(t('success'))
+    },
+  })
+  type FormType = z.infer<typeof schema>
+  const {
+    register,
+    control,
+    handleSubmit,
+    formState: { errors },
+    reset,
+  } = useForm<FormType>({
+    resolver: zodResolver(schema),
+  })
+  const onSubmit = (data: FormType) => {
+    console.log(data)
+
+    sendContact.mutate(data)
+  }
+
   return (
     <div className="flex w-full flex-col gap-8 lg:flex-row">
       <div className="flex w-full flex-col gap-8 md:py-12 lg:w-[35%] lg:border-r lg:border-secondary xl:w-[30%] xl:gap-14 xl:py-20">
@@ -47,42 +96,60 @@ export default function ContactForm() {
           </div>
         </div>
       </div>
-      <div className="flex w-full flex-1 flex-col items-center justify-center gap-8 md:py-12 xl:gap-14 xl:py-20">
+      <form
+        onSubmit={handleSubmit(onSubmit)}
+        className="flex w-full flex-1 flex-col items-center justify-center gap-8 md:py-12 xl:gap-14 xl:py-20"
+      >
         <div className="grid w-full grid-cols-1 justify-center gap-6 md:grid-cols-2 2xl:gap-8">
           <Input
             label="First Name"
             placeholder="Enter First Name"
             className="w-full"
+            {...register('firstName')}
+            errorMessage={errors.firstName?.message}
           />
           <Input
             label="Last Name"
             placeholder="Enter Last Name"
             className="w-full"
+            {...register('lastName')}
+            errorMessage={errors.lastName?.message}
           />
+
           <Input
             label="Email Address"
             placeholder="Enter Email Address"
             className="w-full"
+            {...register('email')}
+            errorMessage={errors.email?.message}
           />
-          <div className="w-full">
-            <PhoneInput
-              label="Phone Number"
-              placeholder="Enter Phone Number"
-              fullWidth
-            />
-          </div>
+          <Controller
+            name="phone"
+            control={control}
+            render={({ field }) => (
+              <PhoneInput
+                label="Phone Number"
+                {...field}
+                errorMessage={errors.phone?.message}
+              />
+            )}
+          />
           <div className="md:col-span-2">
             <Textarea
               fullWidth
               placeholder="Enter your Message"
               label="Message"
+              {...register('message')}
+              errorMessage={errors.message?.message}
             />
           </div>
         </div>
         <div className="flex w-full justify-end">
-          <Button className="max-md:w-full">Send</Button>
+          <Button className="max-md:w-full" type="submit">
+            Send
+          </Button>
         </div>
-      </div>
+      </form>
     </div>
   )
 }
