@@ -2,7 +2,7 @@ import Image from 'next/image'
 
 import { IconButton } from '@/components/atoms/icon-button'
 import Enter from '@/components/atoms/icons/enter'
-import { Link } from '@/i18n/navigation'
+import { Link } from '@/i18n/routing'
 import { type BlogCard } from '@/sanity/types'
 
 type BlogCardProps = {

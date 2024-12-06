@@ -3,7 +3,7 @@ import { Link } from '@/components/atoms/link'
 import { Typography } from '@/components/atoms/typography'
 import Socials from '@/components/molecules/socials/socials'
 import { footerNavigationConfig } from '@/constants/navigation'
-import { Link as NextLink } from '@/i18n/navigation'
+import { Link as NextLink } from '@/i18n/routing'
 import { FooterType } from '@/sanity/queries/layout.queries'
 import { cn } from '@/utils/common'
 

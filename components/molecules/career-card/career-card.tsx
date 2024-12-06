@@ -1,7 +1,7 @@
 import { IconButton } from '@/components/atoms/icon-button'
 import Enter from '@/components/atoms/icons/enter'
 import { Typography } from '@/components/atoms/typography'
-import { Link } from '@/i18n/navigation'
+import { Link } from '@/i18n/routing'
 import { type CareerCard } from '@/sanity/queries/career.queries'
 import { cn } from '@/utils/common'
 

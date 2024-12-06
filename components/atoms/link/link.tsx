@@ -1,7 +1,7 @@
 import { cva, type VariantProps } from 'class-variance-authority'
 import * as React from 'react'
 
-import { Link as NextLink } from '@/i18n/navigation'
+import { Link as NextLink } from '@/i18n/routing'
 import { cn } from '@/utils/common'
 
 const linkVariants = cva('font-bold', {

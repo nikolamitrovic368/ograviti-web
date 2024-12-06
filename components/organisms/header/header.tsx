@@ -10,7 +10,7 @@ import Close from '@/components/atoms/icons/close'
 import NavLink from '@/components/atoms/nav-link'
 import Socials from '@/components/molecules/socials/socials'
 import navigationConfig from '@/constants/navigation'
-import { Link } from '@/i18n/navigation'
+import { Link } from '@/i18n/routing'
 import { FooterType } from '@/sanity/queries/layout.queries'
 import { cn } from '@/utils/common'
 
