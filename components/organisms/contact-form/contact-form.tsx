@@ -16,10 +16,10 @@ import { api } from '@/trpc/react'
 const phoneUtil = PhoneNumberUtil.getInstance()
 
 const schema = z.object({
-  firstName: z.string().min(1, 'You must enter First name.'),
-  lastName: z.string().min(1, 'You must enter Last name.'),
-  email: z.string().email('You must enter a valid email.'),
-  message: z.string().min(1, 'You must enter Message.'),
+  firstName: z.string().min(1, 'Please enter your first name'),
+  lastName: z.string().min(1, 'Please enter your last name'),
+  email: z.string().email('Please enter valid email address'),
+  message: z.string().min(1, 'Please enter your Message'),
   phone: z.string().refine(
     (phone: string) => {
       try {
@@ -36,7 +36,6 @@ export default function ContactForm() {
   const sendContact = api.onesignal.sendContact.useMutation({
     onSuccess: () => {
       reset()
-      notifySuccess(t('success'))
     },
   })
   type FormType = z.infer<typeof schema>

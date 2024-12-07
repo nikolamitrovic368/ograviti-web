@@ -24,6 +24,7 @@ export default function LogoBackground({
           {[...new Array(9)].map((_v, key) =>
             key % 2 ? (
               <motion.div
+                // @ts-ignore
                 className="flex flex-col items-center"
                 key={key}
                 animate={{
@@ -71,6 +72,7 @@ export default function LogoBackground({
               </motion.div>
             ) : (
               <motion.div
+                // @ts-ignore
                 className="-mx-[52px] -mt-[31px] flex flex-col items-center"
                 key={key}
                 animate={{

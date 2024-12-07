@@ -1,7 +1,5 @@
 import { createClient } from 'next-sanity'
 
-import { env } from '@/env'
-
 export default createClient({
   projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,
   dataset: 'staging',
