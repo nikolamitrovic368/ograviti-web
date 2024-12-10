@@ -1,5 +1,6 @@
 import { Metadata } from 'next'
 import Image from 'next/image'
+import { getTranslations } from 'next-intl/server'
 import { PortableText } from 'next-sanity'
 
 import { Typography } from '@/components/atoms/typography'
@@ -22,12 +23,13 @@ export async function generateMetadata(
   return mapSeo(seo)
 }
 
-export default async function Page(props: SlugLocaleProps) {
+export default async function BlogPage(props: SlugLocaleProps) {
   const params = await props.params
 
   const { slug, locale } = params
 
   const data = await fetchBlogData(slug, locale)
+  const t = await getTranslations('BlogPage')
 
   return (
     <main className="flex flex-col gap-8 md:gap-10 2xl:gap-14">
@@ -47,13 +49,13 @@ export default async function Page(props: SlugLocaleProps) {
       <div>
         <div className="flex justify-end py-4 md:justify-between md:py-8">
           <Typography variant="subtitle1" className="hidden md:block">
-            Other blogs
+            {t('other-blogs')}
           </Typography>
           <Link
             href="/blog"
             className="text-right font-bold underline md:text-2xl"
           >
-            See all
+            {t('see-all')}
           </Link>
         </div>
         <div className="flex flex-col gap-8 md:flex-row">

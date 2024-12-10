@@ -14,7 +14,7 @@ export default function NavLink({
   onClick?: () => void
 }) {
   const [scope, animate] = useAnimate()
-  const { is2xl } = useMedia()
+  const { is2xl, isMd } = useMedia()
   return (
     <div
       className="w-full overflow-hidden"
@@ -28,7 +28,7 @@ export default function NavLink({
     >
       <div className="h-16 w-full overflow-hidden md:h-14 2xl:h-20">
         <motion.div
-          whileHover={{ y: is2xl ? -160 : -104 }}
+          whileHover={{ y: isMd ? (is2xl ? -160 : -104) : 0 }}
           transition={{ duration: 0.7 }}
         >
           <div className="flex flex-col">
@@ -45,10 +45,12 @@ export default function NavLink({
           </div>
         </motion.div>
       </div>
-      <motion.hr
-        initial={{ opacity: 0, x: '-100%' }}
-        transition={{ duration: 0.01 }}
-      />
+      {isMd && (
+        <motion.hr
+          initial={{ opacity: 0, x: '-100%' }}
+          transition={{ duration: 0.01 }}
+        />
+      )}
     </div>
   )
 }

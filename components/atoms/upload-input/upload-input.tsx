@@ -29,13 +29,12 @@ const UploadInput = React.forwardRef<HTMLDivElement, UploadInputProps>(
   ({ className, variant, label, ...props }, ref) => {
     return (
       <div className="flex w-auto flex-col gap-4">
-        {label && <div>{label}</div>}
         <div
           className={cn(uploadInputVariants({ variant, className }))}
           ref={ref}
           {...props}
         >
-          Upload CV
+          {label}
           <Upload />
         </div>
       </div>

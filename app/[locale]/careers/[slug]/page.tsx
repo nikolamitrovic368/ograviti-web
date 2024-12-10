@@ -1,4 +1,5 @@
 import { Metadata } from 'next'
+import { getTranslations } from 'next-intl/server'
 import { PortableText } from 'next-sanity'
 
 import { Button } from '@/components/atoms/button'
@@ -23,10 +24,11 @@ export async function generateMetadata(
   return mapSeo(seo)
 }
 
-export default async function Page(props: SlugLocaleProps) {
+export default async function CareerPage(props: SlugLocaleProps) {
   const params = await props.params
 
   const { slug, locale } = params
+  const t = await getTranslations('CareerPage')
 
   const data = await fetchCareerData(slug, locale)
   return (
@@ -40,7 +42,7 @@ export default async function Page(props: SlugLocaleProps) {
           />
         </div>
         <Typography variant="subtitle1" className="text-center text-3xl">
-          Are you interested?
+          {t('are-you-interested')}
         </Typography>
         <div className="flex flex-col items-center justify-center gap-14 md:gap-16 2xl:gap-24">
           <div className="grid w-full grid-cols-1 justify-center gap-8 md:w-auto md:grid-cols-2">
@@ -68,7 +70,7 @@ export default async function Page(props: SlugLocaleProps) {
             </div>
             <UploadInput className="w-full md:w-[227px]" />
           </div>
-          <Button>Apply Now</Button>
+          <Button>{t('apply-now')}</Button>
         </div>
       </main>
     </div>

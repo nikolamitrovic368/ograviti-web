@@ -66,6 +66,7 @@ export default function Header({ footer }: HeaderProps) {
                   ? 'cursor-default font-normal text-stone-500'
                   : 'cursor-pointer font-bold text-white underline duration-300 hover:text-primary',
               )}
+              // eslint-disable-next-line react/jsx-no-literals
             >
               En
             </Link>
@@ -78,24 +79,13 @@ export default function Header({ footer }: HeaderProps) {
                   ? 'cursor-default font-normal text-stone-500'
                   : 'cursor-pointer font-bold text-white underline duration-300 hover:text-primary',
               )}
+              // eslint-disable-next-line react/jsx-no-literals
             >
               De
             </Link>
           </div>
-          <div className="flex h-full flex-col items-center gap-8 md:hidden">
-            {navigationConfig.map((nav, key) => (
-              <Link
-                href={nav.url}
-                key={key}
-                className="text-2xl font-bold md:text-5xl"
-                onClick={() => setIsOpen(false)}
-              >
-                {nav.title}
-              </Link>
-            ))}
-          </div>
-          <div className="hidden h-full flex-col items-center justify-between md:flex">
-            <div className="flex h-full flex-col items-center justify-between text-center md:w-auto">
+          <div className="h-full flex-col items-center justify-between md:flex">
+            <div className="flex flex-col items-center gap-4 text-center md:w-auto">
               {navigationConfig.map((nav, key) => (
                 <NavLink
                   key={key}
@@ -117,6 +107,7 @@ export default function Header({ footer }: HeaderProps) {
                     ? 'cursor-default font-normal text-stone-500'
                     : 'cursor-pointer font-bold text-white underline duration-300 hover:text-primary',
                 )}
+                // eslint-disable-next-line react/jsx-no-literals
               >
                 En
               </Link>
@@ -129,6 +120,7 @@ export default function Header({ footer }: HeaderProps) {
                     ? 'cursor-default font-normal text-stone-500'
                     : 'cursor-pointer font-bold text-white underline duration-300 hover:text-primary',
                 )}
+                // eslint-disable-next-line react/jsx-no-literals
               >
                 De
               </Link>

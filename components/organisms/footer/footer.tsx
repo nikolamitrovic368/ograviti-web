@@ -1,3 +1,5 @@
+import { useTranslations } from 'next-intl'
+
 import { Ograviti } from '@/components/atoms/icons'
 import { Link } from '@/components/atoms/link'
 import { Typography } from '@/components/atoms/typography'
@@ -12,6 +14,7 @@ type FooterProps = {
 }
 
 export default function Footer({ data }: FooterProps) {
+  const t = useTranslations('Footer')
   return (
     <div
       className={cn(
@@ -22,19 +25,19 @@ export default function Footer({ data }: FooterProps) {
         variant="small"
         className="pt-8 text-center  opacity-50 md:pt-8 2xl:pt-14"
       >
-        Are you ready?
+        {t('are-you-ready')}
       </Typography>
       <div className="py-6 text-center text-2xl leading-6  md:leading-10 2xl:text-3xl 2xl:leading-[50px]">
-        Let’s get started
+        {t('lets-get-started')}
       </div>
       <Link variant="button" href="/contact-us" className="max-md:w-full">
-        Get Started
+        {t('get-started')}
       </Link>
       <Typography
         variant="small"
         className="pb-10 pt-6 text-center text-white opacity-70 md:py-8 2xl:py-14"
       >
-        Copyright © 2024 • Ograviti.
+        {t('copyright')}
       </Typography>
       <hr className="w-full bg-primary-foreground opacity-20" />
       <div className="flex w-full flex-col items-center justify-between gap-6 py-10 md:flex-row md:gap-0 md:py-5 2xl:py-10">

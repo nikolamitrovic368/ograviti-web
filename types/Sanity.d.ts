@@ -5,11 +5,6 @@ declare global {
   namespace Sanity {
     // documents
 
-    type Navigation = SanityDocument<{
-      title: string
-      items?: (Link | LinkList)[]
-    }>
-
     // pages
 
     type PageBase = SanityDocument<{

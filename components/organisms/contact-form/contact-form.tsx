@@ -11,6 +11,7 @@ import { Input } from '@/components/atoms/input'
 import PhoneInput from '@/components/atoms/phone-input'
 import { Textarea } from '@/components/atoms/textarea'
 import { Typography } from '@/components/atoms/typography'
+import { useRouter } from '@/i18n/routing'
 import { api } from '@/trpc/react'
 
 const phoneUtil = PhoneNumberUtil.getInstance()
@@ -33,9 +34,11 @@ const schema = z.object({
 })
 
 export default function ContactForm() {
+  const router = useRouter()
   const sendContact = api.onesignal.sendContact.useMutation({
     onSuccess: () => {
       reset()
+      router.push('/contact-us-thank-you')
     },
   })
   type FormType = z.infer<typeof schema>
@@ -49,8 +52,6 @@ export default function ContactForm() {
     resolver: zodResolver(schema),
   })
   const onSubmit = (data: FormType) => {
-    console.log(data)
-
     sendContact.mutate(data)
   }
 

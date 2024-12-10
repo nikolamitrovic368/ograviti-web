@@ -17,14 +17,14 @@ const typographyVariants = cva('', {
       subtitle3: 'text-lg',
       small: 'max-md:text-sm',
     },
-    type: {
+    textColor: {
       default: '',
       primary: 'text-primary',
     },
   },
   defaultVariants: {
     variant: 'default',
-    type: 'default',
+    textColor: 'default',
   },
 })
 
@@ -33,11 +33,11 @@ export interface TypographyProps
     VariantProps<typeof typographyVariants> {}
 
 const Typography = React.forwardRef<HTMLDivElement, TypographyProps>(
-  ({ className, variant, type, ...props }, ref) => {
+  ({ className, variant, textColor, ...props }, ref) => {
     return (
       <div
         ref={ref}
-        className={cn(typographyVariants({ variant, type, className }))}
+        className={cn(typographyVariants({ variant, textColor, className }))}
         {...props}
       />
     )

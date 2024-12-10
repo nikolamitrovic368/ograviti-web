@@ -1,5 +1,6 @@
 import { Metadata } from 'next'
 import Image from 'next/image'
+import { getTranslations } from 'next-intl/server'
 
 import CardSwiper from '@/components/atoms/card-swiper'
 import { Typography } from '@/components/atoms/typography'
@@ -21,11 +22,12 @@ export async function generateMetadata(
   return mapSeo(seo)
 }
 
-export default async function Page(props: SlugLocaleProps) {
+export default async function CaseStudyPage(props: SlugLocaleProps) {
   const params = await props.params
 
   const { slug, locale } = params
 
+  const t = await getTranslations('CaseStudyPage')
   const { title, ...data } = await fetchCaseStudyData(slug, locale)
 
   return (
@@ -38,7 +40,7 @@ export default async function Page(props: SlugLocaleProps) {
         <div className="flex w-full flex-col justify-center gap-5 py-6 pr-5 md:gap-6 lg:w-1/3 lg:py-12 2xl:gap-8">
           <div className="flex justify-between xl:pl-8 2xl:pl-16">
             <Typography variant="subtitle2" className="max-md:text-base">
-              Completed
+              {t('completed')}
             </Typography>
             <Typography
               variant="subtitle2"
@@ -49,7 +51,7 @@ export default async function Page(props: SlugLocaleProps) {
           </div>
           <div className="flex justify-between xl:pl-8 2xl:pl-16">
             <Typography variant="subtitle2" className="max-md:text-base">
-              Client
+              {t('client')}
             </Typography>
             <Typography
               variant="subtitle2"
@@ -60,7 +62,7 @@ export default async function Page(props: SlugLocaleProps) {
           </div>
           <div className="flex justify-between xl:pl-8 2xl:pl-16">
             <Typography variant="subtitle2" className="max-md:text-base">
-              Website
+              {t('website')}
             </Typography>
             <Typography
               variant="subtitle2"
@@ -71,7 +73,7 @@ export default async function Page(props: SlugLocaleProps) {
           </div>
           <div className="flex justify-between xl:pl-8 2xl:pl-16">
             <Typography variant="subtitle2" className="max-md:text-base">
-              Main Service
+              {t('main-service')}
             </Typography>
             <Typography
               variant="subtitle2"
@@ -97,10 +99,10 @@ export default async function Page(props: SlugLocaleProps) {
             href="/case-study"
             className="text-right font-bold underline md:text-2xl"
           >
-            See all
+            {t('see-all')}
           </Link>
           <Typography variant="subtitle1" className="hidden md:block">
-            Other case studies
+            {t('other-case-studies')}
           </Typography>
           <div className="md:hidden">
             <CardSwiper

@@ -42,5 +42,31 @@
   "PathnamesPage": {
     "description": "<p>The pathnames are internationalized too.</p><p>If you're using the default language English, you'll see <code>/en/pathnames</code> in the browser address bar on this page.</p><p>If you change the locale to German, the URL is localized accordingly (<code>/de/pfadnamen</code>).</p>",
     "title": "Pathnames"
-  }
+  },
+  "ContactUsThankYouPage": {
+    "title": "Thank you!",
+    "description": "Your form has been submitted. We will be in touch with you as soon as possible!"
+  },
+  "Footer": {
+    "are-you-ready": "Are you ready?",
+    "lets-get-started": "Let’s get started",
+    "get-started": "Get Started",
+    "copyright": "Copyright © 2024 • Ograviti"
+  },
+  "BlogPage": {
+    "other-blogs": "Other blogs",
+    "see-all": "See all"
+  },
+  "CareerPage": {
+    "are-you-interested": "Are you interested?",
+    "apply-now": "Apply Now"
+  },
+  "CaseStudyPage": {
+    "completed": "Completed",
+    "client": "Client",
+    "website": "Website",
+    "main-service": "Main Service",
+    "see-all": "See all",
+    "other-case-studies": "Other case studies"
+  },
 }
