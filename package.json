@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --port 3004",
+    "dev": "next dev --turbopack --port 3004",
     "format": "npx prettier --write .",
     "lint": "next lint",
     "type-check": "tsc --noEmit --pretty",
@@ -28,16 +28,16 @@
     "@types/react-touch": "^1.8.8",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
-    "framer-motion": "^11.13.1",
+    "framer-motion": "^11.13.3",
     "google-libphonenumber": "^3.2.40",
     "groq": "^3.66.1",
     "motion": "12.0.0-alpha.2",
-    "next": "15.0.3",
+    "next": "15.1.0",
     "next-intl": "^3.26.0",
     "next-sanity": "^9.8.25",
     "next-sanity-image": "^6.1.1",
-    "react": "19.0.0-rc-66855b96-20241106",
-    "react-dom": "19.0.0-rc-66855b96-20241106",
+    "react": "19.0.0",
+    "react-dom": "19.0.0",
     "react-hook-form": "^7.54.0",
     "react-international-phone": "^4.3.0",
     "react-multi-carousel": "^2.8.5",
@@ -50,16 +50,16 @@
     "swiper": "^11.1.15",
     "tailwind-merge": "^2.5.5",
     "use-media": "^1.5.0",
-    "zod": "^3.23.8"
+    "zod": "^3.24.0"
   },
   "devDependencies": {
     "@types/google-libphonenumber": "^7.4.30",
     "@types/node": "^20.17.9",
-    "@types/react": "npm:types-react@19.0.0-rc.1",
-    "@types/react-dom": "npm:types-react-dom@19.0.0-rc.1",
+    "@types/react": "19.0.1",
+    "@types/react-dom": "19.0.2",
     "@typescript-eslint/eslint-plugin": "^7.18.0",
     "eslint": "^8.57.1",
-    "eslint-config-next": "15.0.3",
+    "eslint-config-next": "15.1.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.2.1",
     "eslint-plugin-simple-import-sort": "^12.1.1",
@@ -72,8 +72,8 @@
   "packageManager": "pnpm@9.15.0+sha512.76e2379760a4328ec4415815bcd6628dee727af3779aaa4c914e3944156c4299921a89f976381ee107d41f12cfa4b66681ca9c718f0668fa0831ed4c6d8ba56c",
   "pnpm": {
     "overrides": {
-      "@types/react": "npm:types-react@19.0.0-rc.1",
-      "@types/react-dom": "npm:types-react-dom@19.0.0-rc.1"
+      "@types/react": "19.0.1",
+      "@types/react-dom": "19.0.2"
     }
   }
 }
