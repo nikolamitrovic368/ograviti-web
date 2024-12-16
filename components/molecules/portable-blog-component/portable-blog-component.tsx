@@ -39,7 +39,12 @@ const PortableBlogComponent = {
     ),
   },
   block: {
+    h1: ({ children }: any) => <Typography variant="h1">{children}</Typography>,
     h2: ({ children }: any) => <Typography variant="h2">{children}</Typography>,
+    h3: ({ children }: any) => <Typography variant="h3">{children}</Typography>,
+    h4: ({ children }: any) => <Typography variant="h4">{children}</Typography>,
+    h5: ({ children }: any) => <Typography variant="h5">{children}</Typography>,
+    h6: ({ children }: any) => <Typography variant="h6">{children}</Typography>,
     normal: ({ children }: any) => (
       <Typography variant="subtitle2">{children}</Typography>
     ),

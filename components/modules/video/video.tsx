@@ -17,7 +17,11 @@ export default function Video({
         </div>
       ) : (
         <video controls className="w-full rounded-[45px]">
-          <source src={url} type="video/mp4" />
+          <source
+            src={url}
+            type="video/mp4"
+            // eslint-disable-next-line react/jsx-no-literals
+          />
           Your browser does not support the video tag.
         </video>
       )}

@@ -12,17 +12,3 @@ export type CaseStudyPageType = {
   slug: Slug
   seo: Seo
 }
-
-export const caseStudyPageQuery = groq`
-*[_type == "caseStudyPage" && language == $locale][0] {
-  ...,
-  caseStudies[]-> {
-    _id,
-    title,
-    description,
-    slug,
-    image ${imageProps}
-  },
-  seo ${withImageProps}
-}
-`

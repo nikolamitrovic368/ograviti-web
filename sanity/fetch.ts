@@ -3,8 +3,6 @@ import type { QueryParams, ResponseQueryOptions } from 'next-sanity'
 
 import client from './client'
 
-export { default as groq } from 'groq'
-
 export async function fetchSanity<T = any>(
   query: string,
   {

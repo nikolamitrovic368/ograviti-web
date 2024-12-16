@@ -30,7 +30,16 @@ modules[]{
       image ${imageProps}
     }
   },
+  _type == 'team' => {
+    ...,
+    members[]-> {
+      ...,
+      "name":  coalesce(name[_key == $locale][0].value, "Missing translation"),
+      "role":  coalesce(role[_key == $locale][0].value, "Missing translation")
+    }
+  },
   _type == "companies" => @-> ${withImageProps},
+  _type == "image-with-list" => ${withImageProps},
   _type == "testimonial-list" => { testimonialCards[]-> },
   _type == "gallery" => {
     images[] ${imageProps}
@@ -40,7 +49,16 @@ modules[]{
     type == "file" => {
       "url": file.asset->url
     }
-  }
+  },
+  _type == "contact-form" => @->{
+    ...,
+    "title":  coalesce(title[_key == $locale][0].value, "Missing translation"),
+    "offices": offices[]{
+      ...,
+      "name":  coalesce(name[_key == $locale][0].value, "Missing translation"),
+      "address":  coalesce(address[_key == $locale][0].value, "Missing translation"),
+    }
+  },
 }
 `
 export const richTextQuery = (name: string = 'body') => groq`

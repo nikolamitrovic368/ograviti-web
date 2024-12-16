@@ -20,7 +20,7 @@ export default function TestimonialList({
   testimonialCards: Sanity.TestimonialCard[]
 }>) {
   return (
-    <div className="">
+    <div className="py-8 md:py-12 xl:py-16">
       <SectionTitle
         className="text-center md:text-left"
         title={title}
@@ -48,7 +48,8 @@ export default function TestimonialList({
                   clickable: true,
                   bulletClass: 'hidden',
                 }}
-                className="!px-8"
+                // px-8 xl:px-16 2xl:px-28
+                className="!px-8 xl:!px-16 2xl:!px-28"
                 slideToClickedSlide
                 modules={[FreeMode, Pagination]}
               >

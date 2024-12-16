@@ -1,5 +1,3 @@
-import { stegaClean } from '@sanity/client/stega'
-
 import {
   Facebook,
   Instagram,
@@ -7,12 +5,11 @@ import {
   Youtube,
 } from '@/components/atoms/icons'
 import { Typography } from '@/components/atoms/typography'
-import { TeamMember } from '@/sanity/types'
 import { urlFor } from '@/sanity/utils/image-builder'
 import { cn } from '@/utils/common'
 
 type ProfileCardProps = {
-  data: TeamMember
+  data: Sanity.TeamMember
   className?: string
 }
 export default function ProfileCard({
@@ -31,34 +28,42 @@ export default function ProfileCard({
               }}
             >
               <div className="absolute -left-16 bottom-0 flex w-14 flex-col items-center justify-center rounded-tr-3xl bg-background py-8 transition-all duration-500 group-hover:left-0 2xl:w-16">
-                <a
-                  target="_blank"
-                  href={stegaClean(linkedin)}
-                  className="flex w-full items-center justify-center py-4 transition-all duration-500 hover:bg-primary"
-                >
-                  <Linkedin className="h-auto w-4 2xl:w-[18px]" />
-                </a>
-                <a
-                  target="_blank"
-                  href={stegaClean(facebook)}
-                  className="flex w-full items-center justify-center py-4 transition-all duration-500 hover:bg-primary"
-                >
-                  <Facebook className="h-auto w-3 2xl:w-[13px]" />
-                </a>
-                <a
-                  target="_blank"
-                  href={stegaClean(instagram)}
-                  className="flex w-full items-center justify-center py-4 transition-all duration-500 hover:bg-primary"
-                >
-                  <Instagram className="h-auto w-4 2xl:w-[18px]" />
-                </a>
-                <a
-                  target="_blank"
-                  href={stegaClean(youtube)}
-                  className="flex w-full items-center justify-center py-4 transition-all duration-500 hover:bg-primary"
-                >
-                  <Youtube className="h-auto w-4 2xl:w-[18px]" />
-                </a>
+                {linkedin && (
+                  <a
+                    target="_blank"
+                    href={linkedin}
+                    className="flex w-full items-center justify-center py-4 transition-all duration-500 hover:bg-primary"
+                  >
+                    <Linkedin className="h-auto w-4 2xl:w-[18px]" />
+                  </a>
+                )}
+                {facebook && (
+                  <a
+                    target="_blank"
+                    href={facebook}
+                    className="flex w-full items-center justify-center py-4 transition-all duration-500 hover:bg-primary"
+                  >
+                    <Facebook className="h-auto w-3 2xl:w-[13px]" />
+                  </a>
+                )}
+                {instagram && (
+                  <a
+                    target="_blank"
+                    href={instagram}
+                    className="flex w-full items-center justify-center py-4 transition-all duration-500 hover:bg-primary"
+                  >
+                    <Instagram className="h-auto w-4 2xl:w-[18px]" />
+                  </a>
+                )}
+                {youtube && (
+                  <a
+                    target="_blank"
+                    href={youtube}
+                    className="flex w-full items-center justify-center py-4 transition-all duration-500 hover:bg-primary"
+                  >
+                    <Youtube className="h-auto w-4 2xl:w-[18px]" />
+                  </a>
+                )}
               </div>
             </div>
           </div>

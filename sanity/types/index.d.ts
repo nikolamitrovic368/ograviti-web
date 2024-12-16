@@ -21,21 +21,6 @@ export type CommonSection = {
   _key?: string
 }
 
-export type TeamMember = {
-  instagram: string
-  linkedin: string
-  _updatedAt: string
-  youtube: string
-  image: ImageProps
-  _createdAt: string
-  _type: teamMember
-  _id: string
-  role: string
-  facebook: string
-  _rev: string
-  name: string
-}
-
 export type TeamMembers = TeamMember[]
 
 export type BlogCard = {

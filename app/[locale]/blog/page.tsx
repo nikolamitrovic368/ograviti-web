@@ -1,25 +1,21 @@
 import { Metadata } from 'next'
 
+import Title from '@/components/modules/heading-title'
 import BlogCard from '@/components/molecules/blog-card'
-import Title from '@/components/molecules/title'
 import { fetchBlogPageData } from '@/sanity/services/pages/blog.service'
 import { LocaleProps } from '@/types'
 import { mapSeo } from '@/utils/common'
 
-export async function generateMetadata(props: LocaleProps): Promise<Metadata> {
-  const params = await props.params
-
-  const { locale } = params
-
+export async function generateMetadata({
+  params,
+}: LocaleProps): Promise<Metadata> {
+  const { locale } = await params
   const { seo } = await fetchBlogPageData(locale)
   return mapSeo(seo)
 }
 
-export default async function Page(props: LocaleProps) {
-  const params = await props.params
-
-  const { locale } = params
-
+export default async function Page({ params }: LocaleProps) {
+  const { locale } = await params
   const data = await fetchBlogPageData(locale)
   return (
     <main className="flex flex-col gap-8 md:gap-14">

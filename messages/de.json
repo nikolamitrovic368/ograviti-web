@@ -1,47 +1,52 @@
 {
-  "Error": {
-    "description": "<p>Es ist leider ein Problem aufgetreten.</p><p>Du kannst versuchen <retry>diese Seite neu zu laden</retry>.</p>",
-    "title": "Etwas ist schief gelaufen!"
+  "ContactUsThankYouPage": {
+    "title": "Thank you!",
+    "description": "Your form has been submitted. We will be in touch with you as soon as possible!"
   },
-  "IndexPage": {
-    "description": "Dies ist ein Beispiel, das die Verwendung von <code>next-intl</code> mit dem Next.js App Router demonstriert. Bei Ändern der Sprache rechts oben ändert sich der Inhalt dieser Seite.",
-    "title": "next-intl Beispiel"
+  "Footer": {
+    "are-you-ready": "Are you ready?",
+    "lets-get-started": "Let’s get started",
+    "get-started": "Get Started",
+    "copyright": "Copyright © 2024 • Ograviti"
   },
-  "LocaleLayout": {
-    "title": "next-intl Beispiel"
+  "BlogPage": {
+    "other-blogs": "Other blogs",
+    "see-all": "See all"
   },
-  "LocaleSwitcher": {
-    "label": "Sprache ändern",
-    "locale": "{locale, select, de {🇩🇪 Deutsch} en {🇺🇸 English} other {Unbekannt}}"
+  "CareerPage": {
+    "are-you-interested": "Are you interested?",
+    "apply-now": "Apply Now"
   },
-  "Manifest": {
-    "description": "",
-    "name": ""
+  "CaseStudyPage": {
+    "completed": "Completed",
+    "client": "Client",
+    "website": "Website",
+    "main-service": "Main Service",
+    "see-all": "See all",
+    "other-case-studies": "Other case studies"
   },
-  "Navigation": {
-    "home": "Start",
-    "pathnames": "Pfadnamen"
-  },
-  "NotFoundPage": {
-    "description": "Bitte überprüfe die Addressleiste deines Browsers oder verwende die Navigation um zu einer bekannten Seite zu wechseln.",
-    "title": "Seite nicht gefunden"
-  },
-  "PageLayout": {
-    "links": {
-      "docs": {
-        "description": "Erfahre mehr über next-intl in der offiziellen Dokumentation.",
-        "href": "https://next-intl-docs.vercel.app/",
-        "title": "Dokumentation"
+  "Modules": {
+    "ContactForm": {
+      "label": {
+        "message": "Message",
+        "phone": "Phone Number",
+        "email": "Email Address",
+        "lastname": "Last Name",
+        "firstname": "First Name"
       },
-      "source": {
-        "description": "Sieh dir den Quellcode dieses Beispiels auf GitHub an.",
-        "href": "https://github.com/amannn/next-intl/tree/main/examples/example-app-router",
-        "title": "Quellcode"
-      }
+      "placeholder": {
+        "firstname": "Enter First Name",
+        "lastname": "Enter Last Name",
+        "email": "Enter Email Address",
+        "message": "Enter your Message"
+      },
+      "validation": {
+        "required": "Please enter a(an) {label} field.",
+        "phone": "Please insert valid phone number",
+        "email": "You must enter a valid email."
+      },
+      "send": "Send",
+      "phone": "Phone"
     }
-  },
-  "PathnamesPage": {
-    "description": "<p>Auch die Pfadnamen sind internationalisiert.</p><p>Wenn du die Standardsprache Englisch verwendest, siehst du <code>/en/pathnames</code> in der Adressleiste des Browsers auf dieser Seite.</p><p>Wenn du die Sprache auf Deutsch änderst, wird die URL entsprechend lokalisiert (<code>/de/pfadnamen</code>).</p>",
-    "title": "Pfadnamen"
   }
 }

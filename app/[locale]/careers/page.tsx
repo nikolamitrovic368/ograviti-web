@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
 
 import CareerCard from '@/components/molecules/career-card'
-import Title from '@/components/molecules/title'
+import Title from '@/components/modules/heading-title'
 import { fetchCareersPageData } from '@/sanity/services/pages/careers.service'
 import { LocaleProps } from '@/types'
 import { mapSeo } from '@/utils/common'

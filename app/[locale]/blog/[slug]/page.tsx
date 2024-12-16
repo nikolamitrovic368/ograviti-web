@@ -4,30 +4,24 @@ import { getTranslations } from 'next-intl/server'
 import { PortableText } from 'next-sanity'
 
 import { Typography } from '@/components/atoms/typography'
+import Title from '@/components/modules/heading-title'
 import BlogCard from '@/components/molecules/blog-card'
 import PortableBlogComponent from '@/components/molecules/portable-blog-component'
-import Title from '@/components/molecules/title'
 import { Link } from '@/i18n/routing'
 import { fetchBlogData } from '@/sanity/services/blog.service'
 import { SlugLocaleProps } from '@/types'
 import { mapSeo } from '@/utils/common'
 
-export async function generateMetadata(
-  props: SlugLocaleProps,
-): Promise<Metadata> {
-  const params = await props.params
-
-  const { slug, locale } = params
-
+export async function generateMetadata({
+  params,
+}: SlugLocaleProps): Promise<Metadata> {
+  const { slug, locale } = await params
   const { seo } = await fetchBlogData(slug, locale)
   return mapSeo(seo)
 }
 
-export default async function BlogPage(props: SlugLocaleProps) {
-  const params = await props.params
-
-  const { slug, locale } = params
-
+export default async function BlogPage({ params }: SlugLocaleProps) {
+  const { slug, locale } = await params
   const data = await fetchBlogData(slug, locale)
   const t = await getTranslations('BlogPage')
 
@@ -43,7 +37,7 @@ export default async function BlogPage(props: SlugLocaleProps) {
         />
       )}
 
-      <div className="flex flex-col gap-4 md:gap-6 2xl:gap-8">
+      <div className="flex flex-col gap-4 md:gap-6">
         <PortableText value={data.body} components={PortableBlogComponent} />
       </div>
       <div>

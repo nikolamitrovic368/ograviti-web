@@ -1,26 +1,21 @@
 import { Metadata } from 'next'
 
+import Title from '@/components/modules/heading-title'
 import CaseStudyCard from '@/components/molecules/case-study-card'
 import Companies from '@/components/molecules/companies'
-import Title from '@/components/molecules/title'
 import { fetchCaseStudyPageData } from '@/sanity/services/pages/caseStudy.service'
 import { LocaleProps } from '@/types'
 import { mapSeo } from '@/utils/common'
 
-export async function generateMetadata(props: LocaleProps): Promise<Metadata> {
-  const params = await props.params
+// export async function generateMetadata(props: LocaleProps): Promise<Metadata> {
+//   const params = await props.params
+//   const { locale } = params
+//   const { seo } = await fetchCaseStudyPageData(locale)
+//   return mapSeo(seo)
+// }
 
-  const { locale } = params
-
-  const { seo } = await fetchCaseStudyPageData(locale)
-  return mapSeo(seo)
-}
-
-export default async function Page(props: LocaleProps) {
-  const params = await props.params
-
-  const { locale } = params
-
+export default async function Page({ params }: LocaleProps) {
+  const { locale } = await params
   const data = await fetchCaseStudyPageData(locale)
   return (
     <main className="flex flex-col gap-8 md:gap-14">

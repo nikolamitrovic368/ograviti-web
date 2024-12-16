@@ -1,74 +1,91 @@
 import { Step1, Step2, Step3, Step4, Step5 } from '@/components/atoms/icons'
+import Modules from '@/components/modules'
+import ContactForm from '@/components/modules/contact-form'
+import Title from '@/components/modules/heading-title'
 import ServiceStep from '@/components/molecules/service-step'
-import Title from '@/components/molecules/title'
-import ContactForm from '@/components/organisms/contact-form'
+import { fetchServicesPageData } from '@/sanity/services'
+import { LocaleProps } from '@/types'
 
-export default async function Page() {
+export default async function ServicesPage({ params }: LocaleProps) {
+  const { locale } = await params
+  const {
+    title,
+    subtitle,
+    service1,
+    service2,
+    service3,
+    service4,
+    service5,
+    modules,
+  } = await fetchServicesPageData(locale)
+  console.log(service1)
+
   return (
     <main className="flex flex-col gap-8 md:gap-14">
-      <Title
-        title="Our Services"
-        subtitle="At Ogravity, we offer a comprehensive range of services to meet your digital needs. From branding to digital marketing, our team is here to help you achieve your goals and stand out in the digital landscape."
-      />
+      <Title title={title} subtitle={subtitle} />
       <div className="flex flex-wrap justify-center gap-8 md:gap-4 2xl:gap-8">
         <ServiceStep
-          url="/images/services/1.jpg"
+          url={service1.image.src}
           title={
+            // eslint-disable-next-line react/jsx-no-literals
             <>
               01. <br />
-              Branding
+              {service1.title}
             </>
           }
-          content="Elevate your brand identity with our branding services. From logo design to brand strategy, we'll help you create a memorable and impactful brand presence that resonates with your audience."
+          content={service1.subtitle}
           icon={Step1}
         />
         <ServiceStep
-          url="/images/services/2.jpg"
+          url={service2.image.src}
           title={
+            // eslint-disable-next-line react/jsx-no-literals
             <>
               02. <br />
-              UI/UX Design
+              {service2.title}
             </>
           }
-          content="Deliver exceptional user experiences with our UI/UX design services. Our team specializes in designing intuitive and visually appealing interfaces that enhance user engagement and drive conversions."
+          content={service2.subtitle}
           icon={Step2}
         />
         <ServiceStep
-          url="/images/services/3.jpg"
+          url={service3.image.src}
           title={
+            // eslint-disable-next-line react/jsx-no-literals
             <>
               03. <br />
-              Data Analysis
+              {service3.title}
             </>
           }
-          content="Maximize data's potential with our analysis services. From market research to visualization, we provide actionable insights for informed decisions and sustained growth"
+          content={service3.subtitle}
           icon={Step3}
         />
         <ServiceStep
-          url="/images/services/4.jpg"
+          url={service4.image.src}
           title={
+            // eslint-disable-next-line react/jsx-no-literals
             <>
               04. <br />
-              Development
+              {service4.title}
             </>
           }
-          content="Turn your vision into reality with our development services. Whether it's websites or mobile apps, our expert team crafts custom solutions tailored to your needs."
+          content={service4.subtitle}
           icon={Step4}
         />
         <ServiceStep
-          url="/images/services/5.jpg"
+          url={service5.image.src}
           title={
+            // eslint-disable-next-line react/jsx-no-literals
             <>
               05. <br />
-              UI/UX Design
+              {service5.title}
             </>
           }
-          content="Maximize your online presence and reach with our digital marketing services. From SEO to social media marketing, we'll help you drive traffic, generate leads, and grow your business in the digital age"
+          content={service5.subtitle}
           icon={Step5}
         />
       </div>
-      <div className="md:my-4 2xl:my-16"></div>
-      <ContactForm />
+      <Modules modules={modules} />
     </main>
   )
 }

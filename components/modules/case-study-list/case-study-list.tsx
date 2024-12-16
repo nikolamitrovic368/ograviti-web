@@ -1,21 +1,24 @@
 import CardSwiper from '@/components/atoms/card-swiper'
+import { Typography } from '@/components/atoms/typography'
 import CaseStudyCard from '@/components/molecules/case-study-card'
 import SectionTitle from '@/components/molecules/section-title'
 
 export default function CaseStudyList({
   title,
   subtitle,
+  listTitle,
   caseStudies,
-}: Partial<{
-  title: string
-  subtitle: string
-  caseStudies: Sanity.CaseStudyCard[]
-}>) {
+}: Partial<Sanity.CaseStudyList>) {
   return (
     <div className="pt-14">
       <SectionTitle title={title} subtitle={subtitle} />
-      {caseStudies && (
+      {caseStudies?.length && (
         <>
+          {listTitle && (
+            <Typography variant="subtitle1" className="hidden md:block">
+              {listTitle}
+            </Typography>
+          )}
           <div className="py-5 md:hidden">
             <CardSwiper
               cards={caseStudies.map(caseStudy => (

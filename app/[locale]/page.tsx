@@ -5,10 +5,10 @@ import { fetchHomePageData } from '@/sanity/services/pages/home.service'
 import { LocaleProps } from '@/types'
 import { mapSeo } from '@/utils/common'
 
-export async function generateMetadata(props: LocaleProps): Promise<Metadata> {
-  const params = await props.params
-
-  const { locale } = params
+export async function generateMetadata({
+  params,
+}: LocaleProps): Promise<Metadata> {
+  const { locale } = await params
 
   const { seo } = await fetchHomePageData(locale)
   return mapSeo(seo)

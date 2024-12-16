@@ -17,6 +17,36 @@ declare global {
       modules?: Module[]
     }
 
+    type ServicesPage = PageBase & {
+      subtitle: string
+      service1: {
+        title: string
+        subtitle: string
+        image: ImageProps
+      }
+      service2: {
+        title: string
+        subtitle: string
+        image: ImageProps
+      }
+      service3: {
+        title: string
+        subtitle: string
+        image: ImageProps
+      }
+      service4: {
+        title: string
+        subtitle: string
+        image: ImageProps
+      }
+      service5: {
+        title: string
+        subtitle: string
+        image: ImageProps
+      }
+      modules?: Module[]
+    }
+
     // miscellaneous
 
     type CaseStudyCard = {
@@ -25,6 +55,39 @@ declare global {
       description: string
       image: ImageProps
       slug: Slug
+    }
+
+    type ImageWithList = {
+      title: string
+      image: ImageProps
+      items: {
+        title: string
+        subtitle: string
+        _key: string
+      }[]
+    }
+
+    type CaseStudyList = {
+      title: string
+      subtitle: string
+      listTitle?: string
+      caseStudies: Sanity.CaseStudyCard[]
+    }
+
+    type TeamMember = SanityDocument<{
+      instagram?: string
+      linkedin?: string
+      youtube?: string
+      facebook?: string
+      image: ImageProps
+      role: string
+      name: string
+    }>
+
+    type Team = {
+      title: string
+      subtitle: string
+      members: TeamMember[]
     }
 
     // objects
@@ -46,22 +109,22 @@ declare global {
       title: string
     }
 
+    type HeadingTitle = {
+      title: string
+      subtitle: string
+    }
+
+    type ContactUsCta = {
+      title: string
+      ctaText: string
+    }
+
     type Brandings = {
       uiuxSubtitle: string
       digitalMarketingSubtitle: string
       brandingSubtitle: string
       dataAnalysisSubtitle: string
       developmentSubtitle: string
-    }
-
-    type JourneyStep = {
-      name: string
-      title: string
-      subtitle: string
-      media?: {
-        image: Image
-        position: 'bottom' | 'left' | 'top'
-      }
     }
 
     type JourneyStep = {
@@ -94,5 +157,15 @@ declare global {
       _key: string
       uid?: string
     }
+
+    type ContactForm = SanityDocument<{
+      title: string
+      offices?: {
+        _key: string
+        name: string
+        address: string
+        phone: string
+      }[]
+    }>
   }
 }

@@ -2,6 +2,8 @@
 
 import { zodResolver } from '@hookform/resolvers/zod'
 import { PhoneNumberUtil } from 'google-libphonenumber'
+import { useTranslations } from 'next-intl'
+import { Fragment } from 'react'
 import { Controller, useForm } from 'react-hook-form'
 import { z } from 'zod'
 
@@ -16,24 +18,33 @@ import { api } from '@/trpc/react'
 
 const phoneUtil = PhoneNumberUtil.getInstance()
 
-const schema = z.object({
-  firstName: z.string().min(1, 'Please enter your first name'),
-  lastName: z.string().min(1, 'Please enter your last name'),
-  email: z.string().email('Please enter valid email address'),
-  message: z.string().min(1, 'Please enter your Message'),
-  phone: z.string().refine(
-    (phone: string) => {
-      try {
-        return phoneUtil.isValidNumber(phoneUtil.parseAndKeepRawInput(phone))
-      } catch (error) {
-        return false
-      }
-    },
-    { message: 'Please insert valid phone number' },
-  ),
-})
-
-export default function ContactForm() {
+export default function ContactForm({
+  title,
+  offices,
+}: Partial<Sanity.ContactForm>) {
+  const t = useTranslations('Modules.ContactForm')
+  const schema = z.object({
+    firstName: z
+      .string()
+      .min(1, t('validation.required', { label: t('label.firstname') })),
+    lastName: z
+      .string()
+      .min(1, t('validation.required', { label: t('label.lastname') })),
+    email: z.string().email(t('validation.email')),
+    message: z
+      .string()
+      .min(1, t('validation.required', { label: t('label.message') })),
+    phone: z.string().refine(
+      (phone: string) => {
+        try {
+          return phoneUtil.isValidNumber(phoneUtil.parseAndKeepRawInput(phone))
+        } catch (error) {
+          return false
+        }
+      },
+      { message: t('validation.phone') },
+    ),
+  })
   const router = useRouter()
   const sendContact = api.onesignal.sendContact.useMutation({
     onSuccess: () => {
@@ -57,7 +68,7 @@ export default function ContactForm() {
 
   return (
     <div className="flex w-full flex-col gap-8 lg:flex-row">
-      <div className="flex w-full flex-col gap-8 md:py-12 lg:w-[35%] lg:border-r lg:border-secondary xl:w-[30%] xl:gap-14 xl:py-20">
+      <div className="flex w-full flex-col items-start gap-8 md:py-12 lg:w-[35%] lg:border-r lg:border-secondary xl:w-[30%] xl:gap-14 xl:py-20">
         <div className="flex justify-center">
           <Ograviti className="hidden h-auto w-[121px] sm:w-[250px] lg:block 2xl:w-[363px]" />
         </div>
@@ -65,35 +76,26 @@ export default function ContactForm() {
           variant="subtitle1"
           className="text-center text-2xl 2xl:text-3xl"
         >
-          Get in Touch with Ograviti
+          {title}
         </Typography>
         <div className="hidden grid-cols-2 gap-6 lg:grid xl:gap-7">
-          <div>
-            <div className="pb-2 text-xl md:text-lg">Switzerland Office</div>
-            <div>Bahnhofstrasse 100, Zurich</div>
-          </div>
-          <div>
-            <div className="pb-2 text-xl md:text-lg">Phone</div>
-            <a
-              href="tel:+41-1122-111-111"
-              className="duration-300 hover:text-primary"
-            >
-              +41 1122 111 111
-            </a>
-          </div>
-          <div>
-            <div className="pb-2 text-xl md:text-lg">Dubai office</div>
-            <div>Jumeirah Business Center</div>
-          </div>
-          <div>
-            <div className="pb-2 text-xl md:text-lg">Phone</div>
-            <a
-              href="tel:+971-1112-111-111"
-              className="duration-300 hover:text-primary"
-            >
-              +971 1112 111 111
-            </a>
-          </div>
+          {offices?.map(office => (
+            <Fragment key={office._key}>
+              <div>
+                <div className="pb-2 text-xl md:text-lg">{office.name}</div>
+                <div>{office.address}</div>
+              </div>
+              <div>
+                <div className="pb-2 text-xl md:text-lg">{t('phone')}</div>
+                <a
+                  href={`tel:${office.phone}`}
+                  className="duration-300 hover:text-primary"
+                >
+                  {office.phone}
+                </a>
+              </div>
+            </Fragment>
+          ))}
         </div>
       </div>
       <form
@@ -102,23 +104,23 @@ export default function ContactForm() {
       >
         <div className="grid w-full grid-cols-1 justify-center gap-6 md:grid-cols-2 2xl:gap-8">
           <Input
-            label="First Name"
-            placeholder="Enter First Name"
+            label={t('label.firstname')}
+            placeholder={t('placeholder.firstname')}
             className="w-full"
             {...register('firstName')}
             errorMessage={errors.firstName?.message}
           />
           <Input
-            label="Last Name"
-            placeholder="Enter Last Name"
+            label={t('label.lastname')}
+            placeholder={t('placeholder.lastname')}
             className="w-full"
             {...register('lastName')}
             errorMessage={errors.lastName?.message}
           />
 
           <Input
-            label="Email Address"
-            placeholder="Enter Email Address"
+            label={t('label.email')}
+            placeholder={t('placeholder.email')}
             className="w-full"
             {...register('email')}
             errorMessage={errors.email?.message}
@@ -128,7 +130,7 @@ export default function ContactForm() {
             control={control}
             render={({ field }) => (
               <PhoneInput
-                label="Phone Number"
+                label={t('label.phone')}
                 {...field}
                 errorMessage={errors.phone?.message}
               />
@@ -137,8 +139,8 @@ export default function ContactForm() {
           <div className="md:col-span-2">
             <Textarea
               fullWidth
-              placeholder="Enter your Message"
-              label="Message"
+              placeholder={t('placeholder.message')}
+              label={t('label.message')}
               {...register('message')}
               errorMessage={errors.message?.message}
             />
@@ -146,7 +148,7 @@ export default function ContactForm() {
         </div>
         <div className="flex w-full justify-end">
           <Button className="max-md:w-full" type="submit">
-            Send
+            {t('send')}
           </Button>
         </div>
       </form>

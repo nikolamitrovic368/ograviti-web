@@ -1,5 +1,5 @@
 import { Typography } from '@/components/atoms/typography'
-import Title from '@/components/molecules/title'
+import Title from '@/components/modules/heading-title'
 
 export default function Page() {
   return (
