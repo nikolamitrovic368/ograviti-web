@@ -6,7 +6,7 @@ import { PortableText } from 'next-sanity'
 import { Typography } from '@/components/atoms/typography'
 import Title from '@/components/modules/heading-title'
 import BlogCard from '@/components/molecules/blog-card'
-import PortableBlogComponent from '@/components/molecules/portable-blog-component'
+import { PortableComponent } from '@/components/molecules/portable-component/portable-component'
 import { Link } from '@/i18n/routing'
 import { fetchBlogData } from '@/sanity/services/blog.service'
 import { SlugLocaleProps } from '@/types'
@@ -38,7 +38,7 @@ export default async function BlogPage({ params }: SlugLocaleProps) {
       )}
 
       <div className="flex flex-col gap-4 md:gap-6">
-        <PortableText value={data.body} components={PortableBlogComponent} />
+        <PortableText value={data.body} components={PortableComponent} />
       </div>
       <div>
         <div className="flex justify-end py-4 md:justify-between md:py-8">

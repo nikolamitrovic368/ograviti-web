@@ -15,7 +15,18 @@
   },
   "CareerPage": {
     "are-you-interested": "Are you interested?",
-    "apply-now": "Apply Now"
+    "apply-now": "Apply Now",
+    "form": {
+      "firstname": "First Name",
+      "lastname": "Last Name",
+      "email": "Email Address",
+      "phone": "Phone Number"
+    },
+    "placeholder": {
+      "firstname": "Enter First Name",
+      "lastname": "Enter Last Name",
+      "email": "Enter Email Address"
+    }
   },
   "CaseStudyPage": {
     "completed": "Completed",

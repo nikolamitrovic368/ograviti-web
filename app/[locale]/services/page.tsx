@@ -1,6 +1,5 @@
 import { Step1, Step2, Step3, Step4, Step5 } from '@/components/atoms/icons'
 import Modules from '@/components/modules'
-import ContactForm from '@/components/modules/contact-form'
 import Title from '@/components/modules/heading-title'
 import ServiceStep from '@/components/molecules/service-step'
 import { fetchServicesPageData } from '@/sanity/services'
@@ -18,8 +17,6 @@ export default async function ServicesPage({ params }: LocaleProps) {
     service5,
     modules,
   } = await fetchServicesPageData(locale)
-  console.log(service1)
-
   return (
     <main className="flex flex-col gap-8 md:gap-14">
       <Title title={title} subtitle={subtitle} />

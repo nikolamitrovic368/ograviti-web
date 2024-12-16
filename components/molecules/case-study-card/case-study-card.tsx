@@ -34,7 +34,7 @@ export default function CaseStudyCard({
                 {description.length > 20 && ' ...'}
               </div>
               <div>
-                <IconButton variant="secondary" className="">
+                <IconButton variant="secondary">
                   <Right />
                 </IconButton>
               </div>

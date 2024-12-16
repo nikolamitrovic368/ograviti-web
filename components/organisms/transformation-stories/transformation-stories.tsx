@@ -18,7 +18,7 @@ export default function TransformationStories({
   data: Testimonial
 }) {
   return (
-    <div className="">
+    <div>
       {hideTitle || (
         <SectionTitle
           className="text-center md:text-left"

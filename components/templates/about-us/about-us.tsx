@@ -53,9 +53,7 @@ export default function AboutUs({ data }: AboutUsProps) {
                 <Typography variant="h3" className="pb-4 text-primary">
                   {section.title}
                 </Typography>
-                <Typography variant="subtitle2" className="">
-                  {section.subtitle}
-                </Typography>
+                <Typography variant="subtitle2">{section.subtitle}</Typography>
               </div>
             ))}
           </div>

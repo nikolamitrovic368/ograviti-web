@@ -6,7 +6,7 @@ export default function Video({
   url: string
 }>) {
   return (
-    <div className="">
+    <div>
       {type === 'youtube' ? (
         <div className="relative h-0 w-full overflow-hidden rounded-[45px] pb-[56.25%]">
           <iframe

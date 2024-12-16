@@ -6,7 +6,10 @@ export default function Page() {
     <main className="flex flex-col gap-8 md:gap-14">
       <Title title="Data Analysis" />
       <div className=" grid  grid-cols-1 items-center gap-4 md:grid-cols-2 md:gap-12">
-        <Typography variant="subtitle1">
+        <Typography
+          variant="subtitle1"
+          // eslint-disable-next-line react/jsx-no-literals
+        >
           Our data analysis service leverages advanced analytical tools and
           methodologies to transform raw data into actionable insights. We
           provide comprehensive data visualization, trend analysis, and
@@ -26,41 +29,68 @@ export default function Page() {
         </video>
       </div>
       <div className="flex flex-col gap-4 md:gap-8 md:pt-8">
-        <Typography variant="h2">
+        <Typography
+          variant="h2"
+          // eslint-disable-next-line react/jsx-no-literals
+        >
           Key Features of Our Data Analysis Service
         </Typography>
         <Typography variant="subtitle2">
           <ul className="flex flex-col gap-1 pl-4">
-            <li className="list-outside list-disc">
+            <li
+              className="list-outside list-disc"
+              // eslint-disable-next-line react/jsx-no-literals
+            >
               Data Visualization: Transform complex data sets into
               easy-to-understand visual formats such as charts, graphs, and
               dashboards.
             </li>
-            <li className="list-outside list-disc">
+            <li
+              className="list-outside list-disc"
+              // eslint-disable-next-line react/jsx-no-literals
+            >
               Trend Analysis: Identify and analyze patterns in your data to
               understand past performance and predict future outcomes.
             </li>
-            <li className="list-outside list-disc">
+            <li
+              className="list-outside list-disc"
+              // eslint-disable-next-line react/jsx-no-literals
+            >
               Predictive Modeling: Use advanced statistical techniques and
               machine learning to forecast trends and behaviors.
             </li>
-            <li className="list-outside list-disc">
+            <li
+              className="list-outside list-disc"
+              // eslint-disable-next-line react/jsx-no-literals
+            >
               Customer Insights: Gain a deep understanding of customer behavior
               and preferences to enhance customer experience and loyalty.
             </li>
-            <li className="list-outside list-disc">
+            <li
+              className="list-outside list-disc"
+              // eslint-disable-next-line react/jsx-no-literals
+            >
               Operational Optimization: Analyze operational data to identify
               inefficiencies and optimize processes for improved performance.
             </li>
-            <li className="list-outside list-disc">
+            <li
+              className="list-outside list-disc"
+              // eslint-disable-next-line react/jsx-no-literals
+            >
               Custom Reporting: Generate detailed reports tailored to your
               specific business needs and objectives.
             </li>
-            <li className="list-outside list-disc">
+            <li
+              className="list-outside list-disc"
+              // eslint-disable-next-line react/jsx-no-literals
+            >
               Data Integration: Seamlessly integrate data from multiple sources
               to provide a comprehensive analysis.
             </li>
-            <li className="list-outside list-disc">
+            <li
+              className="list-outside list-disc"
+              // eslint-disable-next-line react/jsx-no-literals
+            >
               Real-time Analytics: Access real-time data analysis to make timely
               and informed business decisions.
             </li>

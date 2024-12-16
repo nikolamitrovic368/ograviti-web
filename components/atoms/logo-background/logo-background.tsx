@@ -50,7 +50,6 @@ export default function LogoBackground({
                     />
                     <Image
                       src="/images/bgs/a.svg"
-                      className=""
                       alt="O Logo"
                       width={272}
                       height={272}
