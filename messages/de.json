@@ -1,63 +1,63 @@
 {
   "ContactUsThankYouPage": {
-    "title": "Thank you!",
-    "description": "Your form has been submitted. We will be in touch with you as soon as possible!"
+    "title": "Danke!",
+    "description": "Ihr Formular wurde eingereicht. Wir werden uns so schnell wie möglich mit Ihnen in Verbindung setzen!"
   },
   "Footer": {
-    "are-you-ready": "Are you ready?",
-    "lets-get-started": "Let’s get started",
-    "get-started": "Get Started",
-    "copyright": "Copyright © 2024 • Ograviti"
+    "are-you-ready": "Bist du bereit?",
+    "lets-get-started": "Lass uns anfangen",
+    "get-started": "Loslegen",
+    "copyright": "Urheberrecht © 2024 • Ograviti"
   },
   "BlogPage": {
-    "other-blogs": "Other blogs",
-    "see-all": "See all"
+    "other-blogs": "Andere Blogs",
+    "see-all": "Alle ansehen"
   },
   "CareerPage": {
-    "are-you-interested": "Are you interested?",
-    "apply-now": "Apply Now",
+    "are-you-interested": "Bist du interessiert?",
+    "apply-now": "Jetzt bewerben",
     "form": {
-      "firstname": "First Name",
-      "lastname": "Last Name",
-      "email": "Email Address",
-      "phone": "Phone Number"
+      "firstname": "Vorname",
+      "lastname": "Nachname",
+      "email": "E-Mail-Adresse",
+      "phone": "Telefonnummer"
     },
     "placeholder": {
-      "firstname": "Enter First Name",
-      "lastname": "Enter Last Name",
-      "email": "Enter Email Address"
+      "firstname": "Vorname eingeben",
+      "lastname": "Nachname eingeben",
+      "email": "E-Mail-Adresse eingeben"
     }
   },
   "CaseStudyPage": {
-    "completed": "Completed",
-    "client": "Client",
-    "website": "Website",
-    "main-service": "Main Service",
-    "see-all": "See all",
-    "other-case-studies": "Other case studies"
+    "completed": "Abgeschlossen",
+    "client": "Kunde",
+    "website": "Webseite",
+    "main-service": "Hauptdienstleistung",
+    "see-all": "Alle ansehen",
+    "other-case-studies": "Andere Fallstudien"
   },
   "Modules": {
     "ContactForm": {
       "label": {
-        "message": "Message",
-        "phone": "Phone Number",
-        "email": "Email Address",
-        "lastname": "Last Name",
-        "firstname": "First Name"
+        "message": "Nachricht",
+        "phone": "Telefonnummer",
+        "email": "E-Mail-Adresse",
+        "lastname": "Nachname",
+        "firstname": "Vorname"
       },
       "placeholder": {
-        "firstname": "Enter First Name",
-        "lastname": "Enter Last Name",
-        "email": "Enter Email Address",
-        "message": "Enter your Message"
+        "firstname": "Vorname eingeben",
+        "lastname": "Nachname eingeben",
+        "email": "E-Mail-Adresse eingeben",
+        "message": "Geben Sie Ihre Nachricht ein"
       },
       "validation": {
-        "required": "Please enter a(an) {label} field.",
-        "phone": "Please insert valid phone number",
-        "email": "You must enter a valid email."
+        "required": "Bitte geben Sie ein {label}-Feld ein.",
+        "phone": "Bitte geben Sie eine gültige Telefonnummer ein",
+        "email": "Sie müssen eine gültige E-Mail-Adresse eingeben."
       },
-      "send": "Send",
-      "phone": "Phone"
+      "send": "Senden",
+      "phone": "Telefon"
     }
   }
 }
