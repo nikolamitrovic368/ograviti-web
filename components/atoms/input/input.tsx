@@ -6,7 +6,7 @@ import * as React from 'react'
 import { cn } from '@/utils/common'
 
 const inputVariants = cva(
-  'px-5 py-3.5 2xl:py-5 rounded-full max-md:text-sm outline-none focus:outline focus:outline-primary transition-all',
+  'px-5 py-3.5 2xl:py-5 rounded-full max-md:text-sm outline-hidden focus:outline focus:outline-primary transition-all',
   {
     variants: {
       variant: {

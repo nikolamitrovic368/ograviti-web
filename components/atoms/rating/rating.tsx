@@ -9,7 +9,7 @@ export default function Rating({ className, ...props }: RatingProps) {
     <OriginRating
       initialValue={3}
       className={cn(
-        '[&>.empty-icons]:flex [&>.empty-icons]:gap-1 [&>.filled-icons]:flex [&>.filled-icons]:gap-1',
+        '[&>.empty-icons]:flex! [&>.empty-icons]:gap-1! [&>.filled-icons]:flex! [&>.filled-icons]:gap-1!',
         className,
       )}
       fillIcon={

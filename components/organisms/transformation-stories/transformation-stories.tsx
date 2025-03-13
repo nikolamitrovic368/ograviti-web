@@ -49,12 +49,12 @@ export default function TransformationStories({
               clickable: true,
               bulletClass: 'hidden',
             }}
-            className="!px-8"
+            className="px-8!"
             slideToClickedSlide
             modules={[FreeMode, Pagination]}
           >
             {data?.testimonialCards.map((card, k) => (
-              <SwiperSlide key={k} className="!w-auto select-none">
+              <SwiperSlide key={k} className="w-auto! select-none">
                 <TestimonialCard {...card} />
               </SwiperSlide>
             ))}

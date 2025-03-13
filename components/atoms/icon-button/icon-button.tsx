@@ -11,7 +11,7 @@ const iconButtonVariants = cva(
         default: 'rounded-full bg-secondary text-background ',
         secondary:
           'rounded-full bg-stone-500 text-background hover:bg-primary active:bg-primary-hover',
-        icon: '[&_path]:hover:fill-primary [&_path]:active:fill-primary-hover [&_path]:transition-all [&_path]:duration-300',
+        icon: 'hover:[&_path]:fill-primary active:[&_path]:fill-primary-hover [&_path]:transition-all [&_path]:duration-300',
       },
       size: {
         default: 'w-14 h-14 2xl:w-[72px] 2xl:h-[72px]',

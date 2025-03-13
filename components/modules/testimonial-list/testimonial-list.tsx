@@ -49,12 +49,12 @@ export default function TestimonialList({
                   bulletClass: 'hidden',
                 }}
                 // px-8 xl:px-16 2xl:px-28
-                className="!px-8 xl:!px-16 2xl:!px-28"
+                className="px-8! xl:px-16! 2xl:px-28!"
                 slideToClickedSlide
                 modules={[FreeMode, Pagination]}
               >
                 {testimonialCards.map((card, k) => (
-                  <SwiperSlide key={k} className="!w-auto select-none">
+                  <SwiperSlide key={k} className="w-auto! select-none">
                     <TestimonialCard {...card} />
                   </SwiperSlide>
                 ))}

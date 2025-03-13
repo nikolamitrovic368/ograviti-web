@@ -13,7 +13,7 @@ export default function TestimonialCard({
 }: Sanity.TestimonialCard) {
   const imageProps = useSanityImage(image)
   return (
-    <div className="flex h-[322px] flex-col justify-between gap-4 rounded-3xl bg-secondary px-4 py-6 md:h-[334px] md:w-[288px] md:py-5 2xl:h-[465px] 2xl:w-[400px] 2xl:px-7 2xl:py-10">
+    <div className="bg-secondary flex h-[322px] flex-col justify-between gap-4 rounded-3xl px-4 py-6 md:h-[334px] md:w-[288px] md:py-5 2xl:h-[465px] 2xl:w-[400px] 2xl:px-7 2xl:py-10">
       <div className="text-center md:text-base 2xl:text-2xl 2xl:leading-9">
         {description}
       </div>
@@ -27,7 +27,7 @@ export default function TestimonialCard({
         <div className="py-1 text-lg font-semibold text-white md:text-base">
           {name}
         </div>
-        <div className="text-white/opacity-60 text-sm font-normal text-action">
+        <div className="text-white/opacity-60 text-action text-sm font-normal">
           {role}
         </div>
       </div>

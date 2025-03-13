@@ -55,7 +55,7 @@ export default function Branding(data: Partial<Sanity.Brandings>) {
             >
               <Link
                 href="/services/4"
-                className="block pb-4 text-left text-4xl font-bold text-primary md:text-3xl 2xl:text-5xl"
+                className="text-primary block pb-4 text-left text-4xl font-bold md:text-3xl 2xl:text-5xl"
               >
                 {step.title}
               </Link>
@@ -72,10 +72,10 @@ export default function Branding(data: Partial<Sanity.Brandings>) {
                 <feGaussianBlur
                   in="SourceGraphic"
                   stdDeviation={10}
-                  result="blur"
+                  result="blur-sm"
                 />
                 <feColorMatrix
-                  in="blur"
+                  in="blur-sm"
                   mode="matrix"
                   values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -8"
                   result="goo"
@@ -145,7 +145,7 @@ export default function Branding(data: Partial<Sanity.Brandings>) {
             ))}
             <Image
               className={cn(
-                'point absolute left-1/2 top-1/2 h-[92.5%] w-[92.5%] !translate-x-[-50%] !translate-y-[-50%] overflow-hidden transition-all duration-300',
+                'point translate-x-[-50%]! translate-y-[-50%]! absolute left-1/2 top-1/2 h-[92.5%] w-[92.5%] overflow-hidden transition-all duration-300',
                 {
                   'rotate-0': step === 0,
                   'rotate-[41deg]': step === 1,
@@ -162,7 +162,7 @@ export default function Branding(data: Partial<Sanity.Brandings>) {
             <button onClick={() => serviceonClick(0)}>
               <svg
                 className={cn(
-                  'absolute left-0 top-[55%] -translate-x-1/2 -translate-y-1/2 scale-50 duration-300 sm:scale-75 lg:scale-90 2xl:scale-100 [&_path]:fill-stone-500 [&_path]:transition-all [&_path]:hover:fill-primary',
+                  'hover:[&_path]:fill-primary absolute left-0 top-[55%] -translate-x-1/2 -translate-y-1/2 scale-50 duration-300 sm:scale-75 lg:scale-90 2xl:scale-100 [&_path]:fill-stone-500 [&_path]:transition-all',
                   step === 0 && '[&_path]:fill-primary-foreground',
                 )}
                 width={50}
@@ -208,7 +208,7 @@ export default function Branding(data: Partial<Sanity.Brandings>) {
             <button onClick={() => serviceonClick(1)} className="z-30">
               <svg
                 className={cn(
-                  'absolute left-[9%] top-[20%] w-[200px] -translate-x-1/2 -translate-y-1/2 rotate-[-53deg] scale-50 duration-300 sm:scale-75 lg:scale-90 2xl:scale-100 [&_path]:fill-stone-500 [&_path]:transition-all [&_path]:hover:fill-primary',
+                  'hover:[&_path]:fill-primary absolute left-[9%] top-[20%] w-[200px] -translate-x-1/2 -translate-y-1/2 rotate-[-53deg] scale-50 duration-300 sm:scale-75 lg:scale-90 2xl:scale-100 [&_path]:fill-stone-500 [&_path]:transition-all',
                   step === 1 && '[&_path]:fill-primary-foreground',
                 )}
                 id="Layer_1"
@@ -273,7 +273,7 @@ export default function Branding(data: Partial<Sanity.Brandings>) {
             <button onClick={() => serviceonClick(2)}>
               <svg
                 className={cn(
-                  'absolute left-[48.8%] top-0 -translate-x-1/2 -translate-y-1/2 scale-50 duration-300 sm:scale-75 lg:scale-90 2xl:scale-100 [&_path]:fill-stone-500 [&_path]:transition-all [&_path]:hover:fill-primary',
+                  'hover:[&_path]:fill-primary absolute left-[48.8%] top-0 -translate-x-1/2 -translate-y-1/2 scale-50 duration-300 sm:scale-75 lg:scale-90 2xl:scale-100 [&_path]:fill-stone-500 [&_path]:transition-all',
                   step === 2 && '[&_path]:fill-primary-foreground',
                 )}
                 width={96}
@@ -307,7 +307,7 @@ export default function Branding(data: Partial<Sanity.Brandings>) {
             <button onClick={() => serviceonClick(3)}>
               <svg
                 className={cn(
-                  'absolute left-[90%] top-[18%] w-[200px] -translate-x-1/2 -translate-y-1/2 rotate-[51deg] scale-50 duration-300 sm:scale-75 lg:scale-90 2xl:scale-100 [&_path]:fill-stone-500 [&_path]:transition-all [&_path]:hover:fill-primary',
+                  'hover:[&_path]:fill-primary absolute left-[90%] top-[18%] w-[200px] -translate-x-1/2 -translate-y-1/2 rotate-[51deg] scale-50 duration-300 sm:scale-75 lg:scale-90 2xl:scale-100 [&_path]:fill-stone-500 [&_path]:transition-all',
                   step === 3 && '[&_path]:fill-primary-foreground',
                 )}
                 id="Layer_1"
@@ -368,7 +368,7 @@ export default function Branding(data: Partial<Sanity.Brandings>) {
             <button onClick={() => serviceonClick(4)}>
               <svg
                 className={cn(
-                  'absolute left-full top-[52%] -translate-x-1/2 -translate-y-1/2 scale-50 duration-300 sm:scale-75 lg:scale-90 2xl:scale-100 [&_path]:fill-stone-500 [&_path]:transition-all [&_path]:hover:fill-primary',
+                  'hover:[&_path]:fill-primary absolute left-full top-[52%] -translate-x-1/2 -translate-y-1/2 scale-50 duration-300 sm:scale-75 lg:scale-90 2xl:scale-100 [&_path]:fill-stone-500 [&_path]:transition-all',
                   step === 4 && '[&_path]:fill-primary-foreground',
                 )}
                 width={56}

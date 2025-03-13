@@ -22,10 +22,10 @@ export default function BlogCard({ data }: BlogCardProps) {
       />
       <div className="w-full backdrop-blur-xl">
         <div className="p-8 pb-20 transition-all duration-500 md:pb-10 md:group-hover:pb-20">
-          <div className="overflow-hidden overflow-ellipsis text-nowrap text-3xl leading-[50px] text-primary-foreground md:leading-10">
+          <div className="text-primary-foreground overflow-hidden text-ellipsis text-nowrap text-3xl leading-[50px] md:leading-10">
             {data.title}
           </div>
-          <div className="h-12 overflow-hidden overflow-ellipsis py-2 text-sm text-primary-foreground md:h-16 md:text-lg">
+          <div className="text-primary-foreground h-12 overflow-hidden text-ellipsis py-2 text-sm md:h-16 md:text-lg">
             {data.subtitle}
           </div>
         </div>
