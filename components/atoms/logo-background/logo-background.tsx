@@ -19,8 +19,8 @@ export default function LogoBackground({
         className,
       )}
     >
-      <div className="absolute left-0 top-0 -z-10 -mt-28 w-[2000px] bg-[#232361]">
-        <div className="pointer-events-none flex  scale-[.6] opacity-25 max-md:-translate-x-1/3 max-md:-translate-y-1/2 md:scale-100">
+      <div className="absolute top-0 left-0 -z-10 -mt-28 w-[2000px] bg-[#232361]">
+        <div className="pointer-events-none flex scale-[.6] opacity-25 max-md:-translate-x-1/3 max-md:-translate-y-1/2 md:scale-100">
           {[...new Array(9)].map((_v, key) =>
             key % 2 ? (
               <motion.div

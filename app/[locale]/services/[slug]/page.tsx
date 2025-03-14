@@ -5,7 +5,7 @@ export default function Page() {
   return (
     <main className="flex flex-col gap-8 md:gap-14">
       <Title title="Data Analysis" />
-      <div className=" grid  grid-cols-1 items-center gap-4 md:grid-cols-2 md:gap-12">
+      <div className="grid grid-cols-1 items-center gap-4 md:grid-cols-2 md:gap-12">
         <Typography
           variant="subtitle1"
           // eslint-disable-next-line react/jsx-no-literals

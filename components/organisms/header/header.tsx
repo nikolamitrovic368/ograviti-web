@@ -11,14 +11,10 @@ import NavLink from '@/components/atoms/nav-link'
 import Socials from '@/components/molecules/socials/socials'
 import navigationConfig from '@/constants/navigation'
 import { Link } from '@/i18n/routing'
-import { FooterType } from '@/sanity/queries/layout.queries'
+import { FooterQueryResult } from '@/sanity.types'
 import { cn } from '@/utils/common'
 
-type HeaderProps = {
-  footer: FooterType
-}
-
-export default function Header({ footer }: HeaderProps) {
+export default function Header({ footer }: { footer: FooterQueryResult }) {
   const [isOpen, setIsOpen] = useState(false)
   const { locale } = useParams<{ locale: string }>()
   useEffect(() => {
@@ -42,7 +38,7 @@ export default function Header({ footer }: HeaderProps) {
         </IconButton>
       </div>
       <Drawer open={isOpen} side="top">
-        <div className="flex h-screen w-full flex-col justify-between gap-4 overflow-y-auto bg-background px-8 py-10 md:py-7 xl:px-16 2xl:gap-12 2xl:px-28 2xl:py-10">
+        <div className="bg-background flex h-screen w-full flex-col justify-between gap-4 overflow-y-auto px-8 py-10 md:py-7 xl:px-16 2xl:gap-12 2xl:px-28 2xl:py-10">
           <div className="flex justify-between">
             <Link href="/">
               <Ograviti className="h-5 w-32 sm:h-6 sm:w-36" />
@@ -64,7 +60,7 @@ export default function Header({ footer }: HeaderProps) {
                 'text-2xl',
                 locale === 'en'
                   ? 'cursor-default font-normal text-stone-500'
-                  : 'cursor-pointer font-bold text-white underline duration-300 hover:text-primary',
+                  : 'hover:text-primary cursor-pointer font-bold text-white underline duration-300',
               )}
               // eslint-disable-next-line react/jsx-no-literals
             >
@@ -77,7 +73,7 @@ export default function Header({ footer }: HeaderProps) {
                 'text-2xl',
                 locale === 'de'
                   ? 'cursor-default font-normal text-stone-500'
-                  : 'cursor-pointer font-bold text-white underline duration-300 hover:text-primary',
+                  : 'hover:text-primary cursor-pointer font-bold text-white underline duration-300',
               )}
               // eslint-disable-next-line react/jsx-no-literals
             >
@@ -105,7 +101,7 @@ export default function Header({ footer }: HeaderProps) {
                   'text-2xl',
                   locale === 'en'
                     ? 'cursor-default font-normal text-stone-500'
-                    : 'cursor-pointer font-bold text-white underline duration-300 hover:text-primary',
+                    : 'hover:text-primary cursor-pointer font-bold text-white underline duration-300',
                 )}
                 // eslint-disable-next-line react/jsx-no-literals
               >
@@ -118,14 +114,14 @@ export default function Header({ footer }: HeaderProps) {
                   'text-2xl',
                   locale === 'de'
                     ? 'cursor-default font-normal text-stone-500'
-                    : 'cursor-pointer font-bold text-white underline duration-300 hover:text-primary',
+                    : 'hover:text-primary cursor-pointer font-bold text-white underline duration-300',
                 )}
                 // eslint-disable-next-line react/jsx-no-literals
               >
                 De
               </Link>
             </div>
-            <Socials data={footer.socialMedia} />
+            {footer?.socialMedia && <Socials data={footer.socialMedia} />}
           </div>
         </div>
       </Drawer>

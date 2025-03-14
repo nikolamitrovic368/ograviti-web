@@ -1,15 +1,42 @@
-import { createClient } from 'next-sanity'
+import { createClient, type QueryParams } from 'next-sanity'
 
-export default createClient({
-  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,
-  dataset: 'staging',
-  apiVersion: '2024-05-01',
-  useCdn: process.env.NODE_ENV !== 'development',
+import { apiVersion, dataset, projectId, studioUrl } from './api'
+
+export const client = createClient({
+  projectId,
+  dataset,
+  apiVersion,
+  useCdn: true,
+  perspective: 'published',
   stega: {
-    enabled: false,
-    studioUrl:
-      process.env.NODE_ENV === 'development'
-        ? 'http://localhost:3333'
-        : process.env.NEXT_PUBLIC_SANITY_STUDIO_URL,
+    studioUrl,
+    // Set logger to 'console' for more verbose logging
+    // logger: console,
+    filter: props => {
+      if (props.sourcePath.at(-1) === 'title') {
+        return true
+      }
+
+      return props.filterDefault(props)
+    },
   },
 })
+
+export async function sanityFetch<const QueryString extends string>({
+  query,
+  params = {},
+  revalidate = 60, // default revalidation time in seconds
+  tags = [],
+}: {
+  query: QueryString
+  params?: QueryParams
+  revalidate?: number | false
+  tags?: string[]
+}) {
+  return client.fetch(query, params, {
+    next: {
+      revalidate: tags.length ? false : revalidate, // for simple, time-based revalidation
+      tags, // for tag-based revalidation
+    },
+  })
+}

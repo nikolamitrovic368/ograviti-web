@@ -40,7 +40,7 @@ const Drawer = ({ open, side = 'right', children }: DrawerProps) => {
     >
       <div
         className={cn(
-          'fixed inset-0 bg-gray-500 bg-opacity-75 transition-all',
+          'bg-opacity-75 fixed inset-0 bg-gray-500 transition-all',
           {
             'visible opacity-100 duration-500 ease-in-out': open,
           },

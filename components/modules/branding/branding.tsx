@@ -10,11 +10,12 @@ import { IconButton } from '@/components/atoms/icon-button'
 import { Left, Right } from '@/components/atoms/icons'
 import { Link } from '@/i18n/routing'
 import { useRouter } from '@/i18n/routing'
+import type { Branding } from '@/sanity.types'
 import { cn } from '@/utils/common'
 
 import { mapSteps } from './constants'
 
-export default function Branding(data: Partial<Sanity.Brandings>) {
+export default function Branding(data: Branding) {
   const [step, setStep] = useState(0)
   const steps = mapSteps(data)
   const router = useRouter()
@@ -35,7 +36,7 @@ export default function Branding(data: Partial<Sanity.Brandings>) {
     >
       <div className="relative -mx-8 flex h-[calc(100vh-133px)] flex-col justify-between md:-mt-14 md:h-screen md:flex-row xl:-mx-16 2xl:-mx-28">
         <Carousel
-          className="left-0 top-5 z-10 pl-8 md:absolute md:pt-6 xl:pl-16 2xl:pl-28"
+          className="top-5 left-0 z-10 pl-8 md:absolute md:pt-6 xl:pl-16 2xl:pl-28"
           showArrows={false}
           showStatus={false}
           showIndicators={false}
@@ -85,14 +86,14 @@ export default function Branding(data: Partial<Sanity.Brandings>) {
             </defs>
           </svg>
           <div className="h-full w-full [filter:url(#goo)_blur(60px)]">
-            <div className="absolute left-[10%] top-[10%] h-4/5 w-4/5 origin-center animate-[moveVertical_30s_ease_infinite] opacity-60 mix-blend-hard-light [background:radial-gradient(circle_at_center,rgba(30,30,30,0.8)_0,rgba(30,30,30,0)_50%)_no-repeat]"></div>
-            <div className="absolute left-[10%] top-[10%] h-4/5 w-4/5 origin-[calc(50%-600px)] animate-[moveInCircle_50s_reverse_infinite] opacity-30 mix-blend-hard-light [background:radial-gradient(circle_at_center,rgba(80,80,255,0.8)_0,rgba(80,80,255,0)_50%)_no-repeat]"></div>
-            <div className="absolute left-[10%-500px] top-[10%+200px] h-4/5 w-4/5 origin-[calc(50%+1200px)] animate-[moveInCircle_40s_reverse_infinite] opacity-30 mix-blend-hard-light [background:radial-gradient(circle_at_center,rgba(30,30,30,0.8)_0,rgba(30,30,30,0)_50%)_no-repeat]"></div>
-            <div className="absolute left-[10%] top-[10%] h-4/5 w-4/5 origin-[calc(50%-200px)] animate-[moveHorizontal_40s_ease_infinite] opacity-30 mix-blend-hard-light [background:radial-gradient(circle_at_center,rgba(255,255,255,0.8)_0,rgba(255,255,255,0)_50%)_no-repeat]"></div>
-            <div className="absolute left-[10%] top-[10%] h-[160%] w-[160%] origin-[calc(50%-300px)_calc(50%+500px)] animate-[moveInCircle_20s_reverse_infinite] opacity-10 mix-blend-hard-light [background:radial-gradient(circle_at_center,rgba(80,80,255,0.8)_0,rgba(80,80,255,0)_50%)_no-repeat]"></div>
+            <div className="absolute top-[10%] left-[10%] h-4/5 w-4/5 origin-center animate-[moveVertical_30s_ease_infinite] opacity-60 mix-blend-hard-light [background:radial-gradient(circle_at_center,rgba(30,30,30,0.8)_0,rgba(30,30,30,0)_50%)_no-repeat]"></div>
+            <div className="absolute top-[10%] left-[10%] h-4/5 w-4/5 origin-[calc(50%-600px)] animate-[moveInCircle_50s_reverse_infinite] opacity-30 mix-blend-hard-light [background:radial-gradient(circle_at_center,rgba(80,80,255,0.8)_0,rgba(80,80,255,0)_50%)_no-repeat]"></div>
+            <div className="absolute top-[10%+200px] left-[10%-500px] h-4/5 w-4/5 origin-[calc(50%+1200px)] animate-[moveInCircle_40s_reverse_infinite] opacity-30 mix-blend-hard-light [background:radial-gradient(circle_at_center,rgba(30,30,30,0.8)_0,rgba(30,30,30,0)_50%)_no-repeat]"></div>
+            <div className="absolute top-[10%] left-[10%] h-4/5 w-4/5 origin-[calc(50%-200px)] animate-[moveHorizontal_40s_ease_infinite] opacity-30 mix-blend-hard-light [background:radial-gradient(circle_at_center,rgba(255,255,255,0.8)_0,rgba(255,255,255,0)_50%)_no-repeat]"></div>
+            <div className="absolute top-[10%] left-[10%] h-[160%] w-[160%] origin-[calc(50%-300px)_calc(50%+500px)] animate-[moveInCircle_20s_reverse_infinite] opacity-10 mix-blend-hard-light [background:radial-gradient(circle_at_center,rgba(80,80,255,0.8)_0,rgba(80,80,255,0)_50%)_no-repeat]"></div>
           </div>
         </div>
-        <div className=" relative mb-12 flex w-full flex-col items-center justify-between overflow-hidden px-8 pt-4 md:mb-0 md:flex-row md:pt-0 xl:px-16 2xl:px-28">
+        <div className="relative mb-12 flex w-full flex-col items-center justify-between overflow-hidden px-8 pt-4 md:mb-0 md:flex-row md:pt-0 xl:px-16 2xl:px-28">
           <div className="hidden md:block">
             <IconButton onClick={() => setStep(step - 1)} disabled={!step}>
               <Left />
@@ -117,14 +118,14 @@ export default function Branding(data: Partial<Sanity.Brandings>) {
             )}
           >
             <Image
-              className="absolute left-1/2 top-1/2 h-[88%] w-[88%] -translate-x-1/2 -translate-y-1/2"
+              className="absolute top-1/2 left-1/2 h-[88%] w-[88%] -translate-x-1/2 -translate-y-1/2"
               src="/images/main/subtract-2.svg"
               alt="subtract-2"
               width={896}
               height={896}
             />
             <Image
-              className="absolute left-1/2 top-1/2 h-[80.5%] w-[80.5%] -translate-x-1/2 -translate-y-1/2"
+              className="absolute top-1/2 left-1/2 h-[80.5%] w-[80.5%] -translate-x-1/2 -translate-y-1/2"
               src="/images/main/subtract-1.svg"
               alt="subtract-1"
               width={780}
@@ -133,7 +134,7 @@ export default function Branding(data: Partial<Sanity.Brandings>) {
             {steps.map((_, key) => (
               <Image
                 className={cn(
-                  'absolute left-1/2 top-1/2 h-[70%] w-[70%] -translate-x-1/2 -translate-y-1/2 opacity-0 transition-opacity',
+                  'absolute top-1/2 left-1/2 h-[70%] w-[70%] -translate-x-1/2 -translate-y-1/2 opacity-0 transition-opacity',
                   key <= step && 'opacity-100',
                 )}
                 key={key}
@@ -145,7 +146,7 @@ export default function Branding(data: Partial<Sanity.Brandings>) {
             ))}
             <Image
               className={cn(
-                'point translate-x-[-50%]! translate-y-[-50%]! absolute left-1/2 top-1/2 h-[92.5%] w-[92.5%] overflow-hidden transition-all duration-300',
+                'point absolute top-1/2 left-1/2 h-[92.5%] w-[92.5%] translate-x-[-50%]! translate-y-[-50%]! overflow-hidden transition-all duration-300',
                 {
                   'rotate-0': step === 0,
                   'rotate-[41deg]': step === 1,
@@ -162,8 +163,8 @@ export default function Branding(data: Partial<Sanity.Brandings>) {
             <button onClick={() => serviceonClick(0)}>
               <svg
                 className={cn(
-                  'hover:[&_path]:fill-primary absolute left-0 top-[55%] -translate-x-1/2 -translate-y-1/2 scale-50 duration-300 sm:scale-75 lg:scale-90 2xl:scale-100 [&_path]:fill-stone-500 [&_path]:transition-all',
-                  step === 0 && '[&_path]:fill-primary-foreground',
+                  'hover:[&_path]:fill-primary! absolute top-[55%] left-0 -translate-x-1/2 -translate-y-1/2 scale-50 duration-300 sm:scale-75 lg:scale-90 2xl:scale-100 [&_path]:fill-stone-500 [&_path]:transition-all',
+                  step === 0 && '[&_path]:fill-primary-foreground!',
                 )}
                 width={50}
                 height={146}
@@ -208,10 +209,9 @@ export default function Branding(data: Partial<Sanity.Brandings>) {
             <button onClick={() => serviceonClick(1)} className="z-30">
               <svg
                 className={cn(
-                  'hover:[&_path]:fill-primary absolute left-[9%] top-[20%] w-[200px] -translate-x-1/2 -translate-y-1/2 rotate-[-53deg] scale-50 duration-300 sm:scale-75 lg:scale-90 2xl:scale-100 [&_path]:fill-stone-500 [&_path]:transition-all',
-                  step === 1 && '[&_path]:fill-primary-foreground',
+                  'hover:[&_path]:fill-primary! absolute top-[20%] left-[9%] w-[200px] -translate-x-1/2 -translate-y-1/2 scale-50 rotate-[-53deg] duration-300 sm:scale-75 lg:scale-90 2xl:scale-100 [&_path]:fill-stone-500 [&_path]:transition-all',
+                  step === 1 && '[&_path]:fill-primary-foreground!',
                 )}
-                id="Layer_1"
                 xmlns="http://www.w3.org/2000/svg"
                 xmlnsXlink="http://www.w3.org/1999/xlink"
                 x="0px"
@@ -273,8 +273,8 @@ export default function Branding(data: Partial<Sanity.Brandings>) {
             <button onClick={() => serviceonClick(2)}>
               <svg
                 className={cn(
-                  'hover:[&_path]:fill-primary absolute left-[48.8%] top-0 -translate-x-1/2 -translate-y-1/2 scale-50 duration-300 sm:scale-75 lg:scale-90 2xl:scale-100 [&_path]:fill-stone-500 [&_path]:transition-all',
-                  step === 2 && '[&_path]:fill-primary-foreground',
+                  'hover:[&_path]:fill-primary! absolute top-0 left-[48.8%] -translate-x-1/2 -translate-y-1/2 scale-50 duration-300 sm:scale-75 lg:scale-90 2xl:scale-100 [&_path]:fill-stone-500 [&_path]:transition-all',
+                  step === 2 && '[&_path]:fill-primary-foreground!',
                 )}
                 width={96}
                 height={34}
@@ -307,8 +307,8 @@ export default function Branding(data: Partial<Sanity.Brandings>) {
             <button onClick={() => serviceonClick(3)}>
               <svg
                 className={cn(
-                  'hover:[&_path]:fill-primary absolute left-[90%] top-[18%] w-[200px] -translate-x-1/2 -translate-y-1/2 rotate-[51deg] scale-50 duration-300 sm:scale-75 lg:scale-90 2xl:scale-100 [&_path]:fill-stone-500 [&_path]:transition-all',
-                  step === 3 && '[&_path]:fill-primary-foreground',
+                  'hover:[&_path]:fill-primary! absolute top-[18%] left-[90%] w-[200px] -translate-x-1/2 -translate-y-1/2 scale-50 rotate-[51deg] duration-300 sm:scale-75 lg:scale-90 2xl:scale-100 [&_path]:fill-stone-500 [&_path]:transition-all',
+                  step === 3 && '[&_path]:fill-primary-foreground!',
                 )}
                 id="Layer_1"
                 xmlns="http://www.w3.org/2000/svg"
@@ -368,8 +368,8 @@ export default function Branding(data: Partial<Sanity.Brandings>) {
             <button onClick={() => serviceonClick(4)}>
               <svg
                 className={cn(
-                  'hover:[&_path]:fill-primary absolute left-full top-[52%] -translate-x-1/2 -translate-y-1/2 scale-50 duration-300 sm:scale-75 lg:scale-90 2xl:scale-100 [&_path]:fill-stone-500 [&_path]:transition-all',
-                  step === 4 && '[&_path]:fill-primary-foreground',
+                  'hover:[&_path]:fill-primary! absolute top-[52%] left-full -translate-x-1/2 -translate-y-1/2 scale-50 duration-300 sm:scale-75 lg:scale-90 2xl:scale-100 [&_path]:fill-stone-500 [&_path]:transition-all',
+                  step === 4 && '[&_path]:fill-primary-foreground!',
                 )}
                 width={56}
                 height={239}

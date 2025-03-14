@@ -1,15 +1,22 @@
+import { getImageDimensions, SanityImageSource } from '@sanity/asset-utils'
 import { PortableTextReactComponents } from 'next-sanity'
+import { Image } from 'next-sanity/image'
 
-import SanityImage from '@/components/atoms/sanity-image'
 import { Typography } from '@/components/atoms/typography'
 import Video from '@/components/modules/video'
+import { urlForImage } from '@/sanity/utils'
 import { cn } from '@/utils/common'
 
 export const PortableComponent: Partial<PortableTextReactComponents> = {
   types: {
     image: ({ value }) => (
-      <SanityImage
-        image={value}
+      <Image
+        src={urlForImage(value).fit('max').url() ?? ''}
+        width={1920}
+        height={Math.round(
+          1920 / getImageDimensions(value as SanityImageSource).aspectRatio,
+        )}
+        alt="Multi part Image"
         className="h-[245px] w-full rounded-[45px] object-cover xl:h-[400px] 2xl:h-[686px]"
       />
     ),
@@ -31,9 +38,14 @@ export const PortableComponent: Partial<PortableTextReactComponents> = {
         )}
       >
         {value.multiPartImage.images.map((image: any, key: any) => (
-          <SanityImage
+          <Image
+            src={urlForImage(image).fit('max').url() ?? ''}
+            width={Math.round(
+              450 * getImageDimensions(image as SanityImageSource).aspectRatio,
+            )}
+            height={450}
             key={key}
-            image={image}
+            alt="Multi part Image"
             className="h-[245px] rounded-[45px] object-cover md:h-[350px] 2xl:h-[439px]"
           />
         ))}
@@ -53,7 +65,7 @@ export const PortableComponent: Partial<PortableTextReactComponents> = {
     blockquote: ({ children }) => (
       <Typography
         variant="subtitle1"
-        className="rounded-[45px] bg-primary-foreground px-6 py-3.5 text-center text-secondary md:px-16 md:py-5 2xl:px-28 2xl:py-9"
+        className="bg-primary-foreground text-secondary rounded-[45px] px-6 py-3.5 text-center md:px-16 md:py-5 2xl:px-28 2xl:py-9"
       >
         {children}
       </Typography>

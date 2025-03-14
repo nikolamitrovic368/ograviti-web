@@ -2,13 +2,11 @@ import { type ClassValue, clsx } from 'clsx'
 import { Metadata } from 'next'
 import { twMerge } from 'tailwind-merge'
 
-import { Seo } from '@/sanity/types'
-
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
 }
 
-export function mapSeo(seo: Seo) {
+export function mapSeo(seo: any) {
   if (!seo) return {}
   const mappedSeo: Metadata = {
     robots: {

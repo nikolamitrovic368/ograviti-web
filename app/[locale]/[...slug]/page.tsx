@@ -1,5 +1,6 @@
 import Modules from '@/components/modules'
-import { fetchPageData } from '@/sanity/services/pages/pages.service'
+import { sanityFetch } from '@/sanity/client'
+import { pageQuery } from '@/sanity/queries'
 import { SlugsLocaleProps } from '@/types'
 
 // export async function generateMetadata({
@@ -12,6 +13,10 @@ import { SlugsLocaleProps } from '@/types'
 
 export default async function Page({ params }: SlugsLocaleProps) {
   const { locale, slug } = await params
-  const page = await fetchPageData(slug, locale)
+  const page = await sanityFetch({
+    query: pageQuery,
+    tags: ['page'],
+    params: { slug: slug?.join('/'), locale },
+  })
   return <Modules modules={page?.modules} />
 }

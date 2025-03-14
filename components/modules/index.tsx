@@ -13,10 +13,10 @@ import TestimonialList from './testimonial-list'
 import TextWithLogo from './text-with-logo'
 import Video from './video'
 
-export default function Modules({ modules }: { modules?: Sanity.Module[] }) {
+export default function Modules({ modules }: { modules?: any }) {
   return (
     <div className="flex flex-col gap-8 md:gap-14">
-      {modules?.map(module => {
+      {modules?.map((module: any) => {
         switch (module._type) {
           case 'branding':
             return <Branding {...module} key={module._key} />

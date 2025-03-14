@@ -1,4 +1,6 @@
-export const mapSteps = (data: Partial<Sanity.Brandings>) => [
+import { Branding } from '@/sanity.types'
+
+export const mapSteps = (data: Branding) => [
   {
     title: 'Branding',
     subtitle: data.brandingSubtitle,

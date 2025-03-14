@@ -13,8 +13,9 @@ import Header from '@/components/organisms/header'
 import ClientLayout from '@/components/providers/client-layout'
 import StyledComponentsRegistry from '@/components/providers/styled-components-registry'
 import { routing } from '@/i18n/routing'
-import { fetchGlobalSeoData } from '@/sanity/services/globalSeo.service'
-import { fetchFooterData } from '@/sanity/services/layout.service'
+import { sanityFetch } from '@/sanity/client'
+import { footerQuery, globalSeoQuery } from '@/sanity/queries'
+import { resolveOpenGraphImage } from '@/sanity/utils'
 import { TRPCReactProvider } from '@/trpc/react'
 import { LocaleProps } from '@/types'
 
@@ -28,14 +29,22 @@ export async function generateMetadata(props: LocaleProps): Promise<Metadata> {
 
   const { locale } = params
 
-  const data = await fetchGlobalSeoData(locale)
+  const data = await sanityFetch({
+    query: globalSeoQuery,
+    tags: ['globalSeo'],
+    params: { locale },
+  })
+  const ogImage = resolveOpenGraphImage(data?.globalSeoImage)
   return {
-    title: data.globalSeoTitle,
-    description: data.globalSeoDescription,
-    openGraph: {
-      images: [data.globalSeoImage.src],
+    title: {
+      template: `%s | ${data?.globalSeoTitle}`,
+      default: data?.globalSeoTitle ?? 'Ograviti',
     },
-    keywords: data.globalKeywords,
+    description: data?.globalSeoDescription,
+    openGraph: {
+      images: ogImage ? [ogImage] : [],
+    },
+    keywords: data?.globalKeywords,
   }
 }
 
@@ -57,7 +66,10 @@ export default async function RootLayout(
 
   const messages = await getMessages()
 
-  const footer = await fetchFooterData()
+  const footer = await sanityFetch({
+    query: footerQuery,
+    tags: ['footer'],
+  })
 
   return (
     <html lang={locale}>
