@@ -13,7 +13,7 @@ export async function generateMetadata(props: LocaleProps): Promise<Metadata> {
   const { locale } = params
   const data = await sanityFetch({
     query: caseStudyPageQuery,
-    tags: ['careersPage'],
+    tags: ['caseStudyPage'],
     params: { locale },
   })
   return mapSeo(data?.seo)
@@ -23,7 +23,7 @@ export default async function Page({ params }: LocaleProps) {
   const { locale } = await params
   const data = await sanityFetch({
     query: caseStudyPageQuery,
-    tags: ['careersPage'],
+    tags: ['caseStudyPage'],
     params: { locale },
   })
   return (

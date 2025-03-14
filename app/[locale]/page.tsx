@@ -13,7 +13,7 @@ export async function generateMetadata({
 
   const data = await sanityFetch({
     query: homeQuery,
-    tags: ['page'],
+    tags: ['page:index'],
     params: { locale },
   })
   return mapSeo(data?.seo)

@@ -8,16 +8,20 @@ import { NextIntlClientProvider } from 'next-intl'
 import { getMessages } from 'next-intl/server'
 import { VisualEditing } from 'next-sanity'
 
+import DraftModeToast from '@/components/DraftModeToast'
 import Footer from '@/components/organisms/footer'
 import Header from '@/components/organisms/header'
 import ClientLayout from '@/components/providers/client-layout'
 import StyledComponentsRegistry from '@/components/providers/styled-components-registry'
 import { routing } from '@/i18n/routing'
 import { sanityFetch } from '@/sanity/client'
+import { SanityLive } from '@/sanity/live'
 import { footerQuery, globalSeoQuery } from '@/sanity/queries'
 import { resolveOpenGraphImage } from '@/sanity/utils'
 import { TRPCReactProvider } from '@/trpc/react'
 import { LocaleProps } from '@/types'
+
+import { handleError } from './client-utils'
 
 const lato = Lato({
   subsets: ['latin'],
@@ -65,6 +69,7 @@ export default async function RootLayout(
   const { children } = props
 
   const messages = await getMessages()
+  const { isEnabled: isDraftMode } = await draftMode()
 
   const footer = await sanityFetch({
     query: footerQuery,
@@ -84,8 +89,15 @@ export default async function RootLayout(
               </ClientLayout>
             </StyledComponentsRegistry>
           </NextIntlClientProvider>
-          {(await draftMode()).isEnabled && <VisualEditing />}
         </TRPCReactProvider>
+        {isDraftMode && (
+          <>
+            <DraftModeToast />
+            {/*  Enable Visual Editing, only to be rendered when Draft Mode is enabled */}
+            <VisualEditing />
+          </>
+        )}
+        <SanityLive onError={handleError} />
       </body>
     </html>
   )

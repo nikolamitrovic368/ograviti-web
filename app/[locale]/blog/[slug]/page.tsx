@@ -21,7 +21,7 @@ export async function generateMetadata({
   const { slug, locale } = await params
   const data = await sanityFetch({
     query: blogQuery,
-    tags: ['blogPage'],
+    tags: ['blog'],
     params: { slug, locale },
   })
   return mapSeo(data?.seo)
@@ -31,7 +31,7 @@ export default async function BlogPage({ params }: SlugLocaleProps) {
   const { slug, locale } = await params
   const data = await sanityFetch({
     query: blogQuery,
-    tags: ['blogPage'],
+    tags: ['blog'],
     params: { slug, locale },
   })
   const t = await getTranslations('BlogPage')

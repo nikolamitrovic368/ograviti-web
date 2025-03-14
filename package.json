@@ -49,6 +49,7 @@
     "react-simple-star-rating": "^5.1.7",
     "react-touch": "^0.4.4",
     "server-only": "^0.0.1",
+    "sonner": "^2.0.1",
     "styled-components": "^6.1.15",
     "superjson": "^2.2.2",
     "swiper": "^11.2.5",

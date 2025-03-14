@@ -127,6 +127,9 @@ export const careersPageQuery = defineQuery(`
 }
 `)
 
+export const careersQuery = defineQuery(`
+*[_type == "career" && slug.current == $slug && language == $locale][0]`)
+
 export const caseStudyPageQuery = defineQuery(`
 *[_type == "caseStudyPage" && language == $locale][0] {
   ...,
