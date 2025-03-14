@@ -2785,6 +2785,46 @@ export type ServicesPageQueryResult = {
   seo?: Seo
   language?: string
 } | null
+// Variable: sitemapQuery
+// Query: {  "blogPage" : *[_type == "blogPage" && language == 'en'][0]  {    _updatedAt  },  "caseStudyPage" : *[_type == "caseStudyPage" && language == 'en'][0]  {    _updatedAt  },  "careersPage" : *[_type == "careersPage" && language == 'en'][0]  {    _updatedAt  },  "servicesPage" : *[_type == "servicesPage" && language == 'en'][0]  {    _updatedAt  },  "blogPage" : *[_type == "blogPage" && language == 'en'][0]  {    _updatedAt  },  "pages" : *[_type == "page" && language == 'en']  {    slug {      current    },    _updatedAt  },  "blog" : *[_type == "blog" && language == 'en'] {    slug {      current    },    _updatedAt  },  "caseStudy" : *[_type == "caseStudy" && language == 'en'] {    slug {      current    },    _updatedAt  },  "career" : *[_type == "career" && language == 'en'] {    slug {      current    },    _updatedAt  },}
+export type SitemapQueryResult = {
+  blogPage: {
+    _updatedAt: string
+  } | null
+  caseStudyPage: {
+    _updatedAt: string
+  } | null
+  careersPage: {
+    _updatedAt: string
+  } | null
+  servicesPage: {
+    _updatedAt: string
+  } | null
+  pages: Array<{
+    slug: {
+      current: string
+    }
+    _updatedAt: string
+  }>
+  blog: Array<{
+    slug: {
+      current: string
+    }
+    _updatedAt: string
+  }>
+  caseStudy: Array<{
+    slug: {
+      current: string
+    }
+    _updatedAt: string
+  }>
+  career: Array<{
+    slug: {
+      current: string
+    }
+    _updatedAt: string
+  }>
+}
 
 // Query TypeMap
 import '@sanity/client'
@@ -2802,5 +2842,6 @@ declare module '@sanity/client' {
     '\n*[_type == "caseStudyPage" && language == $locale][0] {\n  ...,\n  caseStudies[]-> {\n    _id,\n    title,\n    description,\n    slug,\n    image\n  },\n}\n': CaseStudyPageQueryResult
     '\n*[_type == "caseStudy" && slug.current == $slug && language == $locale][0] {\n  ...,\n  \nmodules[]{ \n  ...,\n  _type == \'blog-list\' => { filteredCategory-> },\n  _type == \'case-study-list\' => { caseStudies[]->\n    {\n      _id,\n      title,\n      description,\n      slug,\n      image\n    }\n  },\n  _type == \'team\' => {\n    ...,\n    members[]-> {\n      ...,\n      "name":  coalesce(name[_key == $locale][0].value, "Missing translation"),\n      "role":  coalesce(role[_key == $locale][0].value, "Missing translation")\n    }\n  },\n  _type == "companies" => @->,\n  _type == "testimonial-list" => { testimonialCards[]-> },\n  _type == "video" => {\n    ...,\n    type == "file" => {\n      "url": file.asset->url\n    }\n  },\n  _type == "contact-form" => @->{\n    ...,\n    "title":  coalesce(title[_key == $locale][0].value, "Missing translation"),\n    "offices": offices[]{\n      ...,\n      "name":  coalesce(name[_key == $locale][0].value, "Missing translation"),\n      "address":  coalesce(address[_key == $locale][0].value, "Missing translation"),\n    }\n  },\n}\n,\n  relatedCaseStudies[]-> {\n    _id,\n    title,\n    description,\n    slug,\n    image\n  }\n}\n': CaseStudyQueryResult
     '\n*[_type == "servicesPage" && language == $locale][0] {\n  ...,\n  \nmodules[]{ \n  ...,\n  _type == \'blog-list\' => { filteredCategory-> },\n  _type == \'case-study-list\' => { caseStudies[]->\n    {\n      _id,\n      title,\n      description,\n      slug,\n      image\n    }\n  },\n  _type == \'team\' => {\n    ...,\n    members[]-> {\n      ...,\n      "name":  coalesce(name[_key == $locale][0].value, "Missing translation"),\n      "role":  coalesce(role[_key == $locale][0].value, "Missing translation")\n    }\n  },\n  _type == "companies" => @->,\n  _type == "testimonial-list" => { testimonialCards[]-> },\n  _type == "video" => {\n    ...,\n    type == "file" => {\n      "url": file.asset->url\n    }\n  },\n  _type == "contact-form" => @->{\n    ...,\n    "title":  coalesce(title[_key == $locale][0].value, "Missing translation"),\n    "offices": offices[]{\n      ...,\n      "name":  coalesce(name[_key == $locale][0].value, "Missing translation"),\n      "address":  coalesce(address[_key == $locale][0].value, "Missing translation"),\n    }\n  },\n}\n,\n}\n': ServicesPageQueryResult
+    '{\n  "blogPage" : *[_type == "blogPage" && language == \'en\'][0]  {\n    _updatedAt\n  },\n  "caseStudyPage" : *[_type == "caseStudyPage" && language == \'en\'][0]  {\n    _updatedAt\n  },\n  "careersPage" : *[_type == "careersPage" && language == \'en\'][0]  {\n    _updatedAt\n  },\n  "servicesPage" : *[_type == "servicesPage" && language == \'en\'][0]  {\n    _updatedAt\n  },\n  "blogPage" : *[_type == "blogPage" && language == \'en\'][0]  {\n    _updatedAt\n  },\n  "pages" : *[_type == "page" && language == \'en\']  {\n    slug {\n      current\n    },\n    _updatedAt\n  },\n  "blog" : *[_type == "blog" && language == \'en\'] {\n    slug {\n      current\n    },\n    _updatedAt\n  },\n  "caseStudy" : *[_type == "caseStudy" && language == \'en\'] {\n    slug {\n      current\n    },\n    _updatedAt\n  },\n  "career" : *[_type == "career" && language == \'en\'] {\n    slug {\n      current\n    },\n    _updatedAt\n  },\n}': SitemapQueryResult
   }
 }

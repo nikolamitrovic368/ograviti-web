@@ -160,3 +160,47 @@ export const servicesPageQuery = defineQuery(`
   ${modulesQuery},
 }
 `)
+
+// SEO
+
+export const sitemapQuery = defineQuery(`{
+  "blogPage" : *[_type == "blogPage" && language == 'en'][0]  {
+    _updatedAt
+  },
+  "caseStudyPage" : *[_type == "caseStudyPage" && language == 'en'][0]  {
+    _updatedAt
+  },
+  "careersPage" : *[_type == "careersPage" && language == 'en'][0]  {
+    _updatedAt
+  },
+  "servicesPage" : *[_type == "servicesPage" && language == 'en'][0]  {
+    _updatedAt
+  },
+  "blogPage" : *[_type == "blogPage" && language == 'en'][0]  {
+    _updatedAt
+  },
+  "pages" : *[_type == "page" && language == 'en']  {
+    slug {
+      current
+    },
+    _updatedAt
+  },
+  "blog" : *[_type == "blog" && language == 'en'] {
+    slug {
+      current
+    },
+    _updatedAt
+  },
+  "caseStudy" : *[_type == "caseStudy" && language == 'en'] {
+    slug {
+      current
+    },
+    _updatedAt
+  },
+  "career" : *[_type == "career" && language == 'en'] {
+    slug {
+      current
+    },
+    _updatedAt
+  },
+}`)
