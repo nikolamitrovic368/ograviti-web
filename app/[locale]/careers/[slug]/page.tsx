@@ -41,9 +41,11 @@ export default async function CareerPage({ params }: SlugLocaleProps) {
     <div className="-mx-8 -mb-28 pb-12 md:-mb-60 md:bg-[url('/images/bgs/1.svg')] md:bg-right md:bg-repeat-y xl:-mx-16 2xl:-mx-28">
       <main className="mb-28 flex flex-col gap-8 px-8 md:mb-60 md:gap-14 xl:px-16 2xl:px-28">
         <Title title={data?.title} subtitle={data?.subtitle} />
-        <div className="flex flex-col gap-4 md:w-2/3 md:gap-8">
-          <PortableText value={data.body} components={PortableComponent} />
-        </div>
+        {data?.body && (
+          <div className="flex flex-col gap-4 md:w-2/3 md:gap-8">
+            <PortableText value={data.body} components={PortableComponent} />
+          </div>
+        )}
         <Typography variant="subtitle1" className="text-center text-3xl">
           {t('are-you-interested')}
         </Typography>
