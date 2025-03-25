@@ -11,8 +11,8 @@ export function mapSeo(seo: any) {
   if (!seo) return {}
   const mappedSeo: Metadata = {
     robots: {
-      follow: seo?.robotsNoFollow,
-      index: seo?.robotsNoIndex,
+      follow: !seo?.robotsNoFollow,
+      index: !seo?.robotsNoIndex,
     },
   }
   if (seo.title) mappedSeo.title = seo.title
