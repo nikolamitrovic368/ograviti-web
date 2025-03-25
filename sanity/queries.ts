@@ -166,7 +166,7 @@ export const servicesPageQuery = defineQuery(`
 
 // SEO
 
-export const sitemapQuery = defineQuery(`{
+export const sitemapEnQuery = defineQuery(`{
   "blogPage" : *[_type == "blogPage" && language == 'en'][0]  {
     _updatedAt
   },
@@ -201,6 +201,48 @@ export const sitemapQuery = defineQuery(`{
     _updatedAt
   },
   "career" : *[_type == "career" && language == 'en'] {
+    slug {
+      current
+    },
+    _updatedAt
+  },
+}`)
+
+export const sitemapDeQuery = defineQuery(`{
+  "blogPage" : *[_type == "blogPage" && language == 'de'][0]  {
+    _updatedAt
+  },
+  "caseStudyPage" : *[_type == "caseStudyPage" && language == 'de'][0]  {
+    _updatedAt
+  },
+  "careersPage" : *[_type == "careersPage" && language == 'de'][0]  {
+    _updatedAt
+  },
+  "servicesPage" : *[_type == "servicesPage" && language == 'de'][0]  {
+    _updatedAt
+  },
+  "blogPage" : *[_type == "blogPage" && language == 'de'][0]  {
+    _updatedAt
+  },
+  "pages" : *[_type == "page" && language == 'de']  {
+    slug {
+      current
+    },
+    _updatedAt
+  },
+  "blog" : *[_type == "blog" && language == 'de'] {
+    slug {
+      current
+    },
+    _updatedAt
+  },
+  "caseStudy" : *[_type == "caseStudy" && language == 'de'] {
+    slug {
+      current
+    },
+    _updatedAt
+  },
+  "career" : *[_type == "career" && language == 'de'] {
     slug {
       current
     },
