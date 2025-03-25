@@ -1,6 +1,7 @@
 import { type ClassValue, clsx } from 'clsx'
 import { format, parseISO } from 'date-fns'
 import { Metadata } from 'next'
+import { Robots } from 'next/dist/lib/metadata/types/metadata-types'
 import { twMerge } from 'tailwind-merge'
 
 export function cn(...inputs: ClassValue[]) {
@@ -10,11 +11,10 @@ export function cn(...inputs: ClassValue[]) {
 export function mapSeo(seo: any) {
   if (!seo) return {}
   const mappedSeo: Metadata = {
-    robots: {
-      follow: !seo?.robotsNoFollow,
-      index: !seo?.robotsNoIndex,
-    },
+    robots: {},
   }
+  if (seo.robotsNoIndex) (mappedSeo.robots as Robots).index = false
+  if (seo.robotsNoFollow) (mappedSeo.robots as Robots).follow = false
   if (seo.title) mappedSeo.title = seo.title
   if (seo.description) mappedSeo.description = seo.description
   if (seo.keywords?.length) mappedSeo.keywords = seo.keywords
