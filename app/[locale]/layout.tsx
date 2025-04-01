@@ -7,6 +7,7 @@ import { notFound } from 'next/navigation'
 import { NextIntlClientProvider } from 'next-intl'
 import { getMessages } from 'next-intl/server'
 import { VisualEditing } from 'next-sanity'
+import { Toaster } from 'sonner'
 
 import DraftModeToast from '@/components/DraftModeToast'
 import Footer from '@/components/organisms/footer'
@@ -90,6 +91,8 @@ export default async function RootLayout(
             </StyledComponentsRegistry>
           </NextIntlClientProvider>
         </TRPCReactProvider>
+        <Toaster />
+        <SanityLive onError={handleError} />
         {isDraftMode && (
           <>
             <DraftModeToast />
@@ -97,7 +100,6 @@ export default async function RootLayout(
             <VisualEditing />
           </>
         )}
-        <SanityLive onError={handleError} />
       </body>
     </html>
   )
