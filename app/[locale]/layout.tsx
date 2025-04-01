@@ -15,7 +15,7 @@ import Header from '@/components/organisms/header'
 import ClientLayout from '@/components/providers/client-layout'
 import StyledComponentsRegistry from '@/components/providers/styled-components-registry'
 import { routing } from '@/i18n/routing'
-import { sanityFetch } from '@/sanity/client'
+import { sanityFetch } from '@/sanity/live'
 import { SanityLive } from '@/sanity/live'
 import { footerQuery, globalSeoQuery } from '@/sanity/queries'
 import { resolveOpenGraphImage } from '@/sanity/utils'
@@ -34,9 +34,10 @@ export async function generateMetadata(props: LocaleProps): Promise<Metadata> {
 
   const { locale } = params
 
-  const data = await sanityFetch({
+  const { data } = await sanityFetch({
     query: globalSeoQuery,
     tags: ['globalSeo'],
+    stega: false,
     params: { locale },
   })
   const ogImage = resolveOpenGraphImage(data?.globalSeoImage)
@@ -72,7 +73,7 @@ export default async function RootLayout(
   const messages = await getMessages()
   const { isEnabled: isDraftMode } = await draftMode()
 
-  const footer = await sanityFetch({
+  const { data: footer } = await sanityFetch({
     query: footerQuery,
     tags: ['footer'],
   })

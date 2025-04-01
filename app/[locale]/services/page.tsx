@@ -2,13 +2,18 @@ import { Step1, Step2, Step3, Step4, Step5 } from '@/components/atoms/icons'
 import Modules from '@/components/modules'
 import Title from '@/components/modules/heading-title'
 import ServiceStep from '@/components/molecules/service-step'
-import { sanityFetch } from '@/sanity/client'
+import { sanityFetch } from '@/sanity/live'
 import { servicesPageQuery } from '@/sanity/queries'
 import { urlForImage } from '@/sanity/utils'
 import { LocaleProps } from '@/types'
 
 export default async function ServicesPage({ params }: LocaleProps) {
   const { locale } = await params
+  const { data } = await sanityFetch({
+    query: servicesPageQuery,
+    tags: ['servicesPage'],
+    params: { locale },
+  })
   const {
     title,
     subtitle,
@@ -18,12 +23,7 @@ export default async function ServicesPage({ params }: LocaleProps) {
     service4,
     service5,
     modules,
-  } =
-    (await sanityFetch({
-      query: servicesPageQuery,
-      tags: ['servicesPage'],
-      params: { locale },
-    })) ?? {}
+  } = data ?? {}
   return (
     <main className="flex flex-col gap-8 md:gap-14">
       <Title title={title} subtitle={subtitle} />

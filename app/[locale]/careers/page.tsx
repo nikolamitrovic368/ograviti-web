@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 
 import Title from '@/components/modules/heading-title'
 import CareerCard from '@/components/molecules/career-card'
-import { sanityFetch } from '@/sanity/client'
+import { sanityFetch } from '@/sanity/live'
 import { careersPageQuery } from '@/sanity/queries'
 import { LocaleProps } from '@/types'
 import { mapSeo } from '@/utils/common'
@@ -12,9 +12,10 @@ export async function generateMetadata(props: LocaleProps): Promise<Metadata> {
 
   const { locale } = params
 
-  const data = await sanityFetch({
+  const { data } = await sanityFetch({
     query: careersPageQuery,
     tags: ['careersPage'],
+    stega: false,
     params: { locale },
   })
   return mapSeo(data?.seo)
@@ -25,7 +26,7 @@ export default async function Page(props: LocaleProps) {
 
   const { locale } = params
 
-  const data = await sanityFetch({
+  const { data } = await sanityFetch({
     query: careersPageQuery,
     tags: ['careersPage'],
     params: { locale },

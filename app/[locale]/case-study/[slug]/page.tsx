@@ -8,7 +8,7 @@ import { Typography } from '@/components/atoms/typography'
 import Modules from '@/components/modules'
 import CaseStudyCard from '@/components/molecules/case-study-card'
 import { Link } from '@/i18n/routing'
-import { sanityFetch } from '@/sanity/client'
+import { sanityFetch } from '@/sanity/live'
 import { caseStudyQuery } from '@/sanity/queries'
 import { urlForImage } from '@/sanity/utils'
 import { SlugLocaleProps } from '@/types'
@@ -21,9 +21,10 @@ export async function generateMetadata(
 
   const { slug, locale } = params
 
-  const data = await sanityFetch({
+  const { data } = await sanityFetch({
     query: caseStudyQuery,
     tags: ['caseStudy'],
+    stega: false,
     params: { slug, locale },
   })
   return mapSeo(data?.seo)
@@ -35,7 +36,7 @@ export default async function CaseStudyPage(props: SlugLocaleProps) {
   const { slug, locale } = params
 
   const t = await getTranslations('CaseStudyPage')
-  const data = await sanityFetch({
+  const { data } = await sanityFetch({
     query: caseStudyQuery,
     tags: ['caseStudy'],
     params: { slug, locale },

@@ -9,7 +9,7 @@ import { Typography } from '@/components/atoms/typography'
 import { UploadInput } from '@/components/atoms/upload-input/upload-input'
 import Title from '@/components/modules/heading-title'
 import { PortableComponent } from '@/components/molecules/portable-component/portable-component'
-import { sanityFetch } from '@/sanity/client'
+import { sanityFetch } from '@/sanity/live'
 import { careersQuery } from '@/sanity/queries'
 import { SlugLocaleProps } from '@/types'
 import { mapSeo } from '@/utils/common'
@@ -21,9 +21,10 @@ export async function generateMetadata(
 
   const { slug, locale } = params
 
-  const data = await sanityFetch({
+  const { data } = await sanityFetch({
     query: careersQuery,
     tags: ['career'],
+    stega: false,
     params: { slug, locale },
   })
   return mapSeo(data?.seo)
@@ -32,7 +33,7 @@ export async function generateMetadata(
 export default async function CareerPage({ params }: SlugLocaleProps) {
   const { slug, locale } = await params
   const t = await getTranslations('CareerPage')
-  const data = await sanityFetch({
+  const { data } = await sanityFetch({
     query: careersQuery,
     tags: ['career'],
     params: { slug, locale },

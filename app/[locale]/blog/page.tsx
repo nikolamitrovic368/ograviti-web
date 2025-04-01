@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 
 import Title from '@/components/modules/heading-title'
 import BlogCard from '@/components/molecules/blog-card'
-import { sanityFetch } from '@/sanity/client'
+import { sanityFetch } from '@/sanity/live'
 import { blogPageQuery } from '@/sanity/queries'
 import { LocaleProps } from '@/types'
 import { mapSeo } from '@/utils/common'
@@ -11,9 +11,10 @@ export async function generateMetadata({
   params,
 }: LocaleProps): Promise<Metadata> {
   const { locale } = await params
-  const data = await sanityFetch({
+  const { data } = await sanityFetch({
     query: blogPageQuery,
     tags: ['blogPage'],
+    stega: false,
     params: { locale },
   })
   return mapSeo(data?.seo)
@@ -21,7 +22,7 @@ export async function generateMetadata({
 
 export default async function Page({ params }: LocaleProps) {
   const { locale } = await params
-  const data = await sanityFetch({
+  const { data } = await sanityFetch({
     query: blogPageQuery,
     tags: ['blogPage'],
     params: { locale },

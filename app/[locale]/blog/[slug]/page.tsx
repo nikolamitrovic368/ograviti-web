@@ -9,7 +9,7 @@ import Title from '@/components/modules/heading-title'
 import BlogCard from '@/components/molecules/blog-card'
 import { PortableComponent } from '@/components/molecules/portable-component/portable-component'
 import { Link } from '@/i18n/routing'
-import { sanityFetch } from '@/sanity/client'
+import { sanityFetch } from '@/sanity/live'
 import { blogQuery } from '@/sanity/queries'
 import { urlForImage } from '@/sanity/utils'
 import { SlugLocaleProps } from '@/types'
@@ -19,9 +19,10 @@ export async function generateMetadata({
   params,
 }: SlugLocaleProps): Promise<Metadata> {
   const { slug, locale } = await params
-  const data = await sanityFetch({
+  const { data } = await sanityFetch({
     query: blogQuery,
     tags: ['blog'],
+    stega: false,
     params: { slug, locale },
   })
   return mapSeo(data?.seo)
@@ -29,7 +30,7 @@ export async function generateMetadata({
 
 export default async function BlogPage({ params }: SlugLocaleProps) {
   const { slug, locale } = await params
-  const data = await sanityFetch({
+  const { data } = await sanityFetch({
     query: blogQuery,
     tags: ['blog'],
     params: { slug, locale },

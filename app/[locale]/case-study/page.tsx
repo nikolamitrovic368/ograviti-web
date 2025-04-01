@@ -3,7 +3,7 @@ import { Metadata } from 'next'
 import Title from '@/components/modules/heading-title'
 import CaseStudyCard from '@/components/molecules/case-study-card'
 import Companies from '@/components/molecules/companies'
-import { sanityFetch } from '@/sanity/client'
+import { sanityFetch } from '@/sanity/live'
 import { caseStudyPageQuery } from '@/sanity/queries'
 import { LocaleProps } from '@/types'
 import { mapSeo } from '@/utils/common'
@@ -11,9 +11,10 @@ import { mapSeo } from '@/utils/common'
 export async function generateMetadata(props: LocaleProps): Promise<Metadata> {
   const params = await props.params
   const { locale } = params
-  const data = await sanityFetch({
+  const { data } = await sanityFetch({
     query: caseStudyPageQuery,
     tags: ['caseStudyPage'],
+    stega: false,
     params: { locale },
   })
   return mapSeo(data?.seo)
@@ -21,7 +22,7 @@ export async function generateMetadata(props: LocaleProps): Promise<Metadata> {
 
 export default async function Page({ params }: LocaleProps) {
   const { locale } = await params
-  const data = await sanityFetch({
+  const { data } = await sanityFetch({
     query: caseStudyPageQuery,
     tags: ['caseStudyPage'],
     params: { locale },
